@@ -14,7 +14,17 @@
 	  "src": "/images/icon/icon144.png",
 	  "type": "image/png",
 	  "sizes": "144x144"
-	}
+	},
+	{
+	  "src": "/images/icon/icon192.png",
+	  "type": "image/png",
+	  "sizes": "192x192"
+	},
+	{
+	  "src": "/images/icon/icon512.png",
+	  "type": "image/png",
+	  "sizes": "512x512"
+	},
   ],
   "start_url": "/?utm_source=homescreen"
 }
