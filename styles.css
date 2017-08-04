@@ -69,8 +69,7 @@ h2 {
 		width: 100%;
 	}
 	.content {
-		padding-left: 5%;
-		padding-right: 5%;
+		padding-left: 1%;
 	}
 	body {
 		background-color: #e5e5e5;
@@ -82,7 +81,7 @@ h2 {
 	.pinned {
 		color: black;
 	}
-	span, p {
+	.card {
 		font-size: 18px;
 	}
 	h2 {
