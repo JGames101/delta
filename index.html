@@ -19,6 +19,11 @@
 <meta name="msapplication-TileImage" content="images/icon/icon128.png">
   <meta name="msapplication-TileColor" content="#ffffff">
 <!-- Start of Real Content -->
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
+</script>
 <object id="navbar" data="nav.html" width="100%" height="40px"></object>
 <body>
 <h1 id="pageName">James M</h1>
