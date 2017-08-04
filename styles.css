@@ -71,21 +71,16 @@ h2 {
 	.content {
 		padding-left: 5%;
 		padding-right: 5%;
-		padding-top: 128px;
 	}
 	body {
-		background-color: white;
+		background-color: #e5e5e5;
 		padding: none;
+	}
+	#pageName {
+		color: black;
 	}
 	.pinned {
 		color: black;
-	}
-	#pageName {
-		background-color: #e84242;
-		width: 101%;
-		position: absolute;
-		top: -52px;
-		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 	}
 }
 @media (min-width: 992px){
