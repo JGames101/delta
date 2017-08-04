@@ -82,6 +82,12 @@ h2 {
 	.pinned {
 		color: black;
 	}
+	span, p {
+		font-size: 18px;
+	}
+	h2 {
+		font-size: 32px;
+	}
 }
 @media (min-width: 992px){
 	.card {
