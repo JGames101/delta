@@ -81,10 +81,9 @@ h2 {
 		background-color: #e84242;
 		width: 101%;
 		position: fixed;
-		top: -86px;
+		top: -50px;
 		left: -1px;
 		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-		font-size: 128px;
 	}
 	.pinned {
 		color: black;
