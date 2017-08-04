@@ -1,6 +1,9 @@
-"theme_color": "aliceblue""theme_color": "aliceblue""theme_color": "aliceblue""theme_color": "aliceblue"#e5e5e5#e5e5e5#e5e5e5#e5e5e5#e5e5e5"display": "standalone"{
+{
   "short_name": "James M",
   "name": "James M's Wonderful World of Web Wonder",
+  "theme_color": "#e5e5e5",
+  "background_color": "#e5e5e5",
+  "display": "standalone",
   "icons": [
     {
       "src": "icon128.png",
