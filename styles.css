@@ -67,9 +67,11 @@ h2 {
 @media (min-width: 0px) and (max-width: 991px){
 	.card {
 		width: 100%;
+		margin-left: 0px;
+		border-radius: 12px;
+		
 	}
 	.content {
-		padding-left: 1%;
 	}
 	body {
 		background-color: #e5e5e5;
