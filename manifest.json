@@ -9,7 +9,12 @@
       "src": "icon128.png",
       "type": "images/icon",
       "sizes": "128x128"
-    }
+    },
+	{
+	  "src": "icon144.png",
+	  "type": "images/icon",
+	  "sizes": "144x144"
+	}
   ],
   "start_url": "/?utm_source=homescreen"
 }
