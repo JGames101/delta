@@ -28,16 +28,20 @@ if ('serviceWorker' in navigator) {
 <body>
 <h1 id="pageName">James M</h1>
 <div class="content">
+	<div id="jsMissing" class="card">
+		<h2>JAVASCRIPT</h2>
+		<p>Hey!</p>
+		<p>JavaScript is disabled on your browser. That's okay! You can still use most pages. However, any pages with the AngularJS or JS marks will not work.</p>
+	</div>
+	<script>
+	var x = document.getElementById('jsMissing');
+	x.style.display = 'none';
+	</script>
 	<a href="updates.html"><div class="card">
 		<h2>UPDATES</h2>
 		<p>Click here to see update history.</p>
-		<p>Current Version: 0.3b</p>
+		<p>Current Version: 0.4b</p>
 	</div></a>
-	<div class="card">
-		<h2>IMPORTANT</h2>
-		<p>Your browser will save every page you visit on this site to your PC so you can visit offline. If you don't want this, check your browser settings.</p>
-		<p>Any page that says AngularJS in the bottom left corner will require JavaScript to be enabled. If it's disabled, try other parts of the site.</p>
-	</div>
 	<h2 class="pinned">PINNED</h2>
 	<a href="angular.html"><div class="card">
 		<h2>ANGULAR</h2>

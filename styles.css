@@ -3,6 +3,10 @@ nav {
 	color: white;
 	font-size: 20px;
 }
+#jsMissing {
+	background-color: #ff8e75;
+	color: black;
+}
 #player {
 	width: 500px;
 	height: 410px;
