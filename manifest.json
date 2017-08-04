@@ -1,0 +1,12 @@
+"theme_color": "aliceblue""theme_color": "aliceblue""theme_color": "aliceblue""theme_color": "aliceblue"#e5e5e5#e5e5e5#e5e5e5#e5e5e5#e5e5e5"display": "standalone"{
+  "short_name": "James M",
+  "name": "James M's Wonderful World of Web Wonder",
+  "icons": [
+    {
+      "src": "icon128.png",
+      "type": "images/icon",
+      "sizes": "128x128"
+    }
+  ],
+  "start_url": "/?utm_source=homescreen"
+}
