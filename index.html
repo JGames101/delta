@@ -30,6 +30,25 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js');
 }
 </script>
+<script> // This is for prompting app install
+window.addEventListener('beforeinstallprompt', function(e) {
+  // beforeinstallprompt Event fired
+
+  // e.userChoice will return a Promise. 
+  // For more details read: https://developers.google.com/web/fundamentals/getting-started/primers/promises
+  e.userChoice.then(function(choiceResult) {
+
+    console.log(choiceResult.outcome);
+
+    if(choiceResult.outcome == 'dismissed') {
+      console.log('User cancelled home screen install');
+    }
+    else {
+      console.log('User added to home screen');
+    }
+  });
+});
+</script>
 <object id="navbar" data="nav.html" width="100%" height="40px"></object>
 <body>
 <h1 id="pageName">James M</h1>
