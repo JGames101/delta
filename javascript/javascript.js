@@ -26,7 +26,7 @@ function notifyMe(p) {
     });
 
     notification.onclick = function () {
-		notifyMe2('Hey! You clicked on a notification!')  
+		window,alert('You clicked a notification!');  
     };
 
   }
