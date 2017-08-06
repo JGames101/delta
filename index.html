@@ -50,6 +50,18 @@ window.addEventListener('beforeinstallprompt', function(e) {
   });
 });
 </script>
+<script> // Requests Notification Permission
+// request permission on page load
+document.addEventListener('DOMContentLoaded', function () {
+  if (!Notification) {
+    alert('Desktop notifications not available in your browser. Try Chromium.'); 
+    return;
+  }
+
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();
+});
+</script>
 <object id="navbar" data="nav.html" width="100%" height="40px"></object>
 <body>
 <h1 id="pageName">James M</h1>
