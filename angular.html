@@ -1,5 +1,18 @@
 <!doctype html>
 <html>
+<head>
+<link rel="import" href="nav.html">
+<meta name="theme-color" content="#e5e5e5" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<link rel="manifest" href="/manifest.json">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<meta charset="utf-8">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
+<link rel="import" href="nav.html">
+<title>AngularJS | James M</title>
+</head>
 <!-- favicon stuff -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -13,19 +26,6 @@
 <!-- Add to Start for Windows -->
 <meta name="msapplication-TileImage" content="images/icon/icon128.png">
   <meta name="msapplication-TileColor" content="#ffffff">
-<!-- Main Stuff-->
-<link rel="import" href="nav.html">
-<meta name="theme-color" content="#e5e5e5" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<head>
-<link rel="manifest" href="/manifest.json">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<meta charset="utf-8">
-<link href="styles.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<title>AngularJS | James M</title>
-</head>
 <body>
 	<h1 id="pageName">AngularJS | James M</h1>
 	<div class="content" ng-app="">
@@ -37,11 +37,16 @@
 		<h2 class="pinned">EXPERIMENTS</h2>
 		<div class="card" ng-app="" ng-init="not-title='Notification',not-body='This is a notification.',not-icon='images/icon/icon128.png',not-click='window.alert('You clicked a notification!')'">
 		<h2>NOTIFICATION GENERATOR</h2>
-		<p>Title: <input type="text" ng-model="not-title"></p>
-		<p>Body: <input type="text" ng-model="not-body"></p>
-		<p>Icon: <input type="text" ng-model="not-icon"></p>
-		<p>Click event: <input type="text" ng-model="not-click"></p>
-		<p><button onclick="javascript:notify({{not-title}}, {{not-body}}, {{not-icon}}, {{not-click}})"></button></p>
+		<p>Title: <input type="text" ng-model="notTitle"></p>
+		<p>Body: <input type="text" ng-model="notBody"></p>
+		<p>Icon: <input type="text" ng-model="notIcon"></p>
+		<p>Click event: <input type="text" ng-model="notClick"></p>
+		<div class="notificationPreview">
+		<img src="{{not-icon}}">
+		<span id="notPreviewTitle">{{notTitle}}</span>
+		<span id="notPreviewTitle">{{notBody}}</span>
+		</div>
+		<p><button onclick="javascript:notify({{notTitle}}, {{notBody}}, {{notIcon}}, {{notClick}})">Send Notification!</button></p>
 		</div>
 		<div class="card" ng-app="" style="width:{{myWidth}}">
 			<h2>Size Changing</h2>
