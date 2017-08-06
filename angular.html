@@ -35,6 +35,14 @@
 			<p>No AngularJS tags are displayed, because everything on this page uses angularJS.</p>
 		</div>
 		<h2 class="pinned">EXPERIMENTS</h2>
+		<div class="card" ng-app="" ng-init="not-title='Notification',not-body='This is a notification.',not-icon='images/icon/icon128.png',not-click='window.alert('You clicked a notification!')'">
+		<h2>NOTIFICATION GENERATOR</h2>
+		<p>Title: <input type="text" ng-model="not-title"></p>
+		<p>Body: <input type="text" ng-model="not-body"></p>
+		<p>Icon: <input type="text" ng-model="not-icon"></p>
+		<p>Click event: <input type="text" ng-model="not-click"></p>
+		<p><button onclick="javascript:notify({{not-title}}, {{not-body}}, {{not-icon}}, {{not-click}})"></button></p>
+		</div>
 		<div class="card" ng-app="" style="width:{{myWidth}}">
 			<h2>Size Changing</h2>
 			<p>The magical card that changes size!</p>
