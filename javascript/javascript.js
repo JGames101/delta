@@ -16,17 +16,17 @@ function conf(p) {
 		var useless = "cool cool";
 	}
 }
-function notifyMe() {
+function notifyMe(p) {
   if (Notification.permission !== "granted")
     Notification.requestPermission();
   else {
     var notification = new Notification('Notification title', {
-      icon: 'images/icon/icon128.png',
-      body: "Hey there! You've been notified!",
+      icon: 'jgames101.github.io/images/icon/icon128.png',
+      body: p,
     });
 
     notification.onclick = function () {
-      window.open("http://stackoverflow.com/a/13328397/1269037");      
+		notifyMe2('Hey! You clicked on a notification!')  
     };
 
   }
