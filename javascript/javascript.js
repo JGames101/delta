@@ -16,13 +16,13 @@ function conf(p) {
 		var useless = "cool cool";
 	}
 }
-function notifyMe(p) {
+function notifyMe() {
   if (Notification.permission !== "granted")
     Notification.requestPermission();
   else {
     var notification = new Notification('Notification title', {
       icon: 'images/icon/icon128.png',
-      body: p,
+      body: 'Hey! This is a notification!',
     });
 
     notification.onclick = function () {
