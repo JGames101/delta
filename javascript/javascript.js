@@ -21,7 +21,7 @@ function notifyMe() {
     Notification.requestPermission();
   else {
     var notification = new Notification('Notification title', {
-      icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
+      icon: 'mstile-150x150',
       body: "Hey there! You've been notified!",
     });
 
