@@ -23,10 +23,11 @@ function notifyMe() {
     var notification = new Notification('Notification title', {
       icon: 'images/icon/icon128.png',
       body: 'Hey! This is a notification!',
+	  title: 'hey! Look here!'
     });
 
     notification.onclick = function () {
-		window,alert('You clicked a notification!');  
+		notifyMe();  
     };
 
   }
