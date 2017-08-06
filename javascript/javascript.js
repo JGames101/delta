@@ -21,7 +21,7 @@ function notifyMe() {
     Notification.requestPermission();
   else {
     var notification = new Notification('Notification title', {
-      icon: 'mstile-150x150',
+      icon: 'images/icon/icon128.png',
       body: "Hey there! You've been notified!",
     });
 
