@@ -21,7 +21,7 @@ function notifyMe(p) {
     Notification.requestPermission();
   else {
     var notification = new Notification('Notification title', {
-      icon: 'jgames101.github.io/images/icon/icon128.png',
+      icon: 'images/icon/icon128.png',
       body: p,
     });
 
