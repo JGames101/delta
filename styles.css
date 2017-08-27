@@ -105,13 +105,13 @@ h2 {
 	width: 64px;
 	height: 64px;
 	position: absolute;
-	top: 0px;
-	left: 0px;
+	top: 23.33333333333333%;
+	left: 23.33333333333333%;
 }
 .line {
 	width: 100%;
-	height: 25%;
-	margin-bottom: 12.5%;
+	height: 10%;
+	margin-bottom: 23.33333333333333%;
 	background-color: white;
 }
 @media (min-width: 0px) and (max-width: 991px){
