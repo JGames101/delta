@@ -10,4 +10,5 @@ img {
 }
 body {
 	background-color: white !important;
+	background-image: none !important;
 }
