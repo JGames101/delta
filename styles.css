@@ -110,6 +110,11 @@ h2 {
 	body {
 		padding: none;
 		width: 100%;
+		background-image: url('/photos/flowers.jpg');
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
 	.card {
 		font-size: 18px;

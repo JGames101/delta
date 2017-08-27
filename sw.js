@@ -19,6 +19,11 @@ self.addEventListener('install', e => {
 		'/global.js',
 		'/jsmissing.html',
 		'/javascript/javascript.js',
+		'/manifest.json',
+		'/images/icon128',
+		'/images/icon144',
+		'/images/icon192',
+		'/images/icon512',
       ]).then(() => self.skipWaiting());
     })
   );
