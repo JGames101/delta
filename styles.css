@@ -51,8 +51,6 @@ h1 {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 	min-height: 128px;
 	color: black;
-	-webkit-transition-duration: 0.4s; /* Safari */
-	transition-duration: 0.4s;
 }
 h2 {
 	font-weight:700;
@@ -124,6 +122,8 @@ h2 {
 	top: 0px;
 	left: 0px;
 	height: 100%;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
 }
 @media (min-width: 0px) and (max-width: 991px){
 	.colourBackground {
