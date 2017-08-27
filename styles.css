@@ -6,6 +6,7 @@ nav {
 #jsMissing {
 	background-color: #ff8e75;
 	color: black;
+	display: block;
 }
 #player {
 	width: 500px;
@@ -24,8 +25,12 @@ nav {
 	left: -2060px;
 }
 body {
-	background-color: #e84242;
-	font-family: 'Roboto Condensed', sans-serif;
+	background-image: url('http://i.imgur.com/YRs3JSn.jpg');
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	font-family: 'Roboto Condensed', sans;
 }
 h1 {
 	color: white;
@@ -50,6 +55,10 @@ h1 {
 h2 {
 	font-weight:700;
 }
+.video {
+	border-top-left-radius: 16px;
+	border-top-right-radius: 16px;
+}
 .navbtn {
 	color: white;
 	float: right;
@@ -68,24 +77,39 @@ h2 {
 	margin-left: 8px;
 	vertical-align: bottom;
 }
+#pageName {
+	margin-top: 256px;
+}
+.colourBackground {
+	position: absolute;
+	left: 0px;
+	padding-top: 32px;
+	width: 100%;
+	background-color: rgba(43, 53, 56, 0.75);
+}
+#jsmissing {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+}
 @media (min-width: 0px) and (max-width: 991px){
+	.colourBackground {
+		background-color: rgba(43, 53, 56, 0);
+	}
 	.card {
 		width: 100%;
 		margin-left: 0px;
 		border-radius: 12px;
-		
+	}
+	.video {
+		border-top-left-radius: 12px;
+		border-top-right-radius: 12px;
 	}
 	.content {
 	}
 	body {
-		background-color: #e5e5e5;
 		padding: none;
-	}
-	#pageName {
-		color: black;
-	}
-	.pinned {
-		color: black;
+		width: 100%;
 	}
 	.card {
 		font-size: 18px;

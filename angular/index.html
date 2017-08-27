@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<link href="/styles.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
+<title>AngularJS | James M</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+	<object id="jsmissing" data="jsmissing.html" width="100%" height="48px"></object> <!-- The alert for JavaScript being disabled. -->
+	<h1 id="pageName">AngularJS | James M</h1>
+	<div class="content" id="content" ng-app="">
+		<div class="card" ng-app="">
+			<h2>WELCOME</h2>
+			<p>An archive for all of my AngularJS experiments as I learn it. Will hopefully soon be filled up with amazing experiments and projects!</p>
+			<p>No AngularJS tags are displayed, because everything on this page uses angularJS.</p>
+		</div>
+		<h2 class="pinned">EXPERIMENTS</h2>
+		<div class="card" ng-app="">
+			<h2>COMING SOON</h2>
+		</div>
+		<div class="card" ng-app="" style="width:{{myWidth}}">
+			<h2>Size Changing</h2>
+			<p>The magical card that changes size!</p>
+			<p>Width: <input ng-model="myWidth"></p>
+		</div>
+		<div class="card" ng-app="" style="background-color:{{myCol}}" ng-init="myCol='seagreen'">
+			<h2>COLOURS</h2>
+			<p>Card Colour: <input ng-model="myCol" value="{{myCol}}"></p>
+		</div>
+		<div class="card">
+			<h2>ADDITION</h2>
+			<p><input type="number" ng-model="input1"> + <input type="number" ng-model="input2"></p>
+			<p>The answer is {{input1 + input2}}</p>
+		</div>
+		<div class="card" ng-app="" ng-init="name='Bob'">
+			<h2>ENTER YOUR NAME</h2>
+			<p>Name: <input type="text" ng-model="name"></p>
+			<p>Hello, <span ng-bind="name"></span>!</p>
+		</div>
+	</div>
+
+</body>
+<script src="/global.js"></script>
+</html>
