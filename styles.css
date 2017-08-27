@@ -102,15 +102,15 @@ h2 {
 	z-index: 255;
 }
 #menuButton {
-	width: 32px;
-	height: 32px;
+	width: 64px;
+	height: 64px;
 	position: absolute;
 	top: 0px;
 	left: 0px;
 }
 .line {
 	width: 100%;
-	height: 25;
+	height: 25%;
 	margin-bottom: 12.5%;
 	background-color: white;
 }
