@@ -107,6 +107,7 @@ h2 {
 	top: 16px;
 	left: 16px;
 	cursor: pointer;
+	display: none;
 }
 .line {
 	width: 100%;
