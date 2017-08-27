@@ -102,11 +102,11 @@ h2 {
 	z-index: 255;
 }
 #menuButton {
-	width: 64px;
-	height: 64px;
+	width: 32px;
+	height: 32px;
 	position: absolute;
-	top: 32px;
-	left: 32px;
+	top: 16px;
+	left: 16px;
 }
 .line {
 	width: 100%;
