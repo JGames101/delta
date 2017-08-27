@@ -37,9 +37,6 @@ function notgen() {
 	var noTtl = document.getElementById('nottitle').value;
 	var noCon = document.getElementById('notcontent').value;
 	var noImg = document.getElementById('notimage').value;
-	console.log(nottl);
-	console.log(nocon);
-	console.log(noimg);
 	var notification = new Notification(noTtl, {
 		icon: noImg,
 		body: noCon,
