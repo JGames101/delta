@@ -132,10 +132,12 @@ h2 {
 		font-size: 32px;
 	}
 	#connecmissing {
-		height: 96px !important;
+		height: 90px !important;
+		display: none;
 	}
 	#jsmissing {
-		height: 96px !important;
+		height: 90px !important;
+		display: none;
 	}
 }
 @media (min-width: 992px){
