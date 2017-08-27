@@ -20,7 +20,7 @@ function notifyMe() {
   if (Notification.permission !== "granted")
     Notification.requestPermission();
   else {
-    var notification = new Notification('Notification title', {
+    var notification = new Notification('hey! Look here!', {
       icon: 'images/icon/icon128.png',
       body: 'Hey! This is a notification!',
 	  title: 'hey! Look here!'
@@ -32,4 +32,22 @@ function notifyMe() {
 
   }
 
+}
+function notgen() {
+		var nottl = document.getElementById('nottitle').value;
+		var nocon = document.getElementById('notcontent').value;
+		var noimg = document.getElementById('notimage').value;
+		if (Notification.permission !== "granted")
+			Notification.requestPermission();
+		else {
+			var notification = new Notification(nottl, {
+				icon: noimg,
+				body: nocon,
+				title: nottl
+			});
+
+			notification.onclick = function () {
+					console.log('notification clicked');
+			};
+  }
 }

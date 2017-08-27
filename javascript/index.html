@@ -38,6 +38,19 @@
 	</div>
 	<h2 class="pinned">EXPERIMENTS</h2>
 	<div class="card">
+		<h2>NOTIFICATION GENERATOR</h2>
+		<p>Input everything below, and then click the button to make a notification.</p>
+		<p>
+			<span>Notification Title:</span>
+			<input type="text" name="nottitle" id="nottitle"><br>
+			<span>Notification Content:</span>
+			<input type="text" maxlength="512" name="notcontent" id="notcontent"><br>
+			<span>Image:</span>
+			<input type="text" maxlength="512" name="notimage" id="notimage"><br>
+			<button onclick="javascript:notgen()">Go!</button>
+		</p>
+	</div>
+	<div class="card">
 		<h2>NOTIFICATIONS</h2>
 		<p>Click the button below to make a notification.</p>
 		<p><button onclick="javascript:notifyMe()">Notify!</button>
