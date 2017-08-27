@@ -104,6 +104,9 @@ h2 {
 #menuButton {
 	width: 32px;
 	height: 32px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
 }
 .line {
 	width: 100%;
