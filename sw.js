@@ -36,7 +36,7 @@ self.addEventListener('fetch', event => {
 var online = navigator.onLine;
 if (online == true) {
     event.respondWith(
-		fetch('https://jgames101.github.io/' + event.request)
+		fetch('https://jgames101.github.io/')
 	);
 } else { 
     event.respondWith(
