@@ -33,21 +33,3 @@ function notifyMe() {
   }
 
 }
-function notgen() {
-		var nottl = document.getElementById('nottitle').value;
-		var nocon = document.getElementById('notcontent').value;
-		var noimg = document.getElementById('notimage').value;
-		if (Notification.permission !== "granted")
-			Notification.requestPermission();
-		else {
-			var notification = new Notification(nottl, {
-				icon: noimg,
-				body: nocon,
-				title: nottl
-			});
-
-			notification.onclick = function () {
-					console.log('notification clicked');
-			};
-  }
-}
