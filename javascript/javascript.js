@@ -40,17 +40,13 @@ function notgen() {
 	console.log(nottl);
 	console.log(nocon);
 	console.log(noimg);
-	if (Notification.permission !== "granted") {
-		Notification.requestPermission();
-	} else {
-		var notification = new Notification(nottl, {
-			icon: noimg,
-			body: nocon,
-			title: nottl
-		});
+	var notification = new Notification(nottl, {
+		icon: noimg,
+		body: nocon,
+		title: nottl
+	});
 
-		notification.onclick = function () {
-			console.log('notification clicked');
-		};
-	}
+	notification.onclick = function () {
+		console.log('notification clicked');
+	};
 }
