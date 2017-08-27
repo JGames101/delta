@@ -1,6 +1,10 @@
 // we'll version our cache (and learn how to delete caches in
 // some other post)
 const cacheName = 'v3::static';
+var online = navigator.onLine;
+if (online == true)
+	window.location.reload(true);
+	document.getElementById('offlinealert').style.display = 'none';
 
 self.addEventListener('install', e => {
   // once the SW is installed, go ahead and fetch the resources
