@@ -129,6 +129,12 @@ h2 {
 	h2 {
 		font-size: 32px;
 	}
+	#connecmissing {
+		height: 96px !important;
+	}
+	#jsmissing {
+		height: 96px !important;
+	}
 }
 @media (min-width: 992px){
 	.card {
