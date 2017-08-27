@@ -133,6 +133,10 @@ h2 {
 	font-size: 24px;
 	margin-left: 64px;
 }
+#menuTitle {
+	margin-top: 0px;
+	cursor: initial;
+}
 @media (min-width: 0px) and (max-width: 991px){
 	.colourBackground {
 		background-color: rgb(43, 53, 56);
