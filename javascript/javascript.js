@@ -37,6 +37,9 @@ function notgen() {
 	var nottl = document.getElementById('nottitle').value;
 	var nocon = document.getElementById('notcontent').value;
 	var noimg = document.getElementById('notimage').value;
+	console.log(nottl);
+	console.log(nocon);
+	console.log(noimg);
 	if (Notification.permission !== "granted") {
 		Notification.requestPermission();
 	} else {
