@@ -59,4 +59,5 @@ function toCelsiusNew() {
 function toFahrenheitNew() {
 	var celsius = document.getElementById("celsius").value;
     document.getElementById("fahrenheit").value = 1.8 * celsius + 32;
+	document.getElementById("fahrenheit").value = document.getElementById("fahrenheit").value(0, 4);
 }
