@@ -8,3 +8,6 @@ img {
 	top: 0px;
 	left: 0px;
 }
+body {
+	background-color: white !important;
+}
