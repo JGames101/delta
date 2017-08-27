@@ -21,7 +21,7 @@ function notifyMe() {
     Notification.requestPermission();
   else {
     var notification = new Notification('hey! Look here!', {
-      icon: 'images/icon/icon128.png',
+      icon: '/images/icon/icon128.png',
       body: 'Hey! This is a notification!',
 	  title: 'hey! Look here!'
     });
@@ -40,10 +40,10 @@ function notgen() {
 	if (Notification.permission !== "granted")
 		Notification.requestPermission();
 	else {
-		var notification = new Notification('hey! Look here!', {
-			icon: 'images/icon/icon128.png',
-			body: 'Hey! This is a notification!',
-			title: 'hey! Look here!'
+		var notification = new Notification(noTtl, {
+			icon: noImg,
+			body: noCon,
+			title: noTtl
 		});
 
 		notification.onclick = function () {
