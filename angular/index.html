@@ -29,6 +29,10 @@
 	<div class="colourBackground">
 	<div class="content" id="content" ng-app="">
 		<div class="card" ng-app="">
+			<h2>INSTANT TEMPERATURE CONVERTION</h2>
+			<p><input ng-model="fahrenheit" value="{{ 1.8 * celcius + 32 }}">°f = <input ng-model="celcius" value="{{ 5 / 9 * ( fahrenheit - 32 ) }}">
+		</div>
+		<div class="card" ng-app="">
 			<h2>WELCOME</h2>
 			<p>An archive for all of my AngularJS experiments as I learn it. Will hopefully soon be filled up with amazing experiments and projects!</p>
 			<p>No AngularJS tags are displayed, because everything on this page uses angularJS.</p>
