@@ -125,6 +125,10 @@ h2 {
 	-webkit-transition-duration: 0.4s; /* Safari */
 	transition-duration: 0.4s;
 }
+.menuItem {
+	color: white;
+	margin-top: 48px;
+}
 @media (min-width: 0px) and (max-width: 991px){
 	.colourBackground {
 		background-color: rgb(43, 53, 56);
