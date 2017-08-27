@@ -12,7 +12,7 @@ function toggleMenu() {
 		document.getElementById('menu').style.display = 'none';
 		menu = false;
 	} else {
-		document.getElementById('connecmissing').style.display = 'block';
+		document.getElementById('menu').style.display = 'block';
 		menu = true;
 	}
 }
