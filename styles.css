@@ -54,10 +54,6 @@ h1 {
 	-webkit-transition-duration: 0.4s; /* Safari */
 	transition-duration: 0.4s;
 }
-.card:hover {
-	background-color: #e5e5e5;
-	box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2), 0 12px 40px 0 rgba(0,0,0,0.19);
-}
 h2 {
 	font-weight:700;
 }
