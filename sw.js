@@ -25,6 +25,7 @@ self.addEventListener('install', e => {
 		'/styles.css',
 		'/global.js',
 		'/jsmissing.html',
+		'/javascript/javascript.js',
       ]).then(() => self.skipWaiting());
     })
   );

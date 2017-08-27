@@ -33,11 +33,8 @@
 <div class="content">
 	<div class="card">
 		<h2>0.7b</h2>
-		<p>Fixed issue on chrome and firefox with index.html being cached but styles.css not being, which caused the outdated index.html from 0.5b to display along with the CSS from v0.6b.</p>
-		<p>Added dark background for PC/Tablet to all pages.</p>
-		<p>Moved background image to store locally instead of using imgur to fix insecure image issues.</p>
-		<p>Rebuilt the service worker to cache pages and work offline, and ONLY loads cache if offline. If online, it caches the latest version, but doesn't load it unless it's offline.</p>
-		<p>Hopefully everything went right.</p>
+		<p>Fixed issues with caching, so that the page now works offline and loads properly online with the latest version of the site.</p>
+		<p>That means progressive web app goals are complete! All that needs to be done now is fix mobile UI.</p>
 	</div>
 	<div class="card">
 		<h2>0.6b</h2>

@@ -26,9 +26,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
 <!-- Start of Real Content -->
 <script> // service worker
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js');
-}
+navigator.serviceWorker.register('/sw.js');
 </script>
 <script> // Requests Notification Permission
 // request permission on page load
@@ -51,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	<a href="/updates/"><div class="card">
 		<h2>UPDATES</h2>
 		<p>Click here to see update history.</p>
-		<p>Current Version: 0.6b</p>
+		<p>Current Version: 0.7b</p>
 	</div></a>
 	<h2 class="pinned">PINNED</h2>
 	<a href="/angular/"><div class="card">
