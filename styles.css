@@ -91,10 +91,17 @@ h2 {
 	position: fixed;
 	left: 0px;
 	top: 0px;
+	z-index: 128;
+}
+#connecmissing {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	z-index: 127;
 }
 @media (min-width: 0px) and (max-width: 991px){
 	.colourBackground {
-		background-color: rgba(43, 53, 56, 0);
+		background-color: rgb(43, 53, 56);
 	}
 	.card {
 		width: 100%;
