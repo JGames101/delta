@@ -1,18 +1,26 @@
-// we'll version our cache (and learn how to delete caches in
-// some other post)
-const cacheName = 'v2::static';
-
-// Event listener for retrieving data
-self.addEventListener('fetch', function(event) {
-    var req = event.request.clone();
-    if (req.clone().method == "GET") {
-        event.respondWith(  
-         
-	    // Get the response from the network
-	    return fetch(req.clone()).then(function(response) {
-	       // And store it in the cache for later
-		return cache.put(req.clone(), response);
-	    });	
-        );
-    }
-});
+// my custom service worker to get offline support working
+var online = navigator.onLine;
+var CACHE_VERSION = 1;
+if (online == true)
+  event.waitUntil(
+    caches.open(CACHE_VERSION).then(function(cache) {
+      return cache.addAll([
+        '',
+        '/angular/',
+        '/javascript/',
+        '/html5/',
+        '/styles.css',
+        '/photos/flowers.jpg',
+        '/photos/',
+        '/photos/images.css',
+        '/photos/cactus.jpg',
+        '/photos/dandelion.jpg',
+		'/photos/snapdragon.jpg',
+		'/global.js',
+		'jsmissing.html'
+      ]);
+    })
+  );
+else {
+	
+}

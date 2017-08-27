@@ -32,6 +32,14 @@
 <div class="colourBackground">
 <div class="content">
 	<div class="card">
+		<h2>0.7b</h2>
+		<p>Fixed issue on chrome and firefox with index.html being cached but styles.css not being, which caused the outdated index.html from 0.5b to display along with the CSS from v0.6b.</p>
+		<p>Added dark background for PC/Tablet to all pages.</p>
+		<p>Moved background image to store locally instead of using imgur to fix insecure image issues.</p>
+		<p>Rebuilt the service worker to cache pages and work offline, and ONLY loads cache if offline. If online, it caches the latest version, but doesn't load it unless it's offline.</p>
+		<p>Hopefully everything went right.</p>
+	</div>
+	<div class="card">
 		<h2>0.6b</h2>
 		<p>New design that includes background that is consistant on all devices.</p>
 		<p>Added a new Photo Gallery, which is in early testing.</p>
