@@ -114,6 +114,7 @@ h2 {
 	height: 10%;
 	margin-bottom: 23.33333333333333%;
 	background-color: white;
+	border-radius: 5%;
 }
 @media (min-width: 0px) and (max-width: 991px){
 	.colourBackground {
