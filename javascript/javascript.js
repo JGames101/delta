@@ -34,16 +34,16 @@ function notifyMe() {
 
 }
 function notgen() {
-	var nottl = document.getElementById('nottitle').value;
-	var nocon = document.getElementById('notcontent').value;
-	var noimg = document.getElementById('notimage').value;
+	var noTtl = document.getElementById('nottitle').value;
+	var noCon = document.getElementById('notcontent').value;
+	var noImg = document.getElementById('notimage').value;
 	console.log(nottl);
 	console.log(nocon);
 	console.log(noimg);
-	var notification = new Notification(nottl, {
-		icon: noimg,
-		body: nocon,
-		title: nottl
+	var notification = new Notification(noTtl, {
+		icon: noImg,
+		body: noCon,
+		title: noTtl
 	});
 
 	notification.onclick = function () {
