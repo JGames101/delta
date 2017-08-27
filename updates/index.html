@@ -28,6 +28,20 @@
 <body>
 <object id="jsmissing" data="/jsmissing.html" width="100%" height="48px"></object> <!-- The alert for JavaScript being disabled. -->
 <object id="connecmissing" data="/connecmissing.html" width="100%" height="48px"></object> <!-- This is the alert for internet connection missing. -->
+<div id="menuButton" onclick="javascript:toggleMenu()"> <!-- For opening control menu -->
+	<div class="line"></div>
+	<div class="line"></div>
+	<div class="line"></div>
+</div>
+<div id="menu" style="display:none;">
+	<p class="menuItem" id="menuTitle">Pages</p>
+	<p class="menuItem" id="homeButton" onclick="javascript:setPage('/')">HOME</p>
+	<p class="menuItem" id="updatesButton" onclick="javascript:setPage('/updates/')">UPDATES</p>
+	<p class="menuItem" id="angularButton" onclick="javascript:setPage('/angular/')">ANGULAR</p>
+	<p class="menuItem" id="javascriptButton" onclick="javascript:setPage('/javascript/')">JAVASCRIPT</p>
+	<p class="menuItem" id="html5Button" onclick="javascript:setPage('/html5/')">HTML5</p>
+	<p class="menuItem" id="photographyButton" onclick="javascript:setPage('/photos/')">PHOTOGRAPHY</p>
+</div>
 <h1 id="pageName">Updates | James M</h1>
 <div class="colourBackground">
 <div class="content">
