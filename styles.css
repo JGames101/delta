@@ -105,7 +105,7 @@ h2 {
 	width: 32px;
 	height: 32px;
 	position: fixed;
-	z-index: 257;
+	z-index: 258;
 	top: 16px;
 	left: 16px;
 }
@@ -115,6 +115,15 @@ h2 {
 	margin-bottom: 23.33333333333333%;
 	background-color: white;
 	border-radius: 5%;
+}
+#menu {
+	background-color: #7ea5ba;
+	z-index: 257;
+	position: fixed;
+	margin: none;
+	top: 0px;
+	left: 0px;
+	height: 100%;
 }
 @media (min-width: 0px) and (max-width: 991px){
 	.colourBackground {
@@ -155,6 +164,9 @@ h2 {
 		height: 90px !important;
 		display: none;
 	}
+	#menu {
+		width: 100%;
+	}
 }
 @media (min-width: 992px){
 	.card {
@@ -163,6 +175,9 @@ h2 {
 	.content {
 		padding-left: 10%;
 		padding-right: 10%;
+	}
+	#menu {
+		width: 50%;
 	}
 }
 
@@ -173,5 +188,8 @@ h2 {
 	.content {
 		padding-left: 5%;
 		padding-right: 5%;
+	}
+	#menu {
+		width: 25%;
 	}
 }
