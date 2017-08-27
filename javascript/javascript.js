@@ -37,13 +37,18 @@ function notgen() {
 	var noTtl = document.getElementById('nottitle').value;
 	var noCon = document.getElementById('notcontent').value;
 	var noImg = document.getElementById('notimage').value;
-	var notification = new Notification(noTtl, {
-		icon: noImg,
-		body: noCon,
-		title: noTtl
-	});
+	if (Notification.permission !== "granted")
+		Notification.requestPermission();
+	else {
+		var notification = new Notification('hey! Look here!', {
+			icon: 'images/icon/icon128.png',
+			body: 'Hey! This is a notification!',
+			title: 'hey! Look here!'
+		});
 
-	notification.onclick = function () {
-		console.log('notification clicked');
-	};
+		notification.onclick = function () {
+			console.log('Notification Clicked'); 
+		};
+
+	}
 }
