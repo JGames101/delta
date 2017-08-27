@@ -52,3 +52,11 @@ function notgen() {
 
 	}
 }
+function toCelsiusNew() {
+	var fahrenheit = document.getElementById("fahrenheit").value;
+    document.getElementById("celsius").value = (5/9) * (fahrenheit-32);
+}
+function toFahrenheitNew() {
+	var celsius = document.getElementById("celsius").value;
+    document.getElementById("fahrenheit").value = 1.8 * celsius + 32;
+}
