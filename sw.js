@@ -20,10 +20,10 @@ self.addEventListener('install', e => {
 		'/jsmissing.html',
 		'/javascript/javascript.js',
 		'/manifest.json',
-		'/images/icon128',
-		'/images/icon144',
-		'/images/icon192',
-		'/images/icon512',
+		'/images/icon/icon128',
+		'/images/icon/icon144',
+		'/images/icon/icon192',
+		'/images/icon/icon512',
 		'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200',
       ]).then(() => self.skipWaiting());
     })
