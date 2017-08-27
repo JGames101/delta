@@ -16,3 +16,6 @@ function toggleMenu() {
 		menu = true;
 	}
 }
+function setPage(newLocation) {
+	window.location.href = "https://jgames101.github.io" + newLocation;
+}
