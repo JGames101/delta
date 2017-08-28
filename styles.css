@@ -25,7 +25,7 @@ nav {
 	left: -2060px;
 }
 body {
-	background-image: url('/photos/flowers.jpg');
+	background-image: url('/photos/3.jpg');
 	background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -107,7 +107,7 @@ h2 {
 	top: 16px;
 	left: 16px;
 	cursor: pointer;
-	display: none;
+	display: none !important;
 }
 .line {
 	width: 100%;
