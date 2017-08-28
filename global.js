@@ -1,5 +1,4 @@
 document.getElementById('jsmissing').style.display = 'none';
-document.getElementById('menuButton').style.display = 'block';
 var menu = false;
 var online = navigator.onLine;
 if (online == true) {

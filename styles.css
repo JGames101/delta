@@ -91,7 +91,7 @@ h2 {
 	position: fixed;
 	left: 0px;
 	top: 0px;
-	z-index: 256;
+	z-index: 259;
 }
 #connecmissing {
 	position: fixed;
@@ -107,7 +107,7 @@ h2 {
 	top: 16px;
 	left: 16px;
 	cursor: pointer;
-	display: none !important;
+	display: block;
 }
 .line {
 	width: 100%;
