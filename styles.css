@@ -158,7 +158,7 @@ h2 {
 	body {
 		padding: none;
 		width: 100%;
-		
+		background-image: url('/photos/3.jpg');
 		background-attachment: fixed;
 		background-position: center;
 		background-repeat: no-repeat;
