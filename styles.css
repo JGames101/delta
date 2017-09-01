@@ -239,6 +239,8 @@ h2 {
 	#menu {
 		height: 12.5%;
 		width: 100%;
+		overflow-x: none;
+		overflow-y: none;
 	}
 	#menuIconBox {
 		left: 10%;
