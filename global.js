@@ -6,6 +6,7 @@ if (online == true) {
 } else {
     document.getElementById('connecmissing').style.display = 'block';
 }
+document.body.style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.jpg)';
 
 function toggleMenu() {
 	if (menu == true) {

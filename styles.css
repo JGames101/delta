@@ -82,7 +82,7 @@ h2 {
 	left: 0px;
 	padding-top: 32px;
 	width: 100%;
-	background-color: rgba(43, 53, 56, 0.75);
+	background-color: rgba(43, 53, 56, 0);
 }
 #jsmissing {
 	position: fixed;
@@ -159,7 +159,7 @@ h2 {
 } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
  
 ::-webkit-scrollbar-corner {
-      background-color: background-color: #536368;
+      background-color: #536368;
 } /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
 #menuIconBox {
 	position: absolute;
@@ -186,6 +186,12 @@ h2 {
 .pageMenuOpened {
 	width: 75%;
 	margin-left: 25%;
+}
+#photoBtn1 {
+	border-top-left-radius: 16px;
+}
+#photoBtn4 {
+	border-top-right-radius: 16px;
 }
 @media (min-width: 0px) and (max-width: 991px){
 	.colourBackground {
@@ -248,6 +254,12 @@ h2 {
 		width: 12.5% !important;
 		height: 12.5% !important;
 		margin-right: 5%;
+	}
+	#photoBtn1 {
+	border-top-left-radius: 12px;
+	}
+	#photoBtn4 {
+	border-top-right-radius: 12px;
 	}
 }
 @media (min-width: 992px){

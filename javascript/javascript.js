@@ -60,3 +60,9 @@ function toFahrenheitNew() {
 	var celsius = document.getElementById("celsius").value;
     document.getElementById("fahrenheit").value = 1.8 * celsius + 32;
 }
+
+function setBackground(backNum) {
+	localStorage.setItem("backgroundImage", backNum);
+	console.log(localStorage.getItem("backgroundImage"));
+	document.body.style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.jpg)';
+}

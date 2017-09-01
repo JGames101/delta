@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<style>
+	button {
+		width: 64px;
+		height: 64px;
+		border-radius: 8px;
+		background-color: #2b3538;
+		position: absolute;
+		color: white;
+	}
+	#down {
+		bottom: 0px;
+		left: 32px;
+	}
+	#left {
+		bottom: 64px;
+		left: 0px;
+	}
+	#right {
+		bottom: 64px;
+		left: 64px;
+	}
+	#up {
+		bottom: 128px;
+		left: 32px;
+	}
+	img {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
+	</style>
+	<script>
+	var characterX = 0;
+	var characterY = 0;
+	</script>
+	</head>
+	<body>
+		<img id="player" src="/images/shrek%20flag.gif" width="32px" height="32px">
+		<button id="up" onclick="javascript:moveUp()">/\</button>
+		<button id="left" onclick="javascript:moveLeft()">(</button>
+		<button id="right" onclick="javascript:moveRight()">)</button>
+		<button id="down" onclick="javascript:moveDown()">\/</button>
+		<script>
+		function moveUp() {
+			characterY += 5;
+			document.getElementById('player').style.top = characterY;
+			console.log(characterY);
+		};
+		function moveLeft() {
+			characterX -= 5;
+			document.getElementById('player').style.left = characterX;
+			console.log(characterX);
+		};
+		function moveRight() {
+			characterX += 5;
+			document.getElementById('player').style.left = characterX;
+			console.log(characterX);
+		};
+		function moveDown() {
+			characterY -= 5;
+			document.getElementById('player').style.top = characterY;
+			console.log(characterY);
+		};
+		</script>
+	</body>
+</html>
