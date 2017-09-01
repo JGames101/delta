@@ -233,16 +233,21 @@ h2 {
 		display: block !important;
 	}
 	#menu {
-		height: 64px;
+		height: 12.5%;
 		width: 100%;
 	}
 	#menuIconBox {
-		left: 16px;
+		left: 10%;
 		top: 16px;
 		width: auto;
 	}
 	#menuButton {
 		display: none;
+	}
+	.menuIcon {
+		width: 12.5% !important;
+		height: 12.5% !important;
+		margin-right: 5%;
 	}
 }
 @media (min-width: 992px){
