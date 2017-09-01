@@ -1,0 +1,14 @@
+img {
+	padding: 0px;
+	margin: 0px;
+}
+#page {
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+body {
+	background-color: white !important;
+	background-image: none !important;
+}

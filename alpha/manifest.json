@@ -1,0 +1,30 @@
+{
+  "short_name": "James M",
+  "name": "James M's Wonderful World of Web Wonder",
+  "theme_color": "#e5e5e5",
+  "background_color": "#e5e5e5",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/images/icon/icon128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+	{
+	  "src": "/images/icon/icon144.png",
+	  "type": "image/png",
+	  "sizes": "144x144"
+	},
+	{
+	  "src": "/images/icon/icon192.png",
+	  "type": "image/png",
+	  "sizes": "192x192"
+	},
+	{
+	  "src": "/images/icon/icon512.png",
+	  "type": "image/png",
+	  "sizes": "512x512"
+	}
+  ],
+  "start_url": "/?utm_source=homescreen"
+}

@@ -1,0 +1,209 @@
+@charset "utf-8";
+nav {
+	color: white;
+	font-size: 20px;
+}
+#jsMissing {
+	background-color: #ff8e75;
+	color: black;
+	display: block;
+}
+#player {
+	width: 500px;
+	height: 410px;
+	overflow: hidden;
+	position: relative;
+	margin: auto;
+}
+#navbar {
+	overflow-y: hidden;
+	display: none;
+}
+.int-player {
+	position: absolute;
+	top: -51px;
+	left: -2060px;
+}
+body {
+	background-image: url('/photos/3.jpg');
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	font-family: 'Roboto Condensed', sans;
+}
+h1 {
+	color: white;
+	text-align: center;
+	font-size: 72px;
+	font-weight:200;
+}
+.content {
+	overflow: hidden;
+}
+.card {
+	background-color: white;
+	border-radius: 16px;
+	text-align: center;
+	display: inline-table;
+	margin-bottom: 16px;
+	margin-left: 10px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	min-height: 128px;
+	color: black;
+}
+h2 {
+	font-weight:700;
+}
+.video {
+	border-top-left-radius: 16px;
+	border-top-right-radius: 16px;
+}
+.navbtn {
+	color: white;
+	float: right;
+	margin-right: 16px;
+}
+.homebtn {
+	float: none;
+}
+.pinned {
+	color: white;
+	margin-left: 32px;
+}
+.info {
+	text-align: left;
+	color: #c4c4c4;
+	margin-left: 8px;
+	vertical-align: bottom;
+}
+#pageName {
+	margin-top: 256px;
+}
+.colourBackground {
+	position: absolute;
+	left: 0px;
+	padding-top: 32px;
+	width: 100%;
+	background-color: rgba(43, 53, 56, 0.75);
+}
+#jsmissing {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	z-index: 259;
+}
+#connecmissing {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	z-index: 255;
+}
+#menuButton {
+	width: 32px;
+	height: 32px;
+	position: fixed;
+	z-index: 258;
+	top: 16px;
+	left: 16px;
+	cursor: pointer;
+	display: block;
+}
+.line {
+	width: 100%;
+	height: 10%;
+	margin-bottom: 23.33333333333333%;
+	background-color: white;
+	border-radius: 5%;
+}
+#menu {
+	background-color: #7ea5ba;
+	z-index: 257;
+	position: fixed;
+	margin: none;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+}
+.menuItem {
+	color: white;
+	margin-top: 24px;
+	cursor: pointer;
+	font-size: 24px;
+	margin-left: 64px;
+	text-decoration: none !important;
+}
+#menuTitle {
+	margin-top: 16px;
+	cursor: initial;
+}
+@media (min-width: 0px) and (max-width: 991px){
+	.colourBackground {
+		background-color: rgb(43, 53, 56);
+		min-height: 60%;
+	}
+	.card {
+		width: 100%;
+		margin-left: 0px;
+		border-radius: 12px;
+	}
+	.video {
+		border-top-left-radius: 12px;
+		border-top-right-radius: 12px;
+	}
+	.content {
+	}
+	body {
+		padding: none;
+		width: 100%;
+		background-image: url('/photos/flowers.jpg');
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.card {
+		font-size: 18px;
+	}
+	h2 {
+		font-size: 32px;
+	}
+	#connecmissing {
+		height: 90px !important;
+		display: none;
+	}
+	#jsmissing {
+		height: 90px !important;
+		display: none;
+	}
+	#menu {
+		width: 100%;
+	}
+}
+@media (min-width: 992px){
+	.card {
+		width: 45%;
+	}
+	.content {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+	#menu {
+		width: 50%;
+	}
+}
+
+@media (min-width: 1488px){
+	.card {
+		width: 32%;
+	}
+	.content {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	#menu {
+		width: 25%;
+	}
+}
