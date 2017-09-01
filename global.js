@@ -6,6 +6,9 @@ if (online == true) {
 } else {
     document.getElementById('connecmissing').style.display = 'block';
 }
+if (localStorage.getItem("backgroundImage") == undefined) {
+	localStorage.setItem("backgroundImage", "3");
+}
 document.body.style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.jpg)';
 
 function toggleMenu() {
