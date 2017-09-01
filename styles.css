@@ -194,7 +194,7 @@ h2 {
 		overflow-x: hidden;
 	}
 	.colourBackground {
-		background-color: rgba(43, 53, 56, 0);
+		background-color: rgb(43, 53, 56);
 		min-height: 60%;
 	}
 	.card {
@@ -216,7 +216,7 @@ h2 {
 		background-attachment: fixed;
 		background-position: center;
 		background-repeat: no-repeat;
-		background-size: 100% 100%;
+		background-size: cover;
 	}
 	.card {
 		font-size: 18px;
