@@ -193,6 +193,10 @@ h2 {
 #photoBtn4 {
 	border-top-right-radius: 16px;
 }
+.imageButtonJS {
+	cursor: pointer;
+	margin-top: 0px;
+}
 @media (min-width: 0px) and (max-width: 991px){
 	.colourBackground {
 		background-color: rgb(43, 53, 56);
