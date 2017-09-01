@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff0000">
 <!-- Main Stuff-->
-<meta name="theme-color" content="#e5e5e5" />
+<meta name="theme-color" content="#2b3538" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 <link rel="manifest" href="/manifest.json">
@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 <body>
+<div id="page">
 <object id="jsmissing" data="/jsmissing.html" width="100%" height="48px"></object> <!-- The alert for JavaScript being disabled. -->
 <object id="connecmissing" data="/connecmissing.html" width="100%" height="48px"></object> <!-- This is the alert for internet connection missing. -->
 <div id="menuButton" onclick="javascript:toggleMenu()"> <!-- For opening control menu -->
@@ -48,14 +49,22 @@ document.addEventListener('DOMContentLoaded', function () {
 	<div class="line"></div>
 	<div class="line"></div>
 </div>
-<div id="menu" style="display:none;">
-	<p class="menuItem" id="menuTitle">Pages</p>
-	<p class="menuItem" id="homeButton" onclick="javascript:setPage('/')">HOME</p>
-	<p class="menuItem" id="updatesButton" onclick="javascript:setPage('/updates/')">UPDATES</p>
-	<p class="menuItem" id="angularButton" onclick="javascript:setPage('/angular/')">ANGULAR</p>
-	<p class="menuItem" id="javascriptButton" onclick="javascript:setPage('/javascript/')">JAVASCRIPT</p>
-	<p class="menuItem" id="html5Button" onclick="javascript:setPage('/html5/')">HTML5</p>
-	<p class="menuItem" id="photographyButton" onclick="javascript:setPage('/photos/')">PHOTOGRAPHY</p>
+<div id="menu">
+	<div id="menuTextBox">
+		<p class="menuItem" id="menuTitle">Pages</p>
+		<p class="menuItem" id="homeButton" onclick="javascript:setPage('/')">HOME</p>
+		<p class="menuItem" id="updatesButton" onclick="javascript:setPage('/updates/')">UPDATES</p>
+		<p class="menuItem" id="angularButton" onclick="javascript:setPage('/angular/')">ANGULAR</p>
+		<p class="menuItem" id="javascriptButton" onclick="javascript:setPage('/javascript/')">JAVASCRIPT</p>
+		<p class="menuItem" id="html5Button" onclick="javascript:setPage('/html5/')">HTML5</p>
+	</div>
+	<div id="menuIconBox">
+		<img class="menuIcon" id="homeIcon" src="/images/home.png" width="32px" onclick="javascript:setPage('/')">
+		<img class="menuIcon" id="updatesIcon" src="/images/updates.png" width="32px" onclick="javascript:setPage('/updates/')">
+		<img class="menuIcon" id="angularIcon" src="/images/angularJS.png" width="32px" onclick="javascript:setPage('/angular/')">
+		<img class="menuIcon" id="javascriptIcon" src="/images/javascript.png" width="32px" onclick="javascript:setPage('/javascript/')">
+		<img class="menuIcon" id="html5Icon" src="/images/html.png" width="32px" onclick="javascript:setPage('/html5/')">
+	</div>
 </div>
 <h1 id="pageName">James M</h1>
 <div class="colourBackground">
@@ -63,9 +72,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	<a href="/updates/"><div class="card">
 		<h2>UPDATES</h2>
 		<p>Click here to see update history.</p>
-		<p>Current Version: 0.8b</p>
+		<p>Current Version: 1.0b</p>
 	</div></a>
-	<h2 class="pinned">PINNED</h2>
+	<h2 class="pinned">SUGGESTIONS</h2>
 	<a href="/angular/"><div class="card">
 		<h2>ANGULAR</h2>
 		<span>My tests and experiments with AngularJS!</span>
@@ -95,5 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 </div>
 <script src="/global.js"></script>
+</div>
 </body>
 </html>

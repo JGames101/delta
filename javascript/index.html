@@ -14,7 +14,7 @@
 <meta name="msapplication-TileImage" content="images/icon/icon128.png">
   <meta name="msapplication-TileColor" content="#ffffff">
 <!-- Main Stuff-->
-<meta name="theme-color" content="#e5e5e5" />
+<meta name="theme-color" content="#2b3538" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 <link rel="manifest" href="/manifest.json">
@@ -34,14 +34,22 @@
 	<div class="line"></div>
 	<div class="line"></div>
 </div>
-<div id="menu" style="display:none;">
-	<p class="menuItem" id="menuTitle">Pages</p>
-	<p class="menuItem" id="homeButton" onclick="javascript:setPage('/')">HOME</p>
-	<p class="menuItem" id="updatesButton" onclick="javascript:setPage('/updates/')">UPDATES</p>
-	<p class="menuItem" id="angularButton" onclick="javascript:setPage('/angular/')">ANGULAR</p>
-	<p class="menuItem" id="javascriptButton" onclick="javascript:setPage('/javascript/')">JAVASCRIPT</p>
-	<p class="menuItem" id="html5Button" onclick="javascript:setPage('/html5/')">HTML5</p>
-	<p class="menuItem" id="photographyButton" onclick="javascript:setPage('/photos/')">PHOTOGRAPHY</p>
+<div id="menu">
+	<div id="menuTextBox">
+		<p class="menuItem" id="menuTitle">Pages</p>
+		<p class="menuItem" id="homeButton" onclick="javascript:setPage('/')">HOME</p>
+		<p class="menuItem" id="updatesButton" onclick="javascript:setPage('/updates/')">UPDATES</p>
+		<p class="menuItem" id="angularButton" onclick="javascript:setPage('/angular/')">ANGULAR</p>
+		<p class="menuItem" id="javascriptButton" onclick="javascript:setPage('/javascript/')">JAVASCRIPT</p>
+		<p class="menuItem" id="html5Button" onclick="javascript:setPage('/html5/')">HTML5</p>
+	</div>
+	<div id="menuIconBox">
+		<img class="menuIcon" id="homeIcon" src="/images/home.png" width="32px" onclick="javascript:setPage('/')">
+		<img class="menuIcon" id="updatesIcon" src="/images/updates.png" width="32px" onclick="javascript:setPage('/updates/')">
+		<img class="menuIcon" id="angularIcon" src="/images/angularJS.png" width="32px" onclick="javascript:setPage('/angular/')">
+		<img class="menuIcon" id="javascriptIcon" src="/images/javascript.png" width="32px" onclick="javascript:setPage('/javascript/')">
+		<img class="menuIcon" id="html5Icon" src="/images/html.png" width="32px" onclick="javascript:setPage('/html5/')">
+	</div>
 </div>
 <h1 id="pageName">JavaScript | James M</h1>
 <div class="colourBackground">

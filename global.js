@@ -9,10 +9,12 @@ if (online == true) {
 
 function toggleMenu() {
 	if (menu == true) {
-		document.getElementById('menu').style.display = 'none';
+		document.getElementById('menuTextBox').style.color = 'transparent';
+		document.getElementById('menu').className = 'hidden';
 		menu = false;
 	} else {
-		document.getElementById('menu').style.display = 'block';
+		document.getElementById('menuTextBox').style.color = 'white';
+		document.getElementById('menu').className = 'open';
 		menu = true;
 	}
 }

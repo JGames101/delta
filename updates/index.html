@@ -14,7 +14,7 @@
 <meta name="msapplication-TileImage" content="images/icon/icon128.png">
   <meta name="msapplication-TileColor" content="#ffffff">
 <!-- Main Stuff-->
-<meta name="theme-color" content="#e5e5e5" />
+<meta name="theme-color" content="#2b3538" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 <link rel="manifest" href="/manifest.json">
@@ -33,20 +33,43 @@
 	<div class="line"></div>
 	<div class="line"></div>
 </div>
-<div id="menu" style="display:none;">
-	<p class="menuItem" id="menuTitle">Pages</p>
-	<p class="menuItem" id="homeButton" onclick="javascript:setPage('/')">HOME</p>
-	<p class="menuItem" id="updatesButton" onclick="javascript:setPage('/updates/')">UPDATES</p>
-	<p class="menuItem" id="angularButton" onclick="javascript:setPage('/angular/')">ANGULAR</p>
-	<p class="menuItem" id="javascriptButton" onclick="javascript:setPage('/javascript/')">JAVASCRIPT</p>
-	<p class="menuItem" id="html5Button" onclick="javascript:setPage('/html5/')">HTML5</p>
-	<p class="menuItem" id="photographyButton" onclick="javascript:setPage('/photos/')">PHOTOGRAPHY</p>
+<div id="menu">
+	<div id="menuTextBox">
+		<p class="menuItem" id="menuTitle">Pages</p>
+		<p class="menuItem" id="homeButton" onclick="javascript:setPage('/')">HOME</p>
+		<p class="menuItem" id="updatesButton" onclick="javascript:setPage('/updates/')">UPDATES</p>
+		<p class="menuItem" id="angularButton" onclick="javascript:setPage('/angular/')">ANGULAR</p>
+		<p class="menuItem" id="javascriptButton" onclick="javascript:setPage('/javascript/')">JAVASCRIPT</p>
+		<p class="menuItem" id="html5Button" onclick="javascript:setPage('/html5/')">HTML5</p>
+	</div>
+	<div id="menuIconBox">
+		<img class="menuIcon" id="homeIcon" src="/images/home.png" width="32px" onclick="javascript:setPage('/')">
+		<img class="menuIcon" id="updatesIcon" src="/images/updates.png" width="32px" onclick="javascript:setPage('/updates/')">
+		<img class="menuIcon" id="angularIcon" src="/images/angularJS.png" width="32px" onclick="javascript:setPage('/angular/')">
+		<img class="menuIcon" id="javascriptIcon" src="/images/javascript.png" width="32px" onclick="javascript:setPage('/javascript/')">
+		<img class="menuIcon" id="html5Icon" src="/images/html.png" width="32px" onclick="javascript:setPage('/html5/')">
+	</div>
 </div>
 <h1 id="pageName">Updates | James M</h1>
 <div class="colourBackground">
 <div class="content">
 	<div class="card">
-		<h2>0.8b</h2>
+		<h2>1.0b</h2>
+		<p>Beta Release!</p>
+		<p>Fixed phone bug where there is too much horizontal space.</p>
+		<p>Navigation updates:</p>
+		<ul>
+		<li>The menu has been transformed into a bar at the left, 64 pixels wide. (Testing phase for mobile, may be removed)
+		<li>The expand button only expands the bar into the menu from version 0.8a.
+		<li>Expanding the menu is now animated!
+		<li>Photography has been temporarily removed from navigation menu until the UI and functionality is finalized.
+		</ul>
+		<p>Added mobile viewport to all pages to fix content on pages such as Angular being too small.</p>
+		<p>Updated theme colour from Chrome for Phones and Android App Switcher.</p>
+		<p>Added a custom scrollbar!</p>
+	</div>
+	<div class="card">
+		<h2>0.8a</h2>
 		<p>JavaScript now lets you change the background using buttons on the page, as well as a notification generator and a temperature converter that works back and forth.</p>
 		<p>Angular and JavaScript now have a fullscreen this page will not work when JavaScript is disabled.</p>
 		<p>Jsmissing and Connectionmissing now properly show on all pages.</p>
@@ -54,23 +77,23 @@
 		<p>Photos has been updated with a new system of pressing arrows to see the next photo, rather than scrolling.
 	</div>
 	<div class="card">
-		<h2>0.7.2b</h2>
+		<h2>0.72a</h2>
 		<p>Mobile now has the background from PC/Tablet, but completely solid.</p>
 		<p>JavaScript alert now correctly displays at the front, above cards.</p>
 		<p>Added a "You are offline" alert.</p>
 		<p>coloured background now applies to every page.
 	</div>
 	<div class="card">
-		<h2>0.7.1b</h1>
+		<h2>0.71a</h1>
 		<p>Service Worker now detects if you are online and loads from URL rather than from cache.</p>
 	</div>
 	<div class="card">
-		<h2>0.7b</h2>
+		<h2>0.7a</h2>
 		<p>Fixed issues with caching, so that the page now works offline and loads properly online with the latest version of the site.</p>
 		<p>That means progressive web app goals are complete! All that needs to be done now is fix mobile UI.</p>
 	</div>
 	<div class="card">
-		<h2>0.6b</h2>
+		<h2>0.6a</h2>
 		<p>New design that includes background that is consistant on all devices.</p>
 		<p>Added a new Photo Gallery, which is in early testing.</p>
 		<p>Added Berlin VR to home feed.</p>
@@ -82,27 +105,27 @@
 		
 	</div>
 	<div class="card">
-		<h2>0.5b</h2>
+		<h2>0.5a</h2>
 		<p>Added new page for Scratch Player3.</p>
 		<p>Also added notification support! Including a notification button in JavaScript.</p>
 	</div>
 	<div class="card">
-		<h2>0.4b</h2>
+		<h2>0.4a</h2>
 		<p>Updates to the internal HTML and Mobile design to allow for the site to be treated as a Progressive Web App by Chrome for Android, and to work just as well for everyone else.</p>
 		<p>Visit any page here on Chrome for Android, and press add to homescreen to download the app!</p>
 		<p>New JavaScript alert on index.html. If JavaScript is disabled on your browser, you'll see the red card on the homescreen.</p>
 	</div>
 	<div class="card">
-		<h2>0.3b</h2>
+		<h2>0.3a</h2>
 		<p>New Mobile Site design, similar to material design, to fit better as a mobile page. Starting the switch to a Progressive Web App, which will hopefully be finished by 0.4b.</p>
 	</div>
 	<div class="card">
-		<h2>0.2b</h2>
+		<h2>0.2a</h2>
 		<p>Added JavaScript page.</p>
 	</div>
 	<div class="card">
-		<h2>0.1b</h2>
-		<p>Original Release.</p>
+		<h2>0.1a</h2>
+		<p>Alpha Release.</p>
 	</div>
 </div>
 </div>

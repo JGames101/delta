@@ -1,8 +1,4 @@
 @charset "utf-8";
-nav {
-	color: white;
-	font-size: 20px;
-}
 #jsMissing {
 	background-color: #ff8e75;
 	color: black;
@@ -40,6 +36,7 @@ h1 {
 }
 .content {
 	overflow: hidden;
+	margin-left: 64px;
 }
 .card {
 	background-color: white;
@@ -117,27 +114,62 @@ h2 {
 	border-radius: 5%;
 }
 #menu {
-	background-color: #7ea5ba;
+	background-color: #486e89;
 	z-index: 257;
 	position: fixed;
 	margin: none;
 	top: 0px;
 	left: 0px;
 	height: 100%;
+	width: 64px;
 	-webkit-transition-duration: 0.4s; /* Safari */
 	transition-duration: 0.4s;
 }
 .menuItem {
-	color: white;
 	margin-top: 24px;
 	cursor: pointer;
 	font-size: 24px;
 	margin-left: 64px;
 	text-decoration: none !important;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+}
+#menuTextBox {
+	color: transparent;
 }
 #menuTitle {
 	margin-top: 16px;
 	cursor: initial;
+}
+::-webkit-scrollbar {
+      width: 15px;
+}
+::-webkit-scrollbar-track {
+      background-color: #536368;
+} /* the new scrollbar will have a flat appearance with the set background color */
+ 
+::-webkit-scrollbar-thumb {
+      background-color: #2b3538; 
+	  border-radius: 16px;
+} /* this will style the thumb, ignoring the track */
+ 
+::-webkit-scrollbar-button {
+      background-color: #536368;
+	  display: none;
+} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+ 
+::-webkit-scrollbar-corner {
+      background-color: background-color: #536368;
+} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+#menuIconBox {
+	position: absolute;
+	top: 64px;
+	left: 16px;
+	width: 32px;
+}
+.menuIcon {
+	margin-bottom: 20px;
+	cursor: pointer;
 }
 @media (min-width: 0px) and (max-width: 991px){
 	.colourBackground {
@@ -158,11 +190,12 @@ h2 {
 	body {
 		padding: none;
 		width: 100%;
-		background-image: url('/photos/3.jpg');
+		background-image: url('/photos/flowers.jpg');
 		background-attachment: fixed;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
+		overflow-x: hidden;
 	}
 	.card {
 		font-size: 18px;
@@ -178,8 +211,9 @@ h2 {
 		height: 90px !important;
 		display: none;
 	}
-	#menu {
-		width: 100%;
+	.open {
+		width: 100% !important;
+		display: block !important;
 	}
 }
 @media (min-width: 992px){
@@ -190,8 +224,8 @@ h2 {
 		padding-left: 10%;
 		padding-right: 10%;
 	}
-	#menu {
-		width: 50%;
+	.open {
+		width: 50% !important;
 	}
 }
 
@@ -203,7 +237,7 @@ h2 {
 		padding-left: 5%;
 		padding-right: 5%;
 	}
-	#menu {
-		width: 25%;
+	.open {
+		width: 25% !important;
 	}
 }
