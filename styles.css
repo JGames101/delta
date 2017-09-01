@@ -171,6 +171,22 @@ h2 {
 	margin-bottom: 20px;
 	cursor: pointer;
 }
+#content {
+	width: 100%;
+}
+#page {
+	width: 100%;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	overflow-x: hidden;
+}
+.pageMenuClosed {
+	width: 100%;
+}
+.pageMenuOpened {
+	width: 75%;
+	margin-left: 25%;
+}
 @media (min-width: 0px) and (max-width: 991px){
 	.colourBackground {
 		background-color: rgb(43, 53, 56);
@@ -190,7 +206,7 @@ h2 {
 	body {
 		padding: none;
 		width: 100%;
-		background-image: url('/photos/flowers.jpg');
+		background-image: url('/photos/1.jpg');
 		background-attachment: fixed;
 		background-position: center;
 		background-repeat: no-repeat;
