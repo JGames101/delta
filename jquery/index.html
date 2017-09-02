@@ -1,29 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<!-- favicon stuff -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff0000">
-<!-- Add to home screen for Safari on iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="JGames101">
-  <link rel="apple-touch-icon" href="images/icon/icon128.png">
-<!-- Add to Start for Windows -->
-<meta name="msapplication-TileImage" content="images/icon/icon128.png">
-  <meta name="msapplication-TileColor" content="#ffffff">
-<!-- Main Stuff-->
-<meta name="theme-color" content="#2b3538" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
-<link rel="manifest" href="/manifest.json">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<meta charset="utf-8">
-<link href="/styles.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
-<link rel="import" href="nav.html">
-<title>James M</title>
+	<title>JQuery | James M</title>
+	<link href="/styles.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
 </head>
 <body>
 <object id="jsmissing" data="/jsmissing.html" width="100%" height="48px"></object> <!-- The alert for JavaScript being disabled. -->
@@ -54,24 +35,21 @@
 		<img class="menuIcon" id="optionsIcon" src="/images/options.png" width="32px" onclick="javascript:setPage('/options/')">
 	</div>
 </div>
-<h1 id="pageName">HTML5 | James M</h1>
+<div id="page">
+<h1 id="pageName">James M</h1>
 <div class="colourBackground">
-	<div class="content">
-		<div class="card">
-		<h2>INTRODUCTION</h2>
-		<p>This page is less used. Mostly, I work with JavaScript and AngularJS, or on projects, because the entire site is HTML5, so when I want to try something, I try it on the whole site. However, I do sometimes use this page to do random experiments.</p>
+<div class="content">
+	<div class="card">
+		<object data="/jquery/examples/double%20click.html" class="video" width="100%" height="360px"></object>
+		<h2>DOUBLE CLICK</h2>
 	</div>
-		<h2 class="pinned">OTHER</h2>
-		<div class="card">
-			<h2>TEXT EDITOR</h2>
-			<p contenteditable="true" id="textEditor" spellcheck="true">Spellcheck included!</p>
-		</div>
-		<div class="card">
-			<h2>MOBILE VIEW</h2>
-			<object data="/index.html" width="100%" height="480px"></object>
-		</div>
+	<div class="card">
+		<object data="/jquery/examples/draggable.html" class="video" width="100%" height="360px"></object>
+		<h2>DRAGGABLE</h2>
 	</div>
 </div>
-</body>
+</div>
 <script src="/global.js"></script>
+</div>
+</body>
 </html>
