@@ -34,7 +34,7 @@
 	<div class="line"></div>
 	<div class="line"></div>
 </div>
-<div id="menu">
+<div id="menu" contextmenu="navigationContext">
 	<div id="menuTextBox">
 		<p class="menuItem" id="menuTitle">Pages</p>
 		<p class="menuItem" id="homeButton" onclick="javascript:setPage('/')">HOME</p>
@@ -42,6 +42,7 @@
 		<p class="menuItem" id="angularButton" onclick="javascript:setPage('/angular/')">ANGULAR</p>
 		<p class="menuItem" id="javascriptButton" onclick="javascript:setPage('/javascript/')">JAVASCRIPT</p>
 		<p class="menuItem" id="html5Button" onclick="javascript:setPage('/html5/')">HTML5</p>
+		<p class="menuItem" id="optionsButton" onclick="javascript:setPage('/options/')">OPTIONS</p>
 	</div>
 	<div id="menuIconBox">
 		<img class="menuIcon" id="homeIcon" src="/images/home.png" width="32px" onclick="javascript:setPage('/')">
@@ -49,7 +50,28 @@
 		<img class="menuIcon" id="angularIcon" src="/images/angularJS.png" width="32px" onclick="javascript:setPage('/angular/')">
 		<img class="menuIcon" id="javascriptIcon" src="/images/javascript.png" width="32px" onclick="javascript:setPage('/javascript/')">
 		<img class="menuIcon" id="html5Icon" src="/images/html.png" width="32px" onclick="javascript:setPage('/html5/')">
+		<img class="menuIcon" id="optionsIcon" src="/images/options.png" width="32px" onclick="javascript:setPage('/options/')">
 	</div>
+<menu type="context" id="navigationContext">
+  <menuitem icon="/images/icon/icon128.png">Navigation Menu</menuitem>
+  <menu label="actions...">
+	<menuitem icon="" onclick="javascript:toggleMenu()">Toggle Navigation Menu</menuitem>
+	<menuitem icon="" onclick="javascript:simulateOverlay()">Simulate JavaScript Disabled Overlay</menuitem>
+	<menuitem onclick="window.location.reload();" icon="ico_reload.png">Reload Page</menuitem>
+  </menu>
+  <menu label="go to page...">
+	<menuitem icon="/images/home.png" onclick="javascript:setPage('/')">Home</menuitem>
+	<menuitem icon="/images/updates.png" onclick="javascript:setPage('/updates/')">Updates</menuitem>
+	<menuitem icon="/images/angularJS.png" onclick="javascript:setPage('/angular/')">Angular</menuitem>
+	<menuitem icon="/images/javascript.png" onclick="javascript:setPage('/javascript/')">JavaScript</menuitem>
+	<menuitem icon="/images/html5.png" onclick="javascript:setPage('/html5/')">HTML5</menuitem>
+	<menu label="more...">
+		<menuitem icon="/" onclick="javascript:setPage('/photos/')">Photography</menuitem>
+		<menuitem icon="/" onclick="javascript:setPage('/alpha/')">Alpha Version</menuitem>
+	</menu>
+  </menu>
+  <menuitem icon="/" onclick="javascript:setPage('/options/')">Options Menu</menuitem>
+</menu>
 </div>
 <h1 id="pageName">JavaScript | James M</h1>
 <div class="colourBackground">
