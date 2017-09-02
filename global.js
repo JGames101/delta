@@ -5,11 +5,16 @@ if (online == true) {
     document.getElementById('connecmissing').style.display = 'none';
 } else {
     document.getElementById('connecmissing').style.display = 'block';
-}
+};
 if (localStorage.getItem("backgroundImage") == undefined) {
-	localStorage.setItem("backgroundImage", "3");
-}
-document.body.style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.jpg)';
+	console.log("Missing background image settings.");
+} else {
+	document.body.style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.jpg)';
+};
+if (localStorage.getItem("themeColour") == undefined) {
+	localStorage.setItem("themeColour", "#486e89");
+};
+document.getElementById('menu').style.backgroundColor = localStorage.getItem("themeColour");
 
 function toggleMenu() {
 	if (menu == true) {
@@ -24,4 +29,8 @@ function toggleMenu() {
 }
 function setPage(newLocation) {
 	window.location.href = "https://jgames101.github.io" + newLocation;
+}
+
+function simulateOverlay() {
+	document.getElementById('jsmissing').style.display = 'block';
 }
