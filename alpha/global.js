@@ -17,5 +17,5 @@ function toggleMenu() {
 	}
 }
 function setPage(newLocation) {
-	window.location.href = "https://jgames101.github.io" + newLocation;
+	window.location.href = "https://jgames101.github.io/alpha" + newLocation;
 }
