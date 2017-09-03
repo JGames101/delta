@@ -1,3 +1,4 @@
+$('head').append('<meta name="theme-color" content="' + localStorage.getItem("themeColour") + '" />');
 document.getElementById('jsmissing').style.display = 'none';
 var menu = false;
 var online = navigator.onLine;
