@@ -218,6 +218,7 @@ h2 {
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
+		overflow-x: hidden;
 	}
 	.card {
 		font-size: 18px;
@@ -253,7 +254,7 @@ h2 {
 		width: 32px !important;
 		height: 32px !important;
 		margin-right: 24px;
-		display: none;
+		display: initial;
 	}
 	#photoBtn1 {
 	border-top-left-radius: 12px;
