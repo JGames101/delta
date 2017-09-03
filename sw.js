@@ -1,6 +1,6 @@
 // we'll version our cache (and learn how to delete caches in
 // some other post)
-const cacheName = 'v1.16::static';
+const cacheName = 'v1.17-beta2::static';
 
 self.addEventListener('install', e => {
   // once the SW is installed, go ahead and fetch the resources

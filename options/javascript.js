@@ -24,6 +24,7 @@ function setColour() {
 	document.getElementById('menu').style.backgroundColor = localStorage.getItem("themeColour");
 	document.getElementById('newColour').value = localStorage.getItem("themeColour");
 	document.getElementById('colourPicker').value = localStorage.getItem("themeColour");
+	location.reload();
 }
 
 function setPickerColour() {
@@ -34,6 +35,7 @@ function setPickerColour() {
 	document.getElementById('menu').style.backgroundColor = localStorage.getItem("themeColour");
 	document.getElementById('newColour').value = localStorage.getItem("themeColour");
 	document.getElementById('colourPicker').value = localStorage.getItem("themeColour");
+	location.reload();
 }
 
 function resetColour() {
@@ -42,6 +44,7 @@ function resetColour() {
 	document.getElementById('menu').style.backgroundColor = localStorage.getItem("themeColour");
 	document.getElementById('newColour').value = localStorage.getItem("themeColour");
 	document.getElementById('colourPicker').value = localStorage.getItem("themeColour");
+	location.reload();
 }
 
 function setSuggestedColour() {
@@ -50,4 +53,5 @@ function setSuggestedColour() {
 	document.getElementById('menu').style.backgroundColor = localStorage.getItem("themeColour");
 	document.getElementById('newColour').value = localStorage.getItem("themeColour");
 	document.getElementById('colourPicker').value = localStorage.getItem("themeColour");
+	location.reload();
 }
