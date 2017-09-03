@@ -1,30 +1,43 @@
 // we'll version our cache (and learn how to delete caches in
 // some other post)
-const cacheName = 'v5::static';
+const cacheName = 'v1.16::static';
+
 self.addEventListener('install', e => {
+  // once the SW is installed, go ahead and fetch the resources
+  // to make this work offline
   e.waitUntil(
     caches.open(cacheName).then(cache => {
       return cache.addAll([
         '/',
-        '/javascript/',
-		'/html5/',
-		'/photos/',
+        '/updates/',
 		'/angular/',
-		'/updates/',
-		'/photos/cactus.jpg',
-		'/photos/dandelion.jpg',
-		'/photos/flowers.jpg',
-		'/photos/snapdragon.jpg',
+		'/javascript/',
+		'/jquery/',
+		'/html5/',
+		'/options/',
+		'/photos/',
 		'/styles.css',
 		'/global.js',
-		'/jsmissing.html',
 		'/javascript/javascript.js',
-		'/manifest.json',
-		'/images/icon/icon128',
-		'/images/icon/icon144',
-		'/images/icon/icon192',
-		'/images/icon/icon512',
-		'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200',
+		'/options/javascript.js',
+		'/photos/1.jpg',
+		'/photos/1btn.jpg',
+		'/photos/2.jpg',
+		'/photos/3.jpg',
+		'/photos/4.jpg',
+		'/photos/5.jpg',
+		'/photos/6.jpg',
+		'/photos/7.jpg',
+		'/photos/8.jpg',
+		'/images/home.png',
+		'/images/updates.png',
+		'/images/javascript.png',
+		'/images/angularJS.png',
+		'/images/jquery.png',
+		'/images/html.png',
+		'/images/options.png',
+		'/images/doubleclick.png',
+		'/images/file.png',
       ]).then(() => self.skipWaiting());
     })
   );
@@ -33,18 +46,12 @@ self.addEventListener('install', e => {
 // when the browser fetches a url, either response with
 // the cached object or go ahead and fetch the actual url
 self.addEventListener('fetch', event => {
-var online = navigator.onLine;
-if (online == true) {
-    event.respondWith(
-		fetch('https://jgames101.github.io/')
-	);
-} else { 
-    event.respondWith(
+  event.respondWith(
+    // ensure we check the *right* cache to match against
     caches.open(cacheName).then(cache => {
       return cache.match(event.request).then(res => {
         return res || fetch(event.request)
       });
-	})
-	);
-}
+    })
+  );
 });

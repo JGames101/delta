@@ -25,8 +25,10 @@
 <meta name="msapplication-TileImage" content="images/icon/icon128.png">
   <meta name="msapplication-TileColor" content="#ffffff">
 <!-- Start of Real Content -->
-<script> // service worker
-navigator.serviceWorker.register('/sw.js');
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
 </script>
 <script> // Requests Notification Permission
 // request permission on page load
@@ -77,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	<a href="/updates/"><div class="card">
 		<h2>UPDATES</h2>
 		<p>Click here to see update history.</p>
-		<p id="currentVer">Current Version: 1.15b</p>
+		<p id="currentVer">Current Version: 1.16b</p>
 	</div></a>
 	<a href="/options/"><div class="card">
 		<h2>OPTIONS</h2>
