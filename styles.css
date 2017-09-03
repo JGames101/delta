@@ -246,38 +246,19 @@ h2 {
 	#menuIconBox {
 		left: 16px;
 		top: 16px;
-		width: auto;
+		width: 100000%;
 		margin-left: 48px;
 	}
 	.menuIcon {
 		width: 32px !important;
 		height: 32px !important;
 		margin-right: 24px;
-		display: none;
 	}
 	#photoBtn1 {
 	border-top-left-radius: 12px;
 	}
 	#photoBtn4 {
 	border-top-right-radius: 12px;
-	}
-	.menuIcon:nth-child(1) {
-		display: initial !important;
-	}
-	.menuIcon:nth-child(2) {
-		display: initial !important;
-	}
-	.menuIcon:nth-child(3) {
-		display: initial !important;
-	}
-	.menuIcon:nth-child(4) {
-		display: initial !important;
-	}
-	.menuIcon:nth-child(5) {
-		display: initial !important;
-	}
-	.menuIcon:nth-child(6) {
-		display: initial !important;
 	}
 	#menuTitle {
 		display: none;
