@@ -235,32 +235,52 @@ h2 {
 	}
 	.open {
 		width: 100% !important;
+		height: 100% !important;
 		display: block !important;
 	}
 	#menu {
-		height: 12.5%;
+		height: 64px;
 		width: 100%;
-		overflow-x: none;
-		overflow-y: none;
+		overflow: hidden;
 	}
 	#menuIconBox {
-		left: 10%;
+		left: 16px;
 		top: 16px;
 		width: auto;
-	}
-	#menuButton {
-		display: none;
+		margin-left: 48px;
 	}
 	.menuIcon {
-		width: 12.5% !important;
-		height: 12.5% !important;
-		margin-right: 5%;
+		width: 32px !important;
+		height: 32px !important;
+		margin-right: 24px;
+		display: none;
 	}
 	#photoBtn1 {
 	border-top-left-radius: 12px;
 	}
 	#photoBtn4 {
 	border-top-right-radius: 12px;
+	}
+	.menuIcon:nth-child(1) {
+		display: initial !important;
+	}
+	.menuIcon:nth-child(2) {
+		display: initial !important;
+	}
+	.menuIcon:nth-child(3) {
+		display: initial !important;
+	}
+	.menuIcon:nth-child(4) {
+		display: initial !important;
+	}
+	.menuIcon:nth-child(5) {
+		display: initial !important;
+	}
+	#menuTitle {
+		display: none;
+	}
+	.menuItem:nth-child(2) {
+		margin-top: 64px;
 	}
 }
 @media (min-width: 992px){
