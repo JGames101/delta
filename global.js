@@ -1,4 +1,3 @@
-$('head').append('<meta name="theme-color" content="' + localStorage.getItem("themeColour") + '" />');
 document.getElementById('jsmissing').style.display = 'none';
 var menu = false;
 var online = navigator.onLine;
@@ -13,8 +12,9 @@ if (localStorage.getItem("backgroundImage") == undefined) {
 	document.body.style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.jpg)';
 };
 if (localStorage.getItem("themeColour") == undefined) {
-	localStorage.setItem("themeColour", "#486e89");
+	localStorage.setItem("themeColour", "#cb2c36");
 };
+$('head').append('<meta name="theme-color" content="' + localStorage.getItem("themeColour") + '" />');
 document.getElementById('menu').style.backgroundColor = localStorage.getItem("themeColour");
 
 function toggleMenu() {
