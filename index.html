@@ -1,49 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<!-- favicon stuff -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff0000">
-<!-- Main Stuff-->
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="manifest" href="/manifest.json">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<meta charset="utf-8">
-<title>James M</title>
-<link href="styles.css" rel="stylesheet" type="text/css">
+<title>Photos | James M</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
+<link href="images.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/styles.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 </head>
-<!-- Add to home screen for Safari on iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="JGames101">
-  <link rel="apple-touch-icon" href="images/icon/icon128.png">
-<!-- Add to Start for Windows -->
-<meta name="msapplication-TileImage" content="images/icon/icon128.png">
-  <meta name="msapplication-TileColor" content="#ffffff">
-<!-- Start of Real Content -->
-<script> // service worker
-navigator.serviceWorker.register('/sw.js');
-</script>
-<script> // Requests Notification Permission
-// request permission on page load
-document.addEventListener('DOMContentLoaded', function () {
-  if (!Notification) {
-    alert('Desktop notifications not available in your browser. Try Chromium.'); 
-    return;
-  }
-
-  if (Notification.permission !== "granted")
-    Notification.requestPermission();
-});
-</script>
 <body>
-<object id="jsmissing" data="/jsmissing.html" width="100%" height="48px"></object> <!-- The alert for JavaScript being disabled. -->
-<object id="connecmissing" data="/connecmissing.html" width="100%" height="48px"></object> <!-- This is the alert for internet connection missing. -->
-<div id="menuButton" onclick="javascript:toggleMenu()"> <!-- For opening control menu -->
+<div id="menuButton" onclick="javascript:toggleMenu()" style="display:block;"> <!-- For opening control menu -->
 	<div class="line"></div>
 	<div class="line"></div>
 	<div class="line"></div>
@@ -70,53 +36,25 @@ document.addEventListener('DOMContentLoaded', function () {
 	</div>
 </div>
 <div id="page">
-<h1 id="pageName">James M</h1>
-<div class="colourBackground">
-<div class="content">
-	<a href="/updates/"><div class="card">
-		<h2>UPDATES</h2>
-		<p>Click here to see update history.</p>
-		<p id="currentVer">Current Version: 1.12b</p>
-	</div></a>
-	<a href="/options/"><div class="card">
-		<h2>OPTIONS</h2>
-		<p>Personalization</p>
-	</div></a>
-	<h2 class="pinned">SUGGESTIONS</h2>
-	<a href="/angular/"><div class="card">
-		<h2>ANGULAR</h2>
-		<span>My tests and experiments with AngularJS!</span>
-		<p class="info">AngularJS</p>
-	</div></a>
-	<a href="/javascript/"><div class="card">
-		<h2>JAVASCRIPT</h2>
-		<span>My tests and experiments with Javascript!</span>
-		<p class="info">JS</p>
-	</div></a>
-	<a href="/jquery/"><div class="card">
-		<h2>JQUERY</h2>
-		<p>My tests and experiments with JQuery!</p>
-		<p class="info">JQuery</p>
-	</div></a>
-	<a href="/html5/"><div class="card">
-		<h2>HTML5 EXPERIMENTS</h2>
-		<span>Messing around with HTML5 to do weird stuff.</span>
-		<p class="info">AngularJS</p>
-	</div></a>
-	<a href="/photos/"><div class="card">
-		<h2>PHOTOGRAPHY</h2>
-		<p>Tap here for a gallery of my photos.</p>
-		<p class="info">Early Test</p>
-	</div></a>
-	<h2 class="pinned">OTHER</h2>
-	<div class="card">
-		<iframe class="video" width="100%" height="315px" src="https://www.youtube.com/embed/z5XhoUH3sEc" frameborder="0" allowfullscreen></iframe>
-		<h2>BERLIN VR</h2>
-		<p>Some VR images from Berlin.</p>
-	</div>
-</div>
-</div>
-<script src="/global.js"></script>
+<img src="1.jpg" id="photo" width="100%">
+<p><button onclick="javascript:prevImg()">Previous</button><button onclick="javascript:nextImg()">Next</button></p>
 </div>
 </body>
+<script src="/global.js"></script>
+<script>
+function nextImg() {
+	imgNum = imgNum + 1;
+	if (imgNum = 5) {
+		imgNum = 0;
+	}
+	document.getElementById("photo").src = "imgNum" + .jpg;
+}
+function prevImg() {
+	imgNum = imgNum - 1;
+	if (imgNum = 0) {
+		imgNum = 4;
+	}
+	document.getElementById("photo").src = "imgNum" + .jpg;
+}
+</script>
 </html>
