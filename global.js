@@ -1,4 +1,3 @@
-document.getElementById('jsmissing').style.display = 'none';
 var menu = false;
 var online = navigator.onLine;
 if (online == true) {
