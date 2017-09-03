@@ -192,7 +192,7 @@ h2 {
 }
 @media (min-width: 0px) and (max-width: 991px){
 	* {
-		overflow-x: hidden;
+		overflow-x: hidden !important;
 	}
 	.colourBackground {
 		background-color: rgb(43, 53, 56);
@@ -212,7 +212,6 @@ h2 {
 	}
 	body {
 		padding: none;
-		width: 100%;
 		background-image: url('/photos/3.jpg');
 		background-attachment: fixed;
 		background-position: center;
@@ -254,7 +253,7 @@ h2 {
 		width: 32px !important;
 		height: 32px !important;
 		margin-right: 24px;
-		display: initial;
+		display: none;
 	}
 	#photoBtn1 {
 	border-top-left-radius: 12px;
@@ -275,6 +274,9 @@ h2 {
 		display: initial !important;
 	}
 	.menuIcon:nth-child(5) {
+		display: initial !important;
+	}
+	.menuIcon:nth-child(6) {
 		display: initial !important;
 	}
 	#menuTitle {
