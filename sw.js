@@ -1,16 +1,9 @@
 // we'll version our cache (and learn how to delete caches in
 // some other post)
-const cacheName = 'v1.18-release::static';
-var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			var myObj = JSON.parse(this.responseText);
-			caches.delete('v1.17-release::static');
-		}
-	};
-xmlhttp.open("GET", "/latest.json", true);
-xmlhttp.send();
-
+const cacheName = 'v1.18.1-release::static';
+caches.delete('v1.17-release::static');
+caches.delete('v1.18.1-release::static');
+// The line above deletes old caches
 self.addEventListener('install', e => {
   // once the SW is installed, go ahead and fetch the resources
   // to make this work offline
