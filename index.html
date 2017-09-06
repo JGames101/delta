@@ -79,7 +79,20 @@ document.addEventListener('DOMContentLoaded', function () {
 	<a href="/updates/"><div class="card">
 		<h2>UPDATES</h2>
 		<p>Click here to see update history.</p>
-		<p id="currentVer">Current Version: 1.17b</p>
+		<p id="currentVer">Installed Version: 1.18b<br>
+		Latest Version: <span id="latestVer">You are Offline. The latest version is unknown.</span>
+		</p>
+		<script> // This Script loads the latest version.
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				var myObj = JSON.parse(this.responseText);
+				document.getElementById('latestVer').innerHTML = myObj.version;
+			}
+		};
+		xmlhttp.open("GET", "/latest.json", true);
+		xmlhttp.send();
+		</script>
 	</div></a>
 	<a href="/options/"><div class="card">
 		<h2>OPTIONS</h2>
