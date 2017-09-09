@@ -27,6 +27,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover !important;
 	font-family: 'Roboto Condensed', sans;
+	overflow-x: hidden;
 }
 h1 {
 	color: white;
@@ -37,6 +38,8 @@ h1 {
 .content {
 	overflow: hidden;
 	margin-left: 64px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
 }
 .card {
 	background-color: white;
@@ -76,6 +79,9 @@ h2 {
 }
 #pageName {
 	margin-top: 256px;
+	margin-left: 64px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
 }
 .colourBackground {
 	position: absolute;
@@ -169,17 +175,21 @@ h2 {
 	width: 32px;
 }
 .menuIcon {
-	margin-bottom: 20px;
+	margin-bottom: 24px;
 	cursor: pointer;
 }
 #content {
+	position: absolute !important;
 	width: 100%;
+	margin-left: 64px;
+	padding-right: 5%;
 }
 #page {
 	width: 100%;
+	height: 100%;
 	-webkit-transition-duration: 0.4s; /* Safari */
 	transition-duration: 0.4s;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 #photoBtn1 {
 	border-top-left-radius: 16px;
@@ -190,6 +200,20 @@ h2 {
 .imageButtonJS {
 	cursor: pointer;
 }
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-32 { font-size: 32px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 @media (min-width: 0px) and (max-width: 991px){
 	* {
 		overflow-x: hidden !important;
@@ -266,6 +290,9 @@ h2 {
 	.menuItem:nth-child(2) {
 		margin-top: 64px;
 	}
+	#contentOpen {
+		margin-left: 0px;
+	}
 }
 @media (min-width: 992px){
 	.card {
@@ -290,5 +317,14 @@ h2 {
 	}
 	.open {
 		width: 25% !important;
+	}
+	#contentOpen {
+		position: absolute;
+		margin-left: 30%;
+		width: 100%;
+		padding-right: 5%;
+	}
+	#pageNameCondensed {
+		margin-left: 30% !important;
 	}
 }

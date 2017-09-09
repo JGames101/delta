@@ -31,9 +31,7 @@
 	<object id="jsmissing" data="/jsmissing.html" width="100%" height="48px"></object> <!-- The alert for JavaScript being disabled. -->
 </noscript>
 <div id="menuButton" onclick="javascript:toggleMenu()"> <!-- For opening control menu -->
-	<div class="line"></div>
-	<div class="line"></div>
-	<div class="line"></div>
+	<i class="material-icons md-light md-32" id="menuToggle">keyboard_arrow_right</i>
 </div>
 <div id="menu" contextmenu="navigationContext">
 	<div id="menuTextBox">
@@ -47,18 +45,23 @@
 		<p class="menuItem" id="optionsButton" onclick="javascript:setPage('/options/')">OPTIONS</p>
 	</div>
 	<div id="menuIconBox">
-		<img class="menuIcon" id="homeIcon" src="/images/home.png" width="32px" onclick="javascript:setPage('/')">
-		<img class="menuIcon" id="updatesIcon" src="/images/updates.png" width="32px" onclick="javascript:setPage('/updates/')">
-		<img class="menuIcon" id="angularIcon" src="/images/angularJS.png" width="32px" onclick="javascript:setPage('/angular/')">
-		<img class="menuIcon" id="javascriptIcon" src="/images/javascript.png" width="32px" onclick="javascript:setPage('/javascript/')">
-		<img class="menuIcon" id="jqueryIcon" src="/images/jquery.png" width="32px" onclick="javascript:setPage('/jquery/')">
-		<img class="menuIcon" id="html5Icon" src="/images/html.png" width="32px" onclick="javascript:setPage('/html5/')">
-		<img class="menuIcon" id="optionsIcon" src="/images/options.png" width="32px" onclick="javascript:setPage('/options/')">
+		<i class="material-icons md-light md-32 menuIcon" id="homeIcon" onclick="javascript:setPage('/')">home</i>
+		<i class="material-icons md-light md-32 menuIcon" id="updatesIcon" onclick="javascript:setPage('/updates/')">history</i>
+		<img class="menuIcon" id="angularIcon" src="/images/angularJS.png" width="30px" onclick="javascript:setPage('/angular/')">
+		<img class="menuIcon" id="javascriptIcon" src="/images/javascript.png" width="30px" onclick="javascript:setPage('/javascript/')">
+		<img class="menuIcon" id="jqueryIcon" src="/images/jquery.png" width="30px" onclick="javascript:setPage('/jquery/')">
+		<i class="material-icons md-light md-32 menuIcon" id="html5Icon" onclick="javascript:setPage('/html5/')">web</i>
+		<i class="material-icons md-light md-32 menuIcon" id="optionsIcon" onclick="javascript:setPage('/options/')">settings</i>
 	</div>
 </div>
 <h1 id="pageName">Updates | James M</h1>
 <div class="colourBackground">
 <div class="content">
+	<div class="card">
+		<h2>v1.2b</h2>
+		<p>The navigation bar now uses material icons for most icons.<br>There is now a more info button for any updates, starting with this version.</p>
+		<p class="moreInfo info" style="color:black;" id="v1.2b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v1.2b')">More Info<span></p>
+	</div>
 	<div class="card">
 		<h2>v1.191b</h2>
 		<p>There is now a 404 page. You can see it <a href="/missingUrl">here.</a></p>
@@ -202,6 +205,17 @@
 	</div>
 </div>
 </div>
+<script> // setting the colour of the more info buttons.
+var infoBtnCount = document.getElementsByClassName('moreInfo').length;
+var colourNum = 0;
+while (colourNum < infoBtnCount) {
+	document.getElementsByClassName('moreInfo')[colourNum].style.color = localStorage.getItem("themeColour");
+	colourNum += 1;
+}
+function moreInfo(vNum) {
+	window.location.href = window.location.href + '/info/?version=' + vNum;
+}
+</script>
 </body>
 <script src="/global.js"></script>
 </html>

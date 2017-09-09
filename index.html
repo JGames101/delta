@@ -47,9 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <object id="jsmissing" data="/jsmissing.html" width="100%" height="48px"></object> <!-- The alert for JavaScript being disabled. -->
 </noscript>
 <div id="menuButton" onclick="javascript:toggleMenu()"> <!-- For opening control menu -->
-	<div class="line"></div>
-	<div class="line"></div>
-	<div class="line"></div>
+	<i class="material-icons md-light md-32" id="menuToggle">keyboard_arrow_right</i>
 </div>
 <div id="menu" contextmenu="navigationContext">
 	<div id="menuTextBox">
@@ -63,23 +61,23 @@ document.addEventListener('DOMContentLoaded', function () {
 		<p class="menuItem" id="optionsButton" onclick="javascript:setPage('/options/')">OPTIONS</p>
 	</div>
 	<div id="menuIconBox">
-		<img class="menuIcon" id="homeIcon" src="/images/home.png" width="32px" onclick="javascript:setPage('/')">
-		<img class="menuIcon" id="updatesIcon" src="/images/updates.png" width="32px" onclick="javascript:setPage('/updates/')">
-		<img class="menuIcon" id="angularIcon" src="/images/angularJS.png" width="32px" onclick="javascript:setPage('/angular/')">
-		<img class="menuIcon" id="javascriptIcon" src="/images/javascript.png" width="32px" onclick="javascript:setPage('/javascript/')">
-		<img class="menuIcon" id="jqueryIcon" src="/images/jquery.png" width="32px" onclick="javascript:setPage('/jquery/')">
-		<img class="menuIcon" id="html5Icon" src="/images/html.png" width="32px" onclick="javascript:setPage('/html5/')">
-		<img class="menuIcon" id="optionsIcon" src="/images/options.png" width="32px" onclick="javascript:setPage('/options/')">
+		<i class="material-icons md-light md-32 menuIcon" id="homeIcon" onclick="javascript:setPage('/')">home</i>
+		<i class="material-icons md-light md-32 menuIcon" id="updatesIcon" onclick="javascript:setPage('/updates/')">history</i>
+		<img class="menuIcon" id="angularIcon" src="/images/angularJS.png" width="30px" onclick="javascript:setPage('/angular/')">
+		<img class="menuIcon" id="javascriptIcon" src="/images/javascript.png" width="30px" onclick="javascript:setPage('/javascript/')">
+		<img class="menuIcon" id="jqueryIcon" src="/images/jquery.png" width="30px" onclick="javascript:setPage('/jquery/')">
+		<i class="material-icons md-light md-32 menuIcon" id="html5Icon" onclick="javascript:setPage('/html5/')">web</i>
+		<i class="material-icons md-light md-32 menuIcon" id="optionsIcon" onclick="javascript:setPage('/options/')">settings</i>
 	</div>
 </div>
 <div id="page">
 <h1 id="pageName">James M</h1>
 <div class="colourBackground">
-<div class="content">
+<div class="content" id="intial">
 	<a href="/updates/"><div class="card">
 		<h2>UPDATES</h2>
 		<p>Click here to see update history.</p>
-		<p id="currentVer">Installed Version: 1.19b<br>
+		<p id="currentVer">Installed Version: 1.2b<br>
 		Latest Version: <span id="latestVer">loading...</span>
 		</p>
 		<script> // This Script loads the latest version.
