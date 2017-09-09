@@ -15,10 +15,12 @@ function toggleMenu() {
 	if (menu == true) {
 		document.getElementById('menuTextBox').style.color = 'transparent';
 		document.getElementById('menu').className = 'hidden';
+		document.getElementById('menuTextBox').style.cursor = "initial";
 		menu = false;
 	} else {
 		document.getElementById('menuTextBox').style.color = 'white';
 		document.getElementById('menu').className = 'open';
+		document.getElementById('menuTextBox').style.cursor = "pointer";
 		menu = true;
 	}
 }

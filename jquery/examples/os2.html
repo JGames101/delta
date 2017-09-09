@@ -48,9 +48,24 @@ h2 {
 	cursor: pointer;
 	height: 100%;
 }
+#maximise {
+	width: 32px;
+	float: right;
+	text-align: center;
+	background-color: gray;
+	top: 0px;
+	cursor: pointer;
+	height: 100%;
+}
 p {
 	overflow-y: scroll;
 	height: 75%;
+}
+#urlBox {
+	width: 95%;
+}
+#changeURL {
+	width: 5%;
 }
 </style>
 <script>
@@ -74,7 +89,7 @@ $(document).ready(function(){
 </div>
 <div id="Window">
 <h2>IE Beta<span id="close">X</span></h2>
-<input id="urlBox" name="urlBox" value="https://www.bing.com/"></input><button onclick="javascript:changeUrl()">Go!</button>
+<input id="urlBox" name="urlBox" value="https://www.bing.com/"></input><button id="changeURL" onclick="javascript:changeUrl()">Go!</button>
 <object data="https://www.bing.com/" id="iePage" width="100%" height="100%"></object>
 </div>
 <div id="taskbar">

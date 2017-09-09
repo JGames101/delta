@@ -125,10 +125,10 @@ h2 {
 	-webkit-transition-duration: 0.4s; /* Safari */
 	transition-duration: 0.4s;
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	overflow-x: hidden;
 }
 .menuItem {
 	margin-top: 24px;
-	cursor: pointer;
 	font-size: 24px;
 	margin-left: 64px;
 	text-decoration: none !important;
