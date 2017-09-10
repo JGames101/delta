@@ -58,6 +58,11 @@
 <div class="colourBackground">
 <div class="content">
 	<div class="card">
+		<h2>v1.21b</h2>
+		<p>Rather than <a href="/updates/info/">/updates/info/</a>, text documents are now rendered at <a href="https://jgames101.github.io/txt/">jgames101.github.io/txt/</a> to provide a more unified experience under my websites.<br>The local version has been removed.</p>
+		<p class="moreInfo info" style="color:black;" id="v1.21b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v1.21b')">More Info<span></p>
+	</div>
+	<div class="card">
 		<h2>v1.2b</h2>
 		<p>The navigation bar now uses material icons for most icons.<br>There is now a more info button for any updates, starting with this version.</p>
 		<p class="moreInfo info" style="color:black;" id="v1.2b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v1.2b')">More Info<span></p>
@@ -215,7 +220,7 @@ while (colourNum < infoBtnCount) {
 	colourNum += 1;
 }
 function moreInfo(vNum) {
-	window.location.href = window.location.href + '/info/?version=' + vNum;
+	window.location.href = 'https://jgames101.github.io/txt/?document=' + 'https://jgames101.github.io/updates/info/logs/' + vNum + '.txt';
 }
 </script>
 </body>

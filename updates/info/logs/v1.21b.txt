@@ -1,0 +1,11 @@
+<h2>1.21b</h2><br>
+<h3>Overview</h3><br>
+1.21b builds off of the previous version's update information page, but has been moved to the new universal <a href="https://jgames101.github.io/txt/">jgames101.github.io/txt/</a>, further explained below.<br>
+<ul>
+	<li><a href="https://jgames101.github.io/txt/">jgames101.github.io/txt/</a> is now used to render the text documents instead of /updates/info/.
+</ul>
+<br>
+<h3>TXT Renderer</h3><br>
+Seemingly, there are no differences to the updates information page, but it has been moved from under the updates page to the universal <a href="https://jgames101.github.io/txt/">jgames101.github.io/txt/</a>.<br>
+This is because <a href="https://jgames101.github.io/txt/">jgames101.github.io/txt/</a> is universal, for any .txt files on the internet, rather than just ones found under /updates/info/logs/, because the txt page is going to be used across many of my web projects.<br>
+Currently, only .txt files can be viewed, images may be supported in the future. You can already show images, because it renders the txt files as HTML.<br>
