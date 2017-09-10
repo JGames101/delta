@@ -11,7 +11,7 @@
 <h3>Menu</h3><br>
 There are many updates to the menu.<br>
 <h4>Persistent Navigation Bar</h4><br>
-In <a href="https://jgames101.github.io/txt/?document=https://jgames101.github.io/updates/info/logs/v0.8a">v0.8a</a>, a menu was added, with a menu button that could be clicked to bring it up. Now, however, it has been heavily redesigned. There is now a persistent navigation bar on the left, so you don't have to open the menu every time. This menu is 64 pixels wide. This bar contains icons for quick access to other pages, without having to open the menu.<br>
+In <a href="https://jgames101.github.io/txt/?document=https://jgames101.github.io/updates/info/logs/v0.8a.txt">v0.8a</a>, a menu was added, with a menu button that could be clicked to bring it up. Now, however, it has been heavily redesigned. There is now a persistent navigation bar on the left, so you don't have to open the menu every time. This menu is 64 pixels wide. This bar contains icons for quick access to other pages, without having to open the menu.<br>
 <h4>Open Menu Changes</h4><br>
 Now, when you click the open menu button, rather than making the menu appear, it just expands the bar to the old menu, but with icons beside the text.<br>
 This change is animated, so that opening the menu happens over 0.4 seconds, rather than instantly.<br>
