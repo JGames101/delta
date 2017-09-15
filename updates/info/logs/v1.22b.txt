@@ -1,0 +1,23 @@
+<h2>1.22b</h2><br>
+<h3>Overview</h3><br>
+1.22b is a bugfix and small feature update. There are very few new features, but 1.22b does contain a few important features.<br>
+<ul>
+	<li>Fixes for expand menu button on mobile.
+	<li>File Information on JavaScript page.
+	<li>New updates notification system.
+</ul>
+<br>
+<h3>Expand Button Bugfixes</h3><br>
+On Phones, the expand button now points vertically, rather than horizontally.<br>
+This is because on Phones, the navigation bar is placed at the top, rather than the left.<br>
+The expand button has been given overflow: none, so that the scrollbar doesn't appear.<br>
+<br>
+<h3>JavaScript File Information</h3><br>
+There is a new file Information card on the JavaScript page.<br>
+When you select a file, it will show the name, size, and type.<br>
+This feature is in Alpha, because in the future it will have the ability to read TXT files in the future, as well as read JSON, and much more.<br>
+<br>
+<h3>New Update Notification System</h3><br>
+Much like YouTube or Google Drive, there is now always active notifications that will notify you whenever an update is available. This also applies to mobile.<br>
+This works by using the Service Worker. When latest.json is updated, the service worker will see that, and deliver a notification.<br>
+This feature is also in Beta. It will be further updated and improved as time goes on.<br>
