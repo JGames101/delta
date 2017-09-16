@@ -59,15 +59,27 @@
 <div class="content">
 	<div class="card">
 		<h2>WELCOME</h2>
-		<p>This is for my JavaScript stuff. It will be updated as I do more and more. AngularJS will probably be more active, so check there for more advanced and cool things.</p>
+		<p>This is for my JavaScript stuff. It will be updated as I do more and more. I may end up doing more things under JQuery, so look there for more advanced things.</p>
 	</div>
 	<h2 class="pinned">EXPERIMENTS</h2>
 	<div class="card">
-		<object data="/javascript/examples/webBrowser.html" class="video" width="100%" height="360px"></object>
-		<h2>WEB BROWSER</h2>
+		<h2>FILE INFORMATION</h2>
+		<span>Please open a file: </span><br>
+		<input id="fileInput" onchange="javascript:openFile()" type="file">
+		<div class="fileInfo" style="display:none;">
+			<p>
+				<span id="fileName">Loading...</span><br>
+				File Size: <span id="fileSize">Loading...</span> bytes<br>
+				<span id="fileType">Loading...</span>
+			</p>
+		</div>
 	</div>
 	<div class="card">
-		<h2>Temperature Converter</h2>
+		<h2>WEB BROWSER</h2>
+		<object data="/javascript/examples/webBrowser.html" class="reverseVideo" width="100%" height="360px"></object>
+	</div>
+	<div class="card">
+		<h2>TEMPERATURE CONVERTER</h2>
 		<p><input id="fahrenheit" type="number">°f <input id="celsius" type="number">°c</p>
 		<p><button onclick="toCelsiusNew()">Convert to Celsius!</button><button onclick="toFahrenheitNew()">Convert to Fehrenheit!</button></p>
 	</div>

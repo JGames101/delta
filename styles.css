@@ -59,6 +59,10 @@ h2 {
 	border-top-left-radius: 16px;
 	border-top-right-radius: 16px;
 }
+.reverseVideo {
+	border-bottom-left-radius: 16px;
+	border-bottom-right-radius: 16px;
+}
 .navbtn {
 	color: white;
 	float: right;
@@ -111,6 +115,7 @@ h2 {
 	left: 16px;
 	cursor: pointer;
 	display: block;
+	overflow: hidden;
 }
 .line {
 	width: 100%;
@@ -175,7 +180,7 @@ h2 {
 	width: 32px;
 }
 .menuIcon {
-	margin-bottom: 24px;
+	margin-bottom: 20px;
 	cursor: pointer;
 }
 #content {
@@ -295,6 +300,11 @@ i {
 	}
 	#contentOpen {
 		margin-left: 0px;
+	}
+	#menuButton {
+		-ms-transform: rotate(90deg); /* IE 9 */
+		-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+		transform: rotate(90deg);
 	}
 }
 @media (min-width: 992px){

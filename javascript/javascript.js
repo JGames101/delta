@@ -66,3 +66,21 @@ function setBackground(backNum) {
 	console.log(localStorage.getItem("backgroundImage"));
 	document.body.style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.jpg)';
 }
+
+function openFile() {
+	console.log(document.getElementById("fileInput").files[0]);
+	var file = document.getElementById("fileInput").files[0];
+	document.getElementById('fileName').innerHTML = file.name;
+	document.getElementById('fileSize').innerHTML = file.size;
+	document.getElementById('fileType').innerHTML = file.type;
+	document.getElementsByClassName('fileInfo')[0].style.display = 'block';
+}
+
+function toCelsiusInstant() {
+	var fahrenheit = document.getElementById("fahrenheitInstant").value;
+    document.getElementById("celsiusInstant").value = (5/9) * (fahrenheit-32);
+}
+function toFahrenheitInstant() {
+	var celsius = document.getElementById("celsiusInstant").value;
+    document.getElementById("fahrenheitInstant").value = 1.8 * celsius + 32;
+}
