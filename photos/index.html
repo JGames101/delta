@@ -7,57 +7,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="/styles.css" rel="stylesheet" type="text/css">
 <script src="/jquery-3.2.1.min.js"></script>
+<script src="photos.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
 <noscript>
 	<object id="jsmissing" data="/jsmissing.html" width="100%" height="48px"></object> <!-- The alert for JavaScript being disabled. -->
 </noscript>
-<div id="menuButton" onclick="javascript:toggleMenu()" style="display:block;"> <!-- For opening control menu -->
-	<div class="line"></div>
-	<div class="line"></div>
-	<div class="line"></div>
-</div>
-<div id="menu" contextmenu="navigationContext">
-	<div id="menuTextBox">
-		<p class="menuItem" id="menuTitle">Pages</p>
-		<p class="menuItem" id="homeButton" onclick="javascript:setPage('/')">HOME</p>
-		<p class="menuItem" id="updatesButton" onclick="javascript:setPage('/updates/')">UPDATES</p>
-		<p class="menuItem" id="angularButton" onclick="javascript:setPage('/angular/')">ANGULAR</p>
-		<p class="menuItem" id="javascriptButton" onclick="javascript:setPage('/javascript/')">JAVASCRIPT</p>
-		<p class="menuItem" id="optionsButton" onclick="javascript:setPage('/jquery/')">JQUERY</p>
-		<p class="menuItem" id="html5Button" onclick="javascript:setPage('/html5/')">HTML5</p>
-		<p class="menuItem" id="optionsButton" onclick="javascript:setPage('/options/')">OPTIONS</p>
-	</div>
-	<div id="menuIconBox">
-		<img class="menuIcon" id="homeIcon" src="/images/home.png" width="32px" onclick="javascript:setPage('/')">
-		<img class="menuIcon" id="updatesIcon" src="/images/updates.png" width="32px" onclick="javascript:setPage('/updates/')">
-		<img class="menuIcon" id="angularIcon" src="/images/angularJS.png" width="32px" onclick="javascript:setPage('/angular/')">
-		<img class="menuIcon" id="javascriptIcon" src="/images/javascript.png" width="32px" onclick="javascript:setPage('/javascript/')">
-		<img class="menuIcon" id="jqueryIcon" src="/images/jquery.png" width="32px" onclick="javascript:setPage('/jquery/')">
-		<img class="menuIcon" id="html5Icon" src="/images/html.png" width="32px" onclick="javascript:setPage('/html5/')">
-		<img class="menuIcon" id="optionsIcon" src="/images/options.png" width="32px" onclick="javascript:setPage('/options/')">
-	</div>
-</div>
 <div id="page">
-<img src="1.jpg" id="photo" width="100%">
-<p><button onclick="javascript:prevImg()">Previous</button><button onclick="javascript:nextImg()">Next</button></p>
+<img src="1.jpg" id="photo" height="100%">
+<a href="/"><button id="backBtn"><i class="material-icons md-light" id="backIcon" style="font-size:48px;">arrow_back</i></button></a>
+<button id="fullscreenBtn" onclick="javascript:fullscreen()"><i class="material-icons md-light" id="fullscreenIcon" style="font-size:48px;">fullscreen</i></button>
+<button id="prev" onclick="javascript:previousPhoto()"><i class="material-icons md-light" style="font-size:48px;">keyboard_arrow_left</i></button>
+<button id="photoNext" onclick="javascript:nextPhoto()"><i class="material-icons md-light" style="font-size:48px;">keyboard_arrow_right</i></button>
 </div>
 </body>
 <script src="/global.js"></script>
-<script>
-function nextImg() {
-	imgNum = imgNum + 1;
-	if (imgNum = 5) {
-		imgNum = 0;
-	}
-	document.getElementById("photo").src = "imgNum" + .jpg;
-}
-function prevImg() {
-	imgNum = imgNum - 1;
-	if (imgNum = 0) {
-		imgNum = 4;
-	}
-	document.getElementById("photo").src = "imgNum" + .jpg;
-}
+<script> // image in greyscale or oversatured
+if (localStorage.getItem("theme") == "Greyscale") {
+	document.getElementById('photo').style.WebkitFilter="grayscale(100%)";
+	document.getElementById('photo').style.filter="grayscale(100%)";
+};
+if (localStorage.getItem("theme") == "saturated") {
+	document.getElementById('photo').style.WebkitFilter="saturate(200%)";
+	document.getElementById('photo').style.filter="saturate(200%)";
+};
+if (localStorage.getItem("theme") == "inverted") {
+	document.getElementById('photo').style.WebkitFilter="invert(200%)";
+	document.getElementById('photo').style.filter="invert(200%)";
+};
 </script>
 </html>
