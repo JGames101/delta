@@ -1,12 +1,20 @@
 if (localStorage.getItem("backgroundImage") == undefined) {
 	localStorage.setItem("backgroundImage", "3");
-}
+};
+if (localStorage.getItem("theme") == "Greyscale") {
+	document.getElementById('backgroundPhotoCard').style.display = "none";
+} else if (localStorage.getItem("theme") == "colourful") {
+	document.getElementById('backgroundPhotoCard').style.display = "none";
+} else {
+	document.getElementById('backgroundPhotoCard').style.display = "inline-table";
+};
 
 var suggestedColours = ["#ddad08", "#b4697d", "#e01453", "#d2cc2b", "#718181", "#acd56f", "#cb2c36", "#8098ae"];
 document.getElementById('currentTheme').innerHTML = localStorage.getItem("themeColour");
 document.getElementById('newColour').value = localStorage.getItem("themeColour");
 document.getElementById('colourPicker').value = localStorage.getItem("themeColour");
 document.getElementById('suggestedPreview').style.color = suggestedColours[localStorage.getItem("backgroundImage") - 1];
+document.getElementById('themeSelect').value = localStorage.getItem("theme");
 
 
 function setBackground(backNum) {
@@ -53,5 +61,11 @@ function setSuggestedColour() {
 	document.getElementById('menu').style.backgroundColor = localStorage.getItem("themeColour");
 	document.getElementById('newColour').value = localStorage.getItem("themeColour");
 	document.getElementById('colourPicker').value = localStorage.getItem("themeColour");
+	location.reload();
+}
+
+function changeTheme() { // themeSelect
+	console.log(document.getElementById('themeSelect').value);
+	localStorage.setItem("theme", document.getElementById('themeSelect').value);
 	location.reload();
 }

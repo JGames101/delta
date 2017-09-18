@@ -43,7 +43,7 @@
 		<div class="colourBackground">
 		<div class="content">
 		<h2 class="pinned">PERSONALIZATION</h2>
-		<div class="card">
+		<div class="card" id="backgroundPhotoCard">
 			<img src="/photos/1btn.jpg" id="photoBtn1" width="25%" class="imageButtonJS" onclick="javascript:setBackground(1)"><img src="/photos/2.jpg" id="photoBtn2" width="25%" class="imageButtonJS" onclick="javascript:setBackground(2)"><img src="/photos/3.jpg" id="photoBtn3" width="25%" class="imageButtonJS" onclick="javascript:setBackground(3)"><img src="/photos/4.jpg" id="photoBtn4" width="25%" class="imageButtonJS" onclick="javascript:setBackground(4)">
 			<img src="/photos/5.jpg" id="photoBtn5" width="25%" class="imageButtonJS" onclick="javascript:setBackground(5)"><img src="/photos/6.jpg" id="photoBtn6" width="25%" class="imageButtonJS" onclick="javascript:setBackground(6)"><img src="/photos/7.jpg" id="photoBtn7" width="25%" class="imageButtonJS" onclick="javascript:setBackground(7)"><img src="/photos/8.jpg" id="photoBtn8" width="25%" class="imageButtonJS" onclick="javascript:setBackground(8)">
 			<h2>SET BACKGROUND</h2>
@@ -55,6 +55,26 @@
 			Suggested Colour: <span id="suggestedPreview">▇▇▇▇▇▇▇▇</span> <button onclick="javascript:setSuggestedColour()">Set Colour!</button><br>
 			Colour Picker: <input type="color" id="colourPicker" value="#486e89" onchange="javascript:setPickerColour()"><br>
 			Custom Colour: <input id="newColour" name="newColour" value="Please Turn On JavaScript."></input> <button onclick="javascript:setColour()">Set Colour!</button><br>
+			</b></p>
+		</div>
+		<div class="card">
+			<h2>THEME (beta)</h2>
+			<p>Select your theme: 
+			<select id="themeSelect" onchange="javascript:changeTheme()">
+				<optgroup label="Regular Themes">
+					<option value="photoDef">Default</option>
+					<option value="colourful">Colourful</option>
+					<option value="Greyscale">Greyscale</option>
+				</optgroup>
+				<optgroup label="Beta Themes">
+					<option value="Blur">Blur (Limited Browser Support)</option>
+					<option value="transparent">Transparent</option>
+				</optgroup>
+				<optgroup label="Funny Things">
+					<option value="saturated">Over Saturated</option>
+					<option value="inverted">Inverted Colours</option>
+				</optgroup>
+			</select>
 			</p>
 		</div>
 		<h2 class="pinned">INSTALL</h2>
@@ -62,6 +82,10 @@
 			<h2>UWP</h2>
 			<p>Windows 10, Windows 10 Mobile, Xbox One, etc.</p>
 			<a href="/install/Hosted Web App_1.7.1.0_AnyCPU.appxbundle" download><button>Download .appx</button></a>
+		</div>
+		<div class="card">
+			<h2><i class="material-icons">android</i> ANDROID</h2>
+			<p>This site is a Progressive Web App, which means from Chrome for Android, you can just press Add to Homescreen... from the menu to install it.</p>
 		</div>
 		</div>
 		</div>

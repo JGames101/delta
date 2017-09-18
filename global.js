@@ -7,9 +7,54 @@ if (localStorage.getItem("backgroundImage") == undefined) {
 };
 if (localStorage.getItem("themeColour") == undefined) {
 	localStorage.setItem("themeColour", "#cb2c36");
+	localStorage.setItem("backgroundImage", "5");
+	localStorage.setItem("theme", "photoDef");
 };
-$('head').append('<meta name="theme-color" content="' + localStorage.getItem("themeColour") + '" />');
+if (localStorage.getItem("theme") == "Greyscale") {
+	$('head').append('<meta name="theme-color" content="' + '#323232' + '" />');
+} else {
+	$('head').append('<meta name="theme-color" content="' + localStorage.getItem("themeColour") + '" />');
+};
 document.getElementById('menu').style.backgroundColor = localStorage.getItem("themeColour");
+
+// Theme Stuff
+if (localStorage.getItem("theme") == "colourful") {
+	document.body.style.backgroundImage='url(/photos/none.jpg)';
+	document.body.style.backgroundColor = localStorage.getItem("themeColour");
+	document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(0, 0, 0, 0)';
+};
+
+if (localStorage.getItem("theme") == "Greyscale") {
+	document.body.style.WebkitFilter="grayscale(100%)";
+	document.getElementById('menu').style.WebkitFilter="grayscale(100%)";
+	document.body.style.filter="grayscale(100%)";
+	document.getElementById('menu').style.filter="grayscale(100%)";
+	document.body.style.backgroundImage='url(/photos/none.jpg)';
+	document.body.style.backgroundColor = 'grey';
+	document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(0, 0, 0, 0)';
+};
+
+if (localStorage.getItem("theme") == "Blur") {
+	document.getElementById('menu').style.WebkitBackdropFilter="blur(72px)";
+	document.getElementById('menu').style.backdropFilter="blur(72px)";
+	document.getElementById('menu').style.backgroundColor = "rgba(0, 0, 0, 0)";
+	document.getElementById('menu').style.boxShadow = "0 8px 16px 0 rgba(0,0,0,0), 0 6px 20px 0 rgba(0,0,0,0)";
+};
+if (localStorage.getItem("theme") == "transparent") {
+	document.getElementById('menu').style.backgroundColor = "rgba(0, 0, 0, 0)";
+	document.getElementById('menu').style.boxShadow = "0 8px 16px 0 rgba(0,0,0,0), 0 6px 20px 0 rgba(0,0,0,0)";
+};
+if (localStorage.getItem("theme") == "inverted") {
+	document.body.style.WebkitFilter="invert(100%)";
+	document.body.style.filter="invert(100%)";
+	document.body.style.backgroundColor = localStorage.getItem("themeColour");
+};
+if (localStorage.getItem("theme") == "saturated") {
+	document.body.style.WebkitFilter="saturate(200%)";
+	document.body.style.filter="saturate(200%)";
+};
+
+// Global Functions
 
 function toggleMenu() { //The commented code is for the page responding to when the menu is opened.
 	if (menu == true) {

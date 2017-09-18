@@ -1,0 +1,52 @@
+<h2>1.3b</h2><br>
+<h3>Overview</h3><br>
+1.3b isn't as big as some other feature updates, but still has a lot of fun features to mess around with, and the official release of the photos page (out of beta!)<br>
+<ul>
+	<li>New Themes system under options.
+	<li>Photos page has been heavily redesigned and now works.
+	<li>Bugfixes
+</ul>
+<br>
+<h3>Themes System</h3><br>
+A third option has been added to the personlalization section of the options page. This card has a dropdown with 7 options:
+<ul>
+	<li>Regular Themes
+	<ol start="1">
+		<li>Default<br>
+		This is the default look of the site. Nothing will have changed.
+		<li>Colourful<br>
+		Instead of having an image as the background, your theme colour will be set as the background.
+		<li>Greyscale<br>
+		The entire site, including images, will become greyscale. Currently, the background image is replaced with solid grey, but that may change.
+	</ol>
+	<li>Beta Themes
+	<ol start="4">
+		<li>Blur<br>
+		<b>Warning:</b> Blur currently has extremely limited browser support. It requires the webkit backdrop-filter.<br>
+		Blur replaces the colour of the menu bar with a blur of the background.
+		<li>Transparent<br>
+		This makes the menu bar completely transparent, so that the menu items appear over whatever was behind the menu, instead of the colour coming out.<br>
+		This is the fallback if blur is unsupported.
+	</ol>
+	<li>Funny Tests<br>
+	These themes are not designed to be seriously used. They only exist for enjoyment and testing CSS.
+	<ol start="6">
+		<li>Over Saturated<br>
+		This option makes all content 200% saturated.
+		<li>Inverted Colour<br>
+		Beta. This option inverts all of the colours of the site.
+	</ol>
+</ul>
+There will be more choices in the future, as well as changes and impovements to the existing themes. Custom themes using JSON are being experimented with, but may never be implemented.<br>
+There will also be options for themes such as Over Saturated to select your saturation amount on a slider.<br>
+<br>
+<h3>Photos Page Updates</h3><br>
+The Photos page has been revamped with a new design, and full functionality.<br>
+The sidebar has been removed, and replaced with a back button, that returns to the homepage.<br>
+There is a fullscreen page that makes the current photo fullscreen.<br>
+And... everything is fully functional.<br>
+The problem was that the variable was not being recognised as an integer, which has been fixed.<br>
+<br>
+<h3>Bugfixes</h3><br>
+As mentioned above, the photos page has been fixed.<br>
+AngularJS now has the Material Icons font to correctly display the sidebar.<br>
