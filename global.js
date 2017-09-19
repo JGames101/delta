@@ -72,6 +72,7 @@ if (localStorage.getItem("theme") == "saturated") {
 if (localStorage.getItem('mobile.navLoc') == "bottom") {
 	document.getElementById("menu").className += "menuBottom";
 	document.getElementById("menuButton").className = "menuBtnBottom";
+	document.getElementById("menuIconBox").className = "barOnBottom";
 	console.log('menu loaded to bottom.');
 };
 // Global Functions
