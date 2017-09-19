@@ -18,6 +18,18 @@ if (localStorage.getItem("theme") == "Greyscale") {
 document.getElementById('menu').style.backgroundColor = localStorage.getItem("themeColour");
 
 // Theme Stuff
+if (localStorage.getItem("theme") == "light") {
+	document.getElementById('menu').style.backgroundColor = '#cccccc';
+	var infoBtnCount = document.getElementsByClassName('pinned').length;
+	var colourNum = 0;
+	while (colourNum < infoBtnCount) {
+		document.getElementsByClassName('pinned')[colourNum].style.color = localStorage.getItem("themeColour");
+		colourNum += 1;
+	};
+	document.getElementsByClassName('colourBackground')[0].style.backgroundColor = '#fafafa';
+	
+};
+
 if (localStorage.getItem("theme") == "colourful") {
 	document.body.style.backgroundImage='url(/photos/none.jpg)';
 	document.body.style.backgroundColor = localStorage.getItem("themeColour");
@@ -54,6 +66,12 @@ if (localStorage.getItem("theme") == "saturated") {
 	document.body.style.filter="saturate(200%)";
 };
 
+// Functions for other content settings
+if (localStorage.getItem('mobile.navLoc') == "bottom") {
+	document.getElementById("menu").className += "menuBottom";
+	document.getElementById("menuButton").className = "menuBtnBottom";
+	console.log('menu loaded to bottom.');
+};
 // Global Functions
 
 function toggleMenu() { //The commented code is for the page responding to when the menu is opened.
@@ -64,6 +82,9 @@ function toggleMenu() { //The commented code is for the page responding to when 
 		document.getElementById('menuToggle').innerHTML = 'keyboard_arrow_right';
 		//document.getElementsByClassName('content')[0].id = 'initial';
 		//document.getElementById('pageName').className = 'hidden';
+		if (localStorage.getItem('mobile.navLoc') == "bottom") {
+			document.getElementById("menu").className += " menuBottom";
+		};
 		menu = false;
 	} else {
 		document.getElementById('menuTextBox').style.color = 'white';
@@ -72,6 +93,9 @@ function toggleMenu() { //The commented code is for the page responding to when 
 		document.getElementById('menuToggle').innerHTML = 'keyboard_arrow_left';
 		//document.getElementsByClassName('content')[0].id = 'contentOpen';
 		//document.getElementById('pageName').className = 'pageNameCondensed';
+		if (localStorage.getItem('mobile.navLoc') == "bottom") {
+			document.getElementById("menu").className += " menuBottom";
+		};
 		menu = true;
 	}
 }
