@@ -135,7 +135,7 @@ h2 {
 	width: 64px;
 	-webkit-transition-duration: 0.4s; /* Safari */
 	transition-duration: 0.4s;
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	box-shadow: 0 0 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 	overflow-x: hidden;
 }
 .menuItem {
@@ -325,9 +325,26 @@ i {
 	.menuBtnBottom {
 		top: initial !important;
 		bottom: 16px !important;
+		-ms-transform: rotate(270deg) !important; /* IE 9 */
+		-webkit-transform: rotate(270deg) !important; /* Chrome, Safari, Opera */
+		transform: rotate(270deg) !important;
+	}
+	#menuIconBox.barOnBottom {
+		top: initial !important;
+		bottom: -8px !important;
+	}
+	#menuIconBox {
+		position: fixed !important;
 	}
 	.menuBottom.open {
 		height: 75% !important;
+		overflow-y: scroll !important;
+	}
+	.open {
+		overflow-y: scroll !important;
+	}
+	::-webkit-scrollbar {
+      width: 0px;
 	}
 }
 @media (min-width: 992px){
