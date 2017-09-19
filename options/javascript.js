@@ -9,6 +9,10 @@ if (localStorage.getItem("theme") == "Greyscale") {
 	document.getElementById('backgroundPhotoCard').style.display = "inline-table";
 };
 
+if (localStorage.getItem('mobile.navLoc') == "bottom") {
+	document.getElementById('mobileNavLoc').value = localStorage.getItem("mobile.navLoc");
+};
+
 var suggestedColours = ["#ddad08", "#b4697d", "#e01453", "#d2cc2b", "#718181", "#acd56f", "#cb2c36", "#8098ae"];
 document.getElementById('currentTheme').innerHTML = localStorage.getItem("themeColour");
 document.getElementById('newColour').value = localStorage.getItem("themeColour");
@@ -67,5 +71,11 @@ function setSuggestedColour() {
 function changeTheme() { // themeSelect
 	console.log(document.getElementById('themeSelect').value);
 	localStorage.setItem("theme", document.getElementById('themeSelect').value);
+	location.reload();
+}
+
+function mbNavLoc() { // setting the location of the navbar on mobile
+	console.log(document.getElementById('mobileNavLoc').value);
+	localStorage.setItem("mobile.navLoc", document.getElementById('mobileNavLoc').value);
 	location.reload();
 }

@@ -49,7 +49,7 @@
 			<h2>SET BACKGROUND</h2>
 			<p>Select the Photo you would like as your background.</p>
 		</div>
-		<div class="card">
+		<div class="card" id="colourCard">
 			<h2>THEME COLOUR</h2>
 			Current Theme Colour: <b><span id="currentTheme">Please Enable JavaScript.</span></p><br>
 			Suggested Colour: <span id="suggestedPreview">▇▇▇▇▇▇▇▇</span> <button onclick="javascript:setSuggestedColour()">Set Colour!</button><br>
@@ -65,6 +65,8 @@
 					<option value="photoDef">Default</option>
 					<option value="colourful">Colourful</option>
 					<option value="Greyscale">Greyscale</option>
+					<option value="light">Light</option>
+					<option value="dark">Dark</option>
 				</optgroup>
 				<optgroup label="Beta Themes">
 					<option value="Blur">Blur (Limited Browser Support)</option>
@@ -76,6 +78,25 @@
 				</optgroup>
 			</select>
 			</p>
+		</div>
+		<div id="mobileOptions">
+			<h2 class="pinned">MOBILE OPTIONS</h2>
+			<div class="card" style="display:none;">
+				<h2>PRESETS</h2>
+				<p>Content Presets:<br>
+				<button onclick="initialTheme()">Initial</button><button onclick="iosTheme()">iOS</button>
+				</p>
+			</div>
+			<div class="card">
+				<h2>NAVIGATION BAR</h2>
+				<h3>Visuals</h3>
+				<p>Location: 
+				<select id="mobileNavLoc" onchange="javascript:mbNavLoc()">
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</select>
+				</p>
+			</div>
 		</div>
 		<h2 class="pinned">INSTALL</h2>
 		<div class="card">

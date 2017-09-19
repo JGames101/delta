@@ -1,0 +1,24 @@
+<h2>1.31b</h2><br>
+<h3>Overview</h3><br>
+v1.31b: This is a smaller update, but contains a few new features:<br>
+<ul>
+	<li>Two New Themes
+	<li>Mobile View Settings
+</ul>
+<br>
+<h3>New Themes</h3><br>
+The 2 new themes:
+	<ol start="1">
+		<li>Light<br>
+		When you choose Light, most of the colour will be removed and replaced with light grey. This is to make the UI lighter.
+		<li>Dark<br>
+		(Beta, Nothing will happen) Same as light, but dark grey, rather than light grey.
+	</ol>
+More themes will be coming soon, as said in the previous version.<br>
+<br>
+<h3>Mobile View Settings</h3><br>
+Now, when visiting the settings page on a phone, there is a new section for Mobile settings.<br>
+Currently, it only contains the option for positioning the navigation bar.<br>
+The reason for this option is so that the UI looks more consistent with iOS apps. In the future, this will be the default on iOS, but currently, this is only an option.<br>
+When this option is enabled, the bar will be moved from the top to the bottom. When opened, rather than covering the entire page, it only takes 75%. This may be edited in the future.<br>
+This feature is in progress.<br>

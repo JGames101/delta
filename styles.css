@@ -222,6 +222,15 @@ h2 {
 i {
 	overflow: hidden;	
 }
+#mobileOptions {
+	display: none;
+}
+#tabletOptions {
+	display: none;
+}
+#desktopOptions {
+	display: none;
+}
 @media (min-width: 0px) and (max-width: 991px){
 	* {
 		overflow-x: hidden !important;
@@ -306,6 +315,20 @@ i {
 		-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
 		transform: rotate(90deg);
 	}
+	#mobileOptions {
+		display: initial;
+	}
+	.menuBottom {
+		top: initial !important;
+		bottom: 0px !important;
+	}
+	.menuBtnBottom {
+		top: initial !important;
+		bottom: 16px !important;
+	}
+	.menuBottom.open {
+		height: 75% !important;
+	}
 }
 @media (min-width: 992px){
 	.card {
@@ -317,6 +340,9 @@ i {
 	}
 	.open {
 		width: 50% !important;
+	}
+	#tabletOptions {
+		display: initial;
 	}
 }
 
@@ -339,5 +365,8 @@ i {
 	}
 	#pageNameCondensed {
 		margin-left: 30% !important;
+	}
+	#desktopOptions {
+		display: initial;
 	}
 }
