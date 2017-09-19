@@ -12,6 +12,8 @@ if (localStorage.getItem("themeColour") == undefined) {
 };
 if (localStorage.getItem("theme") == "Greyscale") {
 	$('head').append('<meta name="theme-color" content="' + '#323232' + '" />');
+} else if (localStorage.getItem("theme") == "light") {
+	$('head').append('<meta name="theme-color" content="' + '#323232' + '" />');
 } else {
 	$('head').append('<meta name="theme-color" content="' + localStorage.getItem("themeColour") + '" />');
 };
