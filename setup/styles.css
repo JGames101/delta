@@ -1,0 +1,106 @@
+body {
+	overflow: hidden;
+}
+div.page {
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	margin: none;
+	padding: none;
+	background-color: white;
+}
+#welcome {
+	top: 0px;
+}
+#theme {
+	top: 100%;
+}
+#background {
+	top: 200%;
+}
+#done {
+	top: 300%;
+}
+#welcomeTitle {
+	text-align: center;
+	font-size: 128px;
+	font-weight: 200;
+	margin-top: 256px;
+}
+#themeTitle {
+	text-align: center;
+	font-size: 128px;
+	font-weight: 200;
+	margin-top: 128px;
+}
+.box {
+	max-width: 40%;
+	text-align: center;
+	margin-left: 30%;
+	font-size: 24px;
+}
+#welcome {
+	overflow: hidden;
+}
+.nextButton {
+	position: absolute;
+	width: 10%;
+	left: 45%;
+	bottom: 10%;
+	background-color: #03a9f4;
+	border-radius: 16px;
+	font-size: 32px;
+	color: white;
+	cursor: pointer;
+}
+.nextButton:hover {
+	box-shadow: 0 0 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+p {
+	text-align: center;
+}
+.themeChoice {
+	width: 30%;
+	display: inline-block;
+	padding: 0px;
+	border-radius: 16px;
+	margin-bottom: 8px;
+	cursor: pointer;
+	background-color: #fafafa;
+}
+.themeChoice:hover {
+	box-shadow: 0 0 16px 0 rgba(0,0,0,0.2), 0 0 16px 0 rgba(0,0,0,0.19);
+	z-index: 999;
+}
+.photoChoice {
+	width: 30%;
+	display: inline-block;
+	padding: 0px;
+	border-radius: 16px;
+	margin-bottom: 8px;
+	cursor: pointer;
+	background-color: #fafafa;
+}
+.photoChoice:hover {
+	box-shadow: 0 0 16px 0 rgba(0,0,0,0.2), 0 0 16px 0 rgba(0,0,0,0.19);
+	z-index: 999;
+}
+.themeThumb {
+	border-top-left-radius: 16px;
+	border-top-right-radius: 16px;
+}
+#themeBox {
+	max-width: 40%;
+	margin-left: 32%;
+}
+@media (min-width: 0px) and (max-width: 991px){
+	#themeBox {
+		max-width: 95%;
+		margin-left: 2.5%;
+	}
+	.box {
+		max-width: 95%;
+		margin-left: 2.5%;
+	}
+}

@@ -48,7 +48,7 @@ h1 {
 	display: inline-table;
 	margin-bottom: 16px;
 	margin-left: 10px;
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	box-shadow: 0 0 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 	min-height: 128px;
 	color: black;
 }
@@ -138,6 +138,26 @@ h2 {
 	box-shadow: 0 0 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 	overflow-x: hidden;
 }
+
+#classicMenu {
+	background-color: #cb2c36;
+	z-index: 257;
+	position: fixed;
+	margin: none;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 64px;
+	-webkit-transition-duration: 0s; /* Safari */
+	transition-duration: 0s;
+	overflow-x: hidden;
+	background-color: rgba(0, 0, 0, 0) !important;
+}
+
+#classicMenu.open {
+	background-color: #7ea5ba !important;
+}
+
 .menuItem {
 	margin-top: 24px;
 	font-size: 24px;
@@ -332,6 +352,7 @@ i {
 	#menuIconBox.barOnBottom {
 		top: initial !important;
 		bottom: -8px !important;
+		background-color: inherit !important;
 	}
 	#menuIconBox {
 		position: fixed !important;

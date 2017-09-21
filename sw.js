@@ -1,9 +1,9 @@
 // we'll version our cache (and learn how to delete caches in
 // some other post)
 const cacheName = 'v1.22-release::static';
-caches.delete('v1.17-release::static');
-caches.delete('v1.18.1-release::static');
-caches.delete('v1.22-release::static');
+if(navigator.onLine) {
+	caches.delete('v1.22-release::static');
+};
 // The line above deletes old caches
 self.addEventListener('install', e => {
   // once the SW is installed, go ahead and fetch the resources
@@ -19,6 +19,7 @@ self.addEventListener('install', e => {
 		'/html5/',
 		'/options/',
 		'/photos/',
+		'/setup/',
 		'/styles.css',
 		'/global.js',
 		'/javascript/javascript.js',
@@ -41,6 +42,10 @@ self.addEventListener('install', e => {
 		'/images/options.png',
 		'/images/doubleclick.png',
 		'/images/file.png',
+		'/setup/styles.css',
+		'/setup/script.js',
+		'/latest.json',
+		'/jquery-3.2.1.min.js',
       ]).then(() => self.skipWaiting());
     })
   );

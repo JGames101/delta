@@ -1,5 +1,12 @@
 var menu = false;
 var online = navigator.onLine;
+// send user to setup?
+if (localStorage.getItem("user") == undefined) {
+	console.log("User visiting for the first time! Opening new user page...");
+	window.location.href = "/setup/"
+};
+
+
 if (localStorage.getItem("backgroundImage") == undefined) {
 	console.log("Missing background image settings.");
 } else {
@@ -32,6 +39,31 @@ if (localStorage.getItem("theme") == "light") {
 	
 };
 
+if (localStorage.getItem("theme") == "dark") {
+	document.getElementById('menu').style.backgroundColor = '#333';
+	$("*").css("color", "white");
+	$("button").css("color", "black");
+	$("select").css("color", "black");
+	$("input").css("color", "black");
+	$("option").css("color", "black");
+	$("optgroup").css("color", "black");
+	$(".card").css("background-color", "#333");
+	var infoBtnCount = document.getElementsByClassName('pinned').length;
+	var colourNum = 0;
+	while (colourNum < infoBtnCount) {
+		document.getElementsByClassName('pinned')[colourNum].style.color = localStorage.getItem("themeColour");
+		colourNum += 1;
+	};
+	document.getElementsByClassName('colourBackground')[0].style.backgroundColor = '#222';
+	
+};
+
+if (localStorage.getItem("theme") == "v0.8a") {
+	document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(43, 53, 56, 0.75)';
+	document.getElementById('menu').id = "classicMenu";
+	document.getElementById('menuIconBox').style.display = "none";
+};
+
 if (localStorage.getItem("theme") == "colourful") {
 	document.body.style.backgroundImage='url(/photos/none.jpg)';
 	document.body.style.backgroundColor = localStorage.getItem("themeColour");
@@ -54,19 +86,6 @@ if (localStorage.getItem("theme") == "Blur") {
 	document.getElementById('menu').style.backgroundColor = "rgba(0, 0, 0, 0)";
 	document.getElementById('menu').style.boxShadow = "0 8px 16px 0 rgba(0,0,0,0), 0 6px 20px 0 rgba(0,0,0,0)";
 };
-if (localStorage.getItem("theme") == "transparent") {
-	document.getElementById('menu').style.backgroundColor = "rgba(0, 0, 0, 0)";
-	document.getElementById('menu').style.boxShadow = "0 8px 16px 0 rgba(0,0,0,0), 0 6px 20px 0 rgba(0,0,0,0)";
-};
-if (localStorage.getItem("theme") == "inverted") {
-	document.body.style.WebkitFilter="invert(100%)";
-	document.body.style.filter="invert(100%)";
-	document.body.style.backgroundColor = localStorage.getItem("themeColour");
-};
-if (localStorage.getItem("theme") == "saturated") {
-	document.body.style.WebkitFilter="saturate(200%)";
-	document.body.style.filter="saturate(200%)";
-};
 
 // Functions for other content settings
 if (localStorage.getItem('mobile.navLoc') == "bottom") {
@@ -78,6 +97,9 @@ if (localStorage.getItem('mobile.navLoc') == "bottom") {
 // Global Functions
 
 function toggleMenu() { //The commented code is for the page responding to when the menu is opened.
+	if (localStorage.getItem("theme") == "v0.8a") {
+		toggleMenuOldTheme();
+	} else {
 	if (menu == true) {
 		document.getElementById('menuTextBox').style.color = 'transparent';
 		document.getElementById('menu').className = 'hidden';
@@ -89,7 +111,7 @@ function toggleMenu() { //The commented code is for the page responding to when 
 			document.getElementById("menu").className += " menuBottom";
 		};
 		menu = false;
-	} else {
+		} else {
 		document.getElementById('menuTextBox').style.color = 'white';
 		document.getElementById('menu').className = 'open';
 		document.getElementById('menuTextBox').style.cursor = "pointer";
@@ -100,8 +122,30 @@ function toggleMenu() { //The commented code is for the page responding to when 
 			document.getElementById("menu").className += " menuBottom";
 		};
 		menu = true;
+	};
 	}
 }
+
+function toggleMenuOldTheme() { //The commented code is for the page responding to when the menu is opened.
+	if (menu == true) {
+		document.getElementById('menuTextBox').style.color = 'transparent';
+		document.getElementById('classicMenu').className = 'noshow';
+		document.getElementById('menuTextBox').style.cursor = "initial";
+		document.getElementById('menuToggle').innerHTML = 'keyboard_arrow_right';
+		//document.getElementsByClassName('content')[0].id = 'initial';
+		//document.getElementById('pageName').className = 'hidden';
+		menu = false;
+	} else {
+		document.getElementById('menuTextBox').style.color = 'white';
+		document.getElementById('classicMenu').className = 'open';
+		document.getElementById('menuTextBox').style.cursor = "pointer";
+		document.getElementById('menuToggle').innerHTML = 'keyboard_arrow_left';
+		//document.getElementsByClassName('content')[0].id = 'contentOpen';
+		//document.getElementById('pageName').className = 'pageNameCondensed';
+		menu = true;
+	}
+}
+
 function setPage(newLocation) {
 	window.location.href = "https://jgames101.github.io" + newLocation;
 }
@@ -169,4 +213,8 @@ function getAllUrlParams(url) {
   }
 
   return obj;
-}
+};
+
+// Colour Corrections at the end
+$('.info').css('color', localStorage.getItem("themeColour"));
+$('.info').children().css('color', localStorage.getItem("themeColour"));

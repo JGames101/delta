@@ -1,0 +1,21 @@
+<h2>1.4b</h2><br>
+<h3>Overview</h3><br>
+v1.4b is a major change in the way that the site's customization, and moves closer to an app-style.<br>
+<ul>
+	<li>Dark theme works, and there's a new "Classic" v0.8a theme.
+	<li>Added a new "Setup" page, that appears the first time you visit the site.
+</ul>
+<br>
+<h3>Themes</h3><br>
+<h4>Dark Theme</h4><br>
+The dark theme is now functional. It is identical to Light, but replaces the light grey with dark grey.<br>
+<img src="/setup/screenshots/dark.png" width="100%">
+This was very simple to implement, because code-wise, it is the same as light.
+<h4>"Classic" v0.8a Theme</h4><br>
+This theme tries to replicate the design for version 0.8a, but with the modern features of the site. The navigation bar is gone, as well as the icons. There is only the expand button in the top left. When clicked, you then have links to all the pages.<br>
+<img src="/setup/screenshots/v0.8a.png" width="100%">
+This theme was difficult to implement, because it required a lot of editing behaviours of the site to emulate the old menu style. That means there's a second style of menu, only used for the old-fashioned style menu. Earlier versions may be implemented, but currently, only v0.8a is implemented.<br>
+<br>
+<h3>Setup</h3><br>
+When visiting the site for the first time, you will be redirected to /setup/. This page has personalization options, so that you get that setup before entering the site.<br>
+This site acts like multiple pages, but is actually just one being automatically scrolled.

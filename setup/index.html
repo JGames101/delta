@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="/setup/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
+<script src="/setup/script.js"></script>
+<title>Setup | James M</title>
+</head>
+<body>
+<div id="welcome" class="page">
+	<h1 id="welcomeTitle">Welcome!</h1>
+	<p id="welcomeText" class="box">Welcome to James M's Site!<br>This site is used for experiments and tests with HTML5, and extensions such as JQuery. Originally designed to have segmented pages such as JavaScript, JQuery, or HTML5, the site now also contains things such as a navigation menu, personalization, and much more.<br><br>
+	So... this quick setup is to get all of your personalization figured out. It can always be changed in options later.</p>
+	<a href="#theme"><div id="gotoTheme" class="nextButton"><p><b>\/</b></p></div></a>
+</div>
+<div id="theme" class="page">
+	<h1 id="themeTitle">Theme</h1>
+	<p id="themeText" class="box">The theme controls the overall look of the site, from making it bright, colourful, greyscale, or dark. This applies to the whole site, and can even change how certain things, such as the navigation bar, behave.</p>
+	<div id="themeBox">
+	<div onclick="setTheme('photo')" class="themeChoice" id="photo"><img class="themeThumb" src="/setup/screenshots/photo.png" width="100%"><p>Photo</p></div>
+	<div onclick="setTheme('colourful')" class="themeChoice" id="colourful"><img class="themeThumb" src="/setup/screenshots/colourful.png" width="100%"><p>Colourful</p></div>
+	<div onclick="setTheme('Greyscale')" class="themeChoice" id="Greyscale"><img class="themeThumb" src="/setup/screenshots/greyscale.png" width="100%"><p>Greyscale</p></div>
+	<div onclick="setTheme('light')" class="themeChoice" id="light"><img class="themeThumb" src="/setup/screenshots/light.png" width="100%"><p>Light</p></div>
+	<div onclick="setTheme('dark')" class="themeChoice" id="dark"><img class="themeThumb" src="/setup/screenshots/dark.png" width="100%"><p>Dark</p></div>
+	<div onclick="setTheme('v0.8a')" class="themeChoice" id="v0.8a"><img class="themeThumb" src="/setup/screenshots/v0.8a.png" width="100%"><p>Classic</p></div>
+	</div>
+	<a href="#background"><div id="gotoBackground" class="nextButton"><p><b>\/</b></p></div></a>
+</div>
+<div id="background" class="page">
+	<h1 id="themeTitle">Background</h1>
+	<p id="themeText" class="box">Set the background photo for the site. This applies to all pages, and gives the site a different feel, depending on the colour and theme.</p>
+	<div id="themeBox">
+		<div onclick="setPhoto('1')" class="photoChoice" id="1"><img class="themeThumb" src="/photos/1btn.jpg" width="100%"><p>Dandelion</p></div>
+		<div onclick="setPhoto('2')" class="photoChoice" id="2"><img class="themeThumb" src="/photos/2.jpg" width="100%"><p>Cactus</p></div>
+		<div onclick="setPhoto('3')" class="photoChoice" id="3"><img class="themeThumb" src="/photos/3.jpg" width="100%"><p>Flowers</p></div>
+		<div onclick="setPhoto('4')" class="photoChoice" id="4"><img class="themeThumb" src="/photos/4.jpg" width="100%"><p>Snapdragon</p></div>
+		<div onclick="setPhoto('5')" class="photoChoice" id="5"><img class="themeThumb" src="/photos/5.jpg" width="100%"><p>River</p></div>
+		<div onclick="setPhoto('6')" class="photoChoice" id="6"><img class="themeThumb" src="/photos/6.jpg" width="100%"><p>Leaf</p></div>
+		<div onclick="setPhoto('7')" class="photoChoice" id="7"><img class="themeThumb" src="/photos/7.jpg" width="100%"><p>Berry</p></div>
+		<div onclick="setPhoto('8')" class="photoChoice" id="8"><img class="themeThumb" src="/photos/8.jpg" width="100%"><p>Rock</p></div>
+	</div>
+	<a href="#done"><div id="gotoTheme" class="nextButton"><p><b>\/</b></p></div></a>
+</div>
+<div id="done" class="page">
+	<h1 id="themeTitle">Great! You're Done!</h1>
+	<p id="themeText" class="box">You're all setup! Just press finish!</p>
+	<div onclick="finish()" id="gotoTheme" class="nextButton"><p><b>Finish</b></p></div>
+</div>
+</body>
+</html>

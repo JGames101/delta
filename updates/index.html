@@ -22,7 +22,6 @@
 <meta charset="utf-8">
 <link href="/styles.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
-<link rel="import" href="nav.html">
 <title>Updates | James M</title>
 </head>
 <body>
@@ -57,6 +56,12 @@
 <h1 id="pageName">Updates | James M</h1>
 <div class="colourBackground">
 <div class="content">
+	<div class="card">
+		<h2>v1.4b</h2>
+		<p>New Theme Group: Classic!<br>Classic contains v0.8a.<br>Dark theme is now functional. It is just like light theme, but dark grey instead of light grey.<br>
+		If you're visiting for the first time, or have never used this version before, you will be sent to the setup page. Here, it guides you through all the personalization you can make. It should only be displayed once, but can reactivated by going to jgames101.github.io/setup/ or clicking the button in options.</p>
+		<p class="moreInfo info" style="color:black;" id="v1.31b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v1.31b')">More Info<span></p>
+	</div>
 	<div class="card">
 		<h2>v1.31b</h2>
 		<p>New Themes: Light, and Dark.<br>New Mobile options section. It currently conains navbar location.</p>
@@ -229,12 +234,7 @@
 </div>
 </div>
 <script> // setting the colour of the more info buttons.
-var infoBtnCount = document.getElementsByClassName('moreInfo').length;
-var colourNum = 0;
-while (colourNum < infoBtnCount) {
-	document.getElementsByClassName('moreInfo')[colourNum].style.color = localStorage.getItem("themeColour");
-	colourNum += 1;
-}
+$('.info').css('color', localStorage.getItem("themeColour"));
 function moreInfo(vNum) {
 	window.location.href = 'https://jgames101.github.io/txt/?document=' + 'https://jgames101.github.io/updates/info/logs/' + vNum + '.txt';
 }

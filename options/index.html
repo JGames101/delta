@@ -51,7 +51,7 @@
 		</div>
 		<div class="card" id="colourCard">
 			<h2>THEME COLOUR</h2>
-			Current Theme Colour: <b><span id="currentTheme">Please Enable JavaScript.</span></p><br>
+			<p>Current Theme Colour: <b><span id="currentTheme">Please Enable JavaScript.</span></p><br>
 			Suggested Colour: <span id="suggestedPreview">▇▇▇▇▇▇▇▇</span> <button onclick="javascript:setSuggestedColour()">Set Colour!</button><br>
 			Colour Picker: <input type="color" id="colourPicker" value="#486e89" onchange="javascript:setPickerColour()"><br>
 			Custom Colour: <input id="newColour" name="newColour" value="Please Turn On JavaScript."></input> <button onclick="javascript:setColour()">Set Colour!</button><br>
@@ -62,19 +62,14 @@
 			<p>Select your theme: 
 			<select id="themeSelect" onchange="javascript:changeTheme()">
 				<optgroup label="Regular Themes">
-					<option value="photoDef">Default</option>
+					<option value="photoDef">Photo</option>
 					<option value="colourful">Colourful</option>
 					<option value="Greyscale">Greyscale</option>
 					<option value="light">Light</option>
 					<option value="dark">Dark</option>
 				</optgroup>
-				<optgroup label="Beta Themes">
-					<option value="Blur">Blur (Limited Browser Support)</option>
-					<option value="transparent">Transparent</option>
-				</optgroup>
-				<optgroup label="Funny Things">
-					<option value="saturated">Over Saturated</option>
-					<option value="inverted">Inverted Colours</option>
+				<optgroup label="Classic">
+					<option value="v0.8a">v0.8a</option>
 				</optgroup>
 			</select>
 			</p>
@@ -98,6 +93,7 @@
 				</p>
 			</div>
 		</div>
+		<h2 class="pinned">RE-SETUP</h2>
 		<h2 class="pinned">INSTALL</h2>
 		<div class="card">
 			<h2>UWP</h2>
