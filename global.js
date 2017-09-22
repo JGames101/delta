@@ -4,7 +4,7 @@ var online = navigator.onLine;
 var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			if (myObj.version !== "debug") {
+			if (myObj.version != "debug") {
 				if (localStorage.getItem("user") == undefined) {
 					console.log("User visiting for the first time! Opening new user page...");
 					window.location.href = "/setup/"
