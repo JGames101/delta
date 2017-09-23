@@ -367,6 +367,9 @@ i {
 	::-webkit-scrollbar {
       width: 0px;
 	}
+	#menuTextBox {
+		margin-bottom: 32px;
+	}
 }
 @media (min-width: 992px){
 	.card {
