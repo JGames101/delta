@@ -5,8 +5,6 @@ if (localStorage.getItem("user") == undefined) {
 	console.log("User visiting for the first time! Opening new user page...");
 	window.location.href = "/setup/"
 };
-xmlhttp.open("GET", "/latest.json", true);
-xmlhttp.send();
 
 
 
