@@ -103,4 +103,7 @@ p {
 		max-width: 95%;
 		margin-left: 2.5%;
 	}
+	.page {
+		overflow-y: none;
+	}
 }

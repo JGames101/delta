@@ -28,7 +28,12 @@
 </head>
 <body>
 <noscript>
-	<object id="jsmissing" data="/jsmissing.html" width="100%" height="48px"></object> <!-- The alert for JavaScript being disabled. -->
+	<object id="jsmissing" data="/jsmissing.html" width="100%" height="100%" style="z-index:512;height:100%!important;"></object>	<!-- The alert for JavaScript being disabled. -->
+	<style>
+	* {
+		overflow: hidden;
+	}
+	</style>
 </noscript>
 <div id="menuButton" onclick="javascript:toggleMenu()"> <!-- For opening control menu -->
 	<i class="material-icons md-light md-32" id="menuToggle">keyboard_arrow_right</i>
