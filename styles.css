@@ -252,7 +252,7 @@ i {
 #desktopOptions {
 	display: none;
 }
-@media (min-width: 0px) and (max-width: 991px){
+@media (min-width: 0px) and (max-width: 767px){
 	* {
 		overflow-x: hidden !important;
 	}
@@ -375,13 +375,16 @@ i {
 		margin-left: 0px;
 	}
 }
-@media (min-width: 992px){
+@media (min-width: 768px){
 	.card {
-		width: 45%;
+		width: 46.25%;
+	}
+	.wideCard {
+		width: 95%;
 	}
 	.content {
-		padding-left: 10%;
-		padding-right: 10%;
+		padding-left: 2.5%;
+		padding-right: 2.5%;
 	}
 	.open {
 		width: 50% !important;
@@ -389,9 +392,13 @@ i {
 	#tabletOptions {
 		display: initial;
 	}
+	::-webkit-scrollbar {
+      width: 0px;
+	}
+	
 }
 
-@media (min-width: 1488px){
+@media (min-width: 1025px){
 	.card {
 		width: 32%;
 	}
