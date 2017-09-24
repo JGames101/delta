@@ -29,7 +29,14 @@ document.getElementById('menu').style.backgroundColor = localStorage.getItem("th
 
 // Theme Stuff
 if (localStorage.getItem("theme") == "light") {
-	document.getElementById('menu').style.backgroundColor = '#cccccc';
+	document.getElementById('menu').style.backgroundColor = '#fafafa';
+	$("#angularIcon").attr("src","/images/angularJS.dark.png");
+	$("#javascriptIcon").attr("src","/images/javascript.dark.png");
+	$("#jqueryIcon").attr("src","/images/jquery.dark.png");
+	//#555555 colour for menu icons menuToggle
+	$(".menuIcon").css("color", "#555555");
+	$(".menuItem").css("color", "#555555");
+	$("#menuToggle").css("color", "#555555");
 	var infoBtnCount = document.getElementsByClassName('pinned').length;
 	var colourNum = 0;
 	while (colourNum < infoBtnCount) {
@@ -102,7 +109,6 @@ function toggleMenu() { //The commented code is for the page responding to when 
 		toggleMenuOldTheme();
 	} else {
 	if (menu == true) {
-		document.getElementById('menuTextBox').style.color = 'transparent';
 		document.getElementById('menu').className = 'hidden';
 		document.getElementById('menuTextBox').style.cursor = "initial";
 		document.getElementById('menuToggle').innerHTML = 'keyboard_arrow_right';
@@ -113,7 +119,6 @@ function toggleMenu() { //The commented code is for the page responding to when 
 		};
 		menu = false;
 		} else {
-		document.getElementById('menuTextBox').style.color = 'white';
 		document.getElementById('menu').className = 'open';
 		document.getElementById('menuTextBox').style.cursor = "pointer";
 		document.getElementById('menuToggle').innerHTML = 'keyboard_arrow_left';

@@ -40,15 +40,16 @@ h1 {
 	margin-left: 64px;
 	-webkit-transition-duration: 0.4s; /* Safari */
 	transition-duration: 0.4s;
+	padding-bottom: 64px;
 }
 .card {
 	background-color: white;
 	border-radius: 16px;
 	text-align: center;
 	display: inline-table;
-	margin-bottom: 16px;
+	margin-top: 16px;
 	margin-left: 10px;
-	box-shadow: 0 0 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	box-shadow: 0 0 16px 0 rgba(0,0,0,0.2), 0 0px 16px 0 rgba(0,0,0,0.19);
 	min-height: 128px;
 	color: black;
 }
@@ -167,7 +168,7 @@ h2 {
 	transition-duration: 0.4s;
 }
 #menuTextBox {
-	color: transparent;
+	color: white;
 }
 #menuTitle {
 	margin-top: 16px;
@@ -369,6 +370,9 @@ i {
 	}
 	#menuTextBox {
 		margin-bottom: 32px;
+	}
+	#pageName {
+		margin-left: 0px;
 	}
 }
 @media (min-width: 992px){

@@ -1,0 +1,11 @@
+<h2>1.41b</h2><br>
+<h3>Overview</h3><br>
+New Light theme changes!<br>
+<ul>
+	<li>Light theme's navbar has been slightly changed
+</ul>
+<br>
+<h3>Themes</h3><br>
+The light theme's navigation bar has been made lighter, as well as the text and icons being darkened.<br>
+<img src="/setup/screenshots/light.png" width="100%">
+<br>
