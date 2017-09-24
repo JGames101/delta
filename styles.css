@@ -174,26 +174,6 @@ h2 {
 	margin-top: 16px;
 	cursor: initial;
 }
-::-webkit-scrollbar {
-      width: 15px;
-}
-::-webkit-scrollbar-track {
-      background-color: #536368;
-} /* the new scrollbar will have a flat appearance with the set background color */
- 
-::-webkit-scrollbar-thumb {
-      background-color: #2b3538; 
-	  border-radius: 16px;
-} /* this will style the thumb, ignoring the track */
- 
-::-webkit-scrollbar-button {
-      background-color: #536368;
-	  display: none;
-} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
- 
-::-webkit-scrollbar-corner {
-      background-color: #536368;
-} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
 #menuIconBox {
 	position: absolute;
 	top: 64px;
@@ -253,126 +233,149 @@ i {
 	display: none;
 }
 @media (min-width: 0px) and (max-width: 767px){
-	* {
-		overflow-x: hidden !important;
-	}
-	.colourBackground {
-		background-color: rgb(43, 53, 56);
-		min-height: 60%;
-	}
-	.card {
-		width: 100%;
-		margin-left: 0px;
-		border-radius: 12px;
-	}
-	.video {
+	@media screen and (orientation:portrait) {
+		* {
+			overflow-x: hidden !important;
+		}
+		.colourBackground {
+			background-color: rgb(43, 53, 56);
+			min-height: 60%;
+		}
+		.card {
+			width: 100%;
+			margin-left: 0px;
+			border-radius: 12px;
+		}
+		.video {
+			border-top-left-radius: 12px;
+			border-top-right-radius: 12px;
+		}
+		.content {
+			margin-left: 0px;
+		}
+		body {
+			padding: none;
+			background-image: url('/photos/3.jpg');
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			overflow-x: hidden;
+		}
+		.card {
+			font-size: 18px;
+		}
+		h2 {
+			font-size: 32px;
+		}
+		#connecmissing {
+			height: 90px !important;
+			display: none;
+		}
+		#jsmissing {
+			height: 90px !important;
+			display: none;
+		}
+		.open {
+			width: 100% !important;
+			height: 100% !important;
+			display: block !important;
+		}
+		#menu {
+			height: 64px;
+			width: 100%;
+			overflow: hidden;
+		}
+		#menuIconBox {
+			left: 16px;
+			top: 16px;
+			width: 100000%;
+			margin-left: 48px;
+		}
+		.menuIcon {
+			width: 32px !important;
+			height: 32px !important;
+			margin-right: 24px;
+		}
+		#photoBtn1 {
 		border-top-left-radius: 12px;
+		}
+		#photoBtn4 {
 		border-top-right-radius: 12px;
+		}
+		#menuTitle {
+			display: none;
+		}
+		.menuItem:nth-child(2) {
+			margin-top: 64px;
+		}
+		#contentOpen {
+			margin-left: 0px;
+		}
+		#menuButton {
+			-ms-transform: rotate(90deg); /* IE 9 */
+			-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+			transform: rotate(90deg);
+		}
+		#mobileOptions {
+			display: initial;
+		}
+		.menuBottom {
+			top: initial !important;
+			bottom: 0px !important;
+		}
+		.menuBtnBottom {
+			top: initial !important;
+			bottom: 16px !important;
+			-ms-transform: rotate(270deg) !important; /* IE 9 */
+			-webkit-transform: rotate(270deg) !important; /* Chrome, Safari, Opera */
+			transform: rotate(270deg) !important;
+		}
+		#menuIconBox.barOnBottom {
+			top: initial !important;
+			bottom: -8px !important;
+			background-color: inherit !important;
+		}
+		#menuIconBox {
+			position: fixed !important;
+		}
+		.menuBottom.open {
+			height: 75% !important;
+			overflow-y: scroll !important;
+		}
+		.open {
+			overflow-y: scroll !important;
+		}
+		::-webkit-scrollbar {
+		  width: 0px;
+		}
+		#menuTextBox {
+			margin-bottom: 32px;
+		}
+		#pageName {
+			margin-left: 0px;
+		}
 	}
-	.content {
-		margin-left: 0px;
-	}
-	body {
-		padding: none;
-		background-image: url('/photos/3.jpg');
-		background-attachment: fixed;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		overflow-x: hidden;
-	}
-	.card {
-		font-size: 18px;
-	}
-	h2 {
-		font-size: 32px;
-	}
-	#connecmissing {
-		height: 90px !important;
-		display: none;
-	}
-	#jsmissing {
-		height: 90px !important;
-		display: none;
-	}
-	.open {
-		width: 100% !important;
-		height: 100% !important;
-		display: block !important;
-	}
-	#menu {
-		height: 64px;
-		width: 100%;
-		overflow: hidden;
-	}
-	#menuIconBox {
-		left: 16px;
-		top: 16px;
-		width: 100000%;
-		margin-left: 48px;
-	}
-	.menuIcon {
-		width: 32px !important;
-		height: 32px !important;
-		margin-right: 24px;
-	}
-	#photoBtn1 {
-	border-top-left-radius: 12px;
-	}
-	#photoBtn4 {
-	border-top-right-radius: 12px;
-	}
-	#menuTitle {
-		display: none;
-	}
-	.menuItem:nth-child(2) {
-		margin-top: 64px;
-	}
-	#contentOpen {
-		margin-left: 0px;
-	}
-	#menuButton {
-		-ms-transform: rotate(90deg); /* IE 9 */
-		-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-		transform: rotate(90deg);
-	}
-	#mobileOptions {
-		display: initial;
-	}
-	.menuBottom {
-		top: initial !important;
-		bottom: 0px !important;
-	}
-	.menuBtnBottom {
-		top: initial !important;
-		bottom: 16px !important;
-		-ms-transform: rotate(270deg) !important; /* IE 9 */
-		-webkit-transform: rotate(270deg) !important; /* Chrome, Safari, Opera */
-		transform: rotate(270deg) !important;
-	}
-	#menuIconBox.barOnBottom {
-		top: initial !important;
-		bottom: -8px !important;
-		background-color: inherit !important;
-	}
-	#menuIconBox {
-		position: fixed !important;
-	}
-	.menuBottom.open {
-		height: 75% !important;
-		overflow-y: scroll !important;
-	}
-	.open {
-		overflow-y: scroll !important;
-	}
-	::-webkit-scrollbar {
-      width: 0px;
-	}
-	#menuTextBox {
-		margin-bottom: 32px;
-	}
-	#pageName {
-		margin-left: 0px;
+	@media screen and (orientation:landscape) {
+		.card {
+			width: 46.25%;
+		}
+		.wideCard {
+			width: 95%;
+		}
+		.content {
+			padding-left: 2.5%;
+			padding-right: 2.5%;
+		}
+		#menu.open {
+			width: 50% !important;
+		}	
+		#tabletOptions {
+			display: initial;
+		}
+		::-webkit-scrollbar {
+			width: 0px;
+		}
 	}
 }
 @media (min-width: 768px){
@@ -421,4 +424,23 @@ i {
 	#desktopOptions {
 		display: initial;
 	}
-}
+	::-webkit-scrollbar {
+      width: 15px;
+	}
+	::-webkit-scrollbar-track {
+      background-color: #536368;
+	} /* the new scrollbar will have a flat appearance with the set background color */
+ 
+	::-webkit-scrollbar-thumb {
+      background-color: #2b3538; 
+	  border-radius: 16px;
+	} /* this will style the thumb, ignoring the track */
+ 
+	::-webkit-scrollbar-button {
+      background-color: #536368;
+	  display: none;
+	} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+ 
+	::-webkit-scrollbar-corner {
+      background-color: #536368;
+	} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
