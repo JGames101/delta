@@ -285,14 +285,6 @@ i {
 	h2 {
 		font-size: 32px;
 	}
-	#connecmissing {
-		height: 90px !important;
-		display: none;
-	}
-	#jsmissing {
-		height: 90px !important;
-		display: none;
-	}
 	.open {
 		width: 100% !important;
 		height: 100% !important;

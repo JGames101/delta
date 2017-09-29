@@ -26,6 +26,8 @@ function setBackground(backNum) {
 	console.log(localStorage.getItem("backgroundImage"));
 	document.body.style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.jpg)';
 	document.getElementById('suggestedPreview').style.color = suggestedColours[localStorage.getItem("backgroundImage") - 1];
+	localStorage.setItem("themeColour", suggestedColours[localStorage.getItem("backgroundImage") - 1]);
+	location.reload();
 }
 
 function setColour() {
@@ -78,4 +80,15 @@ function mbNavLoc() { // setting the location of the navbar on mobile
 	console.log(document.getElementById('mobileNavLoc').value);
 	localStorage.setItem("mobile.navLoc", document.getElementById('mobileNavLoc').value);
 	location.reload();
+}
+
+document.getElementById('legacyTitle').innerHTML = "LEGACY <i class='material-icons'>keyboard_arrow_down</i>";
+function expandLegacy() {
+	if (document.getElementsByClassName('legacy')[0].style.display == 'none') {
+		document.getElementsByClassName('legacy')[0].style.display = 'initial';
+		document.getElementById('legacyTitle').innerHTML = "LEGACY <i class='material-icons'>keyboard_arrow_up</i>";
+	} else {
+		document.getElementsByClassName('legacy')[0].style.display = 'none';
+		document.getElementById('legacyTitle').innerHTML = "LEGACY <i class='material-icons'>keyboard_arrow_down</i>";
+	}
 }
