@@ -5,8 +5,7 @@ if (localStorage.getItem("user") == undefined) {
 	console.log("User visiting for the first time! Opening new user page...");
 	window.location.href = "/setup/"
 };
-
-
+calculateCardColumns();
 
 if (localStorage.getItem("backgroundImage") == undefined) {
 	console.log("Missing background image settings.");
@@ -27,6 +26,84 @@ if (localStorage.getItem("theme") == "Greyscale") {
 };
 document.getElementById('menu').style.backgroundColor = localStorage.getItem("themeColour");
 
+// Calculate Cards
+function calculateCardColumns() {
+	if (screen.width > "1024") {
+		cardsDesktop();
+	} else if (screen.width > "767") {
+		cardsTablet();
+	}	else if (screen.width > screen.height) {
+		cardsTablet();
+	} else {
+		cardsPhone();
+	};
+}
+
+function cardsDesktop() {
+	console.log("desktop");
+	cardColumns(3);
+};
+function cardsTablet() {
+	console.log("tablet");
+	cardColumns(2);
+};
+function cardsPhone() {
+	console.log("phone");
+	cardColumns(1);
+};
+function cardColumns(colCount) {
+	console.log(colCount);
+	var type = 1;
+	if ($(".pinned").length == "0") {
+		while (type < colCount+1) {
+			$('.content').append('<div id="column' + type + '" class="column"></div>');
+			console.log(type)
+			type += 1;
+		};
+		var type = 1;
+		var cardVal = 0;
+		while (cardVal < $( ".card" ).length) {
+			console.log('Card: ' + cardVal + ' type: ' + type);
+			document.getElementsByClassName('card')[0].style.width = '100%';
+			document.getElementById('column' + type).appendChild(document.getElementsByClassName('card')[0]);
+			
+			if (type > colCount-1) {
+				type = 1;
+			} else {
+				type += 1;
+			};
+			cardVal += 1;
+		};
+	} else {
+		var pinNum = 1;
+		var type = 1;
+		while (pinNum < $(".pinnedDiv").length+1) {
+			while (type < colCount+1) {
+				$('#pinned' + pinNum).append('<div id="column' + type + '-' + pinNum + '" class="column"></div>');
+				console.log(type + "-" + pinNum);
+				type += 1;
+			};
+			pinNum += 1;
+			type = 1;
+		}
+		var pinNum = 1;
+		while (pinNum < $( ".pinned" ).length+2) {
+			var cardVal = 0;
+			var type = 1;
+			while (cardVal < $(".card" + pinNum).length) {
+				document.getElementsByClassName('card' + pinNum)[0].style.width = '100%';
+				document.getElementById('column' + type + '-' + pinNum).appendChild(document.getElementsByClassName('card' + pinNum)[0]);
+				if (type > colCount-1) {
+					type = 1;
+				} else {
+					type += 1;
+				};
+				cardVal += 1;
+			};
+			pinNum += 1;
+		};
+	};
+};
 // Theme Stuff
 if (localStorage.getItem("theme") == "light") {
 	document.getElementById('menu').style.backgroundColor = '#fafafa';

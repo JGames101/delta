@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     Notification.requestPermission();
 });
 </script>
-<body>
+<body onresize="calculateCardColumns()">
 <noscript>
 	<object id="jsmissing" data="/jsmissing.html" width="100%" height="100%" style="z-index:512;height:100%!important;"></object>	<!-- The alert for JavaScript being disabled. -->
 	<style>
@@ -79,10 +79,11 @@ document.addEventListener('DOMContentLoaded', function () {
 <h1 id="pageName">James M</h1>
 <div class="colourBackground">
 <div class="content" id="intial">
-	<a href="/updates/"><div class="card">
+<div id="pinned1" class="pinnedDiv">
+	<div class="card card1" onclick="javascript:setPage('/updates/')">
 		<h2>UPDATES</h2>
 		<p>Click here to see update history.</p>
-		<p id="currentVer">Installed Version: 1.42b<br>
+		<p id="currentVer">Installed Version: 1.43b<br>
 		Latest Version: <span id="latestVer">loading...</span>
 		</p>
 		<script> // This Script loads the latest version.
@@ -96,43 +97,48 @@ document.addEventListener('DOMContentLoaded', function () {
 		xmlhttp.open("GET", "/latest.json", true);
 		xmlhttp.send();
 		</script>
-	</div></a>
-	<a href="/options/"><div class="card">
+	</div>
+	<div class="card card1" onclick="javascript:setPage('/options/')">
 		<h2>OPTIONS</h2>
 		<p>Personalization, Install, Device-Specific Options</p>
-	</div></a>
+	</div>
+</div>
+<div id="pinned2" class="pinnedDiv">
 	<h2 class="pinned">SUGGESTIONS</h2>
-	<a href="/angular/"><div class="card">
+	<div class="card card2" onclick="javascript:setPage('/angular/')">
 		<h2>ANGULAR</h2>
 		<span>My tests and experiments with AngularJS!</span>
 		<p class="info">AngularJS</p>
-	</div></a>
-	<a href="/javascript/"><div class="card">
+	</div>
+	<div class="card card2" onclick="javascript:setPage('/javascript/')">
 		<h2>JAVASCRIPT</h2>
 		<span>My tests and experiments with Javascript!</span>
 		<p class="info">JS</p>
-	</div></a>
-	<a href="/jquery/"><div class="card">
+	</div>
+	<div class="card card2" onclick="javascript:setPage('/jquery/')">
 		<h2>JQUERY</h2>
 		<p>My tests and experiments with JQuery!</p>
 		<p class="info">JQuery</p>
-	</div></a>
-	<a href="/html5/"><div class="card">
+	</div>
+	<div class="card card2" onclick="javascript:setPage('/html5/')">
 		<h2>HTML5 EXPERIMENTS</h2>
 		<span>Other Designs I made with HTML5!</span>
 		<p class="info">AngularJS</p>
-	</div></a>
-	<a href="/photos/"><div class="card">
+	</div>
+	<div class="card card2" onclick="javascript:setPage('/photos/')">
 		<h2>PHOTOGRAPHY</h2>
 		<p>Tap here for a gallery of my photos.</p>
 		<p class="info">Early Test</p>
-	</div></a>
+	</div>
+</div>
+<div id="pinned3" class="pinnedDiv">
 	<h2 class="pinned">OTHER</h2>
-	<div class="card wideCard">
+	<div class="card wideCard card3">
 		<iframe class="video" width="100%" height="315px" src="https://www.youtube.com/embed/z5XhoUH3sEc" frameborder="0" allowfullscreen></iframe>
 		<h2>BERLIN VR</h2>
 		<p>Some VR images from Berlin.</p>
 	</div>
+</div>
 </div>
 </div>
 <script src="/global.js"></script>

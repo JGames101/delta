@@ -11,7 +11,7 @@
 <style>
 </style>
 </head>
-<body>
+<body onresize="calculateCardColumns()">
 	<noscript>
 	<object id="jsmissing" data="/jsmissing.html" width="100%" height="100%" style="z-index:512;height:100%!important;"></object>	<!-- The alert for JavaScript being disabled. -->
 	<style>
@@ -47,30 +47,34 @@
 	<h1 id="pageName">AngularJS | James M</h1>
 	<div class="colourBackground">
 	<div class="content" ng-app="">
-		<div class="card" ng-app="">
+		<div id="pinned1" class="pinnedDiv">
+		<div class="card card1" ng-app="">
 			<h2>WELCOME</h2>
 			<p>An archive for all of my AngularJS experiments as I learn it. Will hopefully soon be filled up with amazing experiments and projects!</p>
 			<p>No AngularJS tags are displayed, because everything on this page uses angularJS.</p>
 		</div>
+		</div>
+		<div id="pinned2" class="pinnedDiv">
 		<h2 class="pinned">EXPERIMENTS</h2>
-		<div class="card" ng-app="" style="width:{{myWidth}}">
+		<div class="card card2" ng-app="" style="width:{{myWidth}}">
 			<h2>Size Changing</h2>
 			<p>The magical card that changes size!</p>
 			<p>Width: <input ng-model="myWidth"></p>
 		</div>
-		<div class="card" ng-app="" style="background-color:{{myCol}}" ng-init="myCol='seagreen'">
+		<div class="card card2" ng-app="" style="background-color:{{myCol}}" ng-init="myCol='seagreen'">
 			<h2>COLOURS</h2>
 			<p>Card Colour: <input ng-model="myCol" value="{{myCol}}"></p>
 		</div>
-		<div class="card">
+		<div class="card card2">
 			<h2>ADDITION</h2>
 			<p><input type="number" ng-model="input1"> + <input type="number" ng-model="input2"></p>
 			<p>The answer is {{input1 + input2}}</p>
 		</div>
-		<div class="card" ng-app="" ng-init="name='Bob'">
+		<div class="card card2" ng-app="" ng-init="name='Bob'">
 			<h2>ENTER YOUR NAME</h2>
 			<p>Name: <input id="nameBox" type="text" ng-model="name"></p>
 			<p>Hello, <span ng-bind="name"></span>!</p>
+		</div>
 		</div>
 	</div>
 </div>

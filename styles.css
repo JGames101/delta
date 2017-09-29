@@ -1,5 +1,5 @@
 @charset "utf-8";
-* {-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
+* {-webkit-tap-highlight-color:rgba(0, 0, 0, 0);cursor:default;}
 #jsMissing {
 	background-color: #ff8e75;
 	color: black;
@@ -39,6 +39,7 @@ h1 {
 	font-weight:200;
 }
 .content {
+	position: relative;
 	overflow: hidden;
 	margin-left: 64px;
 	-webkit-transition-duration: 0.4s; /* Safari */
@@ -241,6 +242,11 @@ i {
 #desktopOptions {
 	display: none;
 }
+.column {
+	display: inline-table;
+	margin-top: 10px;
+	margin-right: 10px;
+}
 @media (min-width: 0px) and (max-width: 767px) and (orientation:portrait){
 	* {
 		overflow-x: hidden !important;
@@ -364,6 +370,10 @@ i {
 	#pageName {
 		margin-left: 0px;
 	}
+	.column {
+		margin-right: 0px !important;
+		width: 100% !important;
+	}
 }
 @media (min-width: 768px) and (max-width: 1024px) {
 	.card {
@@ -445,9 +455,6 @@ i {
 	}
 }
 @media (min-width: 0px) and (max-width: 1024px) and (orientation:landscape) {
-	.card {
-		width: 46.25%;
-	}
 	.wideCard {
 		width: 95%;
 	}
@@ -458,15 +465,21 @@ i {
 	.open {
 		width: 50% !important;
 	}
+	.column {
+		width: 46.25%;
+	}
+	.card {
+		width: 46.25%;
+	}
 }
 
 @media (min-width: 1025px){
-	.card {
-		width: 32%;
-	}
 	.content {
 		padding-left: 5%;
 		padding-right: 5%;
+	}
+	.card {
+		width: 32%;
 	}
 	.open {
 		width: 25% !important;
@@ -503,3 +516,7 @@ i {
 	::-webkit-scrollbar-corner {
       background-color: #536368;
 	} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+	.column {
+		width: 32%;
+	}
+	

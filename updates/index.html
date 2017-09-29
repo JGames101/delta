@@ -24,7 +24,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
 <title>Updates | James M</title>
 </head>
-<body>
+<body onresize="calculateCardColumns()">
 <script src="/jquery-3.2.1.min.js"></script>
 <noscript>
 	<object id="jsmissing" data="/jsmissing.html" width="100%" height="100%" style="z-index:512;height:100%!important;"></object>	<!-- The alert for JavaScript being disabled. -->
@@ -61,6 +61,11 @@
 <h1 id="pageName">Updates | James M</h1>
 <div class="colourBackground">
 <div class="content">
+	<div class="card">
+		<h2>v1.43b</h2>
+		<p><b>INCREDIBLE VERSION 1.43b!</b><br>This version is a HUGE internal update, which has an effect on every page.<br>JavaScript is now required to use the site, because of the changes made in this version:<br>JavaScript now adds 1/2/3 columns (depending on the device) to the page, and moves the cards to the correct column. On pages with card sections, such as the homepage, each of those sections get its own columns. This was inspired by Google+, but it took very long to develop, because of the JavaScript.</p>
+		<p class="moreInfo info" style="color:black;" id="v1.43b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v1.43b')">More Info<span></p>
+	</div>
 	<div class="card">
 		<h2>v1.42b</h2>
 		<p>Horizontal tablet mode remained the same, but vertical tablet mode now has a navigation bar on the bottom.<br>Options has been slightly changed: Background image now changes theme colour, and colour picker has been moved to legacy options. There is now also a "relaunch setup" card.</p>

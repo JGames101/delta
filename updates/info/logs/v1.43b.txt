@@ -1,0 +1,14 @@
+<h2>1.43b</h2><br>
+<h3>Overview</h3><br>
+v1.43, while not being labelled as a major change, internally, it is a big change to the HTML structure and JavaScript.<br>
+<ul>
+	<li>Cards now display right below each other.
+	<li>JavaScript is now required to use the site. 
+</ul>
+<br>
+<h3>Card Changes</h3><br>
+From the beginning of the site, the idea was that cards would display underneath the cards above them. But because of how the CSS behaved, the next row of cards would always be below the longest in the row. This was okay, but made for some uglyness.<br>
+Now, there have been some major changes, with a function in JavaScript that will sort the cards into columns. This is a HUGE change for how the site displays cards, and applies to the entire site.<br>
+<br>
+<h3>JavaScript Required</h3><br>
+Because of the changes with cards, JavaScript is now required for the site to function properly. When you load any page with JavaScript disabled, it will warn you about needing to have JavaScript enabled. Unlike in previous versions, you will not be able to use the site.<br>
