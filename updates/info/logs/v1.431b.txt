@@ -1,0 +1,11 @@
+<h2>1.431b</h2><br>
+<h3>Overview</h3><br>
+v1.431b is a small update, it just adds a new theme, Photo Dark.<br>
+<ul>
+	<li>Photo Dark Theme
+</ul>
+<br>
+<h3>Photo Dark Theme</h3><br>
+The photo dark theme is very similar to the Photo theme, with the card colour from dark theme.<br>
+<img src="/setup/screenshots/photoDark.png" width="100%">
+<br>

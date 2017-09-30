@@ -143,6 +143,17 @@ if (localStorage.getItem("theme") == "dark") {
 	
 };
 
+if (localStorage.getItem("theme") == "photo dark") {
+	$("*").css("color", "white");
+	$("button").css("color", "black");
+	$("select").css("color", "black");
+	$("input").css("color", "black");
+	$("option").css("color", "black");
+	$("optgroup").css("color", "black");
+	$(".card").css("background-color", "#333");
+	
+};
+
 if (localStorage.getItem("theme") == "v0.8a") {
 	document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(43, 53, 56, 0.75)';
 	document.getElementById('menu').id = "classicMenu";
