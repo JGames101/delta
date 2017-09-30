@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     Notification.requestPermission();
 });
 </script>
-<body onresize="calculateCardColumns()">
+<body onresize="window.location.refresh">
 <noscript>
 	<object id="jsmissing" data="/jsmissing.html" width="100%" height="100%" style="z-index:512;height:100%!important;"></object>	<!-- The alert for JavaScript being disabled. -->
 	<style>
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	<div class="card card1" onclick="javascript:setPage('/updates/')" style="cursor:pointer;">
 		<h2>UPDATES</h2>
 		<p>Click here to see update history.</p>
-		<p id="currentVer">Installed Version: 1.431b<br>
+		<p id="currentVer">Installed Version: 1.432b<br>
 		Latest Version: <span id="latestVer">loading...</span>
 		</p>
 		<script> // This Script loads the latest version.

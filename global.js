@@ -199,7 +199,11 @@ function toggleMenu() { //The commented code is for the page responding to when 
 	if (menu == true) {
 		document.getElementById('menu').className = 'hidden';
 		document.getElementById('menuTextBox').style.cursor = "initial";
-		document.getElementById('menuToggle').innerHTML = 'keyboard_arrow_right';
+		if (localStorage.getItem('mobile.navLoc') == "bottom") {
+			document.getElementById('menuButton').className = 'menuBtnBottom regular';
+		} else {
+			document.getElementById('menuButton').className = 'regular';
+		};
 		//document.getElementsByClassName('content')[0].id = 'initial';
 		//document.getElementById('pageName').className = 'hidden';
 		if (localStorage.getItem('mobile.navLoc') == "bottom") {
@@ -209,7 +213,11 @@ function toggleMenu() { //The commented code is for the page responding to when 
 		} else {
 		document.getElementById('menu').className = 'open';
 		document.getElementById('menuTextBox').style.cursor = "pointer";
-		document.getElementById('menuToggle').innerHTML = 'keyboard_arrow_left';
+		if (localStorage.getItem('mobile.navLoc') == "bottom") {
+			document.getElementById('menuButton').className = 'menuBtnBottom reverse';
+		} else {
+			document.getElementById('menuButton').className = 'reverse';
+		};
 		//document.getElementsByClassName('content')[0].id = 'contentOpen';
 		//document.getElementById('pageName').className = 'pageNameCondensed';
 		if (localStorage.getItem('mobile.navLoc') == "bottom") {
