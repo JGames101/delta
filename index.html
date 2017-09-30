@@ -34,7 +34,7 @@ if ('serviceWorker' in navigator) {
 // request permission on page load
 document.addEventListener('DOMContentLoaded', function () {
   if (!Notification) {
-    alert('Desktop notifications not available in your browser. Try Chromium.'); 
+    alert('Desktop notifications not available in your browser. Try Chrome, Firefox, Edge, or Safari.'); 
     return;
   }
 
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <div class="colourBackground">
 <div class="content" id="intial">
 <div id="pinned1" class="pinnedDiv">
-	<div class="card card1" onclick="javascript:setPage('/updates/')">
+	<div class="card card1" onclick="javascript:setPage('/updates/')" style="cursor:pointer;">
 		<h2>UPDATES</h2>
 		<p>Click here to see update history.</p>
 		<p id="currentVer">Installed Version: 1.43b<br>
@@ -98,34 +98,32 @@ document.addEventListener('DOMContentLoaded', function () {
 		xmlhttp.send();
 		</script>
 	</div>
-	<div class="card card1" onclick="javascript:setPage('/options/')">
+	<div class="card card1" onclick="javascript:setPage('/options/')" style="cursor:pointer;">
 		<h2>OPTIONS</h2>
 		<p>Personalization, Install, Device-Specific Options</p>
 	</div>
 </div>
 <div id="pinned2" class="pinnedDiv">
 	<h2 class="pinned">SUGGESTIONS</h2>
-	<div class="card card2" onclick="javascript:setPage('/angular/')">
+	<div class="card card2" onclick="javascript:setPage('/angular/')" style="cursor:pointer;">
 		<h2>ANGULAR</h2>
 		<span>My tests and experiments with AngularJS!</span>
 		<p class="info">AngularJS</p>
 	</div>
-	<div class="card card2" onclick="javascript:setPage('/javascript/')">
+	<div class="card card2" onclick="javascript:setPage('/javascript/')" style="cursor:pointer;">
 		<h2>JAVASCRIPT</h2>
 		<span>My tests and experiments with Javascript!</span>
-		<p class="info">JS</p>
 	</div>
-	<div class="card card2" onclick="javascript:setPage('/jquery/')">
+	<div class="card card2" onclick="javascript:setPage('/jquery/')" style="cursor:pointer;">
 		<h2>JQUERY</h2>
 		<p>My tests and experiments with JQuery!</p>
 		<p class="info">JQuery</p>
 	</div>
-	<div class="card card2" onclick="javascript:setPage('/html5/')">
+	<div class="card card2" onclick="javascript:setPage('/html5/')" style="cursor:pointer;">
 		<h2>HTML5 EXPERIMENTS</h2>
 		<span>Other Designs I made with HTML5!</span>
-		<p class="info">AngularJS</p>
 	</div>
-	<div class="card card2" onclick="javascript:setPage('/photos/')">
+	<div class="card card2" onclick="javascript:setPage('/photos/')" style="cursor:pointer;">
 		<h2>PHOTOGRAPHY</h2>
 		<p>Tap here for a gallery of my photos.</p>
 		<p class="info">Early Test</p>
