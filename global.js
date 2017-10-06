@@ -28,14 +28,16 @@ document.getElementById('menu').style.backgroundColor = localStorage.getItem("th
 
 // Calculate Cards
 function calculateCardColumns() {
-	if (screen.width > "1024") {
-		cardsDesktop();
-	} else if (screen.width > "767") {
-		cardsTablet();
-	}	else if (screen.width > screen.height) {
-		cardsTablet();
-	} else {
-		cardsPhone();
+	if (localStorage.getItem("theme") != "v0.8a") {
+		if (screen.width > "1024") {
+			cardsDesktop();
+		} else if (screen.width > "767") {
+			cardsTablet();
+		}	else if (screen.width > screen.height) {
+			cardsTablet();
+		} else {
+			cardsPhone();
+		};
 	};
 }
 
