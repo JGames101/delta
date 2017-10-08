@@ -3,7 +3,7 @@ var online = navigator.onLine;
 // send user to setup?
 if (localStorage.getItem("user") == undefined) {
 	console.log("User visiting for the first time! Opening new user page...");
-	//window.location.href = "/setup/"
+	window.location.href = "/setup/"
 };
 calculateCardColumns();
 
