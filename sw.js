@@ -1,5 +1,10 @@
-var CACHE_NAME = 'jm014401';
+var CACHE_NAME = 'jm0144';
 var urlsToCache = [
+  '/index.html',
+  '/styles.css',
+  '/global.js',
+  '/404.html',
+  '/jsmissing.html',
   '/',
   '/updates/',
   '/angular/',
@@ -7,12 +12,8 @@ var urlsToCache = [
   '/jquery/',
   '/html5/',
   '/options/',
-  '/index.html',
-  '/styles.css',
-  '/global.js',
-  '/404.html',
-  '/jsmissing.html',
-  '/updates/index.html',
+  '/options/javascript.js',
+  '/javascript/javascript.js',
   '/photos/1.webp',
   '/photos/2.webp',
   '/photos/3.webp',
@@ -21,19 +22,9 @@ var urlsToCache = [
   '/photos/6.webp',
   '/photos/7.webp',
   '/photos/8.webp',
-  '/options/index.html',
-  '/photos/javascript.js',
-  '/latest.json',
-  '/modernizr-webp.js',
-  '/jquery.ui.touch-punch.min.js',
   '/jquery-3.2.1.min.js',
-  '/angular/index.html',
-  '/javascript/index.html',
-  '/javascript/javascript.js',
-  '/angular/index.html',
-  '/jquery/index.html',
-  '/jquery/javascript.js',
-  '/html5/index.html',
+  '/jquery.ui.touch-punch.min.js',
+  '/modernizr-webp.js',
 ];
 
 self.addEventListener('install', function(event) {
@@ -85,26 +76,4 @@ self.addEventListener('fetch', function(event) {
         );
       })
     );
-});
-
-self.addEventListener('push', function(event) {
-  console.log('[Service Worker] Push Received.');
-
-  const title = 'Update out!';
-  const options = {
-    body: 'Visit the site for some new features!',
-    icon: '/images/icon/icon128.png',
-    badge: 'images/icon/badge.png'
-  };
-
-  event.waitUntil(self.registration.showNotification(title, options));
-});
-self.addEventListener('notificationclick', function(event) {
-  console.log('[Service Worker] Notification click Received.');
-
-  event.notification.close();
-
-  event.waitUntil(
-    clients.openWindow('https://jgames101.github.io/')
-  );
 });

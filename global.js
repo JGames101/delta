@@ -3,7 +3,7 @@ var online = navigator.onLine;
 // send user to setup?
 if (localStorage.getItem("user") == undefined) {
 	console.log("User visiting for the first time! Opening new user page...");
-	//window.location.href = "/setup/"
+	window.location.href = "/setup/"
 };
 calculateCardColumns();
 
@@ -258,7 +258,7 @@ function toggleMenuOldTheme() { //The commented code is for the page responding 
 }
 
 function setPage(newLocation) {
-	window.location.href = "https://jgames101.github.io" + newLocation;
+	window.location.href = newLocation;
 }
 
 function simulateOverlay() {
@@ -329,3 +329,5 @@ function getAllUrlParams(url) {
 // Colour Corrections at the end
 $('.info').css('color', localStorage.getItem("themeColour"));
 $('.info').children().css('color', localStorage.getItem("themeColour"));
+
+//other stuff
