@@ -3,12 +3,13 @@ var online = navigator.onLine;
 // send user to setup?
 if (localStorage.getItem("user") == undefined) {
 	console.log("User visiting for the first time! Opening new user page...");
-	//window.location.href = "/setup/"
+	window.location.href = "/setup/"
 };
 calculateCardColumns();
 
 if (localStorage.getItem("backgroundImage") == undefined) {
 	console.log("Missing background image settings.");
+	localStorage.setItem("backgroundImage", 7)
 } else {
 	$('html').attr('id', 'htmlObj');
 	$('body').append('<span class="webp"></span>');
