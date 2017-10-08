@@ -5,6 +5,28 @@ var urlsToCache = [
   '/global.js',
   '/404.html',
   '/jsmissing.html',
+  '/updates/index.html',
+  '/photos/1.webp',
+  '/photos/2.webp',
+  '/photos/3.webp',
+  '/photos/4.webp',
+  '/photos/5.webp',
+  '/photos/6.webp',
+  '/photos/7.webp',
+  '/photos/8.webp',
+  '/options/index.html',
+  '/photos/javascript.js',
+  '/latest.json',
+  '/modernizr-webp.js',
+  '/jquery.ui.touch-punch.min.js',
+  '/jquery-3.2.1.min.js',
+  '/angular/index.html',
+  '/javascript/index.html',
+  '/javascript/javascript.js',
+  '/angular/index.html',
+  '/jquery/index.html',
+  '/jquery/javascript.js',
+  '/html5/index.html',
 ];
 
 self.addEventListener('install', function(event) {
@@ -56,4 +78,26 @@ self.addEventListener('fetch', function(event) {
         );
       })
     );
+});
+
+self.addEventListener('push', function(event) {
+  console.log('[Service Worker] Push Received.');
+
+  const title = 'Update out!';
+  const options = {
+    body: 'Visit the site for some new features!',
+    icon: '/images/icon/icon128.png',
+    badge: 'images/icon/badge.png'
+  };
+
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+self.addEventListener('notificationclick', function(event) {
+  console.log('[Service Worker] Notification click Received.');
+
+  event.notification.close();
+
+  event.waitUntil(
+    clients.openWindow('https://jgames101.github.io/')
+  );
 });
