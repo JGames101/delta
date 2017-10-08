@@ -3,14 +3,20 @@ var online = navigator.onLine;
 // send user to setup?
 if (localStorage.getItem("user") == undefined) {
 	console.log("User visiting for the first time! Opening new user page...");
-	//window.location.href = "/setup/"
+	window.location.href = "/setup/"
 };
 calculateCardColumns();
 
 if (localStorage.getItem("backgroundImage") == undefined) {
 	console.log("Missing background image settings.");
 } else {
-	document.body.style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.jpg)';
+	$('html').attr('id', 'htmlObj');
+	$('body').append('<span class="webp"></span>');
+	if (document.getElementsByClassName('webp')[0].id == "htmlObj") {
+		document.getElementById('htmlObj').style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.webp)';
+	} else {
+		document.getElementById('htmlObj').style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.jpg)';
+	};
 };
 if (localStorage.getItem("themeColour") == undefined) {
 	localStorage.setItem("themeColour", "#cb2c36");

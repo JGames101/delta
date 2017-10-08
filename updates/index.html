@@ -16,6 +16,7 @@
 <!-- Main Stuff-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
+<script src="/modernizr-webp.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <link rel="manifest" href="/manifest.json">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -61,6 +62,11 @@
 <h1 id="pageName">Updates</h1>
 <div class="colourBackground">
 <div class="content">
+	<div class="card">
+		<h2>v1.44b</h2>
+		<p>On supported browsers, images are now .webp instead of .jpg.<br>Unsupported browsers are detected with <a href="https://modernizr.com/">Modernizr</a>, and are served the regular .jpg images.</p>
+		<p class="moreInfo info" style="color:black;" id="v1.44b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v1.44b')">More Info<span></p>
+	</div>
 	<div class="card">
 		<h2>v1.433b</h2>
 		<p>Page titles have been shortened. For example, this page has gone from "Updates | James M" to "Updates".<br>When using the classic theme, the new card system is not used.<br>Vertical tablet mode now works.</p>

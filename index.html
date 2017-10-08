@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html id="htmlObj">
+<span class="webp"></span>
 <!-- favicon stuff -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -8,6 +9,7 @@
 <!-- Main Stuff-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
+<script src="/modernizr-webp.js"></script>
 <script src="/jquery-3.2.1.min.js"></script>
 <link rel="manifest" href="/manifest.json">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -83,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	<div class="card card1" onclick="javascript:setPage('/updates/')" style="cursor:pointer;">
 		<h2>UPDATES</h2>
 		<p>Click here to see update history.</p>
-		<p id="currentVer">Installed Version: 1.433b<br>
+		<p id="currentVer">Installed Version: 1.44b<br>
 		Latest Version: <span id="latestVer">loading...</span>
 		</p>
 		<script> // This Script loads the latest version.
