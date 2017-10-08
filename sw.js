@@ -1,95 +1,59 @@
-// we'll version our cache (and learn how to delete caches in
-// some other post)
-const cacheName = 'v1.22-release::static';
-if(navigator.onLine) {
-	caches.delete('v1.22-release::static');
-};
-// The line above deletes old caches
-self.addEventListener('install', e => {
-  // once the SW is installed, go ahead and fetch the resources
-  // to make this work offline
-  e.waitUntil(
-    caches.open(cacheName).then(cache => {
-      return cache.addAll([
-        '/',
-        '/updates/',
-		'/angular/',
-		'/javascript/',
-		'/jquery/',
-		'/html5/',
-		'/options/',
-		'/photos/',
-		'/setup/',
-		'/styles.css',
-		'/global.js',
-		'/javascript/javascript.js',
-		'/options/javascript.js',
-		'/photos/1.jpg',
-		'/photos/1btn.jpg',
-		'/photos/2.jpg',
-		'/photos/3.jpg',
-		'/photos/4.jpg',
-		'/photos/5.jpg',
-		'/photos/6.jpg',
-		'/photos/7.jpg',
-		'/photos/8.jpg',
-		'/images/home.png',
-		'/images/updates.png',
-		'/images/javascript.png',
-		'/images/angularJS.png',
-		'/images/jquery.png',
-		'/images/html.png',
-		'/images/options.png',
-		'/images/doubleclick.png',
-		'/images/file.png',
-		'/setup/styles.css',
-		'/setup/script.js',
-		'/latest.json',
-		'/jquery-3.2.1.min.js',
-      ]).then(() => self.skipWaiting());
-    })
+var CACHE_NAME = 'jm0144';
+var urlsToCache = [
+  '/index.html',
+  '/styles.css',
+  '/global.js',
+  '/404.html',
+  '/jsmissing.html',
+];
+
+self.addEventListener('install', function(event) {
+  // Perform install steps
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(function(cache) {
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+      })
   );
 });
 
-// when the browser fetches a url, either response with
-// the cached object or go ahead and fetch the actual url
-//self.addEventListener('fetch', event => {
-//  event.respondWith(
-//    // ensure we check the *right* cache to match against
-//    caches.open(cacheName).then(cache => {
-//      return cache.match(event.request).then(res => {
-//        return res || fetch(event.request)
-//      });
-//    })
-//  );
-//});
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request)
+      .then(function(response) {
+        // Cache hit - return response
+        if (response) {
+          return response;
+        }
 
-// NOW: Notification stuff
-//function whenUpdatedNotification() {
-//	if (currentVersion == undefined) {
-//		var currentVersion = 0.1.2.1;
-//	};
-//	var xmlhttp = new XMLHttpRequest();
-//		xmlhttp.onreadystatechange = function() {
-//			if (this.readyState == 4 && this.status == 200) {
-//				var myObj = JSON.parse(this.responseText);
-//				var latestVersion = myObj.version;
-//			}
-//		};
-//		xmlhttp.open("GET", "/latest.json", true);
-//		xmlhttp.send();
-//	if (currentVersion < latestVersion) {
-//		var notification = new Notification('New Site Update!', {
-//			icon: '/images/icon/icon128.png',
-//			body: 'There is a new update for jgames101.github.io',
-//			title: 'hey! Look here!'
-//		});
-//		notification.onclick = function () {
-//			window.location.href = 'https://jgames101.github.io/'; 
-//		};
-//	};
-//  setTimeout(start, 3000);
-//}
+        // IMPORTANT: Clone the request. A request is a stream and
+        // can only be consumed once. Since we are consuming this
+        // once by cache and once by the browser for fetch, we need
+        // to clone the response.
+        var fetchRequest = event.request.clone();
 
-// boot up the first call
-//start();
+        return fetch(fetchRequest).then(
+          function(response) {
+            // Check if we received a valid response
+            if(!response || response.status !== 200 || response.type !== 'basic') {
+              return response;
+            }
+
+            // IMPORTANT: Clone the response. A response is a stream
+            // and because we want the browser to consume the response
+            // as well as the cache consuming the response, we need
+            // to clone it so we have two streams.
+            var responseToCache = response.clone();
+
+            caches.open(CACHE_NAME)
+              .then(function(cache) {
+                cache.put(event.request, responseToCache);
+              });
+
+            return response;
+          }
+        );
+      })
+    );
+});
