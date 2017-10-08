@@ -1,5 +1,12 @@
 var CACHE_NAME = 'jm014401';
 var urlsToCache = [
+  '/',
+  '/updates/',
+  '/angular/',
+  '/javascript/',
+  '/jquery/',
+  '/html5/',
+  '/options/',
   '/index.html',
   '/styles.css',
   '/global.js',
