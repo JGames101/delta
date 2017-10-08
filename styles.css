@@ -23,14 +23,12 @@
 	left: -2060px;
 }
 .webp {
-	background-image: url('/photos/7.webp');
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: repeat;
 	background-size: cover;
 }
 .no-webp {
-	background-image: url('/photos/7.jpg');
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: repeat;
@@ -298,14 +296,12 @@ i {
 		margin-left: 0px;
 	}
 	.webp {
-		background-image: url('/photos/7.webp');
 		background-attachment: fixed;
 		background-position: center;
 		background-repeat: repeat;
 		background-size: cover !important;
 	}
 	.no-webp {
-		background-image: url('/photos/7.jpg');
 		background-attachment: fixed;
 		background-position: center;
 		background-repeat: repeat;
