@@ -1,4 +1,4 @@
-var CACHE_NAME = 'jm0144';
+var CACHE_NAME = 'jm014401';
 var urlsToCache = [
   '/index.html',
   '/styles.css',
