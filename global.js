@@ -35,7 +35,7 @@ document.getElementById('menu').style.backgroundColor = localStorage.getItem("th
 
 // Calculate Cards
 function calculateCardColumns() {
-	if (localStorage.getItem("theme") != "v0.8a") {
+	if (localStorage.getItem("theme") != "v0.8a" || localStorage.getItem("theme") != "v1.0b") {
 		if (screen.width > "1024") {
 			cardsDesktop();
 		} else if (screen.width > "767") {
@@ -167,6 +167,13 @@ if (localStorage.getItem("theme") == "v0.8a") {
 	document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(43, 53, 56, 0.75)';
 	document.getElementById('menu').id = "classicMenu";
 	document.getElementById('menuIconBox').style.display = "none";
+};
+
+if (localStorage.getItem("theme") == "v1.0b") {
+	document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(43, 53, 56, 0.75)';
+	document.getElementById('menu').style.backgroundColor = '#486e89';
+	document.getElementById('menu').style.boxShadow = '0px 0px 0px black';
+	
 };
 
 if (localStorage.getItem("theme") == "colourful") {
