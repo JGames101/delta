@@ -38,12 +38,16 @@ function calculateCardColumns() {
 	if (localStorage.getItem("theme") != "v0.8a" || localStorage.getItem("theme") != "v1.0b") {
 		if (screen.width > "1024") {
 			cardsDesktop();
+			var layout = "desktop";
 		} else if (screen.width > "767") {
 			cardsTablet();
+			var layout = "tablet";
 		}	else if (screen.width > screen.height) {
 			cardsTablet();
+			var layout = "tablet";
 		} else {
 			cardsPhone();
+			var layout = "phone";
 		};
 	};
 }
@@ -207,7 +211,6 @@ if (localStorage.getItem('mobile.navLoc') == "bottom") {
 	console.log('menu loaded to bottom.');
 };
 // Global Functions
-
 function toggleMenu() { //The commented code is for the page responding to when the menu is opened.
 	if (localStorage.getItem("theme") == "v0.8a") {
 		toggleMenuOldTheme();
@@ -333,8 +336,94 @@ function getAllUrlParams(url) {
   return obj;
 };
 
+function detectswipe(el,func) {
+  swipe_det = new Object();
+  swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
+  var min_x = 30;  //min x swipe for horizontal swipe
+  var max_x = 30;  //max x difference for vertical swipe
+  var min_y = 50;  //min y swipe for vertical swipe
+  var max_y = 60;  //max y difference for horizontal swipe
+  var direc = "";
+  ele = document.getElementById(el);
+  ele.addEventListener('touchstart',function(e){
+    var t = e.touches[0];
+    swipe_det.sX = t.screenX; 
+    swipe_det.sY = t.screenY;
+  },false);
+  ele.addEventListener('touchmove',function(e){
+    e.preventDefault();
+    var t = e.touches[0];
+    swipe_det.eX = t.screenX; 
+    swipe_det.eY = t.screenY;    
+  },false);
+  ele.addEventListener('touchend',function(e){
+    //horizontal detection
+    if ((((swipe_det.eX - min_x > swipe_det.sX) || (swipe_det.eX + min_x < swipe_det.sX)) && ((swipe_det.eY < swipe_det.sY + max_y) && (swipe_det.sY > swipe_det.eY - max_y) && (swipe_det.eX > 0)))) {
+      if(swipe_det.eX > swipe_det.sX) direc = "r";
+      else direc = "l";
+    }
+    //vertical detection
+    else if ((((swipe_det.eY - min_y > swipe_det.sY) || (swipe_det.eY + min_y < swipe_det.sY)) && ((swipe_det.eX < swipe_det.sX + max_x) && (swipe_det.sX > swipe_det.eX - max_x) && (swipe_det.eY > 0)))) {
+      if(swipe_det.eY > swipe_det.sY) direc = "d";
+      else direc = "u";
+    }
+
+    if (direc != "") {
+      if(typeof func == 'function') func(el,direc);
+    }
+    direc = "";
+    swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
+  },false);  
+}
+
 // Colour Corrections at the end
 $('.info').css('color', localStorage.getItem("themeColour"));
 $('.info').children().css('color', localStorage.getItem("themeColour"));
 
 //other stuff
+detectswipe('menu',calculateSwipe);
+
+function calculateSwipe(el,d) {
+	console.log('swipe: ' + d);
+	if (calculateLayout() == "desktop" && d == "r" && document.getElementById('menu').className.includes("open") == false) {
+		toggleMenu();
+	} else if (calculateLayout() == "desktop" && d == "l" && document.getElementById('menu').className.includes("open") == true) {
+		toggleMenu();
+	} else if (calculateLayout() == "tablet") {
+		if (screen.width > screen.height) {
+			if (d == "l" && document.getElementById('menu').className.includes("open") == true || d == "r" && document.getElementById('menu').className.includes("open") == false) {
+				toggleMenu();
+			};
+		} else if (screen.width < screen.height) {
+			if (d == "d" && document.getElementById('menu').className.includes("open") == true || d == "u" && document.getElementById('menu').className.includes("open") == false) {
+				toggleMenu();
+			};
+		}
+	} else if (calculateLayout() == "phone") {
+		if (screen.width > screen.height) {
+			if (d == "l" && document.getElementById('menu').className.includes("open") == true || d == "r" && document.getElementById('menu').className.includes("open") == false) {
+				toggleMenu();
+			};
+		} else {
+			if (localStorage.getItem('mobile.navLoc') == "bottom") {
+				if (d == "d" && document.getElementById('menu').className == "open menuBottom" || d == "u" && document.getElementById('menu').className != "open menuBottom") {
+					toggleMenu();
+				}
+			} else if (d == "u" && document.getElementById('menu').className == "open" || d == "d" && document.getElementById('menu').className != "open") {
+				toggleMenu();
+			};
+		};
+	};
+};
+
+function calculateLayout() {
+	if (screen.width > "1024") {
+		return "desktop";
+	} else if (screen.width > "767") {
+		return "tablet";
+	}	else if (screen.width > screen.height) {
+		return "tablet";
+	} else {
+		return "phone";
+	};
+}

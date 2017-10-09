@@ -67,9 +67,16 @@ h1 {
 	margin-top: 8px;
 	margin-bottom: 8px;
 	margin-left: 10px;
-	box-shadow: 0 0 16px 0 rgba(0,0,0,0.2), 0 0px 16px 0 rgba(0,0,0,0.19);
+	box-shadow: 0 0 16px 0 rgba(0,0,0,0.3);
 	min-height: 128px;
 	color: black;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+}
+.card.clickable:hover {
+	background-color: #fafafa !important;
+	box-shadow: 0 0 32px 0 rgba(0,0,0,0.5) !important;
+	z-index: 256;
 }
 h2 {
 	font-weight:700;
@@ -578,4 +585,4 @@ i {
 	.column {
 		width: 32%;
 	}
-	
+}
