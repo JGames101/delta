@@ -27,16 +27,18 @@ if (localStorage.getItem("backgroundImage") == undefined) {
 } else {
 	$('html').attr('id', 'htmlObj');
 	$('body').append('<span class="webp"></span>');
-	if (document.getElementsByClassName('webp')[0].id == "htmlObj") {
-		document.getElementById('htmlObj').style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.webp)';
-	} else {
-		document.getElementById('htmlObj').style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.jpg)';
+	if (calculateLayout() != "mobile") {
+		if (document.getElementsByClassName('webp')[0].id == "htmlObj") {
+			document.getElementById('htmlObj').style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.webp)';
+		} else {
+			document.getElementById('htmlObj').style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.jpg)';
+		};
 	};
 };
 if (localStorage.getItem("themeColour") == undefined) {
 	localStorage.setItem("themeColour", "#cb2c36");
-	localStorage.setItem("backgroundImage", "5");
-	localStorage.setItem("theme", "photoDef");
+	localStorage.setItem("backgroundImage", "7");
+	localStorage.setItem("theme", "colourful");
 };
 if (localStorage.getItem("theme") == "Greyscale") {
 	$('head').append('<meta name="theme-color" content="' + '#323232' + '" />');
@@ -221,10 +223,6 @@ function toggleMenu() { //The commented code is for the page responding to when 
 
 function setPage(newLocation) {
 	window.location.href = newLocation;
-}
-
-function simulateOverlay() {
-	document.getElementById('jsmissing').style.display = 'block';
 }
 
 function getAllUrlParams(url) {
