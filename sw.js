@@ -6,6 +6,10 @@ caches.delete('jm01441').then(function(boolean) {
   // your cache is now deleted
   console.log("cache jm01441 deleted");
 });
+caches.delete('jm0144').then(function(boolean) {
+  // your cache is now deleted
+  console.log("cache jm02 deleted");
+});
 var CACHE_NAME = 'jm0201';
 var urlsToCache = [
   '/index.html',
