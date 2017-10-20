@@ -1,4 +1,12 @@
-var CACHE_NAME = 'jm02';
+caches.delete('jm02').then(function(boolean) {
+  // your cache is now deleted
+  console.log("cache jm02 deleted");
+});
+caches.delete('jm01441').then(function(boolean) {
+  // your cache is now deleted
+  console.log("cache jm01441 deleted");
+});
+var CACHE_NAME = 'jm0201';
 var urlsToCache = [
   '/index.html',
   '/page/offline.html',
