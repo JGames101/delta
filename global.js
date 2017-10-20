@@ -39,6 +39,7 @@ if (localStorage.getItem("themeColour") == undefined) {
 	localStorage.setItem("themeColour", "#cb2c36");
 	localStorage.setItem("backgroundImage", "7");
 	localStorage.setItem("theme", "colourful");
+	localStorage.setItem("navbar", "mobile");
 };
 if (localStorage.getItem("theme") == "Greyscale") {
 	$('head').append('<meta name="theme-color" content="' + '#323232' + '" />');
