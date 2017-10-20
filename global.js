@@ -27,7 +27,7 @@ if (localStorage.getItem("backgroundImage") == undefined) {
 } else {
 	$('html').attr('id', 'htmlObj');
 	$('body').append('<span class="webp"></span>');
-	if (calculateLayout() != "mobile") {
+	if (calculateLayout() != "phone") {
 		if (document.getElementsByClassName('webp')[0].id == "htmlObj") {
 			document.getElementById('htmlObj').style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.webp)';
 		} else {
