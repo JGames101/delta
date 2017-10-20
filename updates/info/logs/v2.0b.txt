@@ -11,9 +11,9 @@ v2.0 is a massive redesign to the site. There are huge internal and external cha
 <br>
 <h3>New Design</h3><br>
 The default design has changed from...<br>
-<img src="/setup/screenshots/old/photo.png">
+<img src="/setup/screenshots/old/photo.png" width="100%">
 To...<br>
-<img src="/setup/screenshots/colourful.png">
+<img src="/setup/screenshots/colourful.png" width="100%">
 The default 8 themes have been replaced with Colourful, Light, Dark, Simple, Simple Light, and Simple Dark.<br>
 The new flat design replaces the card design. On light and colourful themes, the background is white with 10% transparency, and on dark themes, the background is dark with 10% transparency.<br>
 Everything has been restyled, but all the cards are in the exact same place.<br>
