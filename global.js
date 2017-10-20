@@ -12,13 +12,16 @@ jQuery.get('/menus/' + localStorage.getItem('navbar') + '.html', function(data) 
 			$("#menu").removeClass("small").addClass("full");
 		}
 	});
+	$( document ).ready(function() {
+		loadPageContent();
+	});
 });
 var menu = false;
 var online = navigator.onLine;
 // send user to setup?
 if (localStorage.getItem("user") == undefined) {
 	console.log("User visiting for the first time! Opening new user page...");
-	//window.location.href = "/setup/"
+	window.location.href = "/setup/"
 };
 
 if (localStorage.getItem("backgroundImage") == undefined) {
@@ -358,6 +361,3 @@ function loadPageContent() {
 		});
 	}
 };
-$( document ).ready(function() {
-loadPageContent();
-});
