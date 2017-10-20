@@ -39,6 +39,8 @@ var urlsToCache = [
   '/videos/index.html',
   '/jquery/',
   '/jquery/index.html',
+  '/404.html',
+  '/page/404.html',
 ];
 
 self.addEventListener('install', function(event) {
