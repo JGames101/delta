@@ -9,12 +9,13 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff0000">
 <!-- Main Stuff-->
 <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="/modernizr-webp.js"></script>
 <script src="/jquery-3.2.1.min.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <meta charset="utf-8">
 <title>James M</title>
-<link href="styles.css" rel="stylesheet" type="text/css">
+<link href="/styles.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
 </head>
 <!-- Add to home screen for Safari on iOS -->
@@ -27,46 +28,12 @@
   <meta name="msapplication-TileColor" content="#ffffff">
 <!-- Start of Real Content -->
 <script>
-'use strict';
-
-const applicationServerPublicKey = 'BB5XCP9Dh15yDbWeLvlWfflIbjNPuWs0YQZxTZwQZ3QyWGV58BMhMDhxsXX2l68QOmYvLMSpwObmz8Geq53R8Gc';
-
-const pushButton = document.querySelector('.js-push-btn');
-
-let isSubscribed = false;
-let swRegistration = null;
-
-function urlB64ToUint8Array(base64String) {
-  const padding = '='.repeat((4 - base64String.length % 4) % 4);
-  const base64 = (base64String + padding)
-    .replace(/\-/g, '+')
-    .replace(/_/g, '/');
-
-  const rawData = window.atob(base64);
-  const outputArray = new Uint8Array(rawData.length);
-
-  for (let i = 0; i < rawData.length; ++i) {
-    outputArray[i] = rawData.charCodeAt(i);
-  }
-  return outputArray;
-}
-
-if ('serviceWorker' in navigator && 'PushManager' in window) {
-  console.log('Service Worker and Push is supported');
-
-  navigator.serviceWorker.register('sw.js')
-  .then(function(swReg) {
-    console.log('Service Worker is registered', swReg);
-
-    swRegistration = swReg;
-  })
-  .catch(function(error) {
-    console.error('Service Worker Error', error);
-  });
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+  console.log('service worker registered.');
 } else {
-  console.warn('Push messaging is not supported');
-  pushButton.textContent = 'Push Not Supported';
-}
+  console.log('registering service worker failed.');
+};
 </script>
 <script> // Requests Notification Permission
 // request permission on page load
@@ -90,92 +57,17 @@ document.addEventListener('DOMContentLoaded', function () {
 	</style>
 </noscript>
 <div id="menuButton" onclick="javascript:toggleMenu()" style="overflow:hidden;"> <!-- For opening control menu -->
-	<i class="material-icons md-light md-32" id="menuToggle">keyboard_arrow_right</i>
+	<i class="material-icons md-light md-32" id="menuToggle">keyboard_arrow_down</i>
 </div>
-<div id="menu" contextmenu="navigationContext">
-	<div id="menuTextBox">
-		<p class="menuItem" id="menuTitle">Pages</p>
-		<p class="menuItem" id="homeButton" onclick="javascript:setPage('/')">HOME</p>
-		<p class="menuItem" id="updatesButton" onclick="javascript:setPage('/updates/')">UPDATES</p>
-		<p class="menuItem" id="angularButton" onclick="javascript:setPage('/angular/')">ANGULAR</p>
-		<p class="menuItem" id="javascriptButton" onclick="javascript:setPage('/javascript/')">JAVASCRIPT</p>
-		<p class="menuItem" id="jqueryButton" onclick="javascript:setPage('/jquery/')">JQUERY</p>
-		<p class="menuItem" id="html5Button" onclick="javascript:setPage('/html5/')">HTML5</p>
-		<p class="menuItem" id="optionsButton" onclick="javascript:setPage('/options/')">OPTIONS</p>
-	</div>
-	<div id="menuIconBox">
-		<i class="material-icons md-light md-32 menuIcon" id="homeIcon" onclick="javascript:setPage('/')">home</i>
-		<i class="material-icons md-light md-32 menuIcon" id="updatesIcon" onclick="javascript:setPage('/updates/')">history</i>
-		<img class="menuIcon" id="angularIcon" src="/images/angularJS.png" width="30px" onclick="javascript:setPage('/angular/')">
-		<img class="menuIcon" id="javascriptIcon" src="/images/javascript.png" width="30px" onclick="javascript:setPage('/javascript/')">
-		<img class="menuIcon" id="jqueryIcon" src="/images/jquery.png" width="30px" onclick="javascript:setPage('/jquery/')">
-		<i class="material-icons md-light md-32 menuIcon" id="html5Icon" onclick="javascript:setPage('/html5/')">web</i>
-		<i class="material-icons md-light md-32 menuIcon" id="optionsIcon" onclick="javascript:setPage('/options/')">settings</i>
-	</div>
+<div id="menu">
+	<p>Loading Menu... Please wait.</p>
 </div>
 <div id="page">
 <h1 id="pageName">James M</h1>
 <div class="colourBackground">
 <div class="content" id="intial">
-<div id="pinned1" class="pinnedDiv">
-	<div class="card card1 clickable" onclick="javascript:setPage('/updates/')" style="cursor:pointer;">
-		<h2>UPDATES</h2>
-		<p>Click here to see update history.</p>
-		<p id="currentVer">Installed Version: 1.441b<br>
-		Latest Version: <span id="latestVer">loading...</span>
-		</p>
-		<script> // This Script loads the latest version.
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				var myObj = JSON.parse(this.responseText);
-				document.getElementById('latestVer').innerHTML = myObj.version;
-			}
-		};
-		xmlhttp.open("GET", "/latest.json", true);
-		xmlhttp.send();
-		</script>
-	</div>
-	<div class="card card1 clickable" onclick="javascript:setPage('/options/')" style="cursor:pointer;">
-		<h2>OPTIONS</h2>
-		<p>Personalization, Install, Device-Specific Options</p>
-	</div>
-</div>
-<div id="pinned2" class="pinnedDiv">
-	<h2 class="pinned">SUGGESTIONS</h2>
-	<div class="card card2 clickable" onclick="javascript:setPage('/angular/')" style="cursor:pointer;">
-		<h2>ANGULAR</h2>
-		<span>My tests and experiments with AngularJS!</span>
-		<p class="info">AngularJS</p>
-	</div>
-	<div class="card card2 clickable" onclick="javascript:setPage('/javascript/')" style="cursor:pointer;">
-		<h2>JAVASCRIPT</h2>
-		<p>My tests and experiments with Javascript!</p>
-	</div>
-	<div class="card card2 clickable" onclick="javascript:setPage('/jquery/')" style="cursor:pointer;">
-		<h2>JQUERY</h2>
-		<p>My tests and experiments with JQuery!</p>
-		<p class="info">JQuery</p>
-	</div>
-	<div class="card card2 clickable" onclick="javascript:setPage('/html5/')" style="cursor:pointer;">
-		<h2>HTML5 EXPERIMENTS</h2>
-		<p>Other Designs I made with HTML5!</p>
-		<p class="info"> </p>
-	</div>
-	<div class="card card2 clickable" onclick="javascript:setPage('/photos/')" style="cursor:pointer;">
-		<h2>PHOTOGRAPHY</h2>
-		<p>Tap here for a gallery of my photos.</p>
-		<p class="info">alpha</p>
-	</div>
-</div>
-<div id="pinned3" class="pinnedDiv">
-	<h2 class="pinned">OTHER</h2>
-	<div class="card wideCard card3">
-		<iframe class="video" width="100%" height="315px" src="https://www.youtube.com/embed/z5XhoUH3sEc" frameborder="0" allowfullscreen></iframe>
-		<h2>BERLIN VR</h2>
-		<p>Some VR images from Berlin.</p>
-	</div>
-</div>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	<span style="font-family: 'Roboto Mono', monospace;">loading content...</span>
 </div>
 </div>
 <script src="/global.js"></script>

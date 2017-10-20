@@ -4,7 +4,7 @@
 	<head>
 		<script src="/modernizr-webp.js"></script>
 		<script src="/jquery-3.2.1.min.js"></script>
-		<title>Options | JGames101</title>
+		<title>Options</title>
 		<link rel="manifest" href="/manifest.json">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<meta charset="utf-8">
@@ -24,126 +24,14 @@
 	<i class="material-icons md-light md-32" id="menuToggle">keyboard_arrow_right</i>
 </div>
 <div id="menu" contextmenu="navigationContext">
-	<div id="menuTextBox">
-		<p class="menuItem" id="menuTitle">Pages</p>
-		<p class="menuItem" id="homeButton" onclick="javascript:setPage('/')">HOME</p>
-		<p class="menuItem" id="updatesButton" onclick="javascript:setPage('/updates/')">UPDATES</p>
-		<p class="menuItem" id="angularButton" onclick="javascript:setPage('/angular/')">ANGULAR</p>
-		<p class="menuItem" id="javascriptButton" onclick="javascript:setPage('/javascript/')">JAVASCRIPT</p>
-		<p class="menuItem" id="optionsButton" onclick="javascript:setPage('/jquery/')">JQUERY</p>
-		<p class="menuItem" id="html5Button" onclick="javascript:setPage('/html5/')">HTML5</p>
-		<p class="menuItem" id="optionsButton" onclick="javascript:setPage('/options/')">OPTIONS</p>
-	</div>
-	<div id="menuIconBox">
-		<i class="material-icons md-light md-32 menuIcon" id="homeIcon" onclick="javascript:setPage('/')">home</i>
-		<i class="material-icons md-light md-32 menuIcon" id="updatesIcon" onclick="javascript:setPage('/updates/')">history</i>
-		<img class="menuIcon" id="angularIcon" src="/images/angularJS.png" width="30px" onclick="javascript:setPage('/angular/')">
-		<img class="menuIcon" id="javascriptIcon" src="/images/javascript.png" width="30px" onclick="javascript:setPage('/javascript/')">
-		<img class="menuIcon" id="jqueryIcon" src="/images/jquery.png" width="30px" onclick="javascript:setPage('/jquery/')">
-		<i class="material-icons md-light md-32 menuIcon" id="html5Icon" onclick="javascript:setPage('/html5/')">web</i>
-		<i class="material-icons md-light md-32 menuIcon" id="optionsIcon" onclick="javascript:setPage('/options/')">settings</i>
-	</div>
+
 </div>
 		<div id="page">
 		<h1 id="pageName">Options</h1>
 		<div class="colourBackground">
 		<div class="content">
-		<h2 class="pinned">PERSONALIZATION</h2>
-		<div id="pinned1" class="pinnedDiv">
-		<div class="card wideCard card1" id="backgroundPhotoCard">
-			<img src="/photos/1btn.jpg" id="photoBtn1" width="25%" class="imageButtonJS" onclick="javascript:setBackground(1)"><img src="/photos/2.jpg" id="photoBtn2" width="25%" class="imageButtonJS" onclick="javascript:setBackground(2)"><img src="/photos/3.jpg" id="photoBtn3" width="25%" class="imageButtonJS" onclick="javascript:setBackground(3)"><img src="/photos/4.jpg" id="photoBtn4" width="25%" class="imageButtonJS" onclick="javascript:setBackground(4)">
-			<img src="/photos/5.jpg" id="photoBtn5" width="25%" class="imageButtonJS" onclick="javascript:setBackground(5)"><img src="/photos/6.jpg" id="photoBtn6" width="25%" class="imageButtonJS" onclick="javascript:setBackground(6)"><img src="/photos/7.jpg" id="photoBtn7" width="25%" class="imageButtonJS" onclick="javascript:setBackground(7)"><img src="/photos/8.jpg" id="photoBtn8" width="25%" class="imageButtonJS" onclick="javascript:setBackground(8)">
-			<h2>SET BACKGROUND</h2>
-			<p>Select the Photo you would like as your background.</p>
-		</div>
-		<div class="card card1">
-			<h2>THEME</h2>
-			<p>Select your theme: 
-			<select id="themeSelect" onchange="javascript:changeTheme()">
-				<optgroup label="Regular Themes">
-					<option value="photoDef">Photo</option>
-					<option value="photo dark">Photo Dark</option>
-					<option value="colourful">Colourful</option>
-					<option value="Greyscale">Greyscale</option>
-					<option value="light">Light</option>
-					<option value="dark">Dark</option>
-				</optgroup>
-				<optgroup label="Classic">
-					<option value="v1.0b">v1.0b</option>
-					<option value="v0.8a">v0.8a</option>
-				</optgroup>
-			</select>
-			</p>
-		</div>
-		<div class="card card1" onclick="javascript:setPage('/setup/')">
-			<h2>RELAUCH SETUP</h2>
-			<p>Click here to relaunch the setup page.</p>
-		</div>
-		</div>
-		<div id="desktopOptions">
-		<div id="pinned2" class="pinnedDiv">
-			<h2 class="pinned">DESKTOP OPTIONS</h2>
-			<div class="card card2">
-				<h2>umm...</h2>
-				<p>There's not really anything to show here yet. Check back soon!</p>
-			</div>
-		</div>
-		</div>
-		<div id="tabletOptions">
-		<div id="pinned3" class="pinnedDiv">
-			<h2 class="pinned">TABLET OPTIONS</h2>
-			<div class="card card3">
-				<h2>umm...</h2>
-				<p>There's not really anything to show here yet. Check back soon!</p>
-			</div>
-		</div>
-		</div>
-		<div id="mobileOptions">
-		<div id="pinned4" class="pinnedDiv">
-			<h2 class="pinned">MOBILE OPTIONS</h2>
-			<div class="card card4" style="display:none;">
-				<h2>PRESETS</h2>
-				<p>Content Presets:<br>
-				<button onclick="initialTheme()">Initial</button><button onclick="iosTheme()">iOS</button>
-				</p>
-			</div>
-			<div class="card card4">
-				<h2>NAVIGATION BAR</h2>
-				<h3>Visuals</h3>
-				<p>Location: 
-				<select id="mobileNavLoc" onchange="javascript:mbNavLoc()">
-					<option value="top">Top</option>
-					<option value="bottom">Bottom</option>
-				</select>
-				</p>
-			</div>
-		</div>
-		</div>
-		<div id="pinned5" class="pinnedDiv">
-		<h2 class="pinned">INSTALL</h2>
-		<div class="card card5">
-			<h2>UWP</h2>
-			<p>Windows 10, Windows 10 Mobile, Xbox One, etc.</p>
-			<a href="/install/Hosted Web App_1.7.1.0_AnyCPU.appxbundle" download><button>Download .appx</button></a>
-		</div>
-		<div class="card card5">
-			<h2><i class="material-icons">android</i> ANDROID</h2>
-			<p>This site is a Progressive Web App, which means from Chrome for Android, you can just press Add to Homescreen... from the menu to install it.</p>
-		</div>
-		</div>
-		<h2 class="pinned" id="legacyTitle" onclick="expandLegacy()" style="cursor:pointer;">LEGACY</h2>
-		<div class="legacy" style="display:none;">
-		<div id="pinned6" class="pinnedDiv">
-			<div class="card card6" id="colourCard">
-			<h2>THEME COLOUR</h2>
-			<p>Current Theme Colour: <b><span id="currentTheme">Please Enable JavaScript.</span></p><br>
-			Suggested Colour: <span id="suggestedPreview">▇▇▇▇▇▇▇▇</span> <button onclick="javascript:setSuggestedColour()">Set Colour!</button><br>
-			Colour Picker: <input type="color" id="colourPicker" value="#486e89" onchange="javascript:setPickerColour()"><br>
-			Custom Colour: <input id="newColour" name="newColour" value="Please Turn On JavaScript."></input> <button onclick="javascript:setColour()">Set Colour!</button><br>
-			</b></p>
-		</div>
-		</div>
-		</div>
+			<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+			<span style="font-family: 'Roboto Mono', monospace;">loading content...</span>
 		</div>
 		</div>
 		</div>

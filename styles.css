@@ -54,29 +54,31 @@ h1 {
 .content {
 	position: relative;
 	overflow: hidden;
-	margin-left: 64px;
+	margin-left: 0px;
 	-webkit-transition-duration: 0.4s; /* Safari */
 	transition-duration: 0.4s;
 	padding-bottom: 64px;
 }
 .card {
-	background-color: white;
-	border-radius: 16px;
+	padding-top: 64px;
+	padding-left: 0px;
+	background-color: rgba(0, 0, 0, 0);
+	border-radius: 2px;
 	text-align: center;
 	display: inline-table;
-	margin-top: 8px;
-	margin-bottom: 8px;
-	margin-left: 10px;
-	box-shadow: 0 0 16px 0 rgba(0,0,0,0.3);
 	min-height: 128px;
 	color: black;
 	-webkit-transition-duration: 0.4s; /* Safari */
 	transition-duration: 0.4s;
 }
+.card.clickable {
+	cursor: pointer;
+}
 .card.clickable:hover {
-	background-color: #fafafa !important;
-	box-shadow: 0 0 32px 0 rgba(0,0,0,0.5) !important;
-	z-index: 256;
+	color: black !important;
+	background-color: rgba(0, 0, 0, 0) !important;
+	box-shadow: 0 0 16px 0 rgba(0,0,0,0.2);
+	z-index: 999;
 }
 h2 {
 	font-weight:700;
@@ -108,6 +110,7 @@ h2 {
 	vertical-align: bottom;
 }
 #pageName {
+	display: none;
 	margin-top: 256px;
 	margin-left: 64px;
 	-webkit-transition-duration: 0.4s; /* Safari */
@@ -116,10 +119,11 @@ h2 {
 .colourBackground {
 	position: absolute;
 	left: 0px;
-	top: 348px;
-	padding-top: 32px;
+	top: 0px;
+	padding-top: 144px;
 	width: 100%;
-	background-color: rgba(43, 53, 56, 0);
+	background-color: rgba(255, 255, 255, 0.9);
+	min-height: 100%;
 }
 #jsmissing {
 	position: fixed;
@@ -159,69 +163,11 @@ h2 {
 	background-color: white;
 	border-radius: 5%;
 }
-#menu {
-	background-color: #cb2c36;
-	z-index: 257;
-	position: fixed;
-	margin: none;
-	top: 0px;
-	left: 0px;
-	height: 100%;
-	width: 64px;
-	-webkit-transition-duration: 0.4s; /* Safari */
-	transition-duration: 0.4s;
-	box-shadow: 0 0 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-	overflow-x: hidden;
-}
 
-#classicMenu {
-	background-color: #cb2c36;
-	z-index: 257;
-	position: fixed;
-	margin: none;
-	top: 0px;
-	left: 0px;
-	height: 100%;
-	width: 64px;
-	-webkit-transition-duration: 0s; /* Safari */
-	transition-duration: 0s;
-	overflow-x: hidden;
-	background-color: rgba(0, 0, 0, 0) !important;
-}
-
-#classicMenu.open {
-	background-color: #7ea5ba !important;
-}
-
-.menuItem {
-	margin-top: 24px;
-	font-size: 24px;
-	margin-left: 64px;
-	text-decoration: none !important;
-	-webkit-transition-duration: 0.4s; /* Safari */
-	transition-duration: 0.4s;
-}
-#menuTextBox {
-	color: white;
-}
-#menuTitle {
-	margin-top: 16px;
-	cursor: initial;
-}
-#menuIconBox {
-	position: absolute;
-	top: 64px;
-	left: 16px;
-	width: 32px;
-}
-.menuIcon {
-	margin-bottom: 20px;
-	cursor: pointer;
-}
 #content {
 	position: absolute !important;
 	width: 100%;
-	margin-left: 64px;
+	margin-left: 0px;
 	padding-right: 5%;
 }
 #page {
@@ -248,12 +194,12 @@ h2 {
 /* Rules for sizing the icon. */
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
-.material-icons.md-32 { font-size: 32px; }
+.material-icons.md-32 { font-size: 32px!important; }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
 
 /* Rules for using icons as black on a light background. */
-.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark { color: #555555!important; }
 .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
 
 /* Rules for using icons as white on a dark background. */
@@ -274,7 +220,7 @@ i {
 .column {
 	display: inline-table;
 	margin-top: 10px;
-	margin-right: 10px;
+	margin-right: 0px;
 }
 @media (min-width: 0px) and (max-width: 767px) and (orientation:portrait){
 	* {
@@ -286,7 +232,7 @@ i {
 		width: 100%;
 	}
 	.colourBackground {
-		background-color: rgb(43, 53, 56);
+		background-color: rgb(255, 255, 255);
 		min-height: 60%;
 		margin-left: 0px;
 	}
@@ -331,95 +277,26 @@ i {
 	h2 {
 		font-size: 32px;
 	}
-	.open {
-		width: 100% !important;
-		height: 100% !important;
-		display: block !important;
-	}
-	#menu {
-		height: 64px;
-		width: 100%;
-		overflow: hidden;
-		position: absolute;
-	}
-	#menuIconBox {
-		position: relative;
-		left: 16px;
-		top: 16px;
-		width: 100000%;
-		margin-left: 48px;
-	}
-	.menuIcon {
-		width: 32px !important;
-		height: 32px !important;
-		margin-right: 24px;
-	}
+	
 	#photoBtn1 {
 	border-top-left-radius: 12px;
 	}
 	#photoBtn4 {
 	border-top-right-radius: 12px;
 	}
-	#menuTitle {
-		display: none;
-	}
-	.menuItem:nth-child(2) {
-		margin-top: 64px;
-	}
+	
 	#contentOpen {
 		margin-left: 0px;
 	}
-	#menuButton {
-		-ms-transform: rotate(90deg); /* IE 9 */
-		-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-		transform: rotate(90deg);
-	}
-	#menuButton.reverse {
-		-ms-transform: rotate(270deg); /* IE 9 */
-		-webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */
-		transform: rotate(270deg);
-	}
+	
 	#mobileOptions {
 		display: initial;
 	}
-	.menuBottom {
-		position: absolute;
-		top: initial !important;
-		bottom: 0px !important;
-	}
-	.menuBtnBottom {
-		top: initial !important;
-		bottom: 16px !important;
-		-ms-transform: rotate(270deg) !important; /* IE 9 */
-		-webkit-transform: rotate(270deg) !important; /* Chrome, Safari, Opera */
-		transform: rotate(270deg) !important;
-	}
-	.menuBtnBottom.reverse {
-		-ms-transform: rotate(90deg) !important; /* IE 9 */
-		-webkit-transform: rotate(90deg) !important; /* Chrome, Safari, Opera */
-		transform: rotate(90deg) !important;
-	}
-	#menuIconBox.barOnBottom {
-		top: initial !important;
-		bottom: -8px !important;
-		background-color: inherit !important;
-	}
-	#menuIconBox {
-		position: fixed !important;
-	}
-	.menuBottom.open {
-		height: 75% !important;
-		overflow-y: scroll !important;
-	}
-	.open {
-		overflow-y: scroll !important;
-	}
+	
 	::-webkit-scrollbar {
 	  width: 0px;
 	}
-	#menuTextBox {
-		margin-bottom: 32px;
-	}
+	
 	#pageName {
 		margin-left: 0px;
 	}
@@ -433,7 +310,7 @@ i {
 		width: 46.25%;
 	}
 	.column {
-		width: 46.25%;
+		width: 50%;
 	}
 	.wideCard {
 		width: 95%;
@@ -449,23 +326,6 @@ i {
       width: 0px;
 	}
 	@media (orientation:portrait) {
-		#menuIconBox {
-		left: 16px;
-		top: 16px;
-		width: 100000%;
-		margin-left: 48px;
-		}
-		.menuIcon {
-			width: 32px !important;
-			height: 32px !important;
-			margin-right: 24px;
-		}
-		#menuTitle {
-			display: none;
-		}
-		.menuItem:nth-child(2) {
-			margin-top: 64px;
-		}
 		#contentOpen {
 			margin-left: 0px;
 		}
@@ -482,42 +342,6 @@ i {
 		#tabletOptions {
 			display: initial;
 		}
-		#menu {
-			top: initial !important;
-			bottom: 0px !important;
-		}
-		#menuButton {
-			top: initial !important;
-			bottom: 16px !important;
-			-ms-transform: rotate(270deg) !important; /* IE 9 */
-			-webkit-transform: rotate(270deg) !important; /* Chrome, Safari, Opera */
-			transform: rotate(270deg) !important;
-		}
-		#menuButton.reverse {
-			-ms-transform: rotate(90deg) !important; /* IE 9 */
-			-webkit-transform: rotate(90deg) !important; /* Chrome, Safari, Opera */
-			transform: rotate(90deg) !important;
-		}
-		#menuIconBox {
-			top: initial !important;
-			bottom: -8px !important;
-			background-color: inherit !important;
-		}
-		#menuIconBox {
-			position: fixed !important;
-		}
-		#menu.open {
-			height: 50% !important;
-			overflow-y: scroll !important;
-		}
-		.open {
-			overflow-y: scroll !important;
-		}
-		#menu {
-			height: 64px;
-			width: 100%;
-			overflow: hidden;
-		}
 	}
 }
 @media (min-width: 0px) and (max-width: 1024px) and (orientation:landscape) {
@@ -528,11 +352,9 @@ i {
 		padding-left: 2.5%;
 		padding-right: 2.5%;
 	}
-	.open {
-		width: 50% !important;
-	}
+	
 	.column {
-		width: 46.25%;
+		width: 50%;
 	}
 	.card {
 		width: 46.25%;
@@ -541,14 +363,11 @@ i {
 
 @media (min-width: 1025px){
 	.content {
-		padding-left: 5%;
-		padding-right: 5%;
+		padding-left: 12.5%;
+		padding-right: 12.5%;
 	}
 	.card {
-		width: 32%;
-	}
-	.open {
-		width: 25% !important;
+		width: 33.33%;
 	}
 	#contentOpen {
 		position: absolute;
@@ -583,6 +402,6 @@ i {
       background-color: #536368;
 	} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
 	.column {
-		width: 32%;
+		width: 33.33%;
 	}
 }

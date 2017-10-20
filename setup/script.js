@@ -4,6 +4,11 @@ function setTheme(themeId) {
 	$(".themeChoice").css("background-color", "#fafafa");
 	document.getElementById(themeId).style.backgroundColor = '#03a9f4';
 	document.getElementById(themeId).style.color = 'white';
+	if (themeId == colourful || themeId == light || themeId == dark) {
+		localStorage.setItem("navbar", 'desktop');
+	} else {
+		localStorage.setItem("navbar", 'mobile');
+	}
 };
 function setPhoto(photoId) {
 	var suggestedColours = ["#ddad08", "#b4697d", "#e01453", "#d2cc2b", "#718181", "#acd56f", "#cb2c36", "#8098ae"];

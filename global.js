@@ -1,3 +1,18 @@
+jQuery.get('/menus/' + localStorage.getItem('navbar') + '.html', function(data) {
+	document.getElementById('menu').innerHTML = data;
+	if (localStorage.getItem('navbar') == 'mobile') {
+		mobileIndicator();
+	};
+	document.getElementById('menuTitle').innerHTML = document.title;
+	loadTheme();
+	window.addEventListener('scroll', function(e) {
+		if(window.scrollY>100) {
+			$("#menu").removeClass("full").addClass("small");
+		} else {
+			$("#menu").removeClass("small").addClass("full");
+		}
+	});
+});
 var menu = false;
 var online = navigator.onLine;
 // send user to setup?
@@ -5,7 +20,6 @@ if (localStorage.getItem("user") == undefined) {
 	console.log("User visiting for the first time! Opening new user page...");
 	window.location.href = "/setup/"
 };
-calculateCardColumns();
 
 if (localStorage.getItem("backgroundImage") == undefined) {
 	console.log("Missing background image settings.");
@@ -31,11 +45,10 @@ if (localStorage.getItem("theme") == "Greyscale") {
 } else {
 	$('head').append('<meta name="theme-color" content="' + localStorage.getItem("themeColour") + '" />');
 };
-document.getElementById('menu').style.backgroundColor = localStorage.getItem("themeColour");
 
 // Calculate Cards
 function calculateCardColumns() {
-	if (localStorage.getItem("theme") != "v0.8a" || localStorage.getItem("theme") != "v1.0b") {
+	if (localStorage.getItem("theme") != "v0.8a" && localStorage.getItem("theme") != "v1.0b") {
 		if (screen.width > "1024") {
 			cardsDesktop();
 			var layout = "desktop";
@@ -118,154 +131,93 @@ function cardColumns(colCount) {
 	};
 };
 // Theme Stuff
-if (localStorage.getItem("theme") == "light") {
-	document.getElementById('menu').style.backgroundColor = '#fafafa';
-	$("#angularIcon").attr("src","/images/angularJS.dark.png");
-	$("#javascriptIcon").attr("src","/images/javascript.dark.png");
-	$("#jqueryIcon").attr("src","/images/jquery.dark.png");
-	//#555555 colour for menu icons menuToggle
-	$(".menuIcon").css("color", "#555555");
-	$(".menuItem").css("color", "#555555");
-	$("#menuToggle").css("color", "#555555");
-	var infoBtnCount = document.getElementsByClassName('pinned').length;
-	var colourNum = 0;
-	while (colourNum < infoBtnCount) {
-		document.getElementsByClassName('pinned')[colourNum].style.color = localStorage.getItem("themeColour");
-		colourNum += 1;
+function loadTheme() {
+	if (localStorage.getItem("theme") == "light") {
+		document.getElementById('menu').style.backgroundColor = '#fafafa';
+		$("#angularIcon").attr("src","/images/angularJS.dark.png");
+		$("#jqueryIcon").attr("src","/images/jquery.dark.png");
+		//#555555 colour for menu icons menuToggle
+		$(".menuIcon").css("color", "#555555");
+		$(".menuItem").css("color", "#555555");
+		$(".mdc-tab-bar__indicator").css("background-color", "#555555");
+		$("#menuToggle").css("color", "#555555");
+		$("#menuTitle").css("color", "#555555");
+		
 	};
-	document.getElementsByClassName('colourBackground')[0].style.backgroundColor = '#fafafa';
 	
-};
-
-if (localStorage.getItem("theme") == "dark") {
-	document.getElementById('menu').style.backgroundColor = '#333';
-	$("*").css("color", "white");
-	$("button").css("color", "black");
-	$("select").css("color", "black");
-	$("input").css("color", "black");
-	$("option").css("color", "black");
-	$("optgroup").css("color", "black");
-	$(".card").css("background-color", "#333");
-	var infoBtnCount = document.getElementsByClassName('pinned').length;
-	var colourNum = 0;
-	while (colourNum < infoBtnCount) {
-		document.getElementsByClassName('pinned')[colourNum].style.color = localStorage.getItem("themeColour");
-		colourNum += 1;
+	if (localStorage.getItem("theme") == "smp-light") {
+		document.getElementById('menu').style.backgroundColor = '#fafafa';
+		$("#angularIcon").attr("src","/images/angularJS.dark.png");
+		$("#jqueryIcon").attr("src","/images/jquery.dark.png");
+		//#555555 colour for menu icons menuToggle
+		$(".menuIcon").css("color", "#555555");
+		$(".menuItem").css("color", "#555555");
+		$(".mdc-tab-bar__indicator").css("background-color", "#555555");
+		$("#menuToggle").css("color", "#555555");
+		$("#menuTitle").css("color", "#555555");
+		
 	};
-	document.getElementsByClassName('colourBackground')[0].style.backgroundColor = '#222';
+
+	if (localStorage.getItem("theme") == "dark") {
+		document.getElementById('menu').style.backgroundColor = '#333';
+		$("*").css("color", "white");
+		$("button").css("color", "black");
+		$("select").css("color", "black");
+		$("input").css("color", "black");
+		$("option").css("color", "black");
+		$("optgroup").css("color", "black");
+		document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(40, 40, 40 ,0.9)';
+		
+	};
 	
-};
+	if (localStorage.getItem("theme") == "smp-dark") {
+		document.getElementById('menu').style.backgroundColor = '#333';
+		$("*").css("color", "white");
+		$("button").css("color", "black");
+		$("select").css("color", "black");
+		$("input").css("color", "black");
+		$("option").css("color", "black");
+		$("optgroup").css("color", "black");
+		document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(40, 40, 40 ,0.9)';
+		
+	};
 
-if (localStorage.getItem("theme") == "photo dark") {
-	$("*").css("color", "white");
-	$("button").css("color", "black");
-	$("select").css("color", "black");
-	$("input").css("color", "black");
-	$("option").css("color", "black");
-	$("optgroup").css("color", "black");
-	$(".card").css("background-color", "#333");
+	if (localStorage.getItem("theme") == "v0.8a") {
+		document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(43, 53, 56, 0.75)';
+		document.getElementById('menu').id = "classicMenu";
+		document.getElementById('menuIconBox').style.display = "none";
+	};
+
+	if (localStorage.getItem("theme") == "v1.0b") {
+		document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(43, 53, 56, 0.75)';
+		document.getElementById('menu').style.backgroundColor = '#486e89';
+		document.getElementById('menu').style.boxShadow = '0px 0px 0px black';
+		
+	};
 	
-};
-
-if (localStorage.getItem("theme") == "v0.8a") {
-	document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(43, 53, 56, 0.75)';
-	document.getElementById('menu').id = "classicMenu";
-	document.getElementById('menuIconBox').style.display = "none";
-};
-
-if (localStorage.getItem("theme") == "v1.0b") {
-	document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(43, 53, 56, 0.75)';
-	document.getElementById('menu').style.backgroundColor = '#486e89';
-	document.getElementById('menu').style.boxShadow = '0px 0px 0px black';
+	if (localStorage.getItem("theme") == 'colourful' || localStorage.getItem("theme") == 'simple') {
+		document.getElementById('menu').style.backgroundColor = localStorage.getItem('themeColour');
+	};
 	
-};
-
-if (localStorage.getItem("theme") == "colourful") {
-	document.body.style.backgroundImage='url(/photos/none.jpg)';
-	document.body.style.backgroundColor = localStorage.getItem("themeColour");
-	document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(0, 0, 0, 0)';
-};
-
-if (localStorage.getItem("theme") == "Greyscale") {
-	document.body.style.WebkitFilter="grayscale(100%)";
-	document.getElementById('menu').style.WebkitFilter="grayscale(100%)";
-	document.body.style.filter="grayscale(100%)";
-	document.getElementById('menu').style.filter="grayscale(100%)";
-	document.body.style.backgroundImage='url(/photos/none.jpg)';
-	document.body.style.backgroundColor = 'grey';
-	document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(0, 0, 0, 0)';
-};
-
-if (localStorage.getItem("theme") == "Blur") {
-	document.getElementById('menu').style.WebkitBackdropFilter="blur(72px)";
-	document.getElementById('menu').style.backdropFilter="blur(72px)";
-	document.getElementById('menu').style.backgroundColor = "rgba(0, 0, 0, 0)";
-	document.getElementById('menu').style.boxShadow = "0 8px 16px 0 rgba(0,0,0,0), 0 6px 20px 0 rgba(0,0,0,0)";
-};
-
-// Functions for other content settings
-if (localStorage.getItem('mobile.navLoc') == "bottom") {
-	document.getElementById("menu").className += "menuBottom";
-	document.getElementById("menuButton").className = "menuBtnBottom";
-	document.getElementById("menuIconBox").className = "barOnBottom";
-	console.log('menu loaded to bottom.');
+	$(".pinned").css("color", localStorage.getItem("themeColour"));
+	// Functions for other content settings
 };
 // Global Functions
 function toggleMenu() { //The commented code is for the page responding to when the menu is opened.
-	if (localStorage.getItem("theme") == "v0.8a") {
-		toggleMenuOldTheme();
-	} else {
-	if (menu == true) {
+	if (document.getElementById('menu').className == 'open') {
 		document.getElementById('menu').className = 'hidden';
 		document.getElementById('menuTextBox').style.cursor = "initial";
-		if (localStorage.getItem('mobile.navLoc') == "bottom") {
-			document.getElementById('menuButton').className = 'menuBtnBottom regular';
-		} else {
-			document.getElementById('menuButton').className = 'regular';
-		};
 		//document.getElementsByClassName('content')[0].id = 'initial';
 		//document.getElementById('pageName').className = 'hidden';
-		if (localStorage.getItem('mobile.navLoc') == "bottom") {
-			document.getElementById("menu").className += " menuBottom";
-		};
-		menu = false;
+		document.getElementById('menuButton').className = 'regular';
 		} else {
 		document.getElementById('menu').className = 'open';
 		document.getElementById('menuTextBox').style.cursor = "pointer";
-		if (localStorage.getItem('mobile.navLoc') == "bottom") {
-			document.getElementById('menuButton').className = 'menuBtnBottom reverse';
-		} else {
-			document.getElementById('menuButton').className = 'reverse';
-		};
 		//document.getElementsByClassName('content')[0].id = 'contentOpen';
 		//document.getElementById('pageName').className = 'pageNameCondensed';
-		if (localStorage.getItem('mobile.navLoc') == "bottom") {
-			document.getElementById("menu").className += " menuBottom";
-		};
-		menu = true;
+		document.getElementById('menuButton').className = 'reverse';
 	};
-	}
-}
-
-function toggleMenuOldTheme() { //The commented code is for the page responding to when the menu is opened.
-	if (menu == true) {
-		document.getElementById('menuTextBox').style.color = 'transparent';
-		document.getElementById('classicMenu').className = 'noshow';
-		document.getElementById('menuTextBox').style.cursor = "initial";
-		document.getElementById('menuToggle').innerHTML = 'keyboard_arrow_right';
-		//document.getElementsByClassName('content')[0].id = 'initial';
-		//document.getElementById('pageName').className = 'hidden';
-		menu = false;
-	} else {
-		document.getElementById('menuTextBox').style.color = 'white';
-		document.getElementById('classicMenu').className = 'open';
-		document.getElementById('menuTextBox').style.cursor = "pointer";
-		document.getElementById('menuToggle').innerHTML = 'keyboard_arrow_left';
-		//document.getElementsByClassName('content')[0].id = 'contentOpen';
-		//document.getElementById('pageName').className = 'pageNameCondensed';
-		menu = true;
-	}
-}
+};
 
 function setPage(newLocation) {
 	window.location.href = newLocation;
@@ -336,85 +288,12 @@ function getAllUrlParams(url) {
   return obj;
 };
 
-function detectswipe(el,func) {
-  swipe_det = new Object();
-  swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
-  var min_x = 30;  //min x swipe for horizontal swipe
-  var max_x = 30;  //max x difference for vertical swipe
-  var min_y = 50;  //min y swipe for vertical swipe
-  var max_y = 60;  //max y difference for horizontal swipe
-  var direc = "";
-  ele = document.getElementById(el);
-  ele.addEventListener('touchstart',function(e){
-    var t = e.touches[0];
-    swipe_det.sX = t.screenX; 
-    swipe_det.sY = t.screenY;
-  },false);
-  ele.addEventListener('touchmove',function(e){
-    e.preventDefault();
-    var t = e.touches[0];
-    swipe_det.eX = t.screenX; 
-    swipe_det.eY = t.screenY;    
-  },false);
-  ele.addEventListener('touchend',function(e){
-    //horizontal detection
-    if ((((swipe_det.eX - min_x > swipe_det.sX) || (swipe_det.eX + min_x < swipe_det.sX)) && ((swipe_det.eY < swipe_det.sY + max_y) && (swipe_det.sY > swipe_det.eY - max_y) && (swipe_det.eX > 0)))) {
-      if(swipe_det.eX > swipe_det.sX) direc = "r";
-      else direc = "l";
-    }
-    //vertical detection
-    else if ((((swipe_det.eY - min_y > swipe_det.sY) || (swipe_det.eY + min_y < swipe_det.sY)) && ((swipe_det.eX < swipe_det.sX + max_x) && (swipe_det.sX > swipe_det.eX - max_x) && (swipe_det.eY > 0)))) {
-      if(swipe_det.eY > swipe_det.sY) direc = "d";
-      else direc = "u";
-    }
-
-    if (direc != "") {
-      if(typeof func == 'function') func(el,direc);
-    }
-    direc = "";
-    swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
-  },false);  
-}
-
 // Colour Corrections at the end
 $('.info').css('color', localStorage.getItem("themeColour"));
 $('.info').children().css('color', localStorage.getItem("themeColour"));
+$(".pinned").css("color", localStorage.getItem("themeColour"));
 
 //other stuff
-detectswipe('menu',calculateSwipe);
-
-function calculateSwipe(el,d) {
-	console.log('swipe: ' + d);
-	if (calculateLayout() == "desktop" && d == "r" && document.getElementById('menu').className.includes("open") == false) {
-		toggleMenu();
-	} else if (calculateLayout() == "desktop" && d == "l" && document.getElementById('menu').className.includes("open") == true) {
-		toggleMenu();
-	} else if (calculateLayout() == "tablet") {
-		if (screen.width > screen.height) {
-			if (d == "l" && document.getElementById('menu').className.includes("open") == true || d == "r" && document.getElementById('menu').className.includes("open") == false) {
-				toggleMenu();
-			};
-		} else if (screen.width < screen.height) {
-			if (d == "d" && document.getElementById('menu').className.includes("open") == true || d == "u" && document.getElementById('menu').className.includes("open") == false) {
-				toggleMenu();
-			};
-		}
-	} else if (calculateLayout() == "phone") {
-		if (screen.width > screen.height) {
-			if (d == "l" && document.getElementById('menu').className.includes("open") == true || d == "r" && document.getElementById('menu').className.includes("open") == false) {
-				toggleMenu();
-			};
-		} else {
-			if (localStorage.getItem('mobile.navLoc') == "bottom") {
-				if (d == "d" && document.getElementById('menu').className == "open menuBottom" || d == "u" && document.getElementById('menu').className != "open menuBottom") {
-					toggleMenu();
-				}
-			} else if (d == "u" && document.getElementById('menu').className == "open" || d == "d" && document.getElementById('menu').className != "open") {
-				toggleMenu();
-			};
-		};
-	};
-};
 
 function calculateLayout() {
 	if (screen.width > "1024") {
@@ -427,3 +306,59 @@ function calculateLayout() {
 		return "phone";
 	};
 }
+
+
+function mobileIndicator() {
+	if (screen.width < 601) {
+		if (document.title == 'James M') {
+			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '0px';
+		};
+		if (document.title == 'Updates') {
+			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '72px';
+		};
+		if (document.title == 'JavaScript' || document.title == 'JQuery') {
+			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '144px';
+		};
+		if (document.title == 'Options') {
+			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '216px';
+		};
+		if (document.title == 'Videos') {
+			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '288px';
+		};
+	} else {
+		if (document.title == 'James M') {
+			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '0px';
+		};
+		if (document.title == 'Updates') {
+			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '160px';
+		};
+		if (document.title == 'JavaScript' || document.title == 'JQuery') {
+			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '320px';
+		};
+		if (document.title == 'Options') {
+			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '480px';
+		};
+		if (document.title == 'Videos') {
+			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '640px';
+		};
+	};
+};
+
+function loadPageContent() {
+	if (navigator.onLine) {
+		jQuery.get('/page/' + document.title + '.html', function(data) {
+			document.getElementsByClassName('content')[0].innerHTML = data;
+			$(".pinned").css("color", localStorage.getItem("themeColour"));
+			$.getScript( '/page/' + document.title + '.js' );
+			calculateCardColumns();
+			$(".pinned").css("color", localStorage.getItem("themeColour"));
+		});
+	} else {
+		jQuery.get('/page/offline.html', function(data) {
+			document.getElementsByClassName('content')[0].innerHTML = data;
+		});
+	}
+};
+$( document ).ready(function() {
+loadPageContent();
+});

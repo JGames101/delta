@@ -1,0 +1,18 @@
+#menu {
+	height: 128px !important;
+	width: 100%;
+	overflow: hidden;
+	position: fixed;
+	z-index: 2048;
+	-webkit-transition-duration: 0.1s; /* Safari */
+	transition-duration: 0.1s;
+	box-shadow: 0 0 16px 0 rgba(0,0,0,0.2);
+}
+
+#menuButton {
+	display: none;
+}
+
+#menu.small {
+	margin-top: -64px;
+}

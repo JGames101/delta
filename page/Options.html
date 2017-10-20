@@ -1,0 +1,95 @@
+﻿<h2 class="pinned">PERSONALIZATION</h2>
+<div id="pinned1" class="pinnedDiv">
+<div class="card card1">
+	<h2>THEME</h2>
+	<p>Select your theme: 
+	<select id="themeSelect" onchange="javascript:changeTheme()">
+		<optgroup label="Regular Themes">
+			<option value="colourful">Colourful</option>
+			<option value="light">Light</option>
+			<option value="dark">Dark</option>
+		</optgroup>
+		<optgroup label="Simple Themes">
+			<option value="simple">Simple</option>
+			<option value="smp-light">Simple Light</option>
+			<option value="smp-dark">Simple Dark</option>
+		</optgroup>
+		<optgroup label="Classic">
+			<option value="v1.441b">v1.441b</option>
+			<option value="v1.0b">v1.0b</option>
+			<option value="v0.8a">v0.8a</option>
+		</optgroup>
+	</select>
+	</p>
+</div>
+<div class="card card1 clickable" onclick="javascript:setPage('/setup/')">
+	<h2>RELAUCH SETUP</h2>
+	<p>Click here to relaunch the setup page.</p>
+</div>
+</div>
+<div id="desktopOptions">
+<div id="pinned2" class="pinnedDiv">
+	<h2 class="pinned">DESKTOP OPTIONS</h2>
+	<div class="card card2">
+		<h2>umm...</h2>
+		<p>There's not really anything to show here yet. Check back soon!</p>
+	</div>
+</div>
+</div>
+<div id="tabletOptions">
+<div id="pinned3" class="pinnedDiv">
+	<h2 class="pinned">TABLET OPTIONS</h2>
+	<div class="card card3">
+		<h2>umm...</h2>
+		<p>There's not really anything to show here yet. Check back soon!</p>
+	</div>
+</div>
+</div>
+<div id="mobileOptions">
+<div id="pinned4" class="pinnedDiv">
+	<h2 class="pinned">MOBILE OPTIONS</h2>
+	<div class="card card2">
+		<h2>umm...</h2>
+		<p>There's not really anything to show here yet. Check back soon!</p>
+	</div>
+</div>
+</div>
+<div id="pinned5" class="pinnedDiv">
+<h2 class="pinned">INSTALL</h2>
+<div class="card card5">
+	<h2>UWP</h2>
+	<p>Windows 10, Windows 10 Mobile, Xbox One, etc.</p>
+	<a href="/install/Hosted Web App_1.7.1.0_AnyCPU.appxbundle" download><button>Download .appx</button></a>
+</div>
+<div class="card card5">
+	<h2><i class="material-icons">android</i> ANDROID</h2>
+	<p>This site is a Progressive Web App, which means from Chrome for Android, you can just press Add to Homescreen... from the menu to install it.</p>
+</div>
+</div>
+<h2 class="pinned" id="legacyTitle" onclick="expandLegacy()" style="cursor:pointer;">ADVANCED</h2>
+<div class="legacy" style="display:none;">
+<div id="pinned6" class="pinnedDiv">
+<div class="card card6" id="colourCard">
+	<h2>THEME COLOUR</h2>
+	<p>Current Theme Colour: <b><span id="currentTheme">Please Enable JavaScript.</span></p><br>
+	Suggested Colour: <span id="suggestedPreview">????????</span> <button onclick="javascript:setSuggestedColour()">Set Colour!</button><br>
+	Colour Picker: <input type="color" id="colourPicker" value="#486e89" onchange="javascript:setPickerColour()"><br>
+	Custom Colour: <input id="newColour" name="newColour" value="Please Turn On JavaScript."></input> <button onclick="javascript:setColour()">Set Colour!</button><br>
+	</b></p>
+</div>
+<div class="card card6" id="navbarCard">
+	<h2>NAVIGATION BAR</h2>
+	<p>Select your navigation bar:
+	<select id="navSelect" onchange="javascript:changeNavbar()">
+		<option value="desktop">Expanding</option>
+		<option value="mobile">Simple</option>
+		<optgroup label="Classic">
+			<option value="v1.441b">v1.441b</option>
+			<option value="v1.0b">v1.0b</option>
+			<option value="v0.8a">v0.8a</option>
+		</optgroup>
+	</select>
+	</p>
+</div>
+</div>
+</div>

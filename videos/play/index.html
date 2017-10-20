@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<title>Videos</title>
+		<script src="/modernizr-webp.js"></script>
+		<script src="/jquery-3.2.1.min.js"></script>
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<meta charset="utf-8">
+		<link href="/styles.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
+	</head>
+	<body>
+		<noscript>
+			<object id="jsmissing" data="/jsmissing.html" width="100%" height="100%" style="z-index:512;height:100%!important;"></object>	<!-- The alert for JavaScript being disabled. -->
+			<style>* {overflow: hidden;}</style>
+		</noscript>
+		<div id="menu"></div>
+		<div id="page">
+			<div class="colourBackground" style="height:100%;">
+					<iframe id="videoPlayer" width="100%" height="56.25%" src="https://www.youtube.com/embed/z5XhoUH3sEc?autoplay=1" frameborder="0" allowfullscreen></iframe>
+					<h2 class="pinned" id="videoTitle">loading...</h2>
+					<h3 id="username" style="color:'#555555';padding-left:16px;">loading...</h3>
+					<p id="statsBlock" style="color:'#555555';padding-left:16px;"><i class="material-icons">remove_red_eye</i><span id="views"> loading... </span><i class="material-icons">favorite</i><span id="likes"> loading... </span><i class="material-icons">favorite_border</i><span id="dislikes"> loading... </span><i class="material-icons">comment</i><span id="comments"> loading... </span></p>
+					<p style="color:'#555555';padding-left:16px;" id="videoDescription">loading description...</p>
+			</div>
+		</div>
+	</body>
+	<script src="/global.js"></script>
+	<script>
+	var videoId = getParameterByName('video');
+	jQuery.get('https://www.googleapis.com/youtube/v3/videos?id=' + videoId + '&key=AIzaSyAA_UsLtqF-c8dPaXc9PAlbBiDKerDmodA&part=snippet,contentDetails,statistics,status', function(data) {
+		console.log(data);
+		document.getElementById('videoPlayer').src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+		document.getElementById('videoTitle').innerHTML = data.items[0].snippet.title;
+		document.getElementById('videoDescription').innerHTML = data.items[0].snippet.description;
+		document.getElementById('username').innerHTML = data.items[0].snippet.channelTitle;
+		document.getElementById('views').innerHTML = ' ' + data.items[0].statistics.viewCount + ' ';
+		document.getElementById('likes').innerHTML = ' ' + data.items[0].statistics.likeCount + ' ';
+		document.getElementById('dislikes').innerHTML = ' ' + data.items[0].statistics.dislikeCount + ' ';
+		document.getElementById('comments').innerHTML = ' ' + data.items[0].statistics.commentCount + ' ';
+	});
+	
+	function getParameterByName(name, url) {
+		if (!url) url = window.location.href;
+		name = name.replace(/[\[\]]/g, "\\$&");
+		var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+			results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		return decodeURIComponent(results[2].replace(/\+/g, " "));
+	}
+	</script>
+</html>
