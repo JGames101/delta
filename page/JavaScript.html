@@ -1,4 +1,4 @@
-<div id="pinned1" class="pinnedDiv">
+ï»¿<div id="pinned1" class="pinnedDiv">
 	<div class="card card1">
 		<h2>WELCOME</h2>
 		<p>This is for my JavaScript stuff. It will be updated as I do more and more. I may end up doing more things under JQuery, so look there for more advanced things.</p>
@@ -6,6 +6,11 @@
 	</div>
 	<div id="pinned2" class="pinnedDiv">
 	<h2 class="pinned">EXPERIMENTS</h2>
+	<div class="card card2">
+		<h2>WEB SHARING</h2>
+		<p>Web Sharing is a new feature in Chrome, available in version 61+. Other browser support is non-exsistant.</p>
+		<button onclick="shareDemo()" class="mdc-button mdc-button--raised">Share</button>
+	</div>
 	<div class="card card2">
 		<h2>FILE INFORMATION</h2>
 		<span>Please open a file: </span><br>
@@ -24,14 +29,8 @@
 	</div>
 	<div class="card card2">
 		<h2>TEMPERATURE CONVERTER</h2>
-		<p><input id="fahrenheit" type="number">°f <input id="celsius" type="number">°c</p>
-		<p><button onclick="toCelsiusNew()">Convert to Celsius!</button><button onclick="toFahrenheitNew()">Convert to Fehrenheit!</button></p>
-	</div>
-	<div class="card card2">
-		<img src="/photos/1btn.jpg" id="photoBtn1" width="25%" class="imageButtonJS" onclick="javascript:setBackground(1)"><img src="/photos/2.jpg" id="photoBtn2" width="25%" class="imageButtonJS" onclick="javascript:setBackground(2)"><img src="/photos/3.jpg" id="photoBtn3" width="25%" class="imageButtonJS" onclick="javascript:setBackground(3)"><img src="/photos/4.jpg" id="photoBtn4" width="25%" class="imageButtonJS" onclick="javascript:setBackground(4)">
-		<img src="/photos/5.jpg" id="photoBtn5" width="25%" class="imageButtonJS" onclick="javascript:setBackground(5)"><img src="/photos/6.jpg" id="photoBtn6" width="25%" class="imageButtonJS" onclick="javascript:setBackground(6)"><img src="/photos/7.jpg" id="photoBtn7" width="25%" class="imageButtonJS" onclick="javascript:setBackground(7)"><img src="/photos/8.jpg" id="photoBtn8" width="25%" class="imageButtonJS" onclick="javascript:setBackground(8)">
-		<h2>BACKGROUND CHANGER</h2>
-		<p>Click on these photos to change the background! This applies to the whole site.</p>
+		<p><input id="fahrenheit" type="number">Â°f <input id="celsius" type="number">Â°c</p>
+		<p><button class="mdc-button mdc-button--raised" onclick="toCelsiusNew()">Convert to Celsius!</button><button class="mdc-button mdc-button--raised" onclick="toFahrenheitNew()">Convert to Fehrenheit!</button></p>
 	</div>
 	<div class="card card2">
 		<h2>NOTIFICATION GENERATOR</h2>
@@ -43,29 +42,29 @@
 			<input type="text" maxlength="512" name="notcontent" id="notcontent" value="Hi"><br>
 			<span>Image:</span>
 			<input type="text" maxlength="512" name="notimage" id="notimage" value="/images/icon/icon128.png"><br>
-			<button onclick="javascript:notgen()">Go!</button>
+			<button class="mdc-button mdc-button--raised" onclick="javascript:notgen()">Go!</button>
 		</p>
 	</div>
 	<div class="card card2">
 		<h2>NOTIFICATIONS</h2>
 		<p>Click the button below to make a notification.</p>
-		<p><button onclick="javascript:notifyMe()">Notify!</button>
+		<p><button class="mdc-button mdc-button--raised" onclick="javascript:notifyMe()">Notify!</button>
 	</div>
 	<div class="card card2">
 		<h2>POPUPS</h2>
 		<p>These buttons make things pop up! YAY!</p>
-		<a href="javascript:popup('An Alert!')"><button>Alert</button></a><span> </span>
-		<a href="javascript:ask('Great! Uhh... just type anything.')"><button>Prompt</button></a><span> </span>
-		<a href="javascript:confirm('Press a Button!')"><button>Confirm</button></a><p></p>
+		<a href="javascript:popup('An Alert!')"><button class="mdc-button mdc-button--raised">Alert</button></a><span> </span>
+		<a href="javascript:ask('Great! Uhh... just type anything.')"><button class="mdc-button mdc-button--raised">Prompt</button></a><span> </span>
+		<a href="javascript:confirm('Press a Button!')"><button class="mdc-button mdc-button--raised">Confirm</button></a><p></p>
 	</div>
 	<div class="card card2">
 		<h2>FAHRENHEIT TO CELCIUS</h2>
-		<p><input id="input2" type="number"> Degrees fahrenheit is...<a href="javascript:toCelsius()"><button>Calculate!</button></a></p>
+		<p><input id="input2" type="number"> Degrees fahrenheit is...<a href="javascript:toCelsius()"><button class="mdc-button mdc-button--raised">Calculate!</button></a></p>
 		<p><span id="answer2"></span> degrees Celcius!</p>
 	</div>
 		<div class="card card2">
 		<h2>TEXT</h2>
-		<a href="javascript:showText()"><button>Click me!</button></a>
+		<a href="javascript:showText()"><button class="mdc-button mdc-button--raised">Click me!</button></a>
 		<p>Click this button to make something happen!</p>
 		<p id="javaScript1"></p>
 	</div>
