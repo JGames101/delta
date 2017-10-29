@@ -24,6 +24,7 @@
 <link rel="import" href="nav.html">
 <title>JavaScript</title>
 <script src="javascript.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
 </head>
 <body onresize="window.location.refresh">
 <noscript>
@@ -38,25 +39,7 @@
 	<i class="material-icons md-light md-32" id="menuToggle">keyboard_arrow_right</i>
 </div>
 <div id="menu" contextmenu="navigationContext">
-	<div id="menuTextBox">
-		<p class="menuItem" id="menuTitle">Pages</p>
-		<p class="menuItem" id="homeButton" onclick="javascript:setPage('/')">HOME</p>
-		<p class="menuItem" id="updatesButton" onclick="javascript:setPage('/updates/')">UPDATES</p>
-		<p class="menuItem" id="angularButton" onclick="javascript:setPage('/angular/')">ANGULAR</p>
-		<p class="menuItem" id="javascriptButton" onclick="javascript:setPage('/javascript/')">JAVASCRIPT</p>
-		<p class="menuItem" id="optionsButton" onclick="javascript:setPage('/jquery/')">JQUERY</p>
-		<p class="menuItem" id="html5Button" onclick="javascript:setPage('/html5/')">HTML5</p>
-		<p class="menuItem" id="optionsButton" onclick="javascript:setPage('/options/')">OPTIONS</p>
-	</div>
-	<div id="menuIconBox">
-		<i class="material-icons md-light md-32 menuIcon" id="homeIcon" onclick="javascript:setPage('/')">home</i>
-		<i class="material-icons md-light md-32 menuIcon" id="updatesIcon" onclick="javascript:setPage('/updates/')">history</i>
-		<img class="menuIcon" id="angularIcon" src="/images/angularJS.png" width="30px" onclick="javascript:setPage('/angular/')">
-		<img class="menuIcon" id="javascriptIcon" src="/images/javascript.png" width="30px" onclick="javascript:setPage('/javascript/')">
-		<img class="menuIcon" id="jqueryIcon" src="/images/jquery.png" width="30px" onclick="javascript:setPage('/jquery/')">
-		<i class="material-icons md-light md-32 menuIcon" id="html5Icon" onclick="javascript:setPage('/html5/')">web</i>
-		<i class="material-icons md-light md-32 menuIcon" id="optionsIcon" onclick="javascript:setPage('/options/')">settings</i>
-	</div>
+
 </div>
 <h1 id="pageName">JavaScript</h1>
 <div class="colourBackground">
@@ -69,4 +52,6 @@
 <script src="/modernizr-webp.js"></script>
 <script src="/jquery-3.2.1.min.js"></script>
 <script src="/global.js"></script>
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script>mdc.autoInit()</script>
 </html>

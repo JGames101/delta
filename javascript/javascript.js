@@ -84,3 +84,14 @@ function toFahrenheitInstant() {
 	var celsius = document.getElementById("celsiusInstant").value;
     document.getElementById("fahrenheitInstant").value = 1.8 * celsius + 32;
 }
+
+function shareDemo() {
+	if (navigator.share) {
+	  navigator.share({
+		  text: 'Check out this really cool site:',
+		  url: 'https://jgames101.github.io',
+	  })
+		.then(() => console.log('Successful share'))
+		.catch((error) => console.log('Error sharing', error));
+	}
+}
