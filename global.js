@@ -3,8 +3,8 @@ jQuery.get('/menus/' + localStorage.getItem('navbar') + '.html', function(data) 
 	if (localStorage.getItem('navbar') == 'mobile') {
 		mobileIndicator();
 	};
-	document.getElementById('menuTitle').innerHTML = document.title;
 	loadTheme();
+	document.getElementById('menuTitle').innerHTML = document.title;
 	window.addEventListener('scroll', function(e) {
 		if(window.scrollY>100) {
 			$("#menu").removeClass("full").addClass("small");
@@ -16,8 +16,12 @@ jQuery.get('/menus/' + localStorage.getItem('navbar') + '.html', function(data) 
 		loadPageContent();
 	});
 });
+
+document.documentElement.style.setProperty('--mdc-theme-primary', localStorage.getItem('themeColour'));
+document.documentElement.style.setProperty('--mdc-theme-secondary', '#1565c0');
 var menu = false;
 var online = navigator.onLine;
+loadTheme();
 // send user to setup?
 if (localStorage.getItem("user") == undefined) {
 	console.log("User visiting for the first time! Opening new user page...");
@@ -27,17 +31,17 @@ if (localStorage.getItem("user") == undefined) {
 if (localStorage.getItem("backgroundImage") == undefined) {
 	console.log("Missing background image settings.");
 	localStorage.setItem("backgroundImage", 7)
-} else {
+} //else {
 	$('html').attr('id', 'htmlObj');
 	$('body').append('<span class="webp"></span>');
-	if (calculateLayout() != "phone") {
-		if (document.getElementsByClassName('webp')[0].id == "htmlObj") {
-			document.getElementById('htmlObj').style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.webp)';
-		} else {
-			document.getElementById('htmlObj').style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.jpg)';
-		};
-	};
-};
+	//if (calculateLayout() != "phone") {
+	//	if (document.getElementsByClassName('webp')[0].id == "htmlObj") {
+	//		document.getElementById('htmlObj').style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.webp)';
+	//	} else {
+	//		document.getElementById('htmlObj').style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.jpg)';
+	//	};
+//	};
+//};
 if (localStorage.getItem("themeColour") == undefined) {
 	localStorage.setItem("themeColour", "#cb2c36");
 	localStorage.setItem("backgroundImage", "7");
@@ -137,75 +141,9 @@ function cardColumns(colCount) {
 	};
 };
 // Theme Stuff
-function loadTheme() {
-	if (localStorage.getItem("theme") == "light") {
-		document.getElementById('menu').style.backgroundColor = '#fafafa';
-		$("#angularIcon").attr("src","/images/angularJS.dark.png");
-		$("#jqueryIcon").attr("src","/images/jquery.dark.png");
-		//#555555 colour for menu icons menuToggle
-		$(".menuIcon").css("color", "#555555");
-		$(".menuItem").css("color", "#555555");
-		$(".mdc-tab-bar__indicator").css("background-color", "#555555");
-		$("#menuToggle").css("color", "#555555");
-		$("#menuTitle").css("color", "#555555");
-		
-	};
+function loadTheme() {	
+	console.log('themes being loaded');
 	
-	if (localStorage.getItem("theme") == "smp-light") {
-		document.getElementById('menu').style.backgroundColor = '#fafafa';
-		$("#angularIcon").attr("src","/images/angularJS.dark.png");
-		$("#jqueryIcon").attr("src","/images/jquery.dark.png");
-		//#555555 colour for menu icons menuToggle
-		$(".menuIcon").css("color", "#555555");
-		$(".menuItem").css("color", "#555555");
-		$(".mdc-tab-bar__indicator").css("background-color", "#555555");
-		$("#menuToggle").css("color", "#555555");
-		$("#menuTitle").css("color", "#555555");
-		
-	};
-
-	if (localStorage.getItem("theme") == "dark") {
-		document.getElementById('menu').style.backgroundColor = '#333';
-		$("*").css("color", "white");
-		$("button").css("color", "black");
-		$("select").css("color", "black");
-		$("input").css("color", "black");
-		$("option").css("color", "black");
-		$("optgroup").css("color", "black");
-		document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(40, 40, 40 ,0.9)';
-		
-	};
-	
-	if (localStorage.getItem("theme") == "smp-dark") {
-		document.getElementById('menu').style.backgroundColor = '#333';
-		$("*").css("color", "white");
-		$("button").css("color", "black");
-		$("select").css("color", "black");
-		$("input").css("color", "black");
-		$("option").css("color", "black");
-		$("optgroup").css("color", "black");
-		document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(40, 40, 40 ,0.9)';
-		
-	};
-
-	if (localStorage.getItem("theme") == "v0.8a") {
-		document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(43, 53, 56, 0.75)';
-		document.getElementById('menu').id = "classicMenu";
-		document.getElementById('menuIconBox').style.display = "none";
-	};
-
-	if (localStorage.getItem("theme") == "v1.0b") {
-		document.getElementsByClassName('colourBackground')[0].style.backgroundColor = 'rgba(43, 53, 56, 0.75)';
-		document.getElementById('menu').style.backgroundColor = '#486e89';
-		document.getElementById('menu').style.boxShadow = '0px 0px 0px black';
-		
-	};
-	
-	if (localStorage.getItem("theme") == 'colourful' || localStorage.getItem("theme") == 'simple') {
-		document.getElementById('menu').style.backgroundColor = localStorage.getItem('themeColour');
-	};
-	
-	$(".pinned").css("color", localStorage.getItem("themeColour"));
 	// Functions for other content settings
 };
 // Global Functions
@@ -311,39 +249,13 @@ function calculateLayout() {
 
 
 function mobileIndicator() {
-	if (screen.width < 601) {
-		if (document.title == 'James M') {
-			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '0px';
-		};
-		if (document.title == 'Updates') {
-			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '72px';
-		};
-		if (document.title == 'JavaScript' || document.title == 'JQuery') {
-			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '144px';
-		};
-		if (document.title == 'Options') {
-			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '216px';
-		};
-		if (document.title == 'Videos') {
-			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '288px';
-		};
+	if (document.title == 'JavaScript' || document.title == 'Code' || document.title == 'JQuery' || document.title == 'HTML5') {
+		document.getElementsByClassName('mdc-tab')[1].className += ' mdc-tab--active';
+	} else if (document.title == 'Media' || document.title == 'Videos') {
+		document.getElementsByClassName('mdc-tab')[2].className += ' mdc-tab--active';
 	} else {
-		if (document.title == 'James M') {
-			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '0px';
-		};
-		if (document.title == 'Updates') {
-			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '160px';
-		};
-		if (document.title == 'JavaScript' || document.title == 'JQuery') {
-			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '320px';
-		};
-		if (document.title == 'Options') {
-			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '480px';
-		};
-		if (document.title == 'Videos') {
-			document.getElementsByClassName('mdc-tab-bar__indicator')[0].style.marginLeft = '640px';
-		};
-	};
+		document.getElementsByClassName('mdc-tab')[0].className += ' mdc-tab--active';
+	}
 };
 
 function loadPageContent() {
@@ -359,5 +271,26 @@ function loadPageContent() {
 		jQuery.get('/page/offline.html', function(data) {
 			document.getElementsByClassName('content')[0].innerHTML = data;
 		});
+	}
+};
+
+function toggleSection(section) {
+	if (document.getElementById(section).style.display == 'none') {
+		document.getElementById(section).style.display = 'initial';
+		document.getElementById('icon-' + section).innerHTML = "<i class='material-icons'>keyboard_arrow_up</i>";
+	} else {
+		document.getElementById(section).style.display = 'none';
+		document.getElementById('icon-' + section).innerHTML = "<i class='material-icons'>keyboard_arrow_down</i>";
+	}
+}
+
+function shareMenu() {
+	if (navigator.share) {
+	  navigator.share({
+		  text: 'Check out this really cool site:',
+		  url: window.location.href,
+	  })
+		.then(() => console.log('Successful share'))
+		.catch((error) => console.log('Error sharing', error));
 	}
 };
