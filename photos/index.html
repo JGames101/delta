@@ -1,40 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Photos | James M</title>
-<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
+<title>loading...</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 <link href="images.css" rel="stylesheet" type="text/css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="/styles.css" rel="stylesheet" type="text/css">
 <script src="/jquery-3.2.1.min.js"></script>
-<script src="photos.js"></script>
+<script src="/photos/photos.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
 </head>
 <body>
 <noscript>
 	<object id="jsmissing" data="/jsmissing.html" width="100%" height="48px"></object> <!-- The alert for JavaScript being disabled. -->
 </noscript>
-<div id="page">
-<img src="1.jpg" id="photo" height="100%">
-<a href="/"><button id="backBtn"><i class="material-icons md-light" id="backIcon" style="font-size:48px;">arrow_back</i></button></a>
-<button id="fullscreenBtn" onclick="javascript:fullscreen()"><i class="material-icons md-light" id="fullscreenIcon" style="font-size:48px;">fullscreen</i></button>
-<button id="prev" onclick="javascript:previousPhoto()"><i class="material-icons md-light" style="font-size:48px;">keyboard_arrow_left</i></button>
-<button id="photoNext" onclick="javascript:nextPhoto()"><i class="material-icons md-light" style="font-size:48px;">keyboard_arrow_right</i></button>
-</div>
+<header class="mdc-toolbar">
+	<div class="mdc-toolbar__row">
+		<section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+		  <a href="/" class="material-icons mdc-toolbar__menu-icon">keyboard_arrow_left</a>
+		  <span class="mdc-toolbar__title" id="menuTitle">Title</span>
+		</section>
+	</div>
+</header>
+	<img id="imageBeingViewed" src="/photos/1.jpg" height="810px">
+	<script>
+		var imgPadding = screen.width-$("img").width()/2;
+		$('img').css("left", );
+	</script>
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script>mdc.autoInit()</script>
 </body>
-<script src="/global.js"></script>
-<script> // image in greyscale or oversatured
-if (localStorage.getItem("theme") == "Greyscale") {
-	document.getElementById('photo').style.WebkitFilter="grayscale(100%)";
-	document.getElementById('photo').style.filter="grayscale(100%)";
-};
-if (localStorage.getItem("theme") == "saturated") {
-	document.getElementById('photo').style.WebkitFilter="saturate(200%)";
-	document.getElementById('photo').style.filter="saturate(200%)";
-};
-if (localStorage.getItem("theme") == "inverted") {
-	document.getElementById('photo').style.WebkitFilter="invert(200%)";
-	document.getElementById('photo').style.filter="invert(200%)";
-};
-</script>
 </html>

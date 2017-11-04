@@ -1,14 +1,13 @@
-img {
-	padding: 0px;
-	margin: 0px;
+* {
+	--mdc-theme-primary: #111;
+	--mdc-theme-secondary: #FF9800;
 }
-#page {
-	width: 100%;
+body {
+	background-color: #111;
+}
+img {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-}
-body {
-	background-color: white !important;
-	background-image: none !important;
+	margin: auto;
 }
