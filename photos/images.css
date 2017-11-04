@@ -4,10 +4,20 @@
 }
 body {
 	background-color: #111;
+	overflow: hidden;
 }
-img {
-	position: absolute;
+
+main {
 	top: 0px;
 	left: 0px;
-	margin: auto;
+}
+
+header {
+	position: fixed !important;
+	z-index: 256 !important;
+	background-color: transparent !important;
+}
+
+img {
+	cursor: move;
 }

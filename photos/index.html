@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>loading...</title>
+<title>Image</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 <link href="images.css" rel="stylesheet" type="text/css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +10,8 @@
 <script src="/photos/photos.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+<script src="/jquery.ui.touch-punch.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
 <noscript>
@@ -18,16 +20,64 @@
 <header class="mdc-toolbar">
 	<div class="mdc-toolbar__row">
 		<section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-		  <a href="/" class="material-icons mdc-toolbar__menu-icon">keyboard_arrow_left</a>
-		  <span class="mdc-toolbar__title" id="menuTitle">Title</span>
+		  <a onclick="setPage('/videos')" class="material-icons mdc-toolbar__menu-icon">keyboard_arrow_left</a>
+		  <span class="mdc-toolbar__title" id="menuTitle"></span>
+		  <i class="material-icons" style="color:white;position:absolute;top:24px;right:64px;cursor:pointer;" onclick="location.reload()">autorenew</i>
+		  <i class="material-icons" style="color:white;position:absolute;top:24px;right:24px;cursor:pointer;" onclick="shareMenu()">share</i>
 		</section>
 	</div>
 </header>
-	<img id="imageBeingViewed" src="/photos/1.jpg" height="810px">
+<main style="width:100%;height:100%;position:absolute;">
+	<img id="imageBeingViewed" width="1080px" style="margin:auto;vertical-align:middle;display:block">
 	<script>
-		var imgPadding = screen.width-$("img").width()/2;
-		$('img').css("left", );
+		var imgId = getParameterByName('image');
+		$('#imageBeingViewed').attr("src",imgId);
+		if (imgId == '/photos/1.jpg') {
+			document.getElementById('menuTitle').innerHTML = "Dandelion";
+			document.title = "Dandelion";
+		} else if (imgId == '/photos/2.jpg') {
+			document.getElementById('menuTitle').innerHTML = "Cactus";
+			document.title = "Cactus";
+		} else if (imgId == '/photos/3.jpg') {
+			document.getElementById('menuTitle').innerHTML = "Fushia";
+			document.title = "Fushia";
+		} else if (imgId == '/photos/4.jpg') {
+			document.getElementById('menuTitle').innerHTML = "Snapdragon";
+			document.title = "Snapdragon";
+		} else if (imgId == '/photos/5.jpg') {
+			document.getElementById('menuTitle').innerHTML = "Leaf Over The River";
+			document.title = "Leaf Over The River";
+		} else if (imgId == '/photos/6.jpg') {
+			document.getElementById('menuTitle').innerHTML = "Rocks";
+			document.title = "Rocks";
+		} else if (imgId == '/photos/7.jpg') {
+			document.getElementById('menuTitle').innerHTML = "Berries";
+			document.title = "Berries";
+		} else if (imgId == '/photos/8.jpg') {
+			document.getElementById('menuTitle').innerHTML = "Cliff";
+			document.title = "Cliff";
+		};
+		
+		if (screen.width < 1080) {
+			$('#imageBeingViewed').attr('width',screen.width);
+		};
+	
+		function getParameterByName(name, url) {
+			if (!url) url = window.location.href;
+			name = name.replace(/[\[\]]/g, "\\$&");
+			var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+				results = regex.exec(url);
+			if (!results) return null;
+			if (!results[2]) return '';
+			return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+		
+		$( function() {
+			$( "#imageBeingViewed" ).draggable();
+		} );
 	</script>
+</main>
+<script src="/global.js"></script>
 <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 <script>mdc.autoInit()</script>
 </body>
