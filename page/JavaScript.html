@@ -4,14 +4,23 @@
 		<p>This is for my JavaScript stuff. It will be updated as I do more and more. I may end up doing more things under JQuery, so look there for more advanced things.</p>
 	</div>
 	</div>
-	<div id="pinned2" class="pinnedDiv">
-	<h2 class="pinned">EXPERIMENTS</h2>
-	<div class="card card2">
+<h2 class="pinned" onclick="toggleSection('pinned2')">EXPERIMENTS  <i class='material-icons' id="icon-pinned2">keyboard_arrow_up</i></h2>
+<div id="pinned2" class="pinnedDiv" style="display:initial;">
+	
+</div>
+<h2 class="pinned" id="legacyTitle" onclick="toggleSection('pinned3')">QUICK TESTS <i class='material-icons' id="icon-pinned3">keyboard_arrow_down</i></h2>
+<div id="pinned3" class="pinnedDiv" style="display:none;">
+	<div class="card card3">
+		<h2>CUSTOM BACKGROUND alpha</h2>
+		<span>Pick your background:</span><br>
+		<input id="customBackground" onchange="javascript:setCustomBackground()" type="file">
+	</div>
+	<div class="card card3">
 		<h2>WEB SHARING</h2>
 		<p>Web Sharing is a new feature in Chrome, available in version 61+. Other browser support is non-exsistant.</p>
 		<button onclick="shareDemo()" class="mdc-button mdc-button--raised">Share</button>
 	</div>
-	<div class="card card2">
+	<div class="card card3">
 		<h2>FILE INFORMATION</h2>
 		<span>Please open a file: </span><br>
 		<input id="fileInput" onchange="javascript:openFile()" type="file">
@@ -23,16 +32,25 @@
 			</p>
 		</div>
 	</div>
-	<div class="card card2">
+	<div class="card card3">
 		<h2>WEB BROWSER</h2>
 		<object data="/javascript/examples/webBrowser.html" class="reverseVideo" width="100%" height="360px"></object>
 	</div>
-	<div class="card card2">
+	<div class="card card3">
 		<h2>TEMPERATURE CONVERTER</h2>
-		<p><input id="fahrenheit" type="number">°f <input id="celsius" type="number">°c</p>
-		<p><button class="mdc-button mdc-button--raised" onclick="toCelsiusNew()">Convert to Celsius!</button><button class="mdc-button mdc-button--raised" onclick="toFahrenheitNew()">Convert to Fehrenheit!</button></p>
+		<p><label class="mdc-textfield">
+			<input type="text" id='fahrenheit' class="mdc-textfield__input">
+			<span class="mdc-textfield__label mdc-textfield__label--float-above">Degrees Fahrenheit</span>
+			<div class="mdc-textfield__bottom-line"></div>
+		</label>
+		<label class="mdc-textfield">
+			<input type="text" id='celsius' class="mdc-textfield__input">
+			<span class="mdc-textfield__label mdc-textfield__label--float-above">Degrees Celsius</span>
+			<div class="mdc-textfield__bottom-line"></div>
+		</label></p>
+		<p><button class="mdc-button mdc-button--raised" onclick="toCelsiusNew()">Convert to Celsius!</button><span> </span><button class="mdc-button mdc-button--raised" onclick="toFahrenheitNew()">Convert to Fehrenheit!</button></p>
 	</div>
-	<div class="card card2">
+	<div class="card card3">
 		<h2>NOTIFICATION GENERATOR</h2>
 		<p>Input everything below, and then click the button to make a notification.</p>
 		<p>
@@ -45,27 +63,27 @@
 			<button class="mdc-button mdc-button--raised" onclick="javascript:notgen()">Go!</button>
 		</p>
 	</div>
-	<div class="card card2">
+	<div class="card card3">
 		<h2>NOTIFICATIONS</h2>
 		<p>Click the button below to make a notification.</p>
 		<p><button class="mdc-button mdc-button--raised" onclick="javascript:notifyMe()">Notify!</button>
 	</div>
-	<div class="card card2">
+	<div class="card card3">
 		<h2>POPUPS</h2>
 		<p>These buttons make things pop up! YAY!</p>
 		<a href="javascript:popup('An Alert!')"><button class="mdc-button mdc-button--raised">Alert</button></a><span> </span>
 		<a href="javascript:ask('Great! Uhh... just type anything.')"><button class="mdc-button mdc-button--raised">Prompt</button></a><span> </span>
 		<a href="javascript:confirm('Press a Button!')"><button class="mdc-button mdc-button--raised">Confirm</button></a><p></p>
 	</div>
-	<div class="card card2">
+	<div class="card card3">
 		<h2>FAHRENHEIT TO CELCIUS</h2>
 		<p><input id="input2" type="number"> Degrees fahrenheit is...<a href="javascript:toCelsius()"><button class="mdc-button mdc-button--raised">Calculate!</button></a></p>
 		<p><span id="answer2"></span> degrees Celcius!</p>
 	</div>
-		<div class="card card2">
+		<div class="card card3">
 		<h2>TEXT</h2>
 		<a href="javascript:showText()"><button class="mdc-button mdc-button--raised">Click me!</button></a>
 		<p>Click this button to make something happen!</p>
 		<p id="javaScript1"></p>
 	</div>
-	</div>
+</div>

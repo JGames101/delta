@@ -115,6 +115,9 @@ p {
 	max-width: 40%;
 	margin-left: 32%;
 }
+.colourText {
+	color: white;
+}
 @media (min-width: 0px) and (max-width: 991px){
 	#themeBox {
 		max-width: 95%;

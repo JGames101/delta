@@ -28,27 +28,30 @@
 	<h1 id="themeTitle">Theme</h1>
 	<p id="themeText" class="box">The theme controls the overall look of the site, from making it bright, colourful, greyscale, or dark. This applies to the whole site, and can even change how certain things, such as the navigation bar, behave.</p>
 	<div id="themeBox">
-	<div onclick="setTheme('colourful')" class="themeChoice" id="colourful"><img class="themeThumb" src="/setup/screenshots/colourful.png" width="100%"><p>Colourful</p></div>
-	<div onclick="setTheme('light')" class="themeChoice" id="light"><img class="themeThumb" src="/setup/screenshots/light.png" width="100%"><p>Light</p></div>
-	<div onclick="setTheme('dark')" class="themeChoice" id="dark"><img class="themeThumb" src="/setup/screenshots/dark.png" width="100%"><p>Dark</p></div>
-	<div onclick="setTheme('simple')" class="themeChoice" id="simple"><img class="themeThumb" src="/setup/screenshots/simple.png" width="100%"><p>Simple Colourful</p></div>
-	<div onclick="setTheme('smp-light')" class="themeChoice" id="smp-light"><img class="themeThumb" src="/setup/screenshots/smp-light.png" width="100%"><p>Simple Light</p></div>
-	<div onclick="setTheme('smp-dark')" class="themeChoice" id="smp-dark"><img class="themeThumb" src="/setup/screenshots/smp-dark.png" width="100%"><p>Simple Dark</p></div>
+	<div onclick="setTheme('simple')" class="themeChoice" id="simple"><img class="themeThumb" src="/setup/screenshots/simple.png" width="100%"><p>Colourful</p></div>
+	<div onclick="setTheme('smp-light')" class="themeChoice" id="smp-light"><img class="themeThumb" src="/setup/screenshots/smp-light.png" width="100%"><p>Light</p></div>
+	<div onclick="setTheme('smp-dark')" class="themeChoice" id="smp-dark"><img class="themeThumb" src="/setup/screenshots/smp-dark.png" width="100%"><p>Dark</p></div>
 	</div>
 	<a href="#background"><div id="gotoBackground" class="nextButton"><p><b>\/</b></p></div></a>
 </div>
 <div id="background" class="page">
-	<h1 id="themeTitle">Background</h1>
-	<p id="themeText" class="box">Set the background photo for the site. This applies to all pages, and gives the site a different feel, depending on the colour and theme.</p>
+	<h1 id="themeTitle">Primary Colour</h1>
+	<p id="themeText" class="box">Choose the primary colour of the site.<br>This includes things like the menu and the subtitles.</p>
 	<div id="themeBox">
-		<div onclick="setPhoto('1')" class="photoChoice" id="1"><img class="themeThumb" src="/photos/1btn.jpg" width="100%"><p>Dandelion</p></div>
-		<div onclick="setPhoto('2')" class="photoChoice" id="2"><img class="themeThumb" src="/photos/2.jpg" width="100%"><p>Cactus</p></div>
-		<div onclick="setPhoto('3')" class="photoChoice" id="3"><img class="themeThumb" src="/photos/3.jpg" width="100%"><p>Flowers</p></div>
-		<div onclick="setPhoto('4')" class="photoChoice" id="4"><img class="themeThumb" src="/photos/4.jpg" width="100%"><p>Snapdragon</p></div>
-		<div onclick="setPhoto('5')" class="photoChoice" id="5"><img class="themeThumb" src="/photos/5.jpg" width="100%"><p>River</p></div>
-		<div onclick="setPhoto('6')" class="photoChoice" id="6"><img class="themeThumb" src="/photos/6.jpg" width="100%"><p>Leaf</p></div>
-		<div onclick="setPhoto('7')" class="photoChoice" id="7"><img class="themeThumb" src="/photos/7.jpg" width="100%"><p>Berry</p></div>
-		<div onclick="setPhoto('8')" class="photoChoice" id="8"><img class="themeThumb" src="/photos/8.jpg" width="100%"><p>Rock</p></div>
+		<div onclick="setColour('#d32f2f')" style="background-color:#d32f2f" class="photoChoice" id="1"><p class="colourText">Red</p></div>
+		<div onclick="setColour('#e91e63')" style="background-color:#e91e63" class="photoChoice" id="1"><p class="colourText">Pink</p></div>
+		<div onclick="setColour('#7b1fa2')" style="background-color:#7b1fa2" class="photoChoice" id="1"><p class="colourText">Purple</p></div>
+		<div onclick="setColour('#5e35b1')" style="background-color:#5e35b1" class="photoChoice" id="1"><p class="colourText">Deep Purple</p></div>
+		<div onclick="setColour('#3f51b5')" style="background-color:#3f51b5" class="photoChoice" id="1"><p class="colourText">Indigo</p></div>
+		<div onclick="setColour('#1e88e5')" style="background-color:#1e88e5" class="photoChoice" id="1"><p class="colourText">Blue</p></div>
+		<div onclick="setColour('#009688')" style="background-color:#009688" class="photoChoice" id="1"><p class="colourText">Teal</p></div>
+		<div onclick="setColour('#43a047')" style="background-color:#43a047" class="photoChoice" id="1"><p class="colourText">Green</p></div>
+		<div onclick="setColour('#fdd835')" style="background-color:#fdd835" class="photoChoice" id="1"><p class="colourText">Yellow</p></div>
+		<div onclick="setColour('#ff9800')" style="background-color:#ff9800" class="photoChoice" id="1"><p class="colourText">Orange</p></div>
+		<div onclick="setColour('#f4511e')" style="background-color:#f4511e" class="photoChoice" id="1"><p class="colourText">Redish-Orange</p></div>
+		<div onclick="setColour('#f4511e')" style="background-color:#6d4c41" class="photoChoice" id="1"><p class="colourText">Brown</p></div>
+		<div onclick="setColour('#757575')" style="background-color:#757575" class="photoChoice" id="1"><p class="colourText">Grey</p></div>
+		<div onclick="setColour('#546e7a')" style="background-color:#546e7a" class="photoChoice" id="1"><p class="colourText">Blue Grey</p></div>
 	</div>
 	<a href="#done"><div id="gotoTheme" class="nextButton"><p><b>\/</b></p></div></a>
 </div>
