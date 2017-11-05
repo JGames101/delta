@@ -98,3 +98,20 @@ function expandLegacy() {
 		document.getElementById('legacyTitle').innerHTML = "ADVANCED <i class='material-icons'>keyboard_arrow_down</i>";
 	}
 }
+function setColour(colour) {
+	localStorage.setItem("themeColour", colour);
+	location.reload();
+};
+function setTheme(themeId) {
+	localStorage.setItem("theme", themeId);
+	$(".themeChoice").css("color", "black");
+	$(".themeChoice").css("background-color", "#fafafa");
+	document.getElementById(themeId).style.backgroundColor = '#03a9f4';
+	document.getElementById(themeId).style.color = 'white';
+	if (themeId == colourful || themeId == light || themeId == dark) {
+		localStorage.setItem("navbar", 'desktop');
+	} else {
+		localStorage.setItem("navbar", 'mobile');
+	}
+	location.reload();
+};
