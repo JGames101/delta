@@ -1,3 +1,9 @@
+if (localStorage.getItem("themeColour") == undefined) {
+	localStorage.setItem("themeColour", "#cb2c36");
+	localStorage.setItem("backgroundImage", "7");
+	localStorage.setItem("theme", "colourful");
+	localStorage.setItem("navbar", "mobile");
+};
 jQuery.get('/menus/' + localStorage.getItem('navbar') + '.html', function(data) {
 	document.getElementById('menu').innerHTML = data;
 	if (localStorage.getItem('navbar') == 'mobile') {
@@ -25,29 +31,9 @@ loadTheme();
 // send user to setup?
 if (localStorage.getItem("user") == undefined) {
 	console.log("User visiting for the first time! Opening new user page...");
-	//window.location.href = "/setup/"
+	window.location.href = "/setup/"
 };
 
-if (localStorage.getItem("backgroundImage") == undefined) {
-	console.log("Missing background image settings.");
-	localStorage.setItem("backgroundImage", 7)
-} //else {
-	$('html').attr('id', 'htmlObj');
-	$('body').append('<span class="webp"></span>');
-	//if (calculateLayout() != "phone") {
-	//	if (document.getElementsByClassName('webp')[0].id == "htmlObj") {
-	//		document.getElementById('htmlObj').style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.webp)';
-	//	} else {
-	//		document.getElementById('htmlObj').style.backgroundImage='url(/photos/' + localStorage.getItem("backgroundImage") + '.jpg)';
-	//	};
-//	};
-//};
-if (localStorage.getItem("themeColour") == undefined) {
-	localStorage.setItem("themeColour", "#cb2c36");
-	localStorage.setItem("backgroundImage", "7");
-	localStorage.setItem("theme", "colourful");
-	localStorage.setItem("navbar", "mobile");
-};
 if (localStorage.getItem("theme") == "Greyscale") {
 	$('head').append('<meta name="theme-color" content="' + '#323232' + '" />');
 } else if (localStorage.getItem("theme") == "light") {
