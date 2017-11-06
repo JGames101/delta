@@ -1,0 +1,34 @@
+{
+    "n4": {
+		"title":"4 NEW IMAGES",
+		"body":"Update 2.2y has Added 4 new Images, including Crayons, Wildflowers, and Québec City.",
+		"image":"/photos/11-240.jpg",
+		"page":"/videos",
+        "context":"image",
+        "timestamp":"171104.0557"
+    },
+    "n3": {
+		"title":"v2.2γ",
+		"body":"2.2 is a Huge Change the Layout and Links of the Homepage",
+		"image":"none",
+		"page":"/txt/?document=https://jgames101.github.io/updates/info/logs/v2.2y.txt",
+		"context":"rightClick",
+		"timestamp":"171104.0555"
+	},
+	"n2": {
+		"title":"v2.1γ",
+		"body":"2.1 has new Theme Colour Options and a Redesigned Title Bar",
+		"image":"none",
+		"page":"/txt/?document=https://jgames101.github.io/updates/info/logs/v2.1y.txt",
+		"context":"rightClick",
+		"timestamp":"171104.0444"
+	},
+	"n1": {
+		"title":"v2.01γ",
+		"body":"2.01 Makes Many Changes to the Internal Systems To Make the Page Much Faster.",
+		"image":"none",
+		"page":"none",
+		"context":"rightClick",
+		"timestamp":"171104.0333"
+	}
+}

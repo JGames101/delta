@@ -40,8 +40,11 @@ div.page {
 #background {
 	top: 200%;
 }
-#done {
+#secondary {
 	top: 300%;
+}
+#done {
+	top: 400%;
 }
 #welcomeTitle {
 	text-align: center;

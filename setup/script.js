@@ -26,3 +26,7 @@ function finish() {
 function setColour(colour) {
 	localStorage.setItem("themeColour", colour);
 };
+function setSecondaryColour(colour) {
+	localStorage.setItem("secondColour", colour);
+	location.reload();
+};

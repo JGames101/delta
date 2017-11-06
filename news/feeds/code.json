@@ -1,0 +1,10 @@
+{
+    "n1": {
+		"title":"THE NEW NEWSFEEDS",
+		"body":"Check out the technology behind the new newsfeeds on the homepage!",
+		"image":"none",
+		"page":"/txt/?document=/news/dev.txt",
+        "context":"rightClick",
+        "timestamp":"171104.0821"
+    }
+}

@@ -1,16 +1,28 @@
 ﻿<h2 class="pinned" onclick="toggleSection('pinned1')">GAMMA <i class='material-icons' id="icon-pinned1">keyboard_arrow_up</i></h2>
 <div id="pinned1" class="pinnedDiv" style="display:initial">
 	<div class="card card1">
+		<h2>v2.2γ</h2>
+		<p>The Homescreen has been completely redesigned to emphasize content, as well as featuring the new news page.<br>
+		The news page has multiple feeds, including Updates, and a lot more.<br>
+		The newsfeed API allows different feeds, such as Updates, Media, Code, and more to work. It works with JSON, so it's easy to add update independantly from the homepage.<br>
+		There are three feeds on the homepage: News, which shows announcements and updates, code, which emphasizes the code behind features, and media, which puts a spotlight on the different media on the site.<br>
+		This update also redesigns major parts of the site with more Material Components, such as Material Buttons and Cards.<br>
+		Secondary colour is now selectable in setup and options, and applies to buttons and certain other UI elements.<br>
+		As mentioned in the newsfeed, there are now four new images: Wildflowers, Kelowna, Québec City, and Crayons.<br>
+		<b style="color:red">WARNING:</b> Themes are currently broken. They will be fixed in a future version of the site with an improved Theme API 2.0.</p>
+		<button onclick="moreInfo('v2.2y')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+	<div class="card card1">
 		<h2>v2.1γ</h2>
 		<p>Material Design Components have been fully implemented into the site. You can see this most notably on the JavaScript page, but it also slightly changes the header, and some other things as well.<br>
-		There is a new homepage design, to emphasize the three things that the site focuses on: Code, Media, and Options. Code will, in a future release, take you to a new page.<br>
+		There is a new menu design, to emphasize the three things that the site focuses on: Code, Media, and Options. Code will, in a future release, take you to a new page.<br>
 		From tests with the new Web Share API, there is now a share button on videos, photos, and some code games. On browsers that support Web Share API, that will appear. On other browsers, it will open a new email with the link.<br>
 		Photos page has been completely redesigned to be more like a photos viewer, and loads image from URL.<br>
 		There is now and expand/contract button beside headers for categories of cards, much like the advanced section in option.<br>
 		The Updates page has been seperated into three sections: Gamma, Beta, and Alpha.<br>
 		The Versions previously known as Beta 2 is now known as the Gamma release.<br>
-		Version 2.2γ will be coming soon with more improvements.
-		</p>
+		Version 2.2γ will be coming soon with more improvements.</p>
+		<button onclick="moreInfo('v2.1y')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
 	</div>
 	<div class="card card1">
 		<h2>v2.01γ</h2>
@@ -25,8 +37,8 @@
 		The site has a segmented design for offline support.<br>
 		There is now a special message when offline.<br>
 		There is a new "media" page for photos and videos.<br>
-		As with v1.0b, the final beta1 version, v1.441b, can be found at <a href="/beta">/beta</a>.<br>
-		<p class="moreInfo info" style="color:black;" id="v2.0b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v2.0b')">More Info<span></p>
+		As with v1.0b, the final beta1 version, v1.441b, can be found at <a href="/beta">/beta</a>.<br></p>
+		<button onclick="moreInfo('v2.0b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
 	</div>
 </div>
 <h2 class="pinned" onclick="toggleSection('pinned2')">BETA<i class='material-icons' id="icon-pinned2">keyboard_arrow_down</i></h2>
@@ -38,7 +50,7 @@
 	<div class="card card2">
 		<h2>v1.44b</h2>
 		<p>On supported browsers, images are now .webp instead of .jpg.<br>Unsupported browsers are detected with <a href="https://modernizr.com/">Modernizr</a>, and are served the regular .jpg images.<br>Offline support and PWA support has been fixed!</p>
-		<p class="moreInfo info" style="color:black;" id="v1.44b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v1.44b')">More Info<span></p>
+		<button onclick="moreInfo('v1.44b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
 	</div>
 	<div class="card card2">
 		<h2>v1.433b</h2>
@@ -51,12 +63,12 @@
 	<div class="card card2">
 		<h2>v1.431b</h2>
 		<p>A new theme: Photo Dark.<br>It is very similar to Photo, but instead of having light cards, the cards use the dark colour from the dark theme.</p>
-		<p class="moreInfo info" style="color:black;" id="v1.431b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v1.431b')">More Info<span></p>
+		<button onclick="moreInfo('v1.431b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
 	</div>
 	<div class="card card2">
 		<h2>v1.43b</h2>
 		<p><b>INCREDIBLE VERSION 1.43b!</b><br>This version is a HUGE internal update, which has an effect on every page.<br>JavaScript is now required to use the site, because of the changes made in this version:<br>JavaScript now adds 1/2/3 columns (depending on the device) to the page, and moves the cards to the correct column. On pages with card sections, such as the homepage, each of those sections get its own columns. This was inspired by Google+, but it took very long to develop, because of the JavaScript.</p>
-		<p class="moreInfo info" style="color:black;" id="v1.43b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v1.43b')">More Info<span></p>
+		<button onclick="moreInfo('v1.43b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
 	</div>
 	<div class="card card2">
 		<h2>v1.42b</h2>
@@ -65,39 +77,39 @@
 	<div class="card card2">
 		<h2>v1.41b</h2>
 		<p>Light theme's navigation bar is lighter, and has darker icons and text.<br>Tablet Mode now has wide cards for certain things, and should now only show on tablets. More changes to Tablet mode may be coming in the future as I experiment with the UI.</p>
-		<p class="moreInfo info" style="color:black;" id="v1.41b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v1.41b')">More Info<span></p>
+		<button onclick="moreInfo('v1.41b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
 	</div>
 	<div class="card card2">
 		<h2>v1.4b</h2>
 		<p>New Theme Group: Classic!<br>Classic contains v0.8a.<br>Dark theme is now functional. It is just like light theme, but dark grey instead of light grey.<br>
 		If you're visiting for the first time, or have never used this version before, you will be sent to the setup page. Here, it guides you through all the personalization you can make. It should only be displayed once, but can reactivated by going to jgames101.github.io/setup/ or clicking the button in options.</p>
-		<p class="moreInfo info" style="color:black;" id="v1.4b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v1.4b')">More Info<span></p>
+		<button onclick="moreInfo('v1.4b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
 	</div>
 	<div class="card card2">
 		<h2>v1.31b</h2>
 		<p>New Themes: Light, and Dark.<br>New Mobile options section. It currently conains navbar location.</p>
-		<p class="moreInfo info" style="color:black;" id="v1.31b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v1.31b')">More Info<span></p>
+		<button onclick="moreInfo('v1.31b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
 	</div>
 	<div class="card card2 wideCard">
 		<h2>v1.3b</h2>
 		<p>New Theme option in options (Currently in Beta).<br>Depending on your theme, different options will appear.<br>Photos page redesigned with Fullscreen, no menu bar, and better button design.<br>
 		Themes is in Beta. Custom Theme Options may be added in the future, and themes may be added or removed.</p>
-		<p class="moreInfo info" style="color:black;" id="v1.3b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v1.3b')">More Info<span></p>
+		<button onclick="moreInfo('v1.3b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
 	</div>
 	<div class="card card2">
 		<h2>v1.22b</h2>
 		<p>Expand arrow on mobile is now pointed downwards/upwards to better match its function. The menu button also no longer has a scrollbar on it.<br>JavaScript now has a file information card, with a file picker.</p>
-		<p class="moreInfo info" style="color:black;" id="v1.22b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v1.22b')">More Info<span></p>
+		<button onclick="moreInfo('v1.22b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
 	</div>
 	<div class="card card2">
 		<h2>v1.21b</h2>
 		<p>Rather than <a href="/updates/info/">/updates/info/</a>, text documents are now rendered at <a href="https://jgames101.github.io/txt/">jgames101.github.io/txt/</a> to provide a more unified experience under my websites.<br>The local version has been removed.</p>
-		<p class="moreInfo info" style="color:black;" id="v1.21b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v1.21b')">More Info<span></p>
+		<button onclick="moreInfo('v1.21b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
 	</div>
 	<div class="card card2">
 		<h2>v1.2b</h2>
 		<p>The navigation bar now uses material icons for most icons.<br>There is now a more info button for any updates, starting with this version.</p>
-		<p class="moreInfo info" style="color:black;" id="v1.2b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v1.2b')">More Info<span></p>
+		<button onclick="moreInfo('v1.2b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
 	</div>
 	<div class="card card2">
 		<h2>v1.191b</h2>
@@ -180,7 +192,7 @@
 		<p>Added mobile viewport to all pages to fix content on pages such as Angular being too small.</p>
 		<p>Updated theme colour from Chrome for Phones and Android App Switcher.</p>
 		<p>Added a custom scrollbar!</p>
-		<p class="moreInfo info" style="color:black;" id="v1.0b"><span style="cursor:pointer;" onclick="javascript:moreInfo('v1.0b')">More Info<span></p>
+		<button onclick="moreInfo('v1.0b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
 	</div>
 </div>
 <h2 class="pinned" onclick="toggleSection('pinned3')">ALPHA <i class='material-icons' id="icon-pinned3">keyboard_arrow_down</i></h2>
@@ -192,7 +204,7 @@
 		<p>Jsmissing and Connectionmissing now properly show on all pages.</p>
 		<p>The navbar has been removed, as well as nav.html, and replaced with a menu. It resizes depending on the device. on PC, it is 25% of the screen. On tablets, it's 50%, and on phones, it's the whole screen.</p>
 		<p>Photos has been updated with a new system of pressing arrows to see the next photo, rather than scrolling.</p>
-		<p class="moreInfo info" style="color:black;" id="v0.8a"><span style="cursor:pointer;" onclick="javascript:moreInfo('v0.8a')">More Info<span></p>
+		<button onclick="moreInfo('v0.8a')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
 	</div>
 	<div class="card card3">
 		<h2>0.72a</h2>

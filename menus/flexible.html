@@ -1,0 +1,45 @@
+<header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--waterfall mdc-toolbar--flexible mdc-toolbar--flexible-default-behavior mdc-toolbar--flexible-space-maximized">
+    <div class="mdc-toolbar__row" style="height: 224px;">
+      <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+        <a href="#" class="material-icons mdc-toolbar__menu-icon">menu</a>
+        <span class="mdc-toolbar__title" style="font-size: 2.125rem;" id="menuTitle"></span>
+      </section>
+      <section class="mdc-toolbar__section mdc-toolbar__section--align-end" role="toolbar">
+        <nav class="mdc-tab-bar mdc-tab-bar--icon-tab-bar">
+            <a class="mdc-tab" onclick="setPage('/')">
+              <i class="material-icons mdc-tab__icon" aria-label="Home">home</i>
+            </a>
+            <a class="mdc-tab" onclick="setPage('/javascript')">
+              <i class="material-icons mdc-tab__icon" aria-label="Code">code</i>
+            </a>
+            <a class="mdc-tab" onclick="setPage('/videos')">
+              <i class="material-icons mdc-tab__icon" aria-label="Media">video_library</i>
+            </a>
+            <span class="mdc-tab-bar__indicator"></span>
+        </nav>
+      </section>
+    </div>
+</header>
+<script src="/node_modules/material-components-web/dist/material-components-web.js"></script>
+<script>mdc.autoInit()</script>
+<script type="text/javascript">
+    (function() {
+      var pollId = 0;
+      pollId = setInterval(function() {
+        var pos = getComputedStyle(document.querySelector('.mdc-toolbar')).position;
+        if (pos === 'fixed' || pos === 'relative') {
+          init();
+          clearInterval(pollId);
+        }
+      }, 250);
+      function init() {
+        var ratioSpan = document.querySelector("#ratio");
+        var toolbar = mdc.toolbar.MDCToolbar.attachTo(document.querySelector('.mdc-toolbar'));
+        toolbar.listen('MDCToolbar:change', function(evt) {
+          var flexibleExpansionRatio = evt.detail.flexibleExpansionRatio;
+          ratioSpan.innerHTML = flexibleExpansionRatio.toFixed(2);
+        });
+        toolbar.fixedAdjustElement = document.querySelector('.mdc-toolbar-fixed-adjust');
+      }
+    })();
+  </script>

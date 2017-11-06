@@ -1,31 +1,166 @@
 ﻿<div id="pinned1" class="pinnedDiv">
-	<div class="card card1 clickable mdc-ripple-upgraded" onclick="javascript:setPage('/updates/')" style="cursor:pointer;">
+	<div class="card card1 cardFeatured" id="newsFeed">
+	<div class="newsCard">
+		<h1 class="mdc-typography--display3" style="text-align:center;">News</h1>
+		<div class="mdc-card demo-card" id="newsCard1">
+		<div class="mdc-card__horizontal-block">
+			<section class="mdc-card__primary">
+			<h1 class="mdc-card__title mdc-card__title--large" id="newsTitle1" style="text-align:left">LOADING...</h1>
+			<h2 class="mdc-card__subtitle" id="newsBody1">The Lastest News is Being Loaded in.</h2>
+			</section>
+			<img class="mdc-card__media-item" id="newsImage1" class="newsfeedImage">
+		</div>
+		<section class="mdc-card__actions">
+			<a id="newsButton1" href="" style="display:none"><button class="mdc-button mdc-button--compact mdc-card__action">View</button></a>
+		</section>
+		</div>
+		<!---->
+		<div class="mdc-card demo-card" id="newsCard2" style="display:none;">
+		<div class="mdc-card__horizontal-block">
+			<section class="mdc-card__primary">
+			<h1 class="mdc-card__title mdc-card__title--large" id="newsTitle2" style="text-align:left">LOADING...</h1>
+			<h2 class="mdc-card__subtitle" id="newsBody2">The Lastest News is Being Loaded in.</h2>
+			</section>
+			<img class="mdc-card__media-item" id="newsImage2" class="newsfeedImage">
+		</div>
+		<section class="mdc-card__actions">
+			<a id="newsButton2" href="" style="display:none"><button class="mdc-button mdc-button--compact mdc-card__action">View</button></a>
+		</section>
+		</div>
+		<!---->
+		<div class="mdc-card demo-card" id="newsCard3" style="display:none;">
+		<div class="mdc-card__horizontal-block">
+			<section class="mdc-card__primary">
+			<h1 class="mdc-card__title mdc-card__title--large" id="newsTitle3" style="text-align:left">LOADING...</h1>
+			<h2 class="mdc-card__subtitle" id="newsBody3">The Lastest News is Being Loaded in.</h2>
+			</section>
+			<img class="mdc-card__media-item" id="newsImage3" class="newsfeedImage">
+		</div>
+		<section class="mdc-card__actions">
+			<a id="newsButton3" href="" style="display:none"><button class="mdc-button mdc-button--compact mdc-card__action">View</button></a>
+		</section>
+		</div>
+	</div>
+	<div class="cardFeatured" style="margin-top: 8px;">
+		<!--<button onclick="setPage('/news')" class="mdc-button" style="display:block;margin:auto;">More News</button> Future Feature! Newsfeed page! -->
+	</div>
+	</div>
+	<div class="card card1 cardFeatured" id="codeFeed">
+	<div class="newsCard">
+		<h1 class="mdc-typography--display3" style="text-align:center;">Code</h1>
+		<div class="mdc-card demo-card" id="codeCard1">
+			<div class="mdc-card__horizontal-block">
+				<section class="mdc-card__primary">
+				<h1 class="mdc-card__title mdc-card__title--large" id="codeTitle1" style="text-align:left">LOADING...</h1>
+				<h2 class="mdc-card__subtitle" id="codeBody1">The Featured Code is Being Loaded in.</h2>
+				</section>
+				<img class="mdc-card__media-item" id="codeImage1" class="newsfeedImage">
+			</div>
+			<section class="mdc-card__actions">
+					<a id="codeButton1" href="" style="display:none"><button class="mdc-button mdc-button--compact mdc-card__action">View</button></a>
+			</section>
+			</div>
+			<!---->
+			<div class="mdc-card demo-card" style="display:none;" id="codeCard2">
+			<div class="mdc-card__horizontal-block">
+				<section class="mdc-card__primary">
+				<h1 class="mdc-card__title mdc-card__title--large" id="codeTitle2" style="text-align:left">LOADING...</h1>
+				<h2 class="mdc-card__subtitle" style='text-align:left' id="codeBody2">The Featured Code is Being Loaded in.</h2>
+				</section>
+				<img class="mdc-card__media-item" id="codeImage2" class="newsfeedImage">
+			</div>
+			<section class="mdc-card__actions">
+					<a id="codeButton3" href="" style="display:none"><button class="mdc-button mdc-button--compact mdc-card__action">View</button></a>
+			</section>
+			</div>
+			<!---->
+			<div class="mdc-card demo-card" style="display:none;"  id="codeCard3">
+			<div class="mdc-card__horizontal-block">
+				<section class="mdc-card__primary">
+				<h1 class="mdc-card__title mdc-card__title--large" id="codeTitle3" style="text-align:left">LOADING...</h1>
+				<h2 class="mdc-card__subtitle" id="codeBody3">The Featured Code is Being Loaded in.</h2>
+				</section>
+				<img class="mdc-card__media-item" id="codeImage3" class="newsfeedImage">
+			</div>
+			<section class="mdc-card__actions">
+				<button class="mdc-button mdc-button--compact mdc-card__action" id="codeButton3" style="display:none">View</button>
+			</section>
+			</div>
+		</div>
+		</div>
+	<div class="card card1 cardFeatured" id="mediaFeed">
+		<div class="newsCard">
+			<h1 class="mdc-typography--display3" style="text-align:center;">Media</h1>
+			<div class="mdc-card demo-card" id="mediaCard1">
+				<div class="mdc-card__horizontal-block">
+					<section class="mdc-card__primary">
+					<h1 class="mdc-card__title mdc-card__title--large" id="mediaTitle1" style="text-align:left">LOADING...</h1>
+					<h2 class="mdc-card__subtitle" id="mediaBody1">The Featured Code is Being Loaded in.</h2>
+					</section>
+					<img class="mdc-card__media-item" id="mediaImage1" class="newsfeedImage">
+				</div>
+				<section class="mdc-card__actions">
+						<a id="mediaButton1" href="" style="display:none"><button class="mdc-button mdc-button--compact mdc-card__action">View</button></a>
+				</section>
+				</div>
+				<!---->
+				<div class="mdc-card demo-card" style="display:none;" id="mediaCard2">
+				<div class="mdc-card__horizontal-block">
+					<section class="mdc-card__primary">
+					<h1 class="mdc-card__title mdc-card__title--large" id="mediaTitle2" style="text-align:left">LOADING...</h1>
+					<h2 class="mdc-card__subtitle" style='text-align:left' id="mediaBody2">The Featured Code is Being Loaded in.</h2>
+					</section>
+					<img class="mdc-card__media-item" id="mediaImage2" class="newsfeedImage">
+				</div>
+				<section class="mdc-card__actions">
+						<a id="mediaButton2" href="" style="display:none"><button class="mdc-button mdc-button--compact mdc-card__action">View</button></a>
+				</section>
+				</div>
+				<!---->
+				<div class="mdc-card demo-card" style="display:none;"  id="mediaCard3">
+				<div class="mdc-card__horizontal-block">
+					<section class="mdc-card__primary">
+					<h1 class="mdc-card__title mdc-card__title--large" id="mediaTitle3" style="text-align:left">LOADING...</h1>
+					<h2 class="mdc-card__subtitle" id="mediaBody3">The Featured Code is Being Loaded in.</h2>
+					</section>
+					<img class="mdc-card__media-item" id="mediaImage3" class="newsfeedImage">
+				</div>
+				<section class="mdc-card__actions">
+						<a id="mediaButton3" href="" style="display:none"><button class="mdc-button mdc-button--compact mdc-card__action">View</button></a>
+				</section>
+				</div>
+			</div>
+	</div>
+</div>
+<h2 class="pinned" onclick="toggleSection('pinned2')">SITE <i class='material-icons' id="icon-pinned2">keyboard_arrow_up</i></h2>
+<div id="pinned2" class="pinnedDiv">
+	<div class="card card2 clickable mdc-ripple-upgraded" onclick="javascript:setPage('/updates/')" style="cursor:pointer;">
 		<h2>UPDATES</h2>
-		<p id="currentVer">Installed Version: 2.1γ<br>
+		<p id="currentVer">Installed Version: 2.2γ<br>
 		Latest Version: <span id="latestVer">loading...</span>
 		</p>
 	</div>
-	<div class="card card1 clickable mdc-ripple-upgraded" onclick="javascript:setPage('/options/')" style="cursor:pointer;">
+	<div class="card card2 clickable mdc-ripple-upgraded" onclick="javascript:setPage('/options/')" style="cursor:pointer;">
 		<h2>OPTIONS</h2>
 		<p>Personalization, Install, Device-Specific Options</p>
 	</div>
 </div>
-<h2 class="pinned" onclick="toggleSection('pinned2')">SUGGESTIONS <i class='material-icons' id="icon-pinned2">keyboard_arrow_up</i></h2>
-<div id="pinned2" class="pinnedDiv" style="display:initial">
-	<div class="card card2 clickable mdc-ripple-upgraded" onclick="javascript:setPage('/javascript/')" style="cursor:pointer;">
+<h2 class="pinned" onclick="toggleSection('pinned3')">SUGGESTIONS <i class='material-icons' id="icon-pinned3">keyboard_arrow_up</i></h2>
+<div id="pinned3" class="pinnedDiv" style="display:initial">
+	<div class="card card3 clickable mdc-ripple-upgraded" onclick="javascript:setPage('/javascript/')" style="cursor:pointer;">
 		<h2>JAVASCRIPT</h2>
 		<p>My tests and experiments with Javascript!</p>
 	</div>
-	<div class="card card2 clickable mdc-ripple-upgraded" onclick="javascript:setPage('/jquery/')" style="cursor:pointer;">
+	<div class="card card3 clickable mdc-ripple-upgraded" onclick="javascript:setPage('/jquery/')" style="cursor:pointer;">
 		<h2>JQUERY</h2>
 		<p>My tests and experiments with JQuery!</p>
 	</div>
-	<div class="card card2 clickable mdc-ripple-upgraded" onclick="javascript:setPage('/html5/')" style="cursor:pointer;">
+	<div class="card card3 clickable mdc-ripple-upgraded" onclick="javascript:setPage('/html5/')" style="cursor:pointer;">
 		<h2>HTML5</h2>
 		<p>Other Designs I made with HTML5!</p>
 		<p class="info"> </p>
 	</div>
-	<div class="card card2 clickable mdc-ripple-upgraded" onclick="javascript:setPage('/videos/')" style="cursor:pointer;">
+	<div class="card card3 clickable mdc-ripple-upgraded" onclick="javascript:setPage('/videos/')" style="cursor:pointer;">
 		<h2>MEDIA</h2>
 		<p>Links to all of the Photos and Videos from my Site.</p>
 	</div>

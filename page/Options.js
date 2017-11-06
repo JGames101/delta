@@ -24,46 +24,6 @@ function setBackground(backNum) {
 	location.reload();
 }
 
-function setColour() {
-	var newColour = document.getElementById('newColour').value;
-	localStorage.setItem("themeColour", newColour);
-	console.log(localStorage.getItem("themeColour"));
-	document.getElementById('currentTheme').innerHTML = localStorage.getItem("themeColour");
-	document.getElementById('menu').style.backgroundColor = localStorage.getItem("themeColour");
-	document.getElementById('newColour').value = localStorage.getItem("themeColour");
-	document.getElementById('colourPicker').value = localStorage.getItem("themeColour");
-	location.reload();
-}
-
-function setPickerColour() {
-	var newColour = document.getElementById('colourPicker').value;
-	localStorage.setItem("themeColour", newColour);
-	console.log(localStorage.getItem("themeColour"));
-	document.getElementById('currentTheme').innerHTML = localStorage.getItem("themeColour");
-	document.getElementById('menu').style.backgroundColor = localStorage.getItem("themeColour");
-	document.getElementById('newColour').value = localStorage.getItem("themeColour");
-	document.getElementById('colourPicker').value = localStorage.getItem("themeColour");
-	location.reload();
-}
-
-function resetColour() {
-	localStorage.setItem("themeColour", "#486e89");
-	document.getElementById('currentTheme').innerHTML = localStorage.getItem("themeColour");
-	document.getElementById('menu').style.backgroundColor = localStorage.getItem("themeColour");
-	document.getElementById('newColour').value = localStorage.getItem("themeColour");
-	document.getElementById('colourPicker').value = localStorage.getItem("themeColour");
-	location.reload();
-}
-
-function setSuggestedColour() {
-	localStorage.setItem("themeColour", suggestedColours[localStorage.getItem("backgroundImage") - 1]);
-	document.getElementById('currentTheme').innerHTML = localStorage.getItem("themeColour");
-	document.getElementById('menu').style.backgroundColor = localStorage.getItem("themeColour");
-	document.getElementById('newColour').value = localStorage.getItem("themeColour");
-	document.getElementById('colourPicker').value = localStorage.getItem("themeColour");
-	location.reload();
-}
-
 function changeTheme() { // themeSelect
 	var themeId = document.getElementById('themeSelect').value;
 	console.log(document.getElementById('themeSelect').value);
@@ -98,10 +58,17 @@ function expandLegacy() {
 		document.getElementById('legacyTitle').innerHTML = "ADVANCED <i class='material-icons'>keyboard_arrow_down</i>";
 	}
 }
+
 function setColour(colour) {
 	localStorage.setItem("themeColour", colour);
 	location.reload();
 };
+
+function setSecondaryColour(colour) {
+	localStorage.setItem("secondColour", colour);
+	location.reload();
+};
+
 function setTheme(themeId) {
 	localStorage.setItem("theme", themeId);
 	$(".themeChoice").css("color", "black");

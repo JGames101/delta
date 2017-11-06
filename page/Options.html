@@ -1,31 +1,56 @@
 ﻿<h2 class="pinned" onclick="toggleSection('pinned1')">PERSONALIZATION <i class='material-icons' id="icon-pinned1">keyboard_arrow_up</i></h2>
 <div id="pinned1" class="pinnedDiv">
 <div class="card card1">
-	<h2>THEME</h2>
-	<div id="themeBox">
-		<div onclick="setTheme('simple')" class="themeChoice" id="simple"><img class="themeThumb" src="/setup/screenshots/simple.png" width="100%"><p>Colourful</p></div>
-		<div onclick="setTheme('smp-light')" class="themeChoice" id="smp-light"><img class="themeThumb" src="/setup/screenshots/smp-light.png" width="100%"><p>Light</p></div>
-		<div onclick="setTheme('smp-dark')" class="themeChoice" id="smp-dark"><img class="themeThumb" src="/setup/screenshots/smp-dark.png" width="100%"><p>Dark</p></div>
+	<div class="newCard">
+			<div class="mdc-card demo-card">
+			<section class="mdc-card__primary">
+				<h1 class="mdc-card__title mdc-card__title--large" style="text-align:left;">THEME</h1>
+				<h2 class="mdc-card__subtitle" style="text-align:left;">Select Your Theme.</h2>
+			</section>
+			<section class="mdc-card__supporting-text">
+					<div id="themeBox">
+						<div onclick="setTheme('simple')" class="themeChoice" id="simple"><img class="themeThumb" src="/setup/screenshots/simple.png" width="100%"><p>Colourful</p></div>
+						<div onclick="setTheme('smp-light')" class="themeChoice" id="smp-light"><img class="themeThumb" src="/setup/screenshots/smp-light.png" width="100%"><p>Light</p></div>
+						<div onclick="setTheme('smp-dark')" class="themeChoice" id="smp-dark"><img class="themeThumb" src="/setup/screenshots/smp-dark.png" width="100%"><p>Dark</p></div>
+					</div>
+			</section>
+			<section class="mdc-card__actions">
+				<a href="/setup/#theme"><button class="mdc-button mdc-button--compact mdc-card__action">Setup Page</button></a>
+			</section>
+			</div>
 	</div>
 </div>
 <div class="card card1">
-	<h2>COLOUR</h2>
-	<div id="themeBox">
-		<div onclick="setColour('#d32f2f')" style="background-color:#d32f2f" class="photoChoice" id="1"><p class="colourText">Red</p></div>
-		<div onclick="setColour('#e91e63')" style="background-color:#e91e63" class="photoChoice" id="1"><p class="colourText">Pink</p></div>
-		<div onclick="setColour('#7b1fa2')" style="background-color:#7b1fa2" class="photoChoice" id="1"><p class="colourText">Purple</p></div>
-		<div onclick="setColour('#5e35b1')" style="background-color:#5e35b1" class="photoChoice" id="1"><p class="colourText">Deep Purple</p></div>
-		<div onclick="setColour('#3f51b5')" style="background-color:#3f51b5" class="photoChoice" id="1"><p class="colourText">Indigo</p></div>
-		<div onclick="setColour('#1e88e5')" style="background-color:#1e88e5" class="photoChoice" id="1"><p class="colourText">Blue</p></div>
-		<div onclick="setColour('#009688')" style="background-color:#009688" class="photoChoice" id="1"><p class="colourText">Teal</p></div>
-		<div onclick="setColour('#43a047')" style="background-color:#43a047" class="photoChoice" id="1"><p class="colourText">Green</p></div>
-		<div onclick="setColour('#8bc34a')" style="background-color:#8bc34a" class="photoChoice" id="1"><p class="colourText">Light Green</p></div>
-		<div onclick="setColour('#fdd835')" style="background-color:#fdd835" class="photoChoice" id="1"><p class="colourText">Yellow</p></div>
-		<div onclick="setColour('#ff9800')" style="background-color:#ff9800" class="photoChoice" id="1"><p class="colourText">Orange</p></div>
-		<div onclick="setColour('#f4511e')" style="background-color:#f4511e" class="photoChoice" id="1"><p class="colourText">Redish-Orange</p></div>
-		<div onclick="setColour('#6d4c41')" style="background-color:#6d4c41" class="photoChoice" id="1"><p class="colourText">Brown</p></div>
-		<div onclick="setColour('#757575')" style="background-color:#757575" class="photoChoice" id="1"><p class="colourText">Grey</p></div>
-		<div onclick="setColour('#546e7a')" style="background-color:#546e7a" class="photoChoice" id="1"><p class="colourText">Blue Grey</p></div>
+	<div class="newsCard">
+		<div class="mdc-card demo-card">
+            <section class="mdc-card__primary">
+              <h1 class="mdc-card__title mdc-card__title--large" style="text-align:left;">PRIMARY COLOUR</h1>
+              <h2 class="mdc-card__subtitle" style="text-align:left;">Select your Primary Colour.</h2>
+            </section>
+            <section class="mdc-card__supporting-text">
+				<div id="themeBox">
+					<div onclick="setColour('#d32f2f')" style="background-color:#d32f2f" class="photoChoice" id="1"><p class="colourText">Red</p></div>
+					<div onclick="setColour('#e91e63')" style="background-color:#e91e63" class="photoChoice" id="1"><p class="colourText">Pink</p></div>
+					<div onclick="setColour('#7b1fa2')" style="background-color:#7b1fa2" class="photoChoice" id="1"><p class="colourText">Purple</p></div>
+					<div onclick="setColour('#5e35b1')" style="background-color:#5e35b1" class="photoChoice" id="1"><p class="colourText">Deep Purple</p></div>
+					<div onclick="setColour('#3f51b5')" style="background-color:#3f51b5" class="photoChoice" id="1"><p class="colourText">Indigo</p></div>
+					<div onclick="setColour('#1e88e5')" style="background-color:#1e88e5" class="photoChoice" id="1"><p class="colourText">Blue</p></div>
+					<div onclick="setColour('#009688')" style="background-color:#009688" class="photoChoice" id="1"><p class="colourText">Teal</p></div>
+					<div onclick="setColour('#43a047')" style="background-color:#43a047" class="photoChoice" id="1"><p class="colourText">Green</p></div>
+					<div onclick="setColour('#8bc34a')" style="background-color:#8bc34a" class="photoChoice" id="1"><p class="colourText">Light Green</p></div>
+					<div onclick="setColour('#fdd835')" style="background-color:#fdd835" class="photoChoice" id="1"><p class="colourText">Yellow</p></div>
+					<div onclick="setColour('#ff9800')" style="background-color:#ff9800" class="photoChoice" id="1"><p class="colourText">Orange</p></div>
+					<div onclick="setColour('#f4511e')" style="background-color:#f4511e" class="photoChoice" id="1"><p class="colourText">Redish-Orange</p></div>
+					<div onclick="setColour('#6d4c41')" style="background-color:#6d4c41" class="photoChoice" id="1"><p class="colourText">Brown</p></div>
+					<div onclick="setColour('#757575')" style="background-color:#757575" class="photoChoice" id="1"><p class="colourText">Grey</p></div>
+					<div onclick="setColour('#546e7a')" style="background-color:#546e7a" class="photoChoice" id="1"><p class="colourText">Blue Grey</p></div>
+				</div>
+            </section>
+            <section class="mdc-card__actions">
+              <a href="/setup/#background"><button class="mdc-button mdc-button--compact mdc-card__action">Setup Page</button></a>
+              <a href="javascript:localStorage.setItem('themeColour', prompt('Please Enter a Valid Colour (rgb/rgba, hexidecimal, css colour)', '#1e88e5'));location.reload()"><button class="mdc-button mdc-button--compact mdc-card__action">Custom Colour</button></a>
+            </section>
+          </div>
 	</div>
 </div>
 <style>
@@ -62,6 +87,39 @@
 		border-top-right-radius: 16px;
 	}
 </style>
+<div class="card card1">
+	<div class="newsCard">
+		<div class="mdc-card demo-card">
+            <section class="mdc-card__primary">
+              <h1 class="mdc-card__title mdc-card__title--large" style="text-align:left;">SECONDARY COLOUR</h1>
+              <h2 class="mdc-card__subtitle" style="text-align:left;">Select your Secondary Colour.</h2>
+            </section>
+            <section class="mdc-card__supporting-text">
+				<div id="themeBox">
+					<div onclick="setSecondaryColour('#d32f2f')" style="background-color:#d32f2f" class="photoChoice" id="1"><p class="colourText">Red</p></div>
+					<div onclick="setSecondaryColour('#e91e63')" style="background-color:#e91e63" class="photoChoice" id="1"><p class="colourText">Pink</p></div>
+					<div onclick="setSecondaryColour('#7b1fa2')" style="background-color:#7b1fa2" class="photoChoice" id="1"><p class="colourText">Purple</p></div>
+					<div onclick="setSecondaryColour('#5e35b1')" style="background-color:#5e35b1" class="photoChoice" id="1"><p class="colourText">Deep Purple</p></div>
+					<div onclick="setSecondaryColour('#3f51b5')" style="background-color:#3f51b5" class="photoChoice" id="1"><p class="colourText">Indigo</p></div>
+					<div onclick="setSecondaryColour('#1e88e5')" style="background-color:#1e88e5" class="photoChoice" id="1"><p class="colourText">Blue</p></div>
+					<div onclick="setSecondaryColour('#009688')" style="background-color:#009688" class="photoChoice" id="1"><p class="colourText">Teal</p></div>
+					<div onclick="setSecondaryColour('#43a047')" style="background-color:#43a047" class="photoChoice" id="1"><p class="colourText">Green</p></div>
+					<div onclick="setSecondaryColour('#8bc34a')" style="background-color:#8bc34a" class="photoChoice" id="1"><p class="colourText">Light Green</p></div>
+					<div onclick="setSecondaryColour('#fdd835')" style="background-color:#fdd835" class="photoChoice" id="1"><p class="colourText">Yellow</p></div>
+					<div onclick="setSecondaryColour('#ff9800')" style="background-color:#ff9800" class="photoChoice" id="1"><p class="colourText">Orange</p></div>
+					<div onclick="setSecondaryColour('#f4511e')" style="background-color:#f4511e" class="photoChoice" id="1"><p class="colourText">Redish-Orange</p></div>
+					<div onclick="setSecondaryColour('#6d4c41')" style="background-color:#6d4c41" class="photoChoice" id="1"><p class="colourText">Brown</p></div>
+					<div onclick="setSecondaryColour('#757575')" style="background-color:#757575" class="photoChoice" id="1"><p class="colourText">Grey</p></div>
+					<div onclick="setSecondaryColour('#546e7a')" style="background-color:#546e7a" class="photoChoice" id="1"><p class="colourText">Blue Grey</p></div>
+				</div>
+            </section>
+            <section class="mdc-card__actions">
+              <a href="/setup/#secondary"><button class="mdc-button mdc-button--compact mdc-card__action">Setup Page</button></a>
+              <a href="javascript:localStorage.setItem('secondColour', prompt('Please Enter a Valid Colour (rgb/rgba, hexidecimal, css colour)', '#1e88e5'));location.reload()"><button class="mdc-button mdc-button--compact mdc-card__action">Custom Colour</button></a>
+            </section>
+          </div>
+	</div>
+</div>
 <div class="card card1 clickable" onclick="javascript:setPage('/setup/')">
 	<h2>RELAUCH SETUP</h2>
 	<p>Click here to relaunch the setup page.</p>

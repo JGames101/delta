@@ -32,6 +32,10 @@
 	<script>
 		var imgId = getParameterByName('image');
 		$('#imageBeingViewed').attr("src",imgId);
+		var imgHeight = $('#imageBeingViewed').height();
+		var imgPadding = screen.height - imgHeight;
+		var imgPaddingFinal = imgPadding / 2;
+		$('#imageBeingViewed').css("margin-top",imgPaddingFinal);
 		if (imgId == '/photos/1.jpg') {
 			document.getElementById('menuTitle').innerHTML = "Dandelion";
 			document.title = "Dandelion";
@@ -56,18 +60,6 @@
 		} else if (imgId == '/photos/8.jpg') {
 			document.getElementById('menuTitle').innerHTML = "Cliff";
 			document.title = "Cliff";
-		} else if (imgId == '/photos/9.jpg') {
-			document.getElementById('menuTitle').innerHTML = "Wildflowers";
-			document.title = "Wildflowers";
-		} else if (imgId == '/photos/10.jpg') {
-			document.getElementById('menuTitle').innerHTML = "Kelowna";
-			document.title = "Kelowna";
-		} else if (imgId == '/photos/11.jpg') {
-			document.getElementById('menuTitle').innerHTML = "Québec City";
-			document.title = "Québec City";
-		} else if (imgId == '/photos/12.jpg') {
-			document.getElementById('menuTitle').innerHTML = "Crayon";
-			document.title = "Crayon";
 		};
 		
 		if (screen.width < 1080) {
