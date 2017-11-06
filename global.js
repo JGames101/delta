@@ -1,8 +1,9 @@
 if (localStorage.getItem("themeColour") == undefined) {
-	localStorage.setItem("themeColour", "#cb2c36");
+	localStorage.setItem("themeColour", "#1e88e5");
 	localStorage.setItem("backgroundImage", "7");
 	localStorage.setItem("theme", "colourful");
 	localStorage.setItem("navbar", "mobile");
+	localStorage.setItem("secondColour", "#ff9800");
 };
 jQuery.get('/menus/' + localStorage.getItem('navbar') + '.html', function(data) {
 	document.getElementById('menu').innerHTML = data;
@@ -23,15 +24,16 @@ jQuery.get('/menus/' + localStorage.getItem('navbar') + '.html', function(data) 
 	});
 });
 
+document.body.style.backgroundImage = localStorage.getItem('backgroundImage');
 document.documentElement.style.setProperty('--mdc-theme-primary', localStorage.getItem('themeColour'));
-document.documentElement.style.setProperty('--mdc-theme-secondary', '#1565c0');
+document.documentElement.style.setProperty('--mdc-theme-secondary',  localStorage.getItem('secondColour'));
 var menu = false;
 var online = navigator.onLine;
 loadTheme();
 // send user to setup?
 if (localStorage.getItem("user") == undefined) {
 	console.log("User visiting for the first time! Opening new user page...");
-	//window.location.href = "/setup/"
+	window.location.href = "/setup/"
 };
 
 if (localStorage.getItem("theme") == "Greyscale") {
@@ -280,3 +282,8 @@ function shareMenu() {
 		.catch((error) => console.log('Error sharing', error));
 	}
 };
+
+/*document.oncontextmenu = function() {
+	return false;
+	console.log('custom context menu');
+}*/
