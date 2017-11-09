@@ -1,6 +1,6 @@
 @charset "utf-8";
 @import "/node_modules/material-components-web/dist/material-components-web.min.css";
-* {-webkit-tap-highlight-color:rgba(0, 0, 0, 0);cursor:inherit;--theme-text: black;}
+* {-webkit-tap-highlight-color:rgba(0, 0, 0, 0);cursor:inherit;}
 
 #jsMissing {
 	background-color: #ff8e75;

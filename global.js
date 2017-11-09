@@ -247,7 +247,7 @@ function mobileIndicator() {
 };
 
 function loadPageContent() {
-	if (navigator.onLine) {
+	if (navigator.onLine || document.title == 'News') {
 		jQuery.get('/page/' + document.title + '.html', function(data) {
 			document.getElementsByClassName('content')[0].innerHTML = data;
 			$(".pinned").css("color", localStorage.getItem("themeColour"));
@@ -287,3 +287,10 @@ function shareMenu() {
 	return false;
 	console.log('custom context menu');
 }*/
+
+Storage.prototype.setObj = function(key, obj) {
+    return this.setItem(key, JSON.stringify(obj))
+}
+Storage.prototype.getObj = function(key) {
+    return JSON.parse(this.getItem(key))
+}
