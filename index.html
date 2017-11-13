@@ -13,7 +13,8 @@
     <link href="/styles.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <<link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet"
+      href="/node_modules/material-components-web/dist/material-components-web.css">
     <meta name="description" content="My Site for Tests and Experiments with Web Development.">
     </head>
     <!-- Add to home screen for Safari on iOS -->
@@ -56,8 +57,28 @@
     <div id="menuButton" onclick="javascript:toggleMenu()" style="overflow:hidden;"> <!-- For opening control menu -->
       <i class="material-icons md-light md-32" id="menuToggle">keyboard_arrow_down</i>
     </div>
-    <div id="menu">
-      <p>Loading Menu... Please wait.</p>
+    <div id="menuI">
+        <header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--fixed-lastrow-only">
+            <div class="mdc-toolbar__row">
+              <h2 style="font-size:23px;padding-left:32px;font-family:'Roboto Condensed';color:white;" id="menuTitle">loading...</h2>
+            <i class="material-icons" style="color:white;position:absolute;top:24px;right:24px;cursor:pointer;" onclick="shareMenu()">share</i>
+            </div>
+            <div class="mdc-toolbar__row">
+              <nav class="mdc-tab-bar mdc-tab-bar--icon-tab-bar">
+                <a class="mdc-tab" onclick="setPage('/')">
+                <i class="material-icons mdc-tab__icon" aria-label="Home">home</i>
+                </a>
+                <a class="mdc-tab" onclick="setPage('/javascript')">
+                <i class="material-icons mdc-tab__icon" aria-label="Code">code</i>
+                </a>
+                <a class="mdc-tab" onclick="setPage('/videos')">
+                <i class="material-icons mdc-tab__icon" aria-label="Media">video_library</i>
+                </a>
+                <span class="mdc-tab-bar__indicator"></span>
+              </nav>
+            </div>
+          </header>
+          <link href="/menus/mobile.css" rel="stylesheet" type="text/css">
     </div>
     <div id="page">
     <h1 id="pageName">James M</h1>
@@ -70,8 +91,6 @@
     <script src="/modernizr-webp.js"></script>
     <script src="/jquery-3.2.1.min.js"></script>
     <script src="/global.js"></script>
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <script>mdc.autoInit()</script>
     <script>
     $( document ).ready(function() {
       $.getScript("/news/homepage.js", function() {
@@ -80,5 +99,7 @@
     });
     </script>
     </div>
+    <script src="/node_modules/material-components-web/dist/material-components-web.js"></script>
+    <script>mdc.autoInit()</script>
     </body>
     </html>
