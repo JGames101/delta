@@ -6,24 +6,22 @@ if (localStorage.getItem("themeColour") == undefined) {
 	localStorage.setItem("secondColour", "#ff9800");
 };
 
-if (document.title != 'James M') {
-	jQuery.get('/menus/' + localStorage.getItem('navbar') + '.html', function(data) {
-		document.getElementById('menu').innerHTML = data;
-		if (localStorage.getItem('navbar') == 'mobile') {
-			mobileIndicator();
-		};
-		loadTheme();
-		document.getElementById('menuTitle').innerHTML = document.title;
-		window.addEventListener('scroll', function(e) {
-			if(window.scrollY>100) {
-				$("#menu").removeClass("full").addClass("small");
-			} else {
-				$("#menu").removeClass("small").addClass("full");
-			}
-		});
-		
+jQuery.get('/menus/' + localStorage.getItem('navbar') + '.html', function(data) {
+	document.getElementById('menu').innerHTML = data;
+	if (localStorage.getItem('navbar') == 'mobile') {
+		mobileIndicator();
+	};
+	loadTheme();
+	document.getElementById('menuTitle').innerHTML = document.title;
+	window.addEventListener('scroll', function(e) {
+		if(window.scrollY>100) {
+			$("#menu").removeClass("full").addClass("small");
+		} else {
+			$("#menu").removeClass("small").addClass("full");
+		}
 	});
-};
+	
+});
 $( document ).ready(function() {
 	loadPageContent();
 });

@@ -37,8 +37,28 @@
 <div id="menuButton" onclick="javascript:toggleMenu()"> <!-- For opening control menu -->
 	<i class="material-icons md-light md-32" id="menuToggle">keyboard_arrow_right</i>
 </div>
-<div id="menu" contextmenu="navigationContext">
-	
+<div id="menu">
+	<header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--fixed-lastrow-only">
+		<div class="mdc-toolbar__row">
+		  <h2 style="font-size:23px;padding-left:32px;font-family:'Roboto Condensed';color:white;" id="menuTitle">loading...</h2>
+		<i class="material-icons" style="color:white;position:absolute;top:24px;right:24px;cursor:pointer;" onclick="shareMenu()">share</i>
+		</div>
+		<div class="mdc-toolbar__row">
+		  <nav class="mdc-tab-bar mdc-tab-bar--icon-tab-bar">
+			<a class="mdc-tab" onclick="setPage('/')">
+			<i class="material-icons mdc-tab__icon" aria-label="Home">home</i>
+			</a>
+			<a class="mdc-tab" onclick="setPage('/javascript')">
+			<i class="material-icons mdc-tab__icon" aria-label="Code">code</i>
+			</a>
+			<a class="mdc-tab" onclick="setPage('/videos')">
+			<i class="material-icons mdc-tab__icon" aria-label="Media">video_library</i>
+			</a>
+			<span class="mdc-tab-bar__indicator"></span>
+		  </nav>
+		</div>
+	  </header>
+	  <link href="/menus/mobile.css" rel="stylesheet" type="text/css">
 </div>
 <h1 id="pageName">Updates</h1>
 <div class="colourBackground">
