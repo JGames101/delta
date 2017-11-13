@@ -5,24 +5,30 @@ if (localStorage.getItem("themeColour") == undefined) {
 	localStorage.setItem("navbar", "mobile");
 	localStorage.setItem("secondColour", "#ff9800");
 };
-jQuery.get('/menus/' + localStorage.getItem('navbar') + '.html', function(data) {
-	document.getElementById('menu').innerHTML = data;
-	if (localStorage.getItem('navbar') == 'mobile') {
-		mobileIndicator();
-	};
-	loadTheme();
-	document.getElementById('menuTitle').innerHTML = document.title;
-	window.addEventListener('scroll', function(e) {
-		if(window.scrollY>100) {
-			$("#menu").removeClass("full").addClass("small");
-		} else {
-			$("#menu").removeClass("small").addClass("full");
-		}
+
+if (document.title != 'James M') {
+	jQuery.get('/menus/' + localStorage.getItem('navbar') + '.html', function(data) {
+		document.getElementById('menu').innerHTML = data;
+		if (localStorage.getItem('navbar') == 'mobile') {
+			mobileIndicator();
+		};
+		loadTheme();
+		document.getElementById('menuTitle').innerHTML = document.title;
+		window.addEventListener('scroll', function(e) {
+			if(window.scrollY>100) {
+				$("#menu").removeClass("full").addClass("small");
+			} else {
+				$("#menu").removeClass("small").addClass("full");
+			}
+		});
+		
 	});
-	$( document ).ready(function() {
-		loadPageContent();
-	});
+};
+$( document ).ready(function() {
+	loadPageContent();
 });
+mobileIndicator();
+document.getElementById('menuTitle').innerHTML = document.title;
 
 document.body.style.backgroundImage = localStorage.getItem('backgroundImage');
 document.documentElement.style.setProperty('--mdc-theme-primary', localStorage.getItem('themeColour'));
@@ -33,7 +39,7 @@ loadTheme();
 // send user to setup?
 if (localStorage.getItem("user") == undefined) {
 	console.log("User visiting for the first time! Opening new user page...");
-	//window.location.href = "/setup/"
+	window.location.href = "/setup/"
 };
 
 if (localStorage.getItem("theme") == "Greyscale") {
