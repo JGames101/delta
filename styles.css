@@ -310,10 +310,6 @@ i {
 		display: initial;
 	}
 	
-	::-webkit-scrollbar {
-	  width: 0px;
-	}
-	
 	#pageName {
 		margin-left: 0px;
 	}
@@ -376,6 +372,7 @@ i {
 	.card {
 		width: 46.25%;
 	}
+	
 }
 
 @media (min-width: 1025px){
@@ -398,26 +395,6 @@ i {
 	#desktopOptions {
 		display: initial;
 	}
-	::-webkit-scrollbar {
-      width: 8px;
-	}
-	::-webkit-scrollbar-track {
-      background-color: #536368;
-	} /* the new scrollbar will have a flat appearance with the set background color */
- 
-	::-webkit-scrollbar-thumb {
-      background-color: #2b3538; 
-	  border-radius: 16px;
-	} /* this will style the thumb, ignoring the track */
- 
-	::-webkit-scrollbar-button {
-      background-color: #536368;
-	  display: none;
-	} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
- 
-	::-webkit-scrollbar-corner {
-      background-color: #536368;
-	} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
 	.column {
 		width: 33.33%;
 	}

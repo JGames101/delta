@@ -24,6 +24,7 @@
 <link rel="stylesheet" href="/node_modules/material-components-web/dist/material-components-web.css">
 <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
 <title>Updates</title>
+<link rel="stylesheet" href="/page/News.css">
 </head>
 <body onresize="window.location.refresh">
 <noscript>
@@ -34,8 +35,20 @@
 	}
 	</style>
 </noscript>
-<div id="menuButton" onclick="javascript:toggleMenu()"> <!-- For opening control menu -->
-	<i class="material-icons md-light md-32" id="menuToggle">keyboard_arrow_right</i>
+<div id="shadePage"></div>
+<div id="newsStoryContainer">
+	<div id="storyBarTop">
+		<i class="material-icons" id="closeButton" onclick="closeArticle()" style="cursor:pointer;">close</i>
+		<h2 class="mdc-typography--headline newsTitle" id="newsStoryTitle">Loading...</h2>
+		<i class="material-icons" id="saveButton" style="cursor:pointer;">bookmark_border</i>
+		<i class="material-icons" id="moreButton" style="cursor:pointer;">more_vert</i>
+	</div>
+	<div id="storyContent">
+		<div id="storyFill">
+			<h3 class="mdc-typography--headline" id="newsStorySubtitle">Loading...</h3>
+			<p id="newsStoryContent" class="mdc-typography--body1">Loading...</p>
+		</div>
+	</div>
 </div>
 <div id="menu">
 	<header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--fixed-lastrow-only">
@@ -74,4 +87,5 @@
 <script src="/global.js"></script>
 <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 <script>mdc.autoInit()</script>
+<script src="/page/News.js"></script>
 </html>

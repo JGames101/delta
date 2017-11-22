@@ -36,8 +36,8 @@ var online = navigator.onLine;
 loadTheme();
 // send user to setup?
 if (localStorage.getItem("user") == undefined) {
-	console.log("User visiting for the first time! Opening new user page...");
-	window.location.href = "/setup/"
+	console.log("User visiting for the first time! Activating new user popup...");
+	//window.location.href = "/setup/"
 };
 
 if (localStorage.getItem("theme") == "Greyscale") {
