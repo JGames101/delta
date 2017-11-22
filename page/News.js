@@ -35,7 +35,7 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
-document.querySelector('.cache-article').addEventListener('click', function(event) {
+document.querySelector('#saveButton').addEventListener('click', function(event) {
     event.preventDefault();
     var id = this.dataset.articleId;
     var articleURL = getParameterByName('article') + '.json';
