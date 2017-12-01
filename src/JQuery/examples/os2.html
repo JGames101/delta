@@ -1,0 +1,105 @@
+<head>
+<script src="/jquery-3.2.1.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="/jquery.ui.touch-punch.min.js"></script>
+<style>
+#taskbar {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 32px;
+	background-color: #c0c0c0;
+}
+#Window {
+	width: 50%;
+	height: 50%;
+	background-color: #efefef;
+}
+h2 {
+	width: 100%;
+	color: white;
+	top: 0px;
+	left: 0px;
+	background-color: #c0c0c0;
+	font-family: 'Roboto Condensed';
+	height: 10%;
+}
+p {
+	font-family: 'Roboto Condensed';
+}
+body, #taskbar, Window {
+	overflow: hidden;
+}
+h2 {
+	overflow: visible;
+	height: 5%;
+}
+#button {
+	position: fixed;
+}
+#close {
+	width: 32px;
+	float: right;
+	text-align: center;
+	background-color: gray;
+	top: 0px;
+	cursor: pointer;
+	height: 100%;
+}
+#maximise {
+	width: 32px;
+	float: right;
+	text-align: center;
+	background-color: gray;
+	top: 0px;
+	cursor: pointer;
+	height: 100%;
+}
+p {
+	overflow-y: scroll;
+	height: 75%;
+}
+#urlBox {
+	width: 95%;
+}
+#changeURL {
+	width: 5%;
+}
+</style>
+<script>
+$( function() {
+	$( "#Window" ).draggable();
+} );
+$(document).ready(function(){
+	$("#Window").hide();
+	$("#button").dblclick(function(){
+		$("#Window").show();
+	});
+	$("#close").click(function(){
+		$("#Window").hide();
+	});
+});
+</script>
+</head>
+<body>
+<div id="button">
+	<img src="/images/file.png" width="32px">
+</div>
+<div id="Window">
+<h2>IE Beta<span id="close">X</span></h2>
+<input id="urlBox" name="urlBox" value="https://www.bing.com/"></input><button id="changeURL" onclick="javascript:changeUrl()">Go!</button>
+<object data="https://www.bing.com/" id="iePage" width="100%" height="100%"></object>
+</div>
+<div id="taskbar">
+</div>
+<script>
+document.body.style.backgroundColor = localStorage.getItem("themeColour");
+document.getElementById('button').backgroundColor = localStorage.getItem("themeColour");
+function changeUrl() {
+	var newPage = document.getElementById('urlBox').value;
+	document.getElementById("iePage").setAttribute('data', newPage);
+};
+</script>
+</body>

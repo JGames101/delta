@@ -1,0 +1,108 @@
+<head>
+<script src="/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
+<style>
+#menu {
+	width: 128px;
+	position: absolute;
+	height: 128px;
+	background-color: gray;
+	top: 0px;
+	left: 0px;
+	color: white;
+	font-family: 'Roboto Condensed';
+}
+#toggle {
+	color: white;
+	font-family: 'Roboto Condensed';
+	position: absolute;
+	left: 0px;
+	top: 128px;
+	background-color: gray;
+	width: 128px;
+	height: 128px;
+}
+#flip {
+	width: 128px;
+	height: 128px;
+	position: absolute;
+	left: 0px;
+	top: 256px;
+	background-color: gray;
+	color: white;
+	font-family: 'Roboto Condensed';
+}
+#panel {
+	width: 128px;
+	height: 128px;
+	position: absolute;
+	left: 128px;
+	top: 256px;
+	background-color: gray;
+	color: white;
+	font-family: 'Roboto Condensed';
+	display: none;
+}
+#mouseTouching {
+	width: 128px;
+	height: 128px;
+	position: absolute;
+	left: 128px;
+	top: 128px;
+	background-color: gray;
+	color: white;
+	font-family: 'Roboto Condensed';
+}
+body {
+	overflow: hidden;
+}
+</style>
+<script>
+$(document).ready(function(){
+    $("#menu").click(function(){
+        $("#menu").animate({
+            left: '+=128px'
+        });
+    });
+	$("body").keypress(function(){
+        $("#toggle").animate({
+            width: 'toggle'
+        });
+    });
+	$("#flip").click(function(){
+        $("#panel").slideToggle("medium");
+    });
+	$("#panel").mouseenter(function(){
+		$("#panel").animate({
+            top: '128px'
+        });
+	});
+	$("#panel").mouseleave(function(){
+		$("#panel").animate({
+            top: '256px'
+        });
+	});
+});
+</script>
+</head>
+<body>
+<div id="menu">
+<p>Click here to move the box!</p>
+</div>
+<div id="toggle">
+<p>I appear and disapear every time you press a key.</p>
+</div>
+<div id="flip">
+<p>Click.</p>
+</div>
+<div id="panel">
+<p>Touch me with your mouse!</p>
+</div>
+</body>
+<script>
+document.getElementById('menu').style.backgroundColor = localStorage.getItem("themeColour");
+document.getElementById('toggle').style.backgroundColor = localStorage.getItem("themeColour");
+document.getElementById('flip').style.backgroundColor = localStorage.getItem("themeColour");
+document.getElementById('panel').style.backgroundColor = localStorage.getItem("themeColour");
+</script>

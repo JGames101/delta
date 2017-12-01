@@ -1,0 +1,86 @@
+<head>
+<script src="/jquery-3.2.1.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="/jquery.ui.touch-punch.min.js"></script>
+<style>
+#taskbar {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 32px;
+	background-color: #c0c0c0;
+}
+#Window {
+	width: 256px;
+	height: 192px;
+	background-color: #efefef;
+}
+h2 {
+	width: 100%;
+	color: white;
+	top: 0px;
+	left: 0px;
+	background-color: #c0c0c0;
+	font-family: 'Roboto Condensed';
+}
+p {
+	font-family: 'Roboto Condensed';
+}
+body, #taskbar, Window {
+	overflow: hidden;
+}
+h2 {
+	overflow: visible;
+}
+h2 {
+	height: 15%;
+}
+#button {
+	position: fixed;
+}
+#close {
+	width: 32px;
+	float: right;
+	text-align: center;
+	background-color: gray;
+	top: 0px;
+	cursor: pointer;
+	height: 100%;
+}
+p {
+	overflow-y: scroll;
+	height: 75%;
+}
+</style>
+<script>
+$( function() {
+	$( "#Window" ).draggable();
+} );
+$(document).ready(function(){
+	$("#Window").hide();
+	$("#button").dblclick(function(){
+		$("#Window").show();
+	});
+	$("#close").click(function(){
+		$("#Window").hide();
+	});
+});
+</script>
+</head>
+<body>
+<div id="button">
+	<img src="/images/file.png" width="32px">
+</div>
+<div id="Window">
+<h2>Error<span id="close">X</span></h2>
+<p>This is not a fully-featured operating system. It's just a quick fun thing based on what I have done already.<br>This window also show scrolling which is fun I guess.<br>This is not a fully-featured operating system. It's just a quick fun thing based on what I have done already.<br>This window also show scrolling which is fun I guess.</p>
+</div>
+<div id="taskbar">
+</div>
+<script>
+document.body.style.backgroundColor = localStorage.getItem("themeColour");
+document.getElementById('button').backgroundColor = localStorage.getItem("themeColour");
+</script>
+</body>

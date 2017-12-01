@@ -1,0 +1,122 @@
+::-webkit-scrollbar {
+      width: 16px;
+}
+::-webkit-scrollbar-track {
+  background-color: white;
+} /* the new scrollbar will have a flat appearance with the set background color */
+
+::-webkit-scrollbar-thumb {
+  background-color: #e3e3e3; 
+  border-radius: 16px;
+} /* this will style the thumb, ignoring the track */
+
+::-webkit-scrollbar-button {
+  background-color: #536368;
+  display: none;
+} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+
+::-webkit-scrollbar-corner {
+  background-color: #536368;
+}
+#welcome {
+	top: 0px;
+}
+#theme {
+	top: 100%;
+}
+#background {
+	top: 200%;
+}
+#secondary {
+	top: 300%;
+}
+#done {
+	top: 400%;
+}
+#welcomeTitle {
+	text-align: center;
+	font-size: 128px;
+	font-weight: 200;
+	margin-top: 256px;
+}
+#themeTitle {
+	text-align: center;
+	font-size: 128px;
+	font-weight: 200;
+	margin-top: 128px;
+}
+.box {
+	max-width: 40%;
+	text-align: center;
+	margin-left: 30%;
+	font-size: 24px;
+}
+#welcome {
+	overflow: hidden;
+}
+.nextButton {
+	position: absolute;
+	width: 10%;
+	left: 45%;
+	background-color: #03a9f4;
+	border-radius: 16px;
+	font-size: 32px;
+	color: white;
+	cursor: pointer;
+}
+.nextButton:hover {
+	box-shadow: 0 0 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+p {
+	text-align: center;
+}
+.themeChoice {
+	width: 30%;
+	display: inline-block;
+	padding: 0px;
+	border-radius: 16px;
+	margin-bottom: 8px;
+	cursor: pointer;
+	background-color: #fafafa;
+}
+.themeChoice:hover {
+	box-shadow: 0 0 16px 0 rgba(0,0,0,0.2), 0 0 16px 0 rgba(0,0,0,0.19);
+	z-index: 999;
+}
+.photoChoice {
+	width: 30%;
+	display: inline-block;
+	padding: 0px;
+	border-radius: 16px;
+	margin-bottom: 8px;
+	cursor: pointer;
+	background-color: #fafafa;
+}
+.photoChoice:hover {
+	box-shadow: 0 0 16px 0 rgba(0,0,0,0.2), 0 0 16px 0 rgba(0,0,0,0.19);
+	z-index: 999;
+}
+.themeThumb {
+	border-top-left-radius: 16px;
+	border-top-right-radius: 16px;
+}
+#themeBox {
+	max-width: 40%;
+	margin-left: 32%;
+}
+.colourText {
+	color: white;
+}
+@media (min-width: 0px) and (max-width: 991px){
+	#themeBox {
+		max-width: 95%;
+		margin-left: 2.5%;
+	}
+	.box {
+		max-width: 95%;
+		margin-left: 2.5%;
+	}
+	.page {
+		overflow-y: none;
+	}
+}

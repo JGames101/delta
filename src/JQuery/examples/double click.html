@@ -1,0 +1,45 @@
+<head>
+	<script src="/jquery-3.2.1.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
+	<script>
+	$(document).ready(function(){
+		$("#result").hide();
+	});
+	$(document).ready(function(){
+		$("#button").dblclick(function(){
+			$("#result").show();
+		});
+	});
+	</script>
+	<style>
+	#button {
+		width: 128px;
+		height: 128px;
+		background-color: white;
+		color: white;
+		cursor: pointer;
+	}
+	#result {
+		font-family: 'Roboto Condensed';
+	}
+	img {
+		margin-top: 25%;
+		margin-left: 25%;
+	}
+	#resetButton {
+		position: absolute;
+		bottom: 8px;
+		right: 8px;
+	}
+	</style>
+</head>
+<body>
+	<div id="button">
+	<img src="/images/doubleclick.png" width="50%">
+	</div>
+	<p id="result">You Double-Clicked!</p>
+	<button id="resetButton" onclick="location.reload();">Reset</button>
+	<script>
+	document.getElementById('button').style.backgroundColor = localStorage.getItem("themeColour");
+	</script>
+</body>

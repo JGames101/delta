@@ -6,47 +6,25 @@ if (localStorage.getItem("themeColour") == undefined) {
 	localStorage.setItem("secondColour", "#ff9800");
 };
 
-jQuery.get('/menus/' + localStorage.getItem('navbar') + '.html', function(data) {
-	document.getElementById('menu').innerHTML = data;
-	if (localStorage.getItem('navbar') == 'mobile') {
-		mobileIndicator();
-	};
-	loadTheme();
-	document.getElementById('menuTitle').innerHTML = document.title;
-	window.addEventListener('scroll', function(e) {
-		if(window.scrollY>100) {
-			$("#menu").removeClass("full").addClass("small");
-		} else {
-			$("#menu").removeClass("small").addClass("full");
-		}
-	});
-	
-});
+mobileIndicator();
+document.getElementById('menuTitle').innerHTML = page();
+
 $( document ).ready(function() {
 	loadPageContent();
 });
-mobileIndicator();
-document.getElementById('menuTitle').innerHTML = document.title;
 
 document.body.style.backgroundImage = localStorage.getItem('backgroundImage');
 document.documentElement.style.setProperty('--mdc-theme-primary', localStorage.getItem('themeColour'));
 document.documentElement.style.setProperty('--mdc-theme-secondary',  localStorage.getItem('secondColour'));
 var menu = false;
 var online = navigator.onLine;
-loadTheme();
 // send user to setup?
-if (localStorage.getItem("user") == undefined) {
+if (localStorage.getItem("user") == undefined && page() != 'setup') {
 	console.log("User visiting for the first time! Activating new user popup...");
-	//window.location.href = "/setup/"
+	//setPage('/setup');
 };
 
-if (localStorage.getItem("theme") == "Greyscale") {
-	$('head').append('<meta name="theme-color" content="' + '#323232' + '" />');
-} else if (localStorage.getItem("theme") == "light") {
-	$('head').append('<meta name="theme-color" content="' + '#323232' + '" />');
-} else {
-	$('head').append('<meta name="theme-color" content="' + localStorage.getItem("themeColour") + '" />');
-};
+$('head').append('<meta name="theme-color" content="' + localStorage.getItem("themeColour") + '" />');
 
 // Calculate Cards
 function calculateCardColumns() {
@@ -135,90 +113,60 @@ function cardColumns(colCount) {
 // Theme Stuff
 function loadTheme() {	
 	console.log('themes being loaded');
+	if (localStorage.getItem('theme') == 'dark') {
+		document.body.className = 'mdc-theme--dark';
+		document.body.style.backgroundColor = '#222';
+		$('.mdc-card').css('background-color', '#282828');
+		$('p').css('color', 'white');
+		$('h1').css('color', 'white');
+		$('h2').css('color', 'white');
+		$('h3').css('color', 'white');
+		$('.material-icons').css('color', 'white');
+		$('#newsStoryContainer').css('background-color', '#282828');
+		$('#shadePage').css('background-color', 'rgba(0, 0, 0, 0.25)');
+	} else if (localStorage.getItem('theme') == 'light') {
+		$('header').css('background-color', '#fafafa');
+		$('#menuTitle').css('color', '#222');
+		$('.mdc-tab__icon').css('color', '#222');
+		$('.mdc-tab-bar__indicator').css('visibility', 'hidden');
+		$('#moreButtonNav').css('color', '#222');
+	};
 	
-	// Functions for other content settings
 };
 // Global Functions
-function toggleMenu() { //The commented code is for the page responding to when the menu is opened.
-	if (document.getElementById('menu').className == 'open') {
-		document.getElementById('menu').className = 'hidden';
-		document.getElementById('menuTextBox').style.cursor = "initial";
-		//document.getElementsByClassName('content')[0].id = 'initial';
-		//document.getElementById('pageName').className = 'hidden';
-		document.getElementById('menuButton').className = 'regular';
-		} else {
-		document.getElementById('menu').className = 'open';
-		document.getElementById('menuTextBox').style.cursor = "pointer";
-		//document.getElementsByClassName('content')[0].id = 'contentOpen';
-		//document.getElementById('pageName').className = 'pageNameCondensed';
-		document.getElementById('menuButton').className = 'reverse';
-	};
-};
 
 function setPage(newLocation) {
-	window.location.href = newLocation;
+	if (page() == 'videos') {
+		var popoutVideoId = getParameterByName('video');
+		$('#videoPlayer').appendTo('#popoutVideo');
+		document.getElementById('videoPlayer').id = 'videoPlayerPopout';
+		document.getElementById('videoPlayerPopout').height = "100%";
+		var popoutVideo = true;
+		document.getElementById('popoutVideo').className = 'open';
+	}
+	window.history.pushState("setPageFunction", "James M", newLocation);
+	mobileIndicator();
+	document.getElementById('menuTitle').innerHTML = page();
+	loadPageContent();
 }
 
-function getAllUrlParams(url) {
-  // get query string from url (optional) or window
-  var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
-
-  // we'll store the parameters here
-  var obj = {};
-
-  // if query string exists
-  if (queryString) {
-
-    // stuff after # is not part of query string, so get rid of it
-    queryString = queryString.split('#')[0];
-
-    // split our query string into its component parts
-    var arr = queryString.split('&');
-
-    for (var i=0; i<arr.length; i++) {
-      // separate the keys and the values
-      var a = arr[i].split('=');
-
-      // in case params look like: list[]=thing1&list[]=thing2
-      var paramNum = undefined;
-      var paramName = a[0].replace(/\[\d*\]/, function(v) {
-        paramNum = v.slice(1,-1);
-        return '';
-      });
-
-      // set parameter value (use 'true' if empty)
-      var paramValue = typeof(a[1])==='undefined' ? true : a[1];
-
-      // (optional) keep case consistent
-      paramName = paramName.toLowerCase();
-      paramValue = paramValue.toLowerCase();
-
-      // if parameter name already exists
-      if (obj[paramName]) {
-        // convert value to array (if still string)
-        if (typeof obj[paramName] === 'string') {
-          obj[paramName] = [obj[paramName]];
-        }
-        // if no array index number specified...
-        if (typeof paramNum === 'undefined') {
-          // put the value on the end of the array
-          obj[paramName].push(paramValue);
-        }
-        // if array index number specified...
-        else {
-          // put the value at that index number
-          obj[paramName][paramNum] = paramValue;
-        }
-      }
-      // if param name doesn't exist yet, set it
-      else {
-        obj[paramName] = paramValue;
-      }
-    }
-  }
-
-  return obj;
+var selLink = 0;
+while (selLink < document.getElementsByClassName('link').length) {
+	document.getElementsByClassName('link')[selLink].addEventListener('click', function() {
+		event.preventDefault();_href = $(this).attr("href");setPage(_href);
+	});
+	selLink += 1;
 };
+
+function closePopoutVideo() {
+	$('#videoPlayerPopout').remove();
+	document.getElementById('popoutVideo').className = 'close';
+	var popoutVideo = true;
+}
+function fullVideoPlayer() {
+	setPage('/videos/?video=' + popoutVideoId);
+	closePopoutVideo();
+}
 
 // Colour Corrections at the end
 $('.info').css('color', localStorage.getItem("themeColour"));
@@ -241,9 +189,10 @@ function calculateLayout() {
 
 
 function mobileIndicator() {
-	if (document.title == 'JavaScript' || document.title == 'Code' || document.title == 'JQuery' || document.title == 'HTML5') {
+	$(".mdc-tab--active").removeClass("mdc-tab--active");
+	if (page() == 'javascript' || page() == 'code' || page() == 'JQuery' || page() == 'html5') {
 		document.getElementsByClassName('mdc-tab')[1].className += ' mdc-tab--active';
-	} else if (document.title == 'Media' || document.title == 'Videos') {
+	} else if (page() == 'media' || page() == 'videos') {
 		document.getElementsByClassName('mdc-tab')[2].className += ' mdc-tab--active';
 	} else {
 		document.getElementsByClassName('mdc-tab')[0].className += ' mdc-tab--active';
@@ -251,17 +200,31 @@ function mobileIndicator() {
 };
 
 function loadPageContent() {
-	if (navigator.onLine || document.title == 'News') {
-		jQuery.get('/page/' + document.title + '.html', function(data) {
-			document.getElementsByClassName('content')[0].innerHTML = data;
-			$(".pinned").css("color", localStorage.getItem("themeColour"));
-			$.getScript( '/page/' + document.title + '.js' );
-			calculateCardColumns();
-			$(".pinned").css("color", localStorage.getItem("themeColour"));
-		});
+	if (navigator.onLine) {
+		if (page() == '') {
+			jQuery.get('page/James M.html', function(data) {
+				document.getElementsByClassName('content')[0].innerHTML = data;
+				loadTheme();
+				$.getScript( '/page/James M.js' );
+				calculateCardColumns();
+				$(".pinned").css("color", localStorage.getItem("themeColour"));
+				document.getElementById('menuTitle').innerHTML = 'James M';
+			});
+		} else {
+			jQuery.get('page/' + page() + '.html', function(data) {
+				document.getElementsByClassName('content')[0].innerHTML = data;
+				loadTheme();
+				$(".pinned").css("color", localStorage.getItem("themeColour"));
+				$.getScript( '/page/' + page() + '.js' );
+				calculateCardColumns();
+				$(".pinned").css("color", localStorage.getItem("themeColour"));
+			});
+		}	
 	} else {
-		jQuery.get('/page/offline.html', function(data) {
+		jQuery.get('page/offline.html', function(data) {
 			document.getElementsByClassName('content')[0].innerHTML = data;
+			loadTheme();
+			document.getElementById('menuTitle').innerHTML = 'Offline';
 		});
 	}
 };
@@ -287,14 +250,30 @@ function shareMenu() {
 	}
 };
 
-/*document.oncontextmenu = function() {
-	return false;
-	console.log('custom context menu');
-}*/
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
 
-Storage.prototype.setObj = function(key, obj) {
-    return this.setItem(key, JSON.stringify(obj))
+function page() {
+	return window.location.pathname.slice(1, window.location.pathname.length).replace('/', '')
 }
-Storage.prototype.getObj = function(key) {
-    return JSON.parse(this.getItem(key))
-}
+
+document.oncontextmenu = function() {
+	return false;
+};
+// Popout Video Stuff
+var popoutVideo = false;
+var popoutVideoId = '00000000000';
+
+// Popstate stuff
+window.onpopstate = function(event) {
+	mobileIndicator();
+	document.getElementById('menuTitle').innerHTML = page();
+	loadPageContent();
+};

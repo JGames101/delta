@@ -10,13 +10,15 @@
     <head>
     <meta charset="utf-8">
     <title>James M</title>
-    <link href="/styles.css" rel="stylesheet" type="text/css">
+    <link href="styles.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet"
-      href="/node_modules/material-components-web/dist/material-components-web.css">
+      href="node_modules/material-components-web/dist/material-components-web.css">
     <meta name="description" content="My Site for Tests and Experiments with Web Development.">
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="page/news.css">
+    <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
     </head>
     <!-- Add to home screen for Safari on iOS -->
       <meta name="apple-mobile-web-app-capable" content="yes">
@@ -46,61 +48,60 @@
         Notification.requestPermission();
     });
     </script>
-    <body onresize="window.location.refresh">
-    <noscript>
-      <object id="jsmissing" data="/jsmissing.html" width="100%" height="100%" style="z-index:512;height:100%!important;"></object>	<!-- The alert for JavaScript being disabled. -->
-      <style>
-      * {
-        overflow: hidden;
-      }
-      </style>
-    </noscript>
-    <div id="menuButton" onclick="javascript:toggleMenu()" style="overflow:hidden;"> <!-- For opening control menu -->
-      <i class="material-icons md-light md-32" id="menuToggle">keyboard_arrow_down</i>
+    <body>
+    <div id="shadePage"></div>
+    <div id="newsStoryContainer">
+      <div id="storyBarTop">
+        <i class="material-icons" id="closeButton" onclick="closeArticle()" style="cursor:pointer;">close</i>
+        <h2 class="mdc-typography--headline newsTitle" id="newsStoryTitle">Loading...</h2>
+        <i class="material-icons" id="saveButton" style="cursor:pointer;">bookmark_border</i>
+        <i class="material-icons" id="moreButton" style="cursor:pointer;" onclick="shareMenu()">more_vert</i>
+      </div>
+      <div id="storyContent">
+        <div id="storyFill">
+          <h3 class="mdc-typography--headline" id="newsStorySubtitle">Loading...</h3>
+          <p id="newsStoryContent" class="mdc-typography--body1">Loading...</p>
+        </div>
+      </div>
+    </div>
+    <div id="popoutVideo" class="closed">
+      <div id="popoutVideoOverlay" style="overflow-y:hidden;">
+        <i class="material-icons" style="position:absolute;top:4px;left:4px;font-size:32px;cursor:pointer;" onclick="closePopoutVideo()">close</i>
+        <i class="material-icons" style="text-align:center;line-height:256px;font-size:32px;width:100%;cursor:pointer;" onclick="fullVideoPlayer()">fullscreen</i>
+      </div>
     </div>
     <div id="menu">
         <header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--fixed-lastrow-only">
             <div class="mdc-toolbar__row">
-              <h2 style="font-size:23px;padding-left:32px;font-family:'Roboto Condensed';color:white;" id="menuTitle">loading...</h2>
-            <i class="material-icons" style="color:white;position:absolute;top:24px;right:24px;cursor:pointer;" onclick="shareMenu()">share</i>
+              <h2 style="font-size:23px;padding-left:32px;font-family:'Roboto Condensed';color:white;" id="menuTitle">James M</h2>
+            <i class="material-icons" style="color:white;position:absolute;top:24px;right:24px;cursor:pointer;" onclick="shareMenu()" id="moreButtonNav">more_vert</i>
             </div>
             <div class="mdc-toolbar__row">
               <nav class="mdc-tab-bar mdc-tab-bar--icon-tab-bar">
-                <a class="mdc-tab" onclick="setPage('/')">
+                <a class="mdc-tab link" href="/">
                 <i class="material-icons mdc-tab__icon" aria-label="Home">home</i>
                 </a>
-                <a class="mdc-tab" onclick="setPage('/javascript')">
+                <a class="mdc-tab link" href="/javascript">
                 <i class="material-icons mdc-tab__icon" aria-label="Code">code</i>
                 </a>
-                <a class="mdc-tab" onclick="setPage('/videos')">
+                <a class="mdc-tab link" href="/media">
                 <i class="material-icons mdc-tab__icon" aria-label="Media">video_library</i>
                 </a>
                 <span class="mdc-tab-bar__indicator"></span>
               </nav>
             </div>
           </header>
-          <link href="/menus/mobile.css" rel="stylesheet" type="text/css">
     </div>
-    <div id="page">
-    <h1 id="pageName">James M</h1>
-    <div class="colourBackground">
     <div class="content" id="intial">
-      <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-      <span style="font-family: 'Roboto Mono', monospace;">loading content...</span>
+        <noscript>
+          <object id="noJSPage" data="/page/noJS.html" width="100%" height="100%"></object>
+        </noscript>
     </div>
-    </div>
-    <script src="/modernizr-webp.js"></script>
-    <script src="/jquery-3.2.1.min.js"></script>
-    <script src="/global.js"></script>
-    <script>
-    $( document ).ready(function() {
-      $.getScript("/news/homepage.js", function() {
-           console.log('loading the homepage feed');
-      });
-    });
-    </script>
-    </div>
-    <script src="/node_modules/material-components-web/dist/material-components-web.js"></script>
+    <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
     <script>mdc.autoInit()</script>
-    </body>
-    </html>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="global.js"></script>
+    <script src="src/modernizr-history.js"></script>
+    <script src="page/News.js"></script>
+  </body>
+</html>

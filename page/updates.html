@@ -1,0 +1,293 @@
+﻿<h2 class="pinned" onclick="toggleSection('pinned1')">DELTA <i class='material-icons' id="icon-pinned1">keyboard_arrow_up</i></h2>
+<div id="pinned1" class="pinnedDiv" style="display:initial">
+	<div class="card card1">
+		<h2>v3.0δ</h2>
+		<p>This version builds upon the fact that page content is loaded in seperately from the page in v2.0. At the time, this feature was added for speed reasons.<br>
+		But in this version, there is no longer an index.html file for every page. Instead, there is only the root index.html file. The htaccess no longer redirects to the 404 page. Instead, it redirects to index.html.<br>
+		global.js now loads in HTML content not based on page title, but based on page URL.<br>
+		When clicking a link, the page is no longer reloaded. Instead, it uses the History API to change the URL and replaces the content of the page.<br>
+		When watching a video through the video viewer, If you click a button to leave the HTML page, it plays in a PiP mode.<br>
+		2 new photos have been added.<br>
+		The Setup page no longer looks completely seperate to the site. Instead, it looks just like any other page, with the menu at the top.<br>
+		Every page still has its own URL, so it behaves as excepted when sharing.<br>
+		The code page has finally been implemented, with links to all the code pages.</p>
+		<button onclick="openArticle('/news/updates/v3.0d')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+
+</div>
+<h2 class="pinned" onclick="toggleSection('pinned2')">GAMMA <i class='material-icons' id="icon-pinned2">keyboard_arrow_up</i></h2>
+<div id="pinned2" class="pinnedDiv" style="display:initial">
+	<div class="card card2">
+		<h2>v2.31γ</h2>
+		<p>The News Article Page has been Redesigned. It is now a fixed size, and the content scrolls, rather than the whole site. The actions are also now along the top.<br>
+		News stories can now be loaded from the Updates Page, so that the site doesn't have to load the news page to open an article. The goal is for this to be the behavior for all media to improve the speed of the site.<br>
+		On supported versions, the more info button now opens the news viewer rather than the old TXT viewer.<br>
+		More changes will be coming in future updates, such as overlays for new users, notifications, no javascript, as well as media.</p>
+	</div>
+	<div class="card card2">
+		<h2>v2.3γ</h2>
+		<p>This Update adds a new page: News.<br>
+		News has updates and developer logs about the site.<br>
+		It loads articles with JSON to be extremely quick.<br>
+		It is also the first page on the site with true offline support, meaning that it works when offline. However, to be able to read an article offline, you need to first choose to save the article offline when you are online. This will be coming to all future features on the site for better offline support.<br>
+		The service worker has finally been fixed to not cache all loaded files, so Offline support works as intended once again.</p>
+		<button onclick="openArticle('/news/updates/v2.3y')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+	<div class="card card2">
+		<h2>v2.2γ</h2>
+		<p>The Homescreen has been completely redesigned to emphasize content, as well as featuring the new news page.<br>
+		The news page has multiple feeds, including Updates, and a lot more.<br>
+		The newsfeed API allows different feeds, such as Updates, Media, Code, and more to work. It works with JSON, so it's easy to add update independantly from the homepage.<br>
+		There are three feeds on the homepage: News, which shows announcements and updates, code, which emphasizes the code behind features, and media, which puts a spotlight on the different media on the site.<br>
+		This update also redesigns major parts of the site with more Material Components, such as Material Buttons and Cards.<br>
+		Secondary colour is now selectable in setup and options, and applies to buttons and certain other UI elements.<br>
+		As mentioned in the newsfeed, there are now four new images: Wildflowers, Kelowna, Québec City, and Crayons.<br>
+		<b style="color:red">WARNING:</b> Themes are currently broken. They will be fixed in a future version of the site with an improved Theme API 2.0.</p>
+		<button onclick="openArticle('/news/updates/v2.2y')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+	<div class="card card2">
+		<h2>v2.1γ</h2>
+		<p>Material Design Components have been fully implemented into the site. You can see this most notably on the JavaScript page, but it also slightly changes the header, and some other things as well.<br>
+		There is a new menu design, to emphasize the three things that the site focuses on: Code, Media, and Options. Code will, in a future release, take you to a new page.<br>
+		From tests with the new Web Share API, there is now a share button on videos, photos, and some code games. On browsers that support Web Share API, that will appear. On other browsers, it will open a new email with the link.<br>
+		Photos page has been completely redesigned to be more like a photos viewer, and loads image from URL.<br>
+		There is now and expand/contract button beside headers for categories of cards, much like the advanced section in option.<br>
+		The Updates page has been seperated into three sections: Gamma, Beta, and Alpha.<br>
+		The Versions previously known as Beta 2 is now known as the Gamma release.<br>
+		Version 2.2γ will be coming soon with more improvements.</p>
+		<button onclick="openArticle('/news/updates/v2.1y')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+	<div class="card card2">
+		<h2>v2.01γ</h2>
+		<p>As v2.0b fixed the offline functionality, the only missing requirement for PWA was speed on 3G networks. This version has a lot of small changes that make access on 3G networks working well.<br>
+		This includes delaying the loading of JQuery and Modernizr until the initial page has been loaded in, and then delaying loading the content of the page until everything is loaded.</p>
+	</div>
+	<div class="card card2">
+		<h2>v2.0γ</h2>
+		<p>Beta 2.0!<br>
+		The site has been completely redesigned.<br>
+		There are now different menus that can be loaded in.<br>
+		The site has a segmented design for offline support.<br>
+		There is now a special message when offline.<br>
+		There is a new "media" page for photos and videos.<br>
+		As with v1.0b, the final beta1 version, v1.441b, can be found at <a href="/beta">/beta</a>.<br></p>
+		<button onclick="moreInfo('v2.0b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+</div>
+<h2 class="pinned" onclick="toggleSection('pinned3')">BETA<i class='material-icons' id="icon-pinned3">keyboard_arrow_down</i></h2>
+<div id="pinned3" class="pinnedDiv" style="display:none">
+	<div class="card card3">
+		<h2>v1.441b</h2>
+		<p>setup now has scrolling when needed.<br>Service Worker now caches <a href="/txt/">jgames101.github.io/txt/</a> for the more info in the updates page.<br>There is now a v1.0b classic theme.<br>Swipe gestures now work on the menu!</p>
+	</div>
+	<div class="card card3">
+		<h2>v1.44b</h2>
+		<p>On supported browsers, images are now .webp instead of .jpg.<br>Unsupported browsers are detected with <a href="https://modernizr.com/">Modernizr</a>, and are served the regular .jpg images.<br>Offline support and PWA support has been fixed!</p>
+		<button onclick="moreInfo('v1.44b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+	<div class="card card3">
+		<h2>v1.433b</h2>
+		<p>Page titles have been shortened. For example, this page has gone from "Updates | James M" to "Updates".<br>When using the classic theme, the new card system is not used.<br>Vertical tablet mode now works.</p>
+	</div>
+	<div class="card card3">
+		<h2>v1.432b</h2>
+		<p>Image for classic theme on setup has been redone to use the "classic" background image, flowers.<br>Opening the menu now causes the expand icon to animate.<br>Fixed the resizing bug.</p>
+	</div>
+	<div class="card card3">
+		<h2>v1.431b</h2>
+		<p>A new theme: Photo Dark.<br>It is very similar to Photo, but instead of having light cards, the cards use the dark colour from the dark theme.</p>
+		<button onclick="moreInfo('v1.431b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+	<div class="card card3">
+		<h2>v1.43b</h2>
+		<p><b>INCREDIBLE VERSION 1.43b!</b><br>This version is a HUGE internal update, which has an effect on every page.<br>JavaScript is now required to use the site, because of the changes made in this version:<br>JavaScript now adds 1/2/3 columns (depending on the device) to the page, and moves the cards to the correct column. On pages with card sections, such as the homepage, each of those sections get its own columns. This was inspired by Google+, but it took very long to develop, because of the JavaScript.</p>
+		<button onclick="moreInfo('v1.43b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+	<div class="card card3">
+		<h2>v1.42b</h2>
+		<p>Horizontal tablet mode remained the same, but vertical tablet mode now has a navigation bar on the bottom.<br>Options has been slightly changed: Background image now changes theme colour, and colour picker has been moved to legacy options. There is now also a "relaunch setup" card.</p>
+	</div>
+	<div class="card card3">
+		<h2>v1.41b</h2>
+		<p>Light theme's navigation bar is lighter, and has darker icons and text.<br>Tablet Mode now has wide cards for certain things, and should now only show on tablets. More changes to Tablet mode may be coming in the future as I experiment with the UI.</p>
+		<button onclick="moreInfo('v1.41b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+	<div class="card card3">
+		<h2>v1.4b</h2>
+		<p>New Theme Group: Classic!<br>Classic contains v0.8a.<br>Dark theme is now functional. It is just like light theme, but dark grey instead of light grey.<br>
+		If you're visiting for the first time, or have never used this version before, you will be sent to the setup page. Here, it guides you through all the personalization you can make. It should only be displayed once, but can reactivated by going to jgames101.github.io/setup/ or clicking the button in options.</p>
+		<button onclick="moreInfo('v1.4b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+	<div class="card card3">
+		<h2>v1.31b</h2>
+		<p>New Themes: Light, and Dark.<br>New Mobile options section. It currently conains navbar location.</p>
+		<button onclick="moreInfo('v1.31b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+	<div class="card card3 wideCard">
+		<h2>v1.3b</h2>
+		<p>New Theme option in options (Currently in Beta).<br>Depending on your theme, different options will appear.<br>Photos page redesigned with Fullscreen, no menu bar, and better button design.<br>
+		Themes is in Beta. Custom Theme Options may be added in the future, and themes may be added or removed.</p>
+		<button onclick="moreInfo('v1.3b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+	<div class="card card3">
+		<h2>v1.22b</h2>
+		<p>Expand arrow on mobile is now pointed downwards/upwards to better match its function. The menu button also no longer has a scrollbar on it.<br>JavaScript now has a file information card, with a file picker.</p>
+		<button onclick="moreInfo('v1.22b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+	<div class="card card3">
+		<h2>v1.21b</h2>
+		<p>Rather than <a href="/updates/info/">/updates/info/</a>, text documents are now rendered at <a href="https://jgames101.github.io/txt/">jgames101.github.io/txt/</a> to provide a more unified experience under my websites.<br>The local version has been removed.</p>
+		<button onclick="moreInfo('v1.21b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+	<div class="card card3">
+		<h2>v1.2b</h2>
+		<p>The navigation bar now uses material icons for most icons.<br>There is now a more info button for any updates, starting with this version.</p>
+		<button onclick="moreInfo('v1.2b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+	<div class="card card3">
+		<h2>v1.191b</h2>
+		<p>There is now a 404 page. You can see it <a href="/missingUrl">here.</a></p>
+	</div>
+	<div class="card card3">
+		<h2>v1.19b</h2>
+		<p>JavaScript now has a new Web Browser example.<br>Menu links are no longer clickable when menu is closed.</p>
+	</div>
+	<div class="card card3">
+		<h2>1.181b</h2>
+		<p>Added a new library (<a href="http://touchpunch.furf.com/">Touch Punch</a>) to get drag and other mouse effects to work on touchscreen devices in JQuery.</p>
+	</div>
+	<div class="card card3">
+		<h2>1.18b</h2>
+		<p>New system for forced updates when online, using latest.json.<br>Updates on index has 2 subtitles: Installed Version and Newest Version.</p>
+	</div>
+	<div class="card card3">
+		<h2>1.17b</h2>
+		<p>When changing colour, the page now refreshes for Android theme colour.</p><p>Under Options, there is a new "Install" section! Currently, there is only a UWP option, but there will hopefully be more in the future.</p>
+	</div>
+	<div class="card card3">
+		<h2>1.16b</h2>
+		<p>Service Worker remade to work offline properly again.<br>PWA prompt should hopefully work now.</p>
+	</div>
+	<div class="card card3">
+		<h2>1.15b</h2>
+		<p>JavaScript Disabled alert has been moved from using JavaScript to using the HTML tag noscript.<br>JQuery is now stored locally instead of loading from Google.</p>
+	</div>
+	<div class="card card3">
+		<h2>1.14b</h2>
+		<p>Added suggested colours to the personalization menu, one for each background.</p>
+	</div>
+	<div class="card card3">
+		<h2>1.13b</h2>
+		<p>Chrome for Android theme colour is now dynamic depending on your app theme colour.</p>
+	</div>
+	<div class="card card3">
+		<h2>1.12b</h2>
+		<p>Mobile navigation bar fixed, to now only show the first 6 icons at the top, have the expand button, and be a fixed size.</p>
+		<p>FIXED THE MOBILE SCROLLING PROBLEM!!!</p>
+	</div>
+	<div class="card card3">
+		<h2>1.11b</h2>
+		<p>JQuery now has a "Very Basic OS" Showing opening a window and closing it.<br>It will be developed more in the future.</p>
+	</div>
+	<div class="card card3 wideCard">
+		<h2>1.1b</h2>
+		<p>New JQuery Page!<br>It currently has a draggable example, and a double-click example.<br>They adapt to the theme colour.<br>Theme colour settings are now much easier: It has a prompt, so that you don't have to input rgb or hex codes yourself.</p>
+	</div>
+	<div class="card card3">
+		<h2>1.04b</h2>
+		<p>AngularJS page fixed.<br>HTML5 page now has a text editor.<br>alpha site now works. Everything is set relative to /alpha/, so it now loads the alpha CSS and the alpha JS.</p>
+		<p>Most elements now have a custom context menu!<br>Try it on the navigation bar!</p>
+		<p>There is now an options page.</p>
+	</div>
+	<div class="card card3">
+		<h2>1.03b</h2>
+		<p>Setting a background in JavaScript now applies to all pages.<br>The darkened background has been removed.<br>There are 4 new images for backgrounds.</p>
+	</div>
+	<div class="card card3">
+		<h2>1.02b</h2>
+		<p>Mobile navigation bar has been redesigned. It is now positioned on the top.</p>
+	</div>
+	<div class="card card3">
+		<h2>1.01b</h2>
+		<p>Mobile background fixed.</p>
+	</div>
+	<div class="card card3 wideCard">
+		<h2>1.0b</h2>
+		<p>Beta Release!</p>
+		<p>Fixed phone bug where there is too much horizontal space.</p>
+		<p>Navigation updates:</p>
+		<ul>
+		<li>The menu has been transformed into a bar at the left, 64 pixels wide. (Testing phase for mobile, may be removed)
+		<li>The expand button only expands the bar into the menu from version 0.8a.
+		<li>Expanding the menu is now animated!
+		<li>Photography has been temporarily removed from navigation menu until the UI and functionality is finalized.
+		</ul>
+		<p>Added mobile viewport to all pages to fix content on pages such as Angular being too small.</p>
+		<p>Updated theme colour from Chrome for Phones and Android App Switcher.</p>
+		<p>Added a custom scrollbar!</p>
+		<button onclick="moreInfo('v1.0b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+</div>
+<h2 class="pinned" onclick="toggleSection('pinned4')">ALPHA <i class='material-icons' id="icon-pinned4">keyboard_arrow_down</i></h2>
+<div id="pinned4" class="pinnedDiv" style="display:none">
+	<div class="card card4 wideCard">
+		<h2>0.8a</h2>
+		<p>JavaScript now lets you change the background using buttons on the page, as well as a notification generator and a temperature converter that works back and forth.</p>
+		<p>Angular and JavaScript now have a fullscreen this page will not work when JavaScript is disabled.</p>
+		<p>Jsmissing and Connectionmissing now properly show on all pages.</p>
+		<p>The navbar has been removed, as well as nav.html, and replaced with a menu. It resizes depending on the device. on PC, it is 25% of the screen. On tablets, it's 50%, and on phones, it's the whole screen.</p>
+		<p>Photos has been updated with a new system of pressing arrows to see the next photo, rather than scrolling.</p>
+		<button onclick="moreInfo('v0.8a')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+	<div class="card card4">
+		<h2>0.72a</h2>
+		<p>Mobile now has the background from PC/Tablet, but completely solid.</p>
+		<p>JavaScript alert now correctly displays at the front, above cards.</p>
+		<p>Added a "You are offline" alert.</p>
+		<p>coloured background now applies to every page.
+	</div>
+	<div class="card card4">
+		<h2>0.71a</h1>
+		<p>Service Worker now detects if you are online and loads from URL rather than from cache.</p>
+	</div>
+	<div class="card card4">
+		<h2>0.7a</h2>
+		<p>Fixed issues with caching, so that the page now works offline and loads properly online with the latest version of the site.</p>
+		<p>That means progressive web app goals are complete! All that needs to be done now is fix mobile UI.</p>
+	</div>
+	<div class="card card4 wideCard">
+		<h2>0.6a</h2>
+		<p>New design that includes background that is consistant on all devices.</p>
+		<p>Added a new Photo Gallery, which is in early testing.</p>
+		<p>Added Berlin VR to home feed.</p>
+		<p>Removed Responsive and Offline pages, as entire site strives to do those things.</p>
+		<p>PC/Tablet exclusive: darkened background underneath cards for better effect.</p>
+		<p>JavaScript disabled alert redesigned and now applies to every page.</p>
+		<p>Internal changes such as new global.js which covers JS for the whole site, doing things like hiding the JavaScript alert, and pages such as JavaScript or Updates moving to /updates/ rather than /updates.html, to make it more unified with the rest of the web. It also makes testing a pain.</p>
+		<p>The site is getting closer to official release with these changes.</p>
+		
+	</div>
+	<div class="card card4">
+		<h2>0.5a</h2>
+		<p>Added new page for Scratch Player3.</p>
+		<p>Also added notification support! Including a notification button in JavaScript.</p>
+	</div>
+	<div class="card card4">
+		<h2>0.4a</h2>
+		<p>Updates to the internal HTML and Mobile design to allow for the site to be treated as a Progressive Web App by Chrome for Android, and to work just as well for everyone else.</p>
+		<p>Visit any page here on Chrome for Android, and press add to homescreen to download the app!</p>
+		<p>New JavaScript alert on index.html. If JavaScript is disabled on your browser, you'll see the red card on the homescreen.</p>
+	</div>
+	<div class="card card4">
+		<h2>0.3a</h2>
+		<p>New Mobile Site design, similar to material design, to fit better as a mobile page. Starting the switch to a Progressive Web App, which will hopefully be finished by 0.4b.</p>
+	</div>
+	<div class="card card4">
+		<h2>0.2a</h2>
+		<p>Added JavaScript page.</p>
+	</div>
+	<div class="card card4 wideCard">
+		<h2>0.1a</h2>
+		<p>Alpha Release.</p>
+	</div>
+</div>

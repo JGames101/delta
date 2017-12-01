@@ -2,21 +2,35 @@
 <html>
 <head>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
+<link rel="stylesheet" href="/page/news.css">
 <style>
-body {
-	background-color: #e84242;
+img {
+    margin: 0px;
 }
-span {
-	font-size: 24px;
-	font-family: 'Roboto Condensed', sans;
-	color: white;
-	vertical-align: middle;
+#noJS {
+    color: black;
+    text-align:center;
+    width:50%;
+    display:block;
+    margin:auto;
+    z-index: 999999999999999999 !important;
 }
 </style>
 </head>
 <body>
-<span>JavaScript is disabled on your browser. This page relies heavily on JavaScript.</span>
-<span>If you enable JavaScript, you can access the site with no problem.</span>
-<img src="/setup/screenshots/photo.png" width="100%">
+<div id="shadePage" class="open"></div>
+<div id="newsStoryContainer" class="open">
+    <div id="storyBarTop">
+        <h2 class="mdc-typography--headline newsTitle" id="newsStoryTitle">You Need JavaScript to Use This Site.</h2>
+    </div>
+    <div id="storyContent">
+        <div id="storyFill">
+        <h3 class="mdc-typography--headline" id="newsStorySubtitle">So... Uh... This is akward.</h3>
+        <p id="newsStoryContent" class="mdc-typography--body1">Thank you for travelling the web all the way to here! But... Uh... You've hit a dead end.<br>
+        You see, this site needs JavaScript to work, which is something that your browser has turned off.<br>
+        If you want to use this site, Google how to enable JavaScript in your browser.</p>
+        </div>
+    </div>
+</div>
 </body>
 </html>

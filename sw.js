@@ -1,33 +1,13 @@
-var CACHE_NAME = 'jm023'; //Version 2.1b-0001
+var CACHE_NAME = 'jm03'; //Version 3.0d
 var urlsToCache = [
   '/',
   '/index.html',
   '/page/offline.html',
-  '/menus/mobile.html',
-  '/menus/mobile.css',
   '/jquery-3.2.1.min.js',
   '/manifest.json',
   'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css',
   '/styles.css',
   '/global.js',
-  '/page/News.css',
-  '/news/index.html',
-  '/page/News.html',
-  '/page/News.js',
-  '/options/index.html',
-  '/javascript/index.html',
-  '/updates/index.html',
-  '/videos/index.html',
-  '/jquery/index.html',
-  '/html5/index.html',
-  '/news/',
-  '/page/',
-  '/options/',
-  '/javascript/',
-  '/updates/',
-  '/videos/',
-  '/jquery/',
-  '/html5/',
 ];
 
 self.addEventListener('install', function(event) {
