@@ -1,30 +1,107 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>404</title>
-	<script src="/modernizr-webp.js"></script>
-	<link href="/styles.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,200" rel="stylesheet">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="/jquery-3.2.1.min.js"></script>
-</head>
-<body>
-<noscript>
-<object id="jsmissing" data="/jsmissing.html" width="100%" height="48px"></object> <!-- The alert for JavaScript being disabled. -->
-</noscript>
-<div id="menuButton" onclick="javascript:toggleMenu()"> <!-- For opening control menu -->
-	<i class="material-icons md-light md-32" id="menuToggle">keyboard_arrow_right</i>
-</div>
-<div id="menu" contextmenu="navigationContext">
-</div>
-<div id="page">
-<h1 id="pageName">Uhh... 404.</h1>
-<div class="colourBackground">
-<div class="content">
-</div>
-</div>
-<script src="/global.js"></script>
-</div>
-</body>
+<html id="htmlObj">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon stuff -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff0000">
+    <!-- Main Stuff-->
+    <head>
+    <meta charset="utf-8">
+    <title>James M</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet"
+      href="node_modules/material-components-web/dist/material-components-web.css">
+    <meta name="description" content="My Site for Tests and Experiments with Web Development.">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="page/news.css">
+    <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+    </head>
+    <!-- Add to home screen for Safari on iOS -->
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <meta name="apple-mobile-web-app-title" content="JGames101">
+    <!-- Add to Start for Windows -->
+    <meta name="msapplication-TileImage" content="images/icon/icon128.png">
+      <meta name="msapplication-TileColor" content="#ffffff">
+    <!-- Start of Real Content -->
+    <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+      console.log('service worker registered.');
+    } else {
+      console.log('registering service worker failed.');
+    };
+    </script>
+    <script> // Requests Notification Permission
+    // request permission on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!Notification) {
+        alert('Desktop notifications not available in your browser. Try Chrome, Firefox, Edge, or Safari.'); 
+        return;
+      }
+    
+      if (Notification.permission !== "granted")
+        Notification.requestPermission();
+    });
+    </script>
+    <body>
+    <div id="shadePage"></div>
+    <div id="newsStoryContainer">
+      <div id="storyBarTop">
+        <i class="material-icons" id="closeButton" onclick="closeArticle()" style="cursor:pointer;">close</i>
+        <h2 class="mdc-typography--headline newsTitle" id="newsStoryTitle">Loading...</h2>
+        <i class="material-icons" id="saveButton" style="cursor:pointer;">bookmark_border</i>
+        <i class="material-icons" id="moreButton" style="cursor:pointer;" onclick="shareMenu()">more_vert</i>
+      </div>
+      <div id="storyContent">
+        <div id="storyFill">
+          <h3 class="mdc-typography--headline" id="newsStorySubtitle">Loading...</h3>
+          <p id="newsStoryContent" class="mdc-typography--body1">Loading...</p>
+        </div>
+      </div>
+    </div>
+    <div id="popoutVideo" class="closed">
+      <div id="popoutVideoOverlay" style="overflow-y:hidden;">
+        <i class="material-icons" style="position:absolute;top:4px;left:4px;font-size:32px;cursor:pointer;" onclick="closePopoutVideo()">close</i>
+        <i class="material-icons" style="text-align:center;line-height:256px;font-size:32px;width:100%;cursor:pointer;" onclick="fullVideoPlayer()">fullscreen</i>
+      </div>
+    </div>
+    <div id="menu">
+        <header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--fixed-lastrow-only">
+            <div class="mdc-toolbar__row">
+              <h2 style="font-size:23px;padding-left:32px;font-family:'Roboto Condensed';color:white;" id="menuTitle">James M</h2>
+            <i class="material-icons" style="color:white;position:absolute;top:24px;right:24px;cursor:pointer;" onclick="shareMenu()" id="moreButtonNav">more_vert</i>
+            </div>
+            <div class="mdc-toolbar__row">
+              <nav class="mdc-tab-bar mdc-tab-bar--icon-tab-bar">
+                <a class="mdc-tab link" href="/">
+                <i class="material-icons mdc-tab__icon" aria-label="Home">home</i>
+                </a>
+                <a class="mdc-tab link" href="/javascript">
+                <i class="material-icons mdc-tab__icon" aria-label="Code">code</i>
+                </a>
+                <a class="mdc-tab link" href="/media">
+                <i class="material-icons mdc-tab__icon" aria-label="Media">video_library</i>
+                </a>
+                <span class="mdc-tab-bar__indicator"></span>
+              </nav>
+            </div>
+          </header>
+    </div>
+    <div class="content" id="intial">
+        <noscript>
+          <object id="noJSPage" data="/page/noJS.html" width="100%" height="100%"></object>
+        </noscript>
+    </div>
+    <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
+    <script>mdc.autoInit()</script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="global.js"></script>
+    <script src="src/modernizr-history.js"></script>
+    <script src="page/News.js"></script>
+  </body>
 </html>
