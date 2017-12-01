@@ -1,5 +1,13 @@
 {
-    "n3": {
+	"n4": {
+		"title":"NEW IMAGES",
+		"body":"Version 3.0 Introduces new Images!",
+		"image":"/photos/13-240.jpg",
+		"page":"javascript:openArticle('/news/updates/v3.0d')",
+        "context":"image",
+        "timestamp":"171104.0557"
+    },
+	"n3": {
 		"title":"CRAYONS",
 		"body":" ",
 		"image":"/photos/12-240.jpg",

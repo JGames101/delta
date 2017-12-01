@@ -1,0 +1,14 @@
+<h2>1.44b</h2><br>
+<h3>Overview</h3><br>
+v1.44b is an internal update, with no new features. Instead, it serves webP to users that are on browsers that support webP.<br>
+<ul>
+	<li>WebP Images
+	<li>PWA Fixed!
+</ul>
+<br>
+<h3>WebP Images</h3><br>
+On a browser that supports WebP, such as Chrome, the background image will be a .webP image. On any other browser, the image is the old .jpg image.<br>
+<br>
+<h3>PWA Fixes</h3><br>
+The old service worker wasn't working properly, so this version introduces a service worker similar to that from <a href="https://www.progressivewebflap.com/">Progressive Web Flap</a>. Offline support also works again.<br>
+<br>

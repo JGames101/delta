@@ -1,0 +1,15 @@
+<h2>1.2b</h2><br>
+<h3>Overview</h3><br>
+1.2 beta is more of an internal update, rather than a big revolution of the way that the site works. However, there are still quite a few new features.<br>
+<ul>
+	<li>The Navigation Bar now uses Material icons for most of the icons.
+	<li>There is now a more info button for updates starting with version 1.2 (this one).
+</ul>
+<br>
+<h3>Navigation Bar</h3><br>
+The navigation bar now uses Google's <a href="https://material.io/icons/">Material Icons</a> instead of images found on Google Images. The expand button also now uses Google's material arrows rather than 3 lines.<br>
+The Google icons now used look much better and more consistent than the older images. All images will hopefully eventually be replaced, but currently, only Home, Updates, HTML5 and Options have been updated.<br>
+<br>
+<h3>More Info on Updates</h3><br>
+This was a huge thing to develop, as I had never used URL variables before. What I have done is I made a basic page for viewing text, and then loaded a txt file named the version number from /updates/info/logs/ (ie /updates/info/logs/1.2b.txt).<br>
+The page contains expanded info on the update, including development notes, and more information.

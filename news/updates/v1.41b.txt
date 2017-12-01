@@ -1,0 +1,21 @@
+<h2>1.41b</h2><br>
+<h3>Overview</h3><br>
+New Light theme changes, and small tablet updates.<br>
+<ul>
+	<li>Light theme's navbar has been slightly changed
+	<li>Tablet Mode Updates
+</ul>
+<br>
+<h3>Themes</h3><br>
+The light theme's navigation bar has been made lighter, as well as the text and icons being darkened.<br>
+<img src="/setup/screenshots/light.png" width="100%">
+<br>
+<h3>Tablet Mode Changes</h3><br>
+While the mobile page has updated from just a single-collumed version of the site to its own design, tablet mode has remained almost idential to the desktop version.<br>
+This is about to change in future updates. Major changes to Tablet Mode will be coming in the future, but this version has 2 relatively minor changes:<br>
+<h4>Wide Cards</h4><br>
+Certain content, such as Berlin VR, certain updates, or JQuery experiments have been set to be double width on tablet mode.<br>That means that instead of having 2 cards in a row, there is only one.<br>
+not all cards will get this, only certain ones.<br>
+<h4>Correct Devices</h4><br>
+Changes have been made to the selection for the CSS, so that only tablets get tablet mode, instead of some laptops, and some small tablets getting the Phone UI.<br>
+If everything went right, this shouldn't be noticable, but you may notice a new collum of tiles on your laptop.<br>

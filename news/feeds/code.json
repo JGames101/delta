@@ -1,9 +1,17 @@
 {
+    "n2": {
+		"title":"SINGLE-PAGED DESIGN",
+		"body":"Read about the speed and feature update of version 3.0d!",
+		"image":"none",
+		"page":"javascript:openArticle('/news/updates/v3.0d')",
+        "context":"rightClick",
+        "timestamp":"171104.0821"
+    },
     "n1": {
 		"title":"THE NEW NEWSFEEDS",
 		"body":"Check out the technology behind the new newsfeeds on the homepage!",
 		"image":"none",
-		"page":"/news/?article=/news/articles/feed",
+        "page":"javascript:openArticle('/news/articles/feed')",
         "context":"rightClick",
         "timestamp":"171104.0821"
     }
