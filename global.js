@@ -209,6 +209,13 @@ function loadPageContent() {
 				calculateCardColumns();
 				$(".pinned").css("color", localStorage.getItem("themeColour"));
 				document.getElementById('menuTitle').innerHTML = 'James M';
+				var selLink = 0;
+				while (selLink < document.getElementsByClassName('link').length) {
+					document.getElementsByClassName('link')[selLink].addEventListener('click', function() {
+						event.preventDefault();_href = $(this).attr("href");setPage(_href);
+					});
+					selLink += 1;
+				};
 			});
 		} else {
 			jQuery.get('page/' + page() + '.html', function(data) {
@@ -218,6 +225,13 @@ function loadPageContent() {
 				$.getScript( '/page/' + page() + '.js' );
 				calculateCardColumns();
 				$(".pinned").css("color", localStorage.getItem("themeColour"));
+				var selLink = 0;
+				while (selLink < document.getElementsByClassName('link').length) {
+					document.getElementsByClassName('link')[selLink].addEventListener('click', function() {
+						event.preventDefault();_href = $(this).attr("href");setPage(_href);
+					});
+					selLink += 1;
+				};
 			});
 		}	
 	} else {
@@ -225,6 +239,13 @@ function loadPageContent() {
 			document.getElementsByClassName('content')[0].innerHTML = data;
 			loadTheme();
 			document.getElementById('menuTitle').innerHTML = 'Offline';
+			var selLink = 0;
+			while (selLink < document.getElementsByClassName('link').length) {
+				document.getElementsByClassName('link')[selLink].addEventListener('click', function() {
+					event.preventDefault();_href = $(this).attr("href");setPage(_href);
+				});
+				selLink += 1;
+			};
 		});
 	}
 };
