@@ -1,4 +1,12 @@
 {
+	"n7": {
+		"title":"v3.1δ",
+		"body":"Flags, Menus, and new Options",
+		"image":"none",
+		"page":"javascript:openArticle('/news/updates/v3.1d')",
+		"context":"rightClick",
+		"timestamp":"171203.1915"
+	},
 	"n6": {
 		"title":"v3.0δ",
 		"body":"The site is more responsive than ever.",

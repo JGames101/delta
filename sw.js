@@ -1,11 +1,11 @@
-var CACHE_NAME = 'jm03'; //Version 3.0d
+var CACHE_NAME = 'jm031'; //Version 3.1d
 var urlsToCache = [
   '/',
   '/index.html',
   '/page/offline.html',
   '/jquery-3.2.1.min.js',
   '/manifest.json',
-  'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css',
+  'node_modules/material-components-web/dist/material-components-web.css',
   '/styles.css',
   '/global.js',
 ];

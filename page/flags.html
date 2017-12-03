@@ -1,0 +1,229 @@
+<style>
+    #searchBox {
+        font-size:24px;
+        border-radius:24px;
+        border: 0px;
+        width: 50%;
+        display: none;
+        margin:auto;
+        background-color:#fafafa;
+        height:48px;
+        box-shadow:0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+        padding-left:8px;
+    }
+    #info {
+        width: 50%;
+        display:block;
+        margin: auto;
+        text-align:center;
+    }
+    .demo-card {
+        position: relative;
+    }
+</style>
+<h1 class="mdc-typography--display3" style="text-align: center;">Flags</h1>
+<p id="info">Warning: All of these options are experimental.<br>
+That means they may not do what they say they will, and they may even prevent the site from working.<br>
+Proceed with caution.
+Flags only apply once the page has been reloaded.</p>
+<input type="search" name="searchBox" id="searchBox" placeholder="Search...">
+<div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell">
+            <div class="newsCard" id="PiP-card">
+                <div class="mdc-card demo-card">
+                    <section class="mdc-card__primary">
+                        <h1 class="mdc-card__title mdc-card__title--large" style="text-align:left;">Enable PiP Video Player</h1>
+                    </section>
+                    <section class="mdc-card__supporting-text">
+                        <p>PiP Player continues playing a video in the bottom corner of the site when changing page.</p>
+                    </section>
+                    <section class="mdc-card__actions">
+                        <button class="mdc-button mdc-button--compact mdc-card__action" id="PiP-toggle" onclick="toggleFlag('PiP')">enable</button>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="mdc-layout-grid__cell">
+            <div class="newsCard" id="rclick-card">
+                <div class="mdc-card demo-card">
+                    <section class="mdc-card__primary">
+                        <h1 class="mdc-card__title mdc-card__title--large" style="text-align:left;">Custom Right Click Menu</h1>
+                    </section>
+                    <section class="mdc-card__supporting-text">
+                        <p>Instead of using the default right click action menu, bring up the material menu, similar to when clicking the more button in the toolbar, rather than the default browser right click action</p>
+                    </section>
+                    <section class="mdc-card__actions">
+                        <button class="mdc-button mdc-button--compact mdc-card__action" id="rclick-toggle" onclick="toggleFlag('rclick')">enable</button>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="mdc-layout-grid__cell">
+            <div class="newsCard" id="noHistoryAPI-card">
+                <div class="mdc-card demo-card">
+                    <section class="mdc-card__primary">
+                        <h1 class="mdc-card__title mdc-card__title--large" style="text-align:left;">Disable HTML5 History API</h1>
+                    </section>
+                    <section class="mdc-card__supporting-text">
+                        <p>Force the site to use the legacy code designed for browsers that do not support the History API.</p>
+                    </section>
+                    <section class="mdc-card__actions">
+                        <button class="mdc-button mdc-button--compact mdc-card__action" id="noHistoryAPI-toggle" onclick="toggleFlag('noHistoryAPI')">enable</button>
+                    </section>
+                </div>
+            </div>
+        </div>
+            <div class="mdc-layout-grid__cell">
+                <div class="newsCard" id="fourColumn-card">
+                    <div class="mdc-card demo-card">
+                        <section class="mdc-card__primary">
+                            <h1 class="mdc-card__title mdc-card__title--large" style="text-align:left;">Force Four-Column Layout</h1>
+                        </section>
+                        <section class="mdc-card__supporting-text">
+                            <p>Force the site to put the content into Four Columns, rather than the default maximum layout of three.</p>
+                        </section>
+                        <section class="mdc-card__actions">
+                            <button class="mdc-button mdc-button--compact mdc-card__action" id="fourColumn-toggle" onclick="toggleFlag('fourColumn')">enable</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="mdc-layout-grid__cell">
+                <div class="newsCard" id="advancedOptions-card">
+                    <div class="mdc-card demo-card">
+                        <section class="mdc-card__primary">
+                            <h1 class="mdc-card__title mdc-card__title--large" style="text-align:left;">Show Advanced Options</h1>
+                        </section>
+                        <section class="mdc-card__supporting-text">
+                            <p>Show the Advanced section on the options page. Contains a link to the flags page and nearly-finalized features.</p>
+                        </section>
+                        <section class="mdc-card__actions">
+                            <button class="mdc-button mdc-button--compact mdc-card__action" id="advancedOptions-toggle" onclick="toggleFlag('advancedOptions')">enable</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="mdc-layout-grid__cell">
+                    <div class="newsCard" id="noSortingCards-card">
+                        <div class="mdc-card demo-card">
+                            <section class="mdc-card__primary">
+                                <h1 class="mdc-card__title mdc-card__title--large" style="text-align:left;">Disable Sorting cards into columns</h1>
+                            </section>
+                            <section class="mdc-card__supporting-text">
+                                <p>Force the cards to be shown like in versions before 1.4. For use for users without JS or when using a classic-style theme.</p>
+                            </section>
+                            <section class="mdc-card__actions">
+                                <button class="mdc-button mdc-button--compact mdc-card__action" id="noSortingCards-toggle" onclick="toggleFlag('noSortingCards')">enable</button>
+                            </section>
+                        </div>
+                    </div>
+            </div>
+                <div class="mdc-layout-grid__cell">
+                    <div class="newsCard" id="flagsSearch-card">
+                        <div class="mdc-card demo-card">
+                            <section class="mdc-card__primary">
+                                <h1 class="mdc-card__title mdc-card__title--large" style="text-align:left;">Show Searchbox on Flags Page</h1>
+                            </section>
+                            <section class="mdc-card__supporting-text">
+                                <p>Show a searchbox on the flags page to allow easy finding of toggles.</p>
+                            </section>
+                            <section class="mdc-card__actions">
+                                <button class="mdc-button mdc-button--compact mdc-card__action" id="flagsSearch-toggle" onclick="toggleFlag('flagsSearch')">enable</button>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdc-layout-grid__cell">
+                    <div class="newsCard" id="twoPartToolbar-card">
+                        <div class="mdc-card demo-card">
+                            <section class="mdc-card__primary">
+                                <h1 class="mdc-card__title mdc-card__title--large" style="text-align:left;">Two-Part Toolbar</h1>
+                            </section>
+                            <section class="mdc-card__supporting-text">
+                                <p>Seperate the two rows of the toolbar, putting the navigation buttons on the bottom.</p>
+                            </section>
+                            <section class="mdc-card__actions">
+                                <button class="mdc-button mdc-button--compact mdc-card__action" id="twoPartToolbar-toggle" onclick="toggleFlag('twoPartToolbar')">enable</button>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdc-layout-grid__cell">
+                    <div class="newsCard" id="hideToolbar-card">
+                        <div class="mdc-card demo-card">
+                            <section class="mdc-card__primary">
+                                <h1 class="mdc-card__title mdc-card__title--large" style="text-align:left;">Simple Toolbar</h1>
+                            </section>
+                            <section class="mdc-card__supporting-text">
+                                <p>Hides the top row of the toolbar, showing only the navigation parts. Designed for bottom navigation bar.</p>
+                            </section>
+                            <section class="mdc-card__actions">
+                                <button class="mdc-button mdc-button--compact mdc-card__action" id="hideToolbar-toggle"  onclick="toggleFlag('hideToolbar')">enable</button>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdc-layout-grid__cell">
+                    <div class="newsCard" id="flatNavigationKeys-card">
+                        <div class="mdc-card demo-card">
+                            <section class="mdc-card__primary">
+                                <h1 class="mdc-card__title mdc-card__title--large" style="text-align:left;">Do not use colour on Navigation Bar</h1>
+                            </section>
+                            <section class="mdc-card__supporting-text">
+                                <p>ENABLE TWO-PART TOOLBAR FIRST. Makes the navigation bar match the background colour.</p>
+                            </section>
+                            <section class="mdc-card__actions">
+                                <button class="mdc-button mdc-button--compact mdc-card__action" id="flatNavigationKeys-toggle"  onclick="toggleFlag('flatNavigationKeys')">enable</button>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            <div class="mdc-layout-grid__cell">
+                <div class="newsCard" id="customTheme-card">
+                    <div class="mdc-card demo-card">
+                        <section class="mdc-card__primary">
+                            <h1 class="mdc-card__title mdc-card__title--large" style="text-align:left;">Custom Themes Support</h1>
+                        </section>
+                        <section class="mdc-card__supporting-text">
+                            <p>Allow a JSON file to be loaded as a theme. The JSON can define one or more themes.</p>
+                        </section>
+                        <section class="mdc-card__actions">
+                            <button class="mdc-button mdc-button--compact mdc-card__action" id="customTheme-toggle" onclick="toggleFlag('customTheme')">enable</button>
+                            <button class="mdc-button mdc-button--compact mdc-card__action" id="customTheme-action">Load Theme</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="mdc-layout-grid__cell">
+                <div class="newsCard" id="txtNews-card">
+                    <div class="mdc-card demo-card">
+                        <section class="mdc-card__primary">
+                            <h1 class="mdc-card__title mdc-card__title--large" style="text-align:left;">TXT Support in News Popout</h1>
+                        </section>
+                        <section class="mdc-card__supporting-text">
+                            <p>Allows the news popout to load a TXT file.</p>
+                        </section>
+                        <section class="mdc-card__actions">
+                            <button class="mdc-button mdc-button--compact mdc-card__action" id="txtNews-toggle" onclick="toggleFlag('txtNews')">enable</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="mdc-layout-grid__cell">
+                <div class="newsCard" id="noJSsupport-card">
+                    <div class="mdc-card demo-card">
+                        <section class="mdc-card__primary">
+                            <h1 class="mdc-card__title mdc-card__title--large" style="text-align:left;">Full Support Without JavaScript</h1>
+                        </section>
+                        <section class="mdc-card__supporting-text">
+                            <p>Use an object element to allow pages to load without JavaScript.</p>
+                        </section>
+                        <section class="mdc-card__actions">
+                            <button class="mdc-button mdc-button--compact mdc-card__action" id="noJSsupport-toggle" onclick="toggleFlag('noJSsupport')">enable</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

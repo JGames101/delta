@@ -1,11 +1,22 @@
-if (localStorage.getItem("themeColour") == undefined) {
-	localStorage.setItem("themeColour", "#1e88e5");
-	localStorage.setItem("backgroundImage", "7");
-	localStorage.setItem("theme", "colourful");
-	localStorage.setItem("navbar", "mobile");
-	localStorage.setItem("secondColour", "#ff9800");
-};
-
+if (localStorage.getItem('options') == undefined) {
+	if (localStorage.getItem("themeColour") != undefined) {
+		var options = new Object();
+		options.themeColour = localStorage.getItem("themeColour");
+		options.theme = localStorage.getItem("theme");
+		options.secondColour = localStorage.getItem("secondColour");
+		localStorage.setItem("options", JSON.stringify(options));
+	} else {
+		var options = new Object();
+		options.themeColour = "#1e88e5";
+		options.theme = "colourful";
+		options.navigation = "top";
+		options.secondColour = "#ff9800";
+		localStorage.setItem("options", JSON.stringify(options));
+	};
+}
+if (localStorage.getItem('flags') == undefined) {
+	setupFlags();
+}
 mobileIndicator();
 document.getElementById('menuTitle').innerHTML = page();
 
@@ -13,9 +24,8 @@ $( document ).ready(function() {
 	loadPageContent();
 });
 
-document.body.style.backgroundImage = localStorage.getItem('backgroundImage');
-document.documentElement.style.setProperty('--mdc-theme-primary', localStorage.getItem('themeColour'));
-document.documentElement.style.setProperty('--mdc-theme-secondary',  localStorage.getItem('secondColour'));
+document.documentElement.style.setProperty('--mdc-theme-primary', getOption('themeColour'));
+document.documentElement.style.setProperty('--mdc-theme-secondary',  getOption('secondColour'));
 var menu = false;
 var online = navigator.onLine;
 // send user to setup?
@@ -24,11 +34,11 @@ if (localStorage.getItem("user") == undefined && page() != 'setup') {
 	//setPage('/setup');
 };
 
-$('head').append('<meta name="theme-color" content="' + localStorage.getItem("themeColour") + '" />');
+$('head').append('<meta name="theme-color" content="' + getOption('themeColour') + '" />');
 
 // Calculate Cards
 function calculateCardColumns() {
-	if (localStorage.getItem("theme") != "v0.8a" && localStorage.getItem("theme") != "v1.0b") {
+	if (getOption('theme') != "v0.8a" && getOption('theme') != "v1.0b") {
 		if (screen.width > "1024") {
 			cardsDesktop();
 			var layout = "desktop";
@@ -113,7 +123,7 @@ function cardColumns(colCount) {
 // Theme Stuff
 function loadTheme() {	
 	console.log('themes being loaded');
-	if (localStorage.getItem('theme') == 'dark') {
+	if (getOption('theme') == 'dark') {
 		document.body.className = 'mdc-theme--dark';
 		document.body.style.backgroundColor = '#222';
 		$('.mdc-card').css('background-color', '#282828');
@@ -124,7 +134,7 @@ function loadTheme() {
 		$('.material-icons').css('color', 'white');
 		$('#newsStoryContainer').css('background-color', '#282828');
 		$('#shadePage').css('background-color', 'rgba(0, 0, 0, 0.25)');
-	} else if (localStorage.getItem('theme') == 'light') {
+	} else if (getOption('theme') == 'light') {
 		$('header').css('background-color', '#fafafa');
 		$('#menuTitle').css('color', '#222');
 		$('.mdc-tab__icon').css('color', '#222');
@@ -169,9 +179,9 @@ function fullVideoPlayer() {
 }
 
 // Colour Corrections at the end
-$('.info').css('color', localStorage.getItem("themeColour"));
-$('.info').children().css('color', localStorage.getItem("themeColour"));
-$(".pinned").css("color", localStorage.getItem("themeColour"));
+$('.info').css('color', getOption('themeColour'));
+$('.info').children().css('color', getOption('themeColour'));
+$(".pinned").css("color", getOption('themeColour'));
 
 //other stuff
 
@@ -207,7 +217,7 @@ function loadPageContent() {
 				loadTheme();
 				$.getScript( '/page/James M.js' );
 				calculateCardColumns();
-				$(".pinned").css("color", localStorage.getItem("themeColour"));
+				$(".pinned").css("color", getOption('themeColour'));
 				document.getElementById('menuTitle').innerHTML = 'James M';
 				var selLink = 0;
 				while (selLink < document.getElementsByClassName('link').length) {
@@ -216,15 +226,17 @@ function loadPageContent() {
 					});
 					selLink += 1;
 				};
+				flagExperiments();
+				optionExtras();
 			});
 		} else {
 			jQuery.get('page/' + page() + '.html', function(data) {
 				document.getElementsByClassName('content')[0].innerHTML = data;
 				loadTheme();
-				$(".pinned").css("color", localStorage.getItem("themeColour"));
+				$(".pinned").css("color", getOption('themeColour'));
 				$.getScript( '/page/' + page() + '.js' );
 				calculateCardColumns();
-				$(".pinned").css("color", localStorage.getItem("themeColour"));
+				$(".pinned").css("color", getOption('themeColour'));
 				var selLink = 0;
 				while (selLink < document.getElementsByClassName('link').length) {
 					document.getElementsByClassName('link')[selLink].addEventListener('click', function() {
@@ -232,6 +244,8 @@ function loadPageContent() {
 					});
 					selLink += 1;
 				};
+				flagExperiments();
+				optionExtras();
 			});
 		}	
 	} else {
@@ -246,6 +260,8 @@ function loadPageContent() {
 				});
 				selLink += 1;
 			};
+			flagExperiments();
+			optionExtras();
 		});
 	}
 };
@@ -285,7 +301,13 @@ function page() {
 	return window.location.pathname.slice(1, window.location.pathname.length).replace('/', '')
 }
 
+function mousePoisition(event) {
+    var mouseX = event.clientX;
+    var mouseY = event.clientY;
+};
+
 document.oncontextmenu = function() {
+	openMenu('moreMenuHeader');
 	return false;
 };
 // Popout Video Stuff
@@ -298,3 +320,51 @@ window.onpopstate = function(event) {
 	document.getElementById('menuTitle').innerHTML = page();
 	loadPageContent();
 };
+
+function openMenu(id) {
+	if ($('#' + id).is('.mdc-simple-menu--open')) {
+		$('#' + id).removeClass("mdc-simple-menu--open");
+	} else {
+		$('#' + id).addClass("mdc-simple-menu--open");
+	}
+};
+
+function setupFlags() {
+	var flags = new Object();
+	flags.PiP = true;
+	flags.advancedOptions = true;
+	flags.hideToolbar = false;
+	localStorage.setItem("flags", JSON.stringify(flags));
+}
+function loadFlags() {
+	var flags = JSON.parse(localStorage.getItem("flags"));
+}
+
+function getFlag(flag) {
+	var flags = JSON.parse(localStorage.getItem("flags"));
+	return eval('flags.' + flag);
+}
+
+function loadOptions() {
+	var options = JSON.parse(localStorage.getItem("options"));
+}
+
+function getOption(option) {
+	var options = JSON.parse(localStorage.getItem("options"));
+	return eval('options.' + option);
+}
+
+// Set Flag And Options
+
+function flagExperiments() {
+	if (getFlag('hideToolbar')) {
+		document.getElementById('titleBar').style.display = 'none';
+	}
+}
+
+function optionExtras() {
+	if (getOption('navigation') == 'bottom') {
+		$('header').addClass('bottomNavigation');
+		document.getElementsByClassName('content')[0].style.marginTop = '0px';
+	}
+}

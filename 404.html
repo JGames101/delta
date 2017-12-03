@@ -40,7 +40,7 @@
     // request permission on page load
     document.addEventListener('DOMContentLoaded', function () {
       if (!Notification) {
-        alert('Desktop notifications not available in your browser. Try Chrome, Firefox, Edge, or Safari.'); 
+        alert('Desktop notifications are not available in your browser. Try Chrome, Firefox, Edge, or Safari.'); 
         return;
       }
     
@@ -55,13 +55,23 @@
         <i class="material-icons" id="closeButton" onclick="closeArticle()" style="cursor:pointer;">close</i>
         <h2 class="mdc-typography--headline newsTitle" id="newsStoryTitle">Loading...</h2>
         <i class="material-icons" id="saveButton" style="cursor:pointer;">bookmark_border</i>
-        <i class="material-icons" id="moreButton" style="cursor:pointer;" onclick="shareMenu()">more_vert</i>
+        <i class="material-icons" id="moreButton" style="cursor:pointer;" onclick="openMenu('newsMenu')">more_vert</i>
       </div>
       <div id="storyContent">
         <div id="storyFill">
           <h3 class="mdc-typography--headline" id="newsStorySubtitle">Loading...</h3>
           <p id="newsStoryContent" class="mdc-typography--body1">Loading...</p>
         </div>
+      </div>
+      <div class="mdc-simple-menu" id="newsMenu" tabindex="-1">
+        <ul class="mdc-simple-menu__items mdc-list" role="menu" aria-hidden="true">
+          <li class="mdc-list-item" role="menuitem" tabindex="0" onclick="shareMenu();openMenu('newsMenu')">
+            <i class="material-icons" style="margin-right:8px;">share</i>Share
+          </li>
+          <li class="mdc-list-item" role="menuitem" tabindex="0" onclick="openMenu('newsMenu')">
+              <i class="material-icons" style="margin-right:8px;">close</i>Close
+          </li>
+        </ul>
       </div>
     </div>
     <div id="popoutVideo" class="closed">
@@ -72,11 +82,11 @@
     </div>
     <div id="menu">
         <header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--fixed-lastrow-only">
-            <div class="mdc-toolbar__row">
+            <div class="mdc-toolbar__row" id="titleBar">
               <h2 style="font-size:23px;padding-left:32px;font-family:'Roboto Condensed';color:white;" id="menuTitle">James M</h2>
-            <i class="material-icons" style="color:white;position:absolute;top:24px;right:24px;cursor:pointer;" onclick="shareMenu()" id="moreButtonNav">more_vert</i>
+            <i class="material-icons" style="color:white;position:absolute;top:24px;right:24px;cursor:pointer;" onclick="openMenu('moreMenuHeader')" id="moreButtonNav">more_vert</i>
             </div>
-            <div class="mdc-toolbar__row">
+            <div class="mdc-toolbar__row" id="navigationBar">
               <nav class="mdc-tab-bar mdc-tab-bar--icon-tab-bar">
                 <a class="mdc-tab link" href="/">
                 <i class="material-icons mdc-tab__icon" aria-label="Home">home</i>
@@ -96,6 +106,19 @@
         <noscript>
           <object id="noJSPage" data="/page/noJS.html" width="100%" height="100%"></object>
         </noscript>
+    </div>
+    <div class="mdc-simple-menu" id="moreMenuHeader" tabindex="-1">
+      <ul class="mdc-simple-menu__items mdc-list" role="menu" aria-hidden="true">
+        <li class="mdc-list-item" role="menuitem" tabindex="0" onclick="shareMenu();openMenu('moreMenuHeader')">
+          <i class="material-icons" style="margin-right:8px;">share</i>Share
+        </li>
+        <li class="mdc-list-item" role="menuitem" tabindex="0" onclick="setPage('/options');openMenu('moreMenuHeader')">
+          <i class="material-icons" style="margin-right:8px;">settings</i>Options
+        </li>
+        <li class="mdc-list-item" role="menuitem" tabindex="0" onclick="openMenu('moreMenuHeader')">
+            <i class="material-icons" style="margin-right:8px;">close</i>Close
+        </li>
+      </ul>
     </div>
     <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
     <script>mdc.autoInit()</script>

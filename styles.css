@@ -3,6 +3,8 @@
 * {-webkit-tap-highlight-color:rgba(0, 0, 0, 0);cursor:inherit;}
 h1 {overflow: hidden;}
 .link {text-decoration: none}
+#moreMenuHeader {position:fixed;top:16px;right:16px;z-index:1024}
+#mouseMenu {position:absolute;}
 
 #player {
 	width: 500px;
@@ -236,6 +238,11 @@ i {
 }
 #popoutVideo {
 	display: none;
+}
+.bottomNavigation {
+	position:fixed;
+	bottom:0px !important;
+	top: auto !important;
 }
 #popoutVideo.open {
 	display:block;

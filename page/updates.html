@@ -1,6 +1,16 @@
 ﻿<h2 class="pinned" onclick="toggleSection('pinned1')">DELTA <i class='material-icons' id="icon-pinned1">keyboard_arrow_up</i></h2>
 <div id="pinned1" class="pinnedDiv" style="display:initial">
 	<div class="card card1">
+			<h2>v3.1δ</h2>
+			<p>There is now a flags page for changes or options that are in testing.<br>
+			The flags are stored as a JSON object, to make it easy to manage.<br>
+			There is a new format for storing options, which also uses a JSON object. There is a converter built in to convert preferences from older versions.<br>
+			A new personalization option was added: Menu Locataion. Much like in version 1.x, you can choose where to put the navigation menu: the top, or the bottom.<br>
+			New in this version, however, is the fact that it applies to all devices, not just phones.<br>
+			The menu buttons on the news popout and in the header in version 3.0 now function, bringing up a menu with a few options, including share and a link to options.</p>
+			<button onclick="openArticle('/news/updates/v3.1d')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
+	<div class="card card1">
 		<h2>v3.0δ</h2>
 		<p>This version builds upon the fact that page content is loaded in seperately from the page in v2.0. At the time, this feature was added for speed reasons.<br>
 		But in this version, there is no longer an index.html file for every page. Instead, there is only the root index.html file. The htaccess no longer redirects to the 404 page. Instead, it redirects to index.html.<br>

@@ -120,10 +120,24 @@
           </div>
 	</div>
 </div>
-<div class="card card1 clickable" onclick="javascript:setPage('/setup/')">
-	<h2>RELAUCH SETUP</h2>
-	<p>Click here to relaunch the setup page.</p>
-</div>
+	<div class="card card1">
+		<div class="newCard">
+				<div class="mdc-card demo-card">
+				<section class="mdc-card__primary">
+					<h1 class="mdc-card__title mdc-card__title--large" style="text-align:left;">NAVIGATION BAR</h1>
+					<h2 class="mdc-card__subtitle" style="text-align:left;">Select Your Navigation Bar Location</h2>
+				</section>
+				<section class="mdc-card__supporting-text">
+						<div id="themeBox">
+							<div onclick="navbarLocation('top')" class="themeChoice" id="top"><img class="themeThumb" src="/photos/screenshot/navTop.png" width="100%"><p>Top</p></div>
+							<div onclick="navbarLocation('bottom')" class="themeChoice" id="bottom"><img class="themeThumb" src="/photos/screenshot/navBottom.png" width="100%"><p>Bottom</p></div>
+						</div>
+				</section>
+				<section class="mdc-card__actions">
+				</section>
+				</div>
+		</div>
+	</div>
 </div>
 <div id="desktopOptions">
 <h2 class="pinned" onclick="toggleSection('pinned2')">DESKTOP OPTIONS <i class='material-icons' id="icon-pinned2">keyboard_arrow_down</i></h2>
@@ -163,4 +177,11 @@
 	<h2><i class="material-icons">android</i> ANDROID</h2>
 	<p>This site is a Progressive Web App, which means from Chrome for Android, you can just press Add to Homescreen... from the menu to install it.</p>
 </div>
+</div>
+<h2 class="pinned" onclick="toggleSection('pinned6')">ADVANCED <i class='material-icons' id="icon-pinned6">keyboard_arrow_down</i></h2>
+<div id="pinned6" class="pinnedDiv" style="display:none">
+	<a class="card card2 clickable mdc-ripple-upgraded link" href="/flags" style="cursor:pointer;">
+		<h2>FLAGS</h2>
+		<p>Experimental Options</p>
+	</a>
 </div>
