@@ -1,4 +1,12 @@
 {
+    "n3": {
+		"title":"CSS GRIDS AND SWIPES",
+		"body":"The technology behind version 3.2.",
+		"image":"none",
+		"page":"javascript:openArticle('/news/updates/v3.2d')",
+		"context":"rightClick",
+		"timestamp":"171203.1915"
+	},
     "n2": {
 		"title":"SINGLE-PAGED DESIGN",
 		"body":"Read about the speed and feature update of version 3.0d!",

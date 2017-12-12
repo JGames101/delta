@@ -1,4 +1,12 @@
 {
+	"n8": {
+		"title":"v3.2δ",
+		"body":"Swipes, Grids, and a new Video Player",
+		"image":"none",
+		"page":"javascript:openArticle('/news/updates/v3.2d')",
+		"context":"rightClick",
+		"timestamp":"171203.1915"
+	},
 	"n7": {
 		"title":"v3.1δ",
 		"body":"Flags, Menus, and new Options",
