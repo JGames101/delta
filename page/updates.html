@@ -1,5 +1,17 @@
-﻿<h2 class="pinned" onclick="toggleSection('pinned1')">DELTA <i class='material-icons' id="icon-pinned1">keyboard_arrow_up</i></h2>
-<div id="pinned1" class="pinnedDiv" style="display:initial">
+﻿<div class="fullWidth" >
+	<h1 class="mdc-typography--display3" style="text-align: center;">Updates</h1>
+	<input type="search" name="searchBox" id="searchBox" placeholder="Search..."><br>
+</div>
+<h2 class="pinned" onclick="toggleSection('pinned1')">DELTA <i class='material-icons' id="icon-pinned1">keyboard_arrow_up</i></h2>
+	<div class="card card1">
+		<h2>v3.2δ</h2>
+		<p>To change between tabs (home, code, and media), you can now use swipe gestures.<br>
+		The videos player has been redesigned, and is fully functional.<br>
+		The PiP video player is fully functional! Due to the new video player design, PiP mode now works without restarting the video.<br>
+		The site now uses CSS grid for a better experience with screen readers, to make the flow of the HTML document make more sense, and to make resizing the page function properly.<br>
+		To learn more about the implementation of CSS Grid, read the log for this update.</p>
+		<button onclick="openArticle('/news/updates/v3.2d')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+	</div>
 	<div class="card card1">
 			<h2>v3.1δ</h2>
 			<p>There is now a flags page for changes or options that are in testing.<br>
@@ -23,10 +35,7 @@
 		The code page has finally been implemented, with links to all the code pages.</p>
 		<button onclick="openArticle('/news/updates/v3.0d')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
 	</div>
-
-</div>
-<h2 class="pinned" onclick="toggleSection('pinned2')">GAMMA <i class='material-icons' id="icon-pinned2">keyboard_arrow_up</i></h2>
-<div id="pinned2" class="pinnedDiv" style="display:initial">
+<h2 class="pinned" onclick="toggleSection('pinned2')" >GAMMA <i class='material-icons' id="icon-pinned2">keyboard_arrow_up</i></h2>
 	<div class="card card2">
 		<h2>v2.31γ</h2>
 		<p>The News Article Page has been Redesigned. It is now a fixed size, and the content scrolls, rather than the whole site. The actions are also now along the top.<br>
@@ -81,11 +90,9 @@
 		There is now a special message when offline.<br>
 		There is a new "media" page for photos and videos.<br>
 		As with v1.0b, the final beta1 version, v1.441b, can be found at <a href="/beta">/beta</a>.<br></p>
-		<button onclick="moreInfo('v2.0b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
+		<button onclick="openArticle('/news/updates/v2.0y')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
 	</div>
-</div>
-<h2 class="pinned" onclick="toggleSection('pinned3')">BETA<i class='material-icons' id="icon-pinned3">keyboard_arrow_down</i></h2>
-<div id="pinned3" class="pinnedDiv" style="display:none">
+<h2 class="pinned" onclick="toggleSection('pinned3')" >BETA<i class='material-icons' id="icon-pinned3">keyboard_arrow_down</i></h2>
 	<div class="card card3">
 		<h2>v1.441b</h2>
 		<p>setup now has scrolling when needed.<br>Service Worker now caches <a href="/txt/">jgames101.github.io/txt/</a> for the more info in the updates page.<br>There is now a v1.0b classic theme.<br>Swipe gestures now work on the menu!</p>
@@ -237,9 +244,7 @@
 		<p>Added a custom scrollbar!</p>
 		<button onclick="moreInfo('v1.0b')" class="mdc-button moreInfo" style="display:block;margin:auto;">More Info</button>
 	</div>
-</div>
-<h2 class="pinned" onclick="toggleSection('pinned4')">ALPHA <i class='material-icons' id="icon-pinned4">keyboard_arrow_down</i></h2>
-<div id="pinned4" class="pinnedDiv" style="display:none">
+<h2 class="pinned" onclick="toggleSection('pinned4')" >ALPHA <i class='material-icons' id="icon-pinned4">keyboard_arrow_down</i></h2>
 	<div class="card card4 wideCard">
 		<h2>0.8a</h2>
 		<p>JavaScript now lets you change the background using buttons on the page, as well as a notification generator and a temperature converter that works back and forth.</p>
@@ -300,4 +305,3 @@
 		<h2>0.1a</h2>
 		<p>Alpha Release.</p>
 	</div>
-</div>

@@ -5,6 +5,7 @@ if (getParameterByName('article') != undefined) {
 function openArticle(articleURL) {
     document.getElementById('newsStoryContainer').className = 'open';
     document.getElementById('shadePage').className = 'open';
+    window.history.pushState("CLOSE ARTICLE", "James M News", "?article=" + articleURL);
     window.history.pushState("ARTICLE", "James M News", "?article=" + articleURL);
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -17,7 +18,8 @@ function openArticle(articleURL) {
     xmlhttp.send();
 };
 function closeArticle() {
-    history.back()
+    history.back();
+    history.back();
     document.getElementById('newsStoryContainer').className = 'closed';
     document.getElementById('shadePage').className = 'closed';
     setTimeout(function () {

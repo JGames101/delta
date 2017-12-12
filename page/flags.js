@@ -14,9 +14,6 @@ while (flagsItem < Object.keys(flags).length) {
     flagsItem += 1;
 }
 loadFlags();
-if (flags.flagsSearch) {
-    document.getElementById('searchBox').style.display = 'block';
-}
 
 function loadFlags() {
 	var flags = JSON.parse(localStorage.getItem("flags"));

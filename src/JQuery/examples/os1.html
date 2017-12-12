@@ -80,7 +80,11 @@ $(document).ready(function(){
 <div id="taskbar">
 </div>
 <script>
-document.body.style.backgroundColor = localStorage.getItem("themeColour");
-document.getElementById('button').backgroundColor = localStorage.getItem("themeColour");
+function getOption(option) {
+	var options = JSON.parse(localStorage.getItem("options"));
+	return eval('options.' + option);
+}
+document.body.style.backgroundColor = getOption("themeColour");
+document.getElementById('button').backgroundColor = getOption("themeColour");
 </script>
 </body>

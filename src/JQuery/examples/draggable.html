@@ -27,7 +27,11 @@
 	<div id="draggable">
 	</div>
 	<script>
-	document.getElementById('draggable').style.backgroundColor = localStorage.getItem("themeColour");
+	function getOption(option) {
+		var options = JSON.parse(localStorage.getItem("options"));
+		return eval('options.' + option);
+	}
+	document.getElementById('draggable').style.backgroundColor = getOption('themeColour');
 	</script>
 </body>
 </html>

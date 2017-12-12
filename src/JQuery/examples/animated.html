@@ -101,8 +101,12 @@ $(document).ready(function(){
 </div>
 </body>
 <script>
-document.getElementById('menu').style.backgroundColor = localStorage.getItem("themeColour");
-document.getElementById('toggle').style.backgroundColor = localStorage.getItem("themeColour");
-document.getElementById('flip').style.backgroundColor = localStorage.getItem("themeColour");
-document.getElementById('panel').style.backgroundColor = localStorage.getItem("themeColour");
+function getOption(option) {
+	var options = JSON.parse(localStorage.getItem("options"));
+	return eval('options.' + option);
+}
+document.getElementById('menu').style.backgroundColor = getOption('themeColour');
+document.getElementById('toggle').style.backgroundColor = getOption('themeColour');
+document.getElementById('flip').style.backgroundColor = getOption('themeColour');
+document.getElementById('panel').style.backgroundColor = getOption('themeColour');
 </script>

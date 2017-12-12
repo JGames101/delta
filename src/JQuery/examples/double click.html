@@ -40,6 +40,10 @@
 	<p id="result">You Double-Clicked!</p>
 	<button id="resetButton" onclick="location.reload();">Reset</button>
 	<script>
-	document.getElementById('button').style.backgroundColor = localStorage.getItem("themeColour");
+	function getOption(option) {
+		var options = JSON.parse(localStorage.getItem("options"));
+		return eval('options.' + option);
+	}
+	document.getElementById('button').style.backgroundColor = getOption('themeColour');
 	</script>
 </body>

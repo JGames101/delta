@@ -16,9 +16,8 @@
     <link rel="stylesheet"
       href="node_modules/material-components-web/dist/material-components-web.css">
     <meta name="description" content="My Site for Tests and Experiments with Web Development.">
-    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <!--<link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">-->
     <link rel="stylesheet" href="page/news.css">
-    <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
     </head>
     <!-- Add to home screen for Safari on iOS -->
       <meta name="apple-mobile-web-app-capable" content="yes">
@@ -74,10 +73,17 @@
         </ul>
       </div>
     </div>
-    <div id="popoutVideo" class="closed">
-      <div id="popoutVideoOverlay" style="overflow-y:hidden;">
+    <div id="popoutVideo" class="hidden">
+      <iframe id="videoPlayer" class="hidden" src="" frameborder="0" allowfullscreen></iframe>
+      <div id="videoInformation" class="hidden">
+        <h2 class="mdc-typography--display3" style="color:'#555555';padding-left:16px;"><span id="videoTitle">loading...</span> <i class="material-icons" style="cursor:pointer;font-size:3.5rem" onclick="colapseVideo()">picture_in_picture_alt</i></h2>
+        <h3 id="username" style="color:'#555555';padding-left:16px;">loading...</h3>
+        <p id="statsBlock" style="color:'#555555';padding-left:16px;"><i class="material-icons">remove_red_eye</i><span id="views"> loading... </span><i class="material-icons">favorite</i><span id="likes"> loading... </span><i class="material-icons">favorite_border</i><span id="dislikes"> loading... </span><i class="material-icons">comment</i><span id="comments"> loading... </span></p>
+        <p style="color:'#555555';padding-left:16px;" id="videoDescription">loading description...</p>
+      </div>
+      <div id="popoutVideoOverlay" style="overflow-y:hidden;display:none;">
         <i class="material-icons" style="position:absolute;top:4px;left:4px;font-size:32px;cursor:pointer;" onclick="closePopoutVideo()">close</i>
-        <i class="material-icons" style="text-align:center;line-height:256px;font-size:32px;width:100%;cursor:pointer;" onclick="fullVideoPlayer()">fullscreen</i>
+        <i class="material-icons" style="text-align:center;line-height:256px;font-size:32px;width:100%;cursor:pointer;" onclick="expandVideo()">fullscreen</i>
       </div>
     </div>
     <div id="menu">
@@ -102,10 +108,18 @@
             </div>
           </header>
     </div>
-    <div class="content" id="intial">
-        <noscript>
-          <object id="noJSPage" data="/page/noJS.html" width="100%" height="100%"></object>
-        </noscript>
+    <div id='slider' class='swipe'>
+      <div class='swipe-wrap' style="width:300%;">
+        <div class="content" id="homeContent">
+            <p style="text-align:center;">loading...</p>
+        </div>
+        <div class="content" id="codeContent">
+            <p style="text-align:center;">loading...</p>
+        </div>
+        <div class="content" id="mediaContent">
+            <p style="text-align:center;">loading...</p>
+        </div>
+      </div>
     </div>
     <div class="mdc-simple-menu" id="moreMenuHeader" tabindex="-1">
       <ul class="mdc-simple-menu__items mdc-list" role="menu" aria-hidden="true">
@@ -120,11 +134,10 @@
         </li>
       </ul>
     </div>
-    <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
-    <script>mdc.autoInit()</script>
     <script src="/jquery-3.2.1.min.js"></script>
-    <script src="/global.js"></script>
+    <script src="/src/swipe.js"></script>
     <script src="/src/modernizr-history.js"></script>
     <script src="/page/News.js"></script>
-  </body>
+    <script src="/global.js"></script>
+    <script>window.mySwipe = new Swipe(document.getElementById('slider'), {startSlide: 0,speed: 400,continuous: true,disableScroll: false,stopPropagation: false,callback: function(index, elem) {},transitionEnd: function(index, elem) {}});</script></body>
 </html>
