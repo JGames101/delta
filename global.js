@@ -230,7 +230,7 @@ function loadPageContent() {
 			jQuery.get('page/James M.html', function(data) {
 				document.getElementById('homeContent').innerHTML = data;
 				loadTheme();
-				$.getScript( '/page/James M.js' );
+				$.getScript( '/delta/page/James M.js' );
 				//calculateCardColumns();
 				$(".pinned").css("color", getOption('themeColour'));
 				document.getElementById('menuTitle').innerHTML = 'James M';
@@ -258,7 +258,7 @@ function loadPageContent() {
 				};
 				loadTheme();
 				$(".pinned").css("color", getOption('themeColour'));
-				$.getScript( '/page/' + page() + '.js' );
+				$.getScript( '/delta/page/' + page() + '.js' );
 				//calculateCardColumns();
 				$(".pinned").css("color", getOption('themeColour'));
 				var selLink = 0;
@@ -322,7 +322,7 @@ function getParameterByName(name, url) {
 }
 
 function page() {
-	return window.location.pathname.slice(1, window.location.pathname.length).replace('/', '')
+	return window.location.pathname.slice(1, window.location.pathname.length + 6).replace('/', '')
 }
 
 function mousePoisition(event) {
