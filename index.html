@@ -1,16 +1,16 @@
 <html id="htmlObj">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon stuff -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff0000">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#ff0000">
     <!-- Main Stuff-->
     <head>
     <meta charset="utf-8">
     <title>James M</title>
-    <link href="/styles.css" rel="stylesheet" type="text/css">
+    <link href="styles.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet"
@@ -29,7 +29,7 @@
     <!-- Start of Real Content -->
     <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js');
+      navigator.serviceWorker.register('sw.js');
       console.log('service worker registered.');
     } else {
       console.log('registering service worker failed.');
@@ -94,13 +94,13 @@
             </div>
             <div class="mdc-toolbar__row" id="navigationBar">
               <nav class="mdc-tab-bar mdc-tab-bar--icon-tab-bar">
-                <a class="mdc-tab link" href="/">
+                <a class="mdc-tab link" href="/delta">
                 <i class="material-icons mdc-tab__icon" aria-label="Home">home</i>
                 </a>
-                <a class="mdc-tab link" href="/javascript">
+                <a class="mdc-tab link" href="/delta/javascript">
                 <i class="material-icons mdc-tab__icon" aria-label="Code">code</i>
                 </a>
-                <a class="mdc-tab link" href="/media">
+                <a class="mdc-tab link" href="/delta/media">
                 <i class="material-icons mdc-tab__icon" aria-label="Media">video_library</i>
                 </a>
                 <span class="mdc-tab-bar__indicator"></span>
@@ -126,7 +126,7 @@
         <li class="mdc-list-item" role="menuitem" tabindex="0" onclick="shareMenu();openMenu('moreMenuHeader')">
           <i class="material-icons" style="margin-right:8px;">share</i>Share
         </li>
-        <li class="mdc-list-item" role="menuitem" tabindex="0" onclick="setPage('/options');openMenu('moreMenuHeader')">
+        <li class="mdc-list-item" role="menuitem" tabindex="0" onclick="setPage('/delta/options');openMenu('moreMenuHeader')">
           <i class="material-icons" style="margin-right:8px;">settings</i>Options
         </li>
         <li class="mdc-list-item" role="menuitem" tabindex="0" onclick="openMenu('moreMenuHeader')">
@@ -134,10 +134,10 @@
         </li>
       </ul>
     </div>
-    <script src="/jquery-3.2.1.min.js"></script>
-    <script src="/src/swipe.js"></script>
-    <script src="/src/modernizr-history.js"></script>
-    <script src="/page/News.js"></script>
-    <script src="/global.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="src/swipe.js"></script>
+    <script src="src/modernizr-history.js"></script>
+    <script src="page/News.js"></script>
+    <script src="global.js"></script>
     <script>window.mySwipe = new Swipe(document.getElementById('slider'), {startSlide: 0,speed: 400,continuous: true,disableScroll: false,stopPropagation: false,callback: function(index, elem) {},transitionEnd: function(index, elem) {}});</script></body>
 </html>
